@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF - 第三方平台集合 | 开发者 · Low-code · 云市场 · AI</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary)}nav ul a:hover,nav ul a.active{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#059669,#10B981);color:#fff;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600}
+.hero{background:linear-gradient(160deg,#0F172A 0%,#1E293B 40%,#1a3a7a 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(37,99,235,.1) 0%,transparent 60%)}
+.hero .container{position:relative}
+.hero h1{font-size:42px;font-weight:800;line-height:1.25;margin-bottom:18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:15px;color:var(--text-secondary);max-width:620px;margin:0 auto 28px;line-height:1.8}
+.hero-btns{display:flex;gap:12px;justify-content:center;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-white{background:#fff;color:#1E3A8A}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.hero-logos{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.hero-logo-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+.hero-logo-item .icon-circle{width:48px;height:48px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px}
+.hero-logo-item .name{font-size:11px;color:var(--text-muted);font-weight:500}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.platform-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;position:relative;overflow:hidden}
+.platform-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.platform-card .badge{display:inline-flex;font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:4px;margin-bottom:12px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:#60A5FA}
+.platform-card .badge.new{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.25);color:#34D399}
+.platform-card .badge.hot{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.25);color:#F87171}
+.platform-card .badge.soon{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#FBBF24}
+.platform-card .card-icon{font-size:32px;margin-bottom:10px}
+.platform-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.platform-card .desc{color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:14px}
+.platform-card .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.platform-card .card-tag{font-size:11px;padding:3px 8px;border-radius:4px;background:rgba(148,163,184,.08);border:1px solid var(--border);color:var(--text-secondary)}
+.platform-card .card-link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--primary-light)}
+.lowcode-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cloud-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto}
+.cloud-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:32px;position:relative;overflow:hidden}
+.cloud-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.5}
+.cloud-card .card-icon{font-size:36px;margin-bottom:12px}
+.cloud-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.cloud-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:16px}
+.cloud-card .features{list-style:none;margin-bottom:20px}
+.cloud-card .features li{font-size:12.5px;padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;color:var(--text-secondary)}
+.cloud-card .features li::before{content:'✓';color:var(--accent-green);font-weight:700}
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto}
+.ai-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;position:relative;overflow:hidden}
+.ai-card.mcp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#7C3AED,#2563EB)}
+.ai-card.skills::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#F59E0B,#EF4444)}
+.ai-card .card-icon{font-size:32px;margin-bottom:12px}
+.ai-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.ai-card .desc{color:var(--text-secondary);font-size:12.5px;margin-bottom:14px;line-height:1.7}
+.ai-card .card-link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--primary-light)}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){
+  .hero h1{font-size:30px}
+  .platform-grid,.lowcode-grid{grid-template-columns:1fr}
+  .cloud-grid,.ai-grid{grid-template-columns:1fr}
+  nav ul{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="1-document-editing.html">文档编辑</a></li>
+    <li><a href="2-file-processing.html">文件处理</a></li>
+    <li><a href="3-document-automation.html">文档自动化</a></li>
+    <li><a href="4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="5-ai-products.html">AI 产品</a></li>
+    <li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="8-third-party-platforms-v5.html" class="active">平台生态</a></li>
+  </ul>
+  <a href="#form" class="nav-cta">Contact Sales</a>
+</div>
+</nav>
+<section class="hero">
+<div class="container">
+  <h1>一个 SDK，<span class="gradient">连接所有平台</span></h1>
+  <p>无论你是开发者、低代码构建者还是企业决策者，ComPDF 已在你习惯的开发工具中就绪。</p>
+  <div class="hero-btns">
+    <a href="#developer" class="btn btn-white">查看开发者资源</a>
+    <a href="#form" class="btn btn-outline">联系我们</a>
+  </div>
+  <div class="hero-logos">
+    <div class="hero-logo-item"><div class="icon-circle">🐙</div><div class="name">GitHub</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">📦</div><div class="name">npm</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">🎯</div><div class="name">pub.dev</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">⚡</div><div class="name">Make</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">🔄</div><div class="name">Zapier</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">🔧</div><div class="name">n8n</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">☁️</div><div class="name">AWS</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">🔷</div><div class="name">Azure</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">🤖</div><div class="name">MCP</div></div>
+    <div class="hero-logo-item"><div class="icon-circle">🧠</div><div class="name">AI Skills</div></div>
+  </div>
+</div>
+</section>
+<section id="developer">
+<div class="container">
+  <div class="section-title"><span class="tag">👩‍💻 开发者生态</span><h2>在你熟悉的开发工具中，5 分钟完成集成</h2><p>ComPDF SDK 已发布到主流包管理平台和代码托管平台。</p></div>
+  <div class="platform-grid">
+    <div class="platform-card"><div class="badge">Open Source</div><div class="card-icon">🐙</div><h3>GitHub</h3><p class="desc">全平台 SDK 示例代码与 Demo 项目。Star 即可关注最新版本更新。</p><div class="card-tags"><span class="card-tag">iOS Sample</span><span class="card-tag">Android Sample</span><span class="card-tag">Web Demo</span></div><a href="#" class="card-link">访问 GitHub 仓库</a></div>
+    <div class="platform-card"><div class="badge new">v2.6+</div><div class="card-icon">📦</div><h3>npm</h3><p class="desc">一行命令安装 Web/Node.js PDF 能力包。支持 React、Vue、Angular 等主流框架。</p><div class="card-tags"><span class="card-tag">npm install</span><span class="card-tag">TypeScript</span></div><a href="#" class="card-link">查看 npm 包</a></div>
+    <div class="platform-card"><div class="badge">Flutter</div><div class="card-icon">🎯</div><h3>pub.dev</h3><p class="desc">Flutter 官方插件市场发布，一套代码同时覆盖 iOS 和 Android。</p><div class="card-tags"><span class="card-tag">Flutter Plugin</span><span class="card-tag">Dart 3</span></div><a href="#" class="card-link">查看 pub.dev 页面</a></div>
+  </div>
+</div>
+</section>
+<section id="ai" class="section-alt">
+<div class="container">
+  <div class="section-title"><span class="tag">🤖 AI 能力接入</span><h2>让 AI Agent 读懂、处理、生成 PDF</h2><p>通过 MCP Server 和 AI Skills，将 ComPDF 的文档能力无缝注入 AI 工作流。</p></div>
+  <div class="ai-grid">
+    <div class="ai-card mcp"><div class="card-icon">🧩</div><h3>MCP Server</h3><p class="desc">基于 Model Context Protocol 标准，让 Claude、GPT 等 AI 模型通过自然语言直接调用 PDF 能力。</p><a href="#" class="card-link">查看 MCP 文档</a></div>
+    <div class="ai-card skills"><div class="card-icon">🧠</div><h3>AI Skills</h3><p class="desc">预构建的 AI 技能包，覆盖文档分类、字段提取、智能摘要等场景。</p><a href="#" class="card-link">查看 AI Skills 文档</a></div>
+  </div>
+</div>
+</section>
+<footer><div class="container">© 2026 ComPDF. All rights reserved.</div></footer>
+</body>
+</html>

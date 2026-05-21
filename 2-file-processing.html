@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF - 智能文件处理引擎 | 30+ 格式无损转换</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--primary-light);text-decoration:none;transition:all .2s}a:hover{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary)}nav ul a:hover,nav ul a.active{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#059669,#10B981);color:#fff;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(6,182,212,.1) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:44px;font-weight:800;line-height:1.25;max-width:750px;margin:0 auto 18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#10B981,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:620px;margin:0 auto 32px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}.btn-outline:hover{border-color:var(--primary)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#34D399;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.feature-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.fi-blue{background:rgba(37,99,235,.12);color:#60A5FA}.fi-purple{background:rgba(139,92,246,.12);color:#A78BFA}.fi-green{background:rgba(16,185,129,.12);color:#34D399}.fi-orange{background:rgba(245,158,11,.12);color:#FBBF24}.fi-pink{background:rgba(236,72,153,.12);color:#F472B6}.fi-teal{background:rgba(13,148,136,.12);color:#2DD4BF}
+.feature-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:13px;line-height:1.7}
+.feature-card .links{margin-top:14px;display:flex;flex-direction:column;gap:4px}
+.feature-card .links a{font-size:12px;color:var(--primary-light)}
+.format-flow{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.format-chip{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 18px;font-size:14px;font-weight:600}
+.format-arrow{font-size:24px;color:var(--accent)}
+.perf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;align-items:center}
+.perf-bars{display:flex;flex-direction:column;gap:20px}
+.perf-bar label{font-size:14px;font-weight:600;display:flex;justify-content:space-between;margin-bottom:6px;color:var(--text-secondary)}
+.perf-bar .bar-bg{height:12px;background:var(--bg-elevated);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.perf-bar .bar-fill{height:100%;border-radius:6px}.bar-compdf{background:linear-gradient(90deg,#10B981,#2563EB)}
+.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.scene-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;transition:all .3s}
+.scene-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.scene-card .icon{font-size:32px;flex-shrink:0}
+.scene-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.scene-card p{color:var(--text-secondary);font-size:13px}
+.code-tabs{display:flex;gap:0}
+.code-tab{padding:10px 20px;background:var(--bg-card);color:var(--text-muted);font-size:13px;cursor:pointer;border:none;font-weight:600;border-bottom:2px solid transparent}
+.code-tab.active{background:var(--bg-elevated);color:#fff;border-bottom-color:var(--primary)}
+.code-block{background:#0B1120;color:#E2E8F0;padding:28px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-family:'Fira Code',monospace;font-size:14px;line-height:1.8;overflow-x:auto;border:1px solid var(--border);border-top:0}
+.code-block .comment{color:#64748B}.code-block .keyword{color:#7DD3FC}.code-block .string{color:#86EFAC}.code-block .method{color:#FBBF24}
+.form-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px}
+.form-card input,.form-card select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%}
+.form-card input::placeholder{color:var(--text-muted)}
+.form-card input:focus,.form-card select:focus{border-color:var(--primary)}
+.form-card select{color:var(--text-muted)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:768px){.features-grid,.scene-grid,.perf-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul><li><a href="1-document-editing.html">文档编辑</a></li><li><a href="2-file-processing.html" class="active">文件处理</a></li><li><a href="3-document-automation.html">文档自动化</a></li><li><a href="4-hardware-integration.html">软硬件结合</a></li><li><a href="5-ai-products.html">AI 产品</a></li><li><a href="7-sdk-buyers-guide.html">选型指南</a></li><li><a href="8-third-party-platforms-v5.html">平台生态</a></li></ul>
+  <a href="#contact" class="nav-cta">Contact Sales</a>
+</div></nav>
+<section class="hero"><div class="container">
+  <div class="hero-badge">🚀 告别格式焦虑</div>
+  <h1>从 PDF 到任何格式<br><span class="gradient">智能转换 · 精准提取 · 零损耗</span></h1>
+  <p>30+ 文件格式双向转换、AI OCR 识别引擎、表格结构智能保留<br>SDK / Cloud API / CLI 多种接入方式，5 分钟即接即用</p>
+  <div style="display:flex;gap:12px;justify-content:center"><a href="#" class="btn btn-primary">免费试用 SDK</a><a href="#" class="btn btn-outline">查看文档 →</a></div>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">服务器端批量处理</span><h2>大规模文档处理，一条流水线搞定</h2><p>ComPDF 支持部署在服务器中集中处理文档，构建自动化批量处理流水线，适用于企业级海量文档转换与提取场景</p></div>
+  <div style="display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:36px">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;min-width:120px;flex:1;max-width:160px"><div style="font-size:28px">📂</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">批量上传</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">文件夹 / 对象存储<br>批量导入文档</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;min-width:120px;flex:1;max-width:160px"><div style="font-size:28px">🗂️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">任务队列</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">自动分配任务<br>并行处理调度</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;min-width:120px;flex:1;max-width:160px"><div style="font-size:28px">⚙️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ComPDF 处理</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">格式转换 / OCR<br>表格提取 / 压缩</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;min-width:120px;flex:1;max-width:160px"><div style="font-size:28px">✅</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">结果输出</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">格式化文件<br>结构化数据</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;min-width:120px;flex:1;max-width:160px"><div style="font-size:28px">📊</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">业务系统</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">ERP / 数据库<br>知识库 / BI</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🚀</div><div style="font-size:13px;font-weight:700">高并发处理</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">支持数千文档并行处理<br>自动负载均衡</div></div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🔄</div><div style="font-size:13px;font-weight:700">自动重试机制</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">失败任务自动重试<br>异常文件单独标记</div></div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center"><div style="font-size:24px;margin-bottom:6px">📡</div><div style="font-size:13px;font-weight:700">Webhook 回调</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">处理完成实时通知<br>无需轮询等待</div></div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🏢</div><div style="font-size:13px;font-weight:700">私有化部署</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">支持 Docker / K8s<br>数据不出企业内网</div></div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">应用场景</span><h2>让文档处理成为业务提效的引擎</h2><p>从接收文档到数据落地，ComPDF 帮你打通每一个卡点</p></div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon fi-blue">💹</div><h3>财务发票批量入库</h3><p><strong>痛点：</strong>每月数百份 PDF 发票需人工录入 ERP，耗时且易出错。<br><strong>ComPDF解决方案：</strong>PDF 批量转 Excel/JSON，表格数据精准提取后通过 API 自动写入财务系统，实现零人工干预。</p></div>
+    <div class="feature-card"><div class="feature-icon fi-green">📋</div><h3>纸质档案电子化归档</h3><p><strong>痛点：</strong>纸质合同、工单扫描后无法检索，合规审计困难。<br><strong>ComPDF解决方案：</strong>扫描件 OCR → 转 Searchable PDF（双层 PDF），支持全文检索；或转 PDF/A 长期归档标准。</p></div>
+    <div class="feature-card"><div class="feature-icon fi-purple">⚖️</div><h3>合同文本结构化提取</h3><p><strong>痛点：</strong>法务需逐份阅读 PDF 合同，手动提取关键条款。<br><strong>ComPDF解决方案：</strong>PDF 转 Word 保留条款层级结构，或转 JSON 输出字段化数据，供 AI 审查系统直接消费。</p></div>
+    <div class="feature-card"><div class="feature-icon fi-orange">🏥</div><h3>业务报告数据对接</h3><p><strong>痛点：</strong>供应商/检测机构 PDF 报告中数据需手动抄录到内部系统。<br><strong>ComPDF解决方案：</strong>PDF 表格精准转 Excel，保留行列结构与数值精度，通过接口自动推送至 ERP/MES/BI 系统。</p></div>
+    <div class="feature-card"><div class="feature-icon fi-teal">🌐</div><h3>多格式文档统一管理</h3><p><strong>痛点：</strong>Word/PPT/Excel/图片格式分散，版本混乱，难以统一归档分发。<br><strong>ComPDF解决方案：</strong>所有格式批量转 PDF 统一存储，需编辑时一键转回 Word/Excel/PPT，双向转换零损耗。</p></div>
+    <div class="feature-card"><div class="feature-icon fi-pink">📊</div><h3>PDF 数据解锁用于分析</h3><p><strong>痛点：</strong>PDF 格式锁死数据，无法直接用于 BI 工具或数据分析平台。<br><strong>ComPDF解决方案：</strong>批量转 Excel/CSV 保留原始表格结构，直接导入 Tableau/Power BI 等工具进行分析建模。</p></div>
+  </div>
+</div></section>
+<section id="contact"><div class="container">
+  <div class="section-title"><span class="tag">性能实证</span><h2>1000+ 真实文档验证 — 准确率说了算</h2><p>基于多行业真实文档的基准测试结果</p></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px">
+      <h4 style="margin:0 0 16px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px"><span style="font-size:20px">📐</span> 页面布局</h4>
+      <div class="perf-bar"><label>页边距还原 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+      <div class="perf-bar"><label>多栏排版还原 <span>91.7%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:91.7%"></div></div></div>
+      <div class="perf-bar"><label>段落重建 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px">
+      <h4 style="margin:0 0 16px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px"><span style="font-size:20px">📝</span> 文本属性</h4>
+      <div class="perf-bar"><label>文本对齐还原 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+      <div class="perf-bar"><label>超链接保留 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+      <div class="perf-bar"><label>字符间距还原 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px">
+      <h4 style="margin:0 0 16px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px"><span style="font-size:20px">🖼️</span> 图片 & 表格</h4>
+      <div class="perf-bar"><label>透明图片还原 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+      <div class="perf-bar"><label>表格边框样式 <span>84.6%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:84.6%"></div></div></div>
+      <div class="perf-bar"><label>无边框表格识别 <span>100%</span></label><div class="bar-bg"><div class="bar-fill bar-compdf" style="width:100%"></div></div></div>
+    </div>
+  </div>
+  <div style="max-width:520px;margin:0 auto">
+    <div class="form-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:6px;text-align:center">🚀 预约免费技术演示</h3>
+      <p style="font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:18px">30 分钟定制化演示，针对你的文件处理场景</p>
+      <form style="display:flex;flex-direction:column;gap:12px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的姓名"><input type="email" placeholder="工作邮箱">
+        <select><option value="">您的场景</option><option>PDF 格式转换</option><option>扫描件 OCR 识别</option><option>表格数据提取</option><option>批量文件处理</option><option>其他</option></select>
+        <button type="submit" class="fbtn" style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">立即预约 →</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">快速开始</span><h2>几行代码，立即解锁文件处理超能力</h2></div>
+  <div style="max-width:720px;margin:0 auto;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border)">
+    <div class="code-tabs"><button class="code-tab active">Java</button><button class="code-tab">Python</button><button class="code-tab">C#</button></div>
+    <div class="code-block"><span class="comment">// PDF 转 Excel (Java)</span>
+<span class="keyword">import</span> com.compdf.sdk.CPDFConverter;
+
+CPDFConverter converter = <span class="keyword">new</span> CPDFConverter();
+converter.<span class="method">setInputFile</span>(<span class="string">"invoice.pdf"</span>);
+converter.<span class="method">setOutputFormat</span>(<span class="string">"xlsx"</span>);
+converter.<span class="method">enableAIOCR</span>(<span class="keyword">true</span>);
+converter.<span class="method">enableTableRecognition</span>(<span class="keyword">true</span>);
+
+ConvertResult result = converter.<span class="method">convert</span>();
+System.out.println(<span class="string">"Accuracy: "</span> + result.getAccuracy());</div>
+  </div>
+</div></section>
+<section class="cta-section"><div class="container">
+  <h2>从 PDF 到数据，10 秒完成智能提取</h2>
+  <p>零成本启动 · 免费试用 · 立即体验 98% 转换准确率</p>
+  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A">免费试用</a><a href="#" class="btn btn-outline">下载 SDK →</a></div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

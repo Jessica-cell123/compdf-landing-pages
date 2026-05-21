@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF Workflow Solutions</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary)}nav ul a:hover,nav ul a.active{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#059669,#10B981);color:#fff;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative}
+.hero-text h1{font-size:42px;font-weight:800;line-height:1.2;margin-bottom:18px}
+.hero-text h1 .gradient{background:linear-gradient(90deg,#60A5FA,#A78BFA,#F472B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-text p{font-size:15px;color:var(--text-secondary);margin-bottom:28px;line-height:1.8}
+.hero-btns{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-accent{background:linear-gradient(135deg,#D97706,#F59E0B);color:#0F172A}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.wf-solutions{display:flex;flex-direction:column;gap:56px}
+.wf-solution{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.wf-info h3{font-size:24px;font-weight:700}
+.wf-info .desc{color:var(--text-secondary);font-size:14px}
+.wf-diagram{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px}
+.wf-step{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px}
+.wf-step-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.wf-step-text h4{font-size:13px;font-weight:700}.wf-step-text p{font-size:11px;color:var(--text-muted)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);padding:48px 0;font-size:13px}
+@media(max-width:900px){.hero .container,.wf-solution{grid-template-columns:1fr}.hero-text h1{font-size:30px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul><li><a href="1-document-editing.html">文档编辑</a></li><li><a href="2-file-processing.html">文件处理</a></li><li><a href="3-document-automation.html">文档自动化</a></li><li><a href="4-hardware-integration.html">软硬件结合</a></li><li><a href="5-ai-products.html">AI 产品</a></li><li><a href="7-sdk-buyers-guide.html">选型指南</a></li><li><a href="8-third-party-platforms-v5.html">平台生态</a></li><li><a href="workflow-solutions.html" class="active">Workflow</a></li></ul>
+<a href="#" class="nav-cta">Contact Sales</a>
+</div></nav>
+<section class="hero"><div class="container">
+  <div class="hero-text">
+    <div class="hero-badge">⚡ Workflow Solutions</div>
+    <h1>用 <span class="gradient">智能工作流</span><br>重新定义文档处理</h1>
+    <p>将 PDF 编辑、转换、提取、AI 识别串联成自动化工作流</p>
+    <div class="hero-btns"><a href="#solutions" class="btn btn-accent">查看解决方案</a><a href="#" class="btn btn-outline">预约演示 →</a></div>
+  </div>
+  <div class="hero-diagram" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
+    <div style="text-align:center;color:var(--text-muted);font-size:14px">ComPDF 作为文档处理中枢，连接你的一切工作流</div>
+  </div>
+</div></section>
+<section id="solutions"><div class="container">
+  <div class="section-title"><span class="tag">解决方案</span><h2>5 大文档工作流方案</h2></div>
+  <div class="wf-solutions">
+    <div class="wf-solution"><div class="wf-info"><h3>💰 发票自动化工作流</h3><p class="desc">从收到发票到财务入账全自动完成。ComPDF AI 识别发票类型，AI 提取金额、日期、供应商等关键字段。</p></div>
+      <div class="wf-diagram"><div class="wf-step"><div class="wf-step-icon" style="background:rgba(37,99,235,.12);color:#60A5FA">📧</div><div class="wf-step-text"><h4>触发：收到发票邮件</h4><p>Gmail / Outlook 自动监控附件</p></div></div></div></div>
+    <div class="wf-solution"><div class="wf-info"><h3>📋 合同审查与管理工作流</h3><p class="desc">合同上传后自动识别关键条款，AI Agent 标记风险项，团队在线协同修改并签署。</p></div>
+      <div class="wf-diagram"><div class="wf-step"><div class="wf-step-icon" style="background:rgba(37,99,235,.12);color:#60A5FA">📄</div><div class="wf-step-text"><h4>上传合同 PDF</h4><p>Google Drive / Salesforce / 邮件</p></div></div></div></div>
+    <div class="wf-solution"><div class="wf-info"><h3>🧠 AI 知识库构建工作流</h3><p class="desc">将企业 PDF 文档自动转化为 AI 知识库，支持 RAG 应用。</p></div>
+      <div class="wf-diagram"><div class="wf-step"><div class="wf-step-icon" style="background:rgba(37,99,235,.12);color:#60A5FA">📚</div><div class="wf-step-text"><h4>批量导入 PDF</h4><p>手册 / 政策 / 技术文档 / 报告</p></div></div></div></div>
+    <div class="wf-solution"><div class="wf-info"><h3>🔄 多格式文件转换工作流</h3><p class="desc">监控 Google Drive 新增文件，自动将 PDF 转换为 Word/Excel/HTML 等格式。</p></div>
+      <div class="wf-diagram"><div class="wf-step"><div class="wf-step-icon" style="background:rgba(37,99,235,.12);color:#60A5FA">☁️</div><div class="wf-step-text"><h4>监控 Google Drive</h4><p>新文件 / 指定文件夹 / 定时扫描</p></div></div></div></div>
+  </div>
+</div></section>
+<section class="cta-section"><div class="container">
+  <h2>开始构建你的文档工作流</h2>
+  <p>免费试用 ComPDF，5 分钟内让你的第一个文档工作流跑起来</p>
+  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn" style="background:#fff;color:#1E3A8A;font-weight:700">免费试用</a><a href="#" class="btn btn-outline">预约 1 对 1 演示 →</a></div>
+</div></section>
+<footer><div class="container"><div class="footer-bottom" style="text-align:center;color:var(--text-muted);font-size:12px">© 2026 ComPDF. All Rights Reserved.</div></div></footer>
+</body>
+</html>

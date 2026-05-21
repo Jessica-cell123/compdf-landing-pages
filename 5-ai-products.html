@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF AI - 四大 AI 产品矩阵 | 智能文档处理</title>
+<style>
+:root{--primary:#f59e0b;--primary-dark:#d97706;--accent-blue:#2563EB;--bg:#0f172a;--bg2:#1e293b;--card:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--border:#334155;--success:#10b981;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:22px;font-weight:800;color:#60a5fa}.logo span{color:var(--primary)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500;color:var(--muted)}
+nav ul a{color:var(--muted)}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#0f172a 50%);color:#fff;padding:100px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.15),transparent 70%);border-radius:50%}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(96,165,250,.1),transparent 70%);border-radius:50%}
+.hero h1{font-size:48px;font-weight:800;line-height:1.25;max-width:820px;margin:0 auto 20px;position:relative;z-index:1}
+.hero h1 .highlight{background:linear-gradient(90deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:20px;opacity:.8;max-width:660px;margin:0 auto 36px;position:relative;z-index:1}
+.btn{display:inline-block;padding:14px 36px;border-radius:8px;font-weight:600;font-size:16px;transition:all .2s}
+.btn-gold{background:var(--primary);color:#0f172a}.btn-gold:hover{background:var(--primary-dark)}
+.btn-outline{border:2px solid rgba(255,255,255,.3);color:#fff;margin-left:12px}.btn-outline:hover{background:rgba(255,255,255,.1)}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:36px;font-weight:700;margin-bottom:12px;color:#fff}
+.section-title p{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto}
+.tag{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:13px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:12px}
+.flow-section{background:var(--bg)}
+.flow-group{margin-bottom:48px}
+.flow-group h3{text-align:center;font-size:20px;font-weight:700;margin-bottom:20px;color:var(--text)}
+.flow-group h3 .badge{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:12px;font-weight:600;padding:3px 12px;border-radius:16px;margin-right:8px}
+.flow-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:12px}
+.flow-node{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;text-align:center;min-width:130px}
+.flow-node .emoji{font-size:26px}
+.flow-node .label{font-size:12px;font-weight:600;margin-top:4px}
+.flow-node .desc{font-size:11px;color:var(--muted)}
+.flow-node.highlight-node{border-color:var(--primary);background:rgba(245,158,11,.08)}
+.flow-node.blue-node{border-color:var(--accent-blue);background:rgba(37,99,235,.08)}
+.flow-arrow{font-size:24px;color:var(--primary);padding:0 6px}
+.product-section{padding:100px 0;position:relative}
+.product-section:nth-child(odd){background:var(--bg)}
+.product-section:nth-child(even){background:var(--bg2)}
+.product-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.product-info .product-tag{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:12px;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:16px}
+.product-info h2{font-size:34px;font-weight:800;margin-bottom:16px;line-height:1.3}
+.product-info .subtitle{font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.8}
+.product-features{list-style:none;padding:0}
+.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;display:flex;align-items:center;gap:10px}
+.product-features li:last-child{border-bottom:none}
+.product-features li .icon{font-size:18px}
+.product-visual{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.product-visual .big-icon{font-size:72px;margin-bottom:20px}
+.product-visual .capabilities{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.product-visual .cap-tag{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--primary);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px}
+.product-visual .cap-tag.blue{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.25);color:#60a5fa}
+.cta-section{background:linear-gradient(135deg,#1e293b,#0f172a);border-top:1px solid var(--border);color:#fff;text-align:center;padding:80px 0}
+.cta-section h2{font-size:36px;font-weight:700;margin-bottom:14px}
+.cta-section p{font-size:18px;opacity:.8;margin-bottom:32px}
+footer{background:#000;color:#64748b;text-align:center;padding:32px 0;font-size:14px}
+@media(max-width:768px){.flow-row{flex-direction:column;gap:8px}.flow-arrow{transform:rotate(90deg)}.product-layout{grid-template-columns:1fr}.hero h1{font-size:30px}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo">Com<span>PDF</span></div>
+<ul><li><a href="1-document-editing.html">文档编辑</a></li><li><a href="2-file-processing.html">文件处理</a></li><li><a href="3-document-automation.html">文档自动化</a></li><li><a href="4-hardware-integration.html">软硬件结合</a></li><li><a href="5-ai-products.html" style="color:var(--primary)">AI 产品</a></li><li><a href="7-sdk-buyers-guide.html">选型指南</a></li><li><a href="8-third-party-platforms-v5.html">平台生态</a></li></ul>
+</div></nav>
+<section class="hero">
+<div class="container">
+  <span class="tag" style="background:rgba(245,158,11,.25);color:#fbbf24">ComPDF AI 产品矩阵</span>
+  <h1>为你的业务装上<br><span class="highlight">AI 文档超能力</span></h1>
+  <p>ComPDF AI . AI 助手 . AI Skills . MCP Server<br>四大产品覆盖智能文档处理全场景，赋能企业业务系统</p>
+  <a href="#products" class="btn btn-gold">了解产品</a>
+  <a href="#" class="btn btn-outline">申请试用 →</a>
+</div>
+</section>
+<section class="flow-section">
+<div class="container">
+  <div class="section-title"><span class="tag">产品能力闭环</span><h2>从 AI 赋能到业务系统的完整链路</h2></div>
+  <div class="flow-group">
+    <h3><span class="badge">AI 功能</span>智能文档处理流程</h3>
+    <div class="flow-row">
+      <div class="flow-node"><div class="emoji">📄</div><div class="label">文档输入</div><div class="desc">PDF / 扫描件 / 图片</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight-node"><div class="emoji">🤖</div><div class="label">ComPDF AI</div><div class="desc">智能抽取 / 智能解析</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight-node"><div class="emoji">💬</div><div class="label">AI 助手</div><div class="desc">问答 / 批量处理</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="emoji">📊</div><div class="label">结构化数据</div><div class="desc">JSON / CSV / API</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node blue-node"><div class="emoji">🏢</div><div class="label">客户业务系统</div><div class="desc">ERP / OA / CRM</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node blue-node"><div class="emoji">✅</div><div class="label">业务执行</div><div class="desc">自动入账 / 合同归档<br>风控审核 / 报表生成</div></div>
+    </div>
+  </div>
+  <div class="flow-group">
+    <h3><span class="badge">PDF 功能</span>PDF 文档处理流程</h3>
+    <div class="flow-row">
+      <div class="flow-node"><div class="emoji">📄</div><div class="label">PDF 文档</div><div class="desc">编辑 / 转换 / 合并</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight-node"><div class="emoji">⚡</div><div class="label">AI Skills</div><div class="desc">30+ PDF 处理能力</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight-node"><div class="emoji">🔌</div><div class="label">MCP Server</div><div class="desc">标准化协议接入</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="emoji">✅</div><div class="label">处理结果</div><div class="desc">转换 / 提取 / 生成</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node blue-node"><div class="emoji">🏢</div><div class="label">客户业务系统</div><div class="desc">SaaS / 工作流 / 自建平台</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node blue-node"><div class="emoji">✅</div><div class="label">业务执行</div><div class="desc">文档分发 / 客户交付<br>数据同步 / 流程触发</div></div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="product-section" id="products">
+<div class="container">
+  <div class="product-layout">
+    <div class="product-info">
+      <div class="product-tag">产品 1</div>
+      <h2>ComPDF AI<br>智能文档处理引擎</h2>
+      <div class="subtitle">ComPDF AI 是核心的智能文档处理产品，提供智能文档解析与智能文档抽取两大核心能力，可从各类文档中自动提取结构化数据。</div>
+      <ul class="product-features">
+        <li><span class="icon">📤</span><strong>智能文档抽取</strong> — 自动识别并提取文档中的关键字段（金额、日期、供应商等）</li>
+        <li><span class="icon">📄</span><strong>智能文档解析</strong> — 深度解析文档版面、表格、段落，输出结构化数据</li>
+        <li><span class="icon">🌐</span><strong>多语言支持</strong> — 覆盖中、英、日、韩等多种语言文档</li>
+        <li><span class="icon">📊</span><strong>多格式输出</strong> — 支持 JSON、CSV、Markdown 等结构化输出</li>
+        <li><span class="icon">🔗</span><strong>API 集成</strong> — 通过 REST API 与企业系统无缝对接</li>
+      </ul>
+    </div>
+    <div class="product-visual">
+      <div class="big-icon">🤖</div>
+      <h3 style="font-size:20px;margin-bottom:12px">核心能力</h3>
+      <div class="capabilities">
+        <span class="cap-tag">智能文档解析</span>
+        <span class="cap-tag">智能文档抽取</span>
+        <span class="cap-tag">表格识别</span>
+        <span class="cap-tag">版面分析</span>
+        <span class="cap-tag">OCR 识别</span>
+        <span class="cap-tag">多语言</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="product-section">
+<div class="container">
+  <div class="product-layout" style="direction:rtl">
+    <div class="product-info" style="direction:ltr">
+      <div class="product-tag">产品 2</div>
+      <h2>AI 助手<br>对话式文档处理</h2>
+      <div class="subtitle">AI 助手嵌入 Web Demo 中，支持通过自然语言对话实现文档自动化处理。用户可以通过问答方式完成批量注释、内容编辑、密文标记等操作。</div>
+      <ul class="product-features">
+        <li><span class="icon">💬</span><strong>实时问答</strong> — 针对文档内容进行实时对话与信息查询</li>
+        <li><span class="icon">📝</span><strong>批量注释</strong> — 通过对话指令批量添加注释、高亮、标记</li>
+        <li><span class="icon">✏️</span><strong>内容编辑</strong> — 以自然语言指示 AI 完成文本修改与格式调整</li>
+        <li><span class="icon">🔒</span><strong>密文标记</strong> — 自动识别敏感信息并进行涂黑/脱敏处理</li>
+        <li><span class="icon">🌐</span><strong>Web Demo 嵌入</strong> — 直接集成在 Web 端，即开即用</li>
+      </ul>
+    </div>
+    <div class="product-visual" style="direction:ltr">
+      <div class="big-icon">💬</div>
+      <h3 style="font-size:20px;margin-bottom:12px">对话式操作</h3>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:left;width:100%;max-width:320px;font-size:13px;color:var(--muted);line-height:1.8">
+        <div style="margin-bottom:8px"><span style="color:var(--primary)">用户：</span>把第 3 页所有金额数字高亮标注</div>
+        <div style="margin-bottom:8px"><span style="color:#60a5fa">AI 助手：</span>已完成，共标注 12 处金额数字 ✓</div>
+        <div style="margin-bottom:8px"><span style="color:var(--primary)">用户：</span>将文档中所有身份证号做密文处理</div>
+        <div><span style="color:#60a5fa">AI 助手：</span>已识别 5 处身份证号并完成涂黑 ✓</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="product-section">
+<div class="container">
+  <div class="product-layout">
+    <div class="product-info">
+      <div class="product-tag">产品 3</div>
+      <h2>AI Skills<br>全功能 PDF 处理技能</h2>
+      <div class="subtitle">AI Skills 上线了所有 ComPDF API 支持的功能，包括编辑、转换、提取、生成等 30+ 种 PDF 处理能力，可直接被 AI Agent 调用执行。</div>
+      <ul class="product-features">
+        <li><span class="icon">✏️</span><strong>编辑类 Skills</strong> — 文本编辑、注释添加、合并、分割、页面管理</li>
+        <li><span class="icon">🔄</span><strong>转换类 Skills</strong> — PDF ⇄ Word / Excel / PPT / HTML / 图片</li>
+        <li><span class="icon">📤</span><strong>提取类 Skills</strong> — 文本提取、表格识别、图片提取、KVP 提取</li>
+        <li><span class="icon">📄</span><strong>生成类 Skills</strong> — 模板填充、报告生成、水印添加、批量输出</li>
+        <li><span class="icon">🧩</span><strong>Agent 友好</strong> — 可被 Claude / GPT 等 AI Agent 直接调用</li>
+      </ul>
+    </div>
+    <div class="product-visual">
+      <div class="big-icon">⚡</div>
+      <h3 style="font-size:20px;margin-bottom:12px">30+ Skills 全覆盖</h3>
+      <div class="capabilities">
+        <span class="cap-tag">PDF 转 Word</span>
+        <span class="cap-tag">PDF 转 Excel</span>
+        <span class="cap-tag">文本提取</span>
+        <span class="cap-tag">表格识别</span>
+        <span class="cap-tag">合并 PDF</span>
+        <span class="cap-tag">分割 PDF</span>
+        <span class="cap-tag blue">OCR 识别</span>
+        <span class="cap-tag blue">添加水印</span>
+        <span class="cap-tag blue">模板填充</span>
+        <span class="cap-tag blue">页面管理</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="product-section">
+<div class="container">
+  <div class="product-layout" style="direction:rtl">
+    <div class="product-info" style="direction:ltr">
+      <div class="product-tag">产品 4</div>
+      <h2>MCP Server<br>标准化 AI 协议接入</h2>
+      <div class="subtitle">MCP Server 基于 Model Context Protocol 标准协议，上线了智能文档处理相关功能，让各类 AI 框架和 Agent 能够通过统一协议调用 ComPDF 的文档处理能力。</div>
+      <ul class="product-features">
+        <li><span class="icon">🔌</span><strong>标准协议</strong> — 基于 MCP 标准，跨平台通用接入</li>
+        <li><span class="icon">🤖</span><strong>智能文档处理</strong> — 聚焦文档解析、抽取等 AI 处理能力</li>
+        <li><span class="icon">🔗</span><strong>多框架支持</strong> — 兼容 Claude、LangChain、AutoGen 等 AI 框架</li>
+        <li><span class="icon">⚙️</span><strong>自适应接口</strong> — AI Agent 可根据任务自动选择合适的处理方法</li>
+        <li><span class="icon">🛡️</span><strong>安全可控</strong> — 支持认证鉴权、用量控制、数据隔离</li>
+      </ul>
+    </div>
+    <div class="product-visual" style="direction:ltr">
+      <div class="big-icon">🔌</div>
+      <h3 style="font-size:20px;margin-bottom:12px">MCP 协议配置</h3>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:left;width:100%;max-width:340px;font-family:monospace;font-size:12px;color:#94a3b8;line-height:1.8">
+        {<br>
+        &nbsp;&nbsp;"mcpServers": {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"compdf": {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "mcp.compdf.com",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"capabilities": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"document_parse",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"document_extract",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ocr"<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+  <h2>探索 ComPDF AI 产品矩阵 — 免费开始</h2>
+  <p>四大产品覆盖智能文档处理全场景，为你的业务系统注入 AI 文档能力</p>
+  <a href="#" class="btn btn-gold">申请试用</a>
+  <a href="#" class="btn btn-outline">联系方案团队 →</a>
+</div>
+</section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>
