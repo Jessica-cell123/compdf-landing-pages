@@ -82,6 +82,19 @@ section{padding:80px 0}
 .plat-card .p-links{display:flex;gap:8px;flex-wrap:wrap}
 .plat-card .p-links a{font-size:12px;font-weight:600;color:var(--primary-light)}
 
+/* Flow Steps */
+.flow-steps{display:flex;align-items:stretch;justify-content:center;gap:0;margin-top:16px}
+.flow-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 28px;text-align:center;flex:1;max-width:320px;position:relative;transition:all .3s}
+.flow-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.flow-card .step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.flow-card .f-icon{font-size:40px;margin-bottom:12px}
+.flow-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.flow-card p{color:var(--text-secondary);font-size:12.5px;margin-bottom:18px;line-height:1.7}
+.flow-card .btn{width:100%;justify-content:center;font-size:13px;padding:10px}
+.flow-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 8px}
+.connector-line{width:2px;height:20px;background:var(--gradient);border-radius:1px;opacity:.4}
+.connector-arrow{font-size:20px;color:var(--accent);opacity:.6;line-height:1}
+
 .form-section{background:var(--bg-elevated);padding:80px 0}
 .form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
 .form-section input::placeholder{color:var(--text-muted)}
@@ -92,6 +105,9 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 
 @media(max-width:900px){
   .cap-grid,.plat-grid{grid-template-columns:1fr}
+  .flow-steps{flex-direction:column;align-items:center}
+  .flow-connector{flex-direction:row;padding:4px 0}
+  .flow-connector .connector-line{width:20px;height:2px}
   .demo-showcase .container{grid-template-columns:1fr}
   .hero h1{font-size:30px}
   nav ul{display:none}
@@ -252,26 +268,39 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
   </div>
 </div></section>
 
-<section class="form-section"><div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <h2 style="font-size:28px;font-weight:700;margin-bottom:16px">开始使用 ComPDF SDK</h2>
-      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">30 天免费试用 · 技术团队全程支持 · 5 分钟跑通 Demo</p>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">免费 30 天全功能试用 License</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">1 对 1 技术支持与集成指导</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">POC 验证与架构咨询</span></div>
-      </div>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">免费试用流程</span><h2>三步获取 License，开始集成</h2><p>注册会员 · 生成 License · 查看文档，全程 5 分钟完成</p></div>
+  <div class="flow-steps">
+    <div class="flow-card">
+      <div class="step-num">1</div>
+      <div class="f-icon">📝</div>
+      <h3>注册会员</h3>
+      <p>访问 ComPDF 官网注册账号，填写基本信息即可完成注册，无需信用卡。</p>
+      <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">立即注册 →</a>
     </div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">获取 SDK 试用</h3>
-      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="您的姓名">
-        <input type="email" placeholder="工作邮箱">
-        <input type="text" placeholder="公司名称">
-        <select><option value="">您使用的平台</option><option>Web</option><option>iOS</option><option>Android</option><option>Java</option><option>.NET</option><option>Flutter</option><option>React Native</option><option>Windows</option><option>macOS</option></select>
-        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">获取试用 License</button>
-      </form>
+    <div class="flow-connector">
+      <div class="connector-line"></div>
+      <div class="connector-arrow">→</div>
+      <div class="connector-line"></div>
+    </div>
+    <div class="flow-card">
+      <div class="step-num">2</div>
+      <div class="f-icon">🔑</div>
+      <h3>获取 License</h3>
+      <p>登录会员后台，在 License 管理页面一键生成免费试用 License Key，复制即可使用。</p>
+      <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">查看 License →</a>
+    </div>
+    <div class="flow-connector">
+      <div class="connector-line"></div>
+      <div class="connector-arrow">→</div>
+      <div class="connector-line"></div>
+    </div>
+    <div class="flow-card">
+      <div class="step-num">3</div>
+      <div class="f-icon">📖</div>
+      <h3>集成开发</h3>
+      <p>查看官方开发文档，选择对应平台的 SDK 集成指南，5 分钟跑通 Demo。</p>
+      <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-primary">查看文档 →</a>
     </div>
   </div>
 </div></section>
