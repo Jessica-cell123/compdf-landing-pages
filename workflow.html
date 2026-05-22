@@ -40,12 +40,15 @@ section{padding:80px 0}
 .wf-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .wf-card .tag-item{font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(148,163,184,.08);border:1px solid var(--border);color:var(--text-secondary)}
 .wf-card .btn{width:100%;justify-content:center;font-size:13px;padding:10px}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
 .cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
 .cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
 .cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
-@media(max-width:900px){.wf-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}}
+@media(max-width:900px){.wf-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}.form-section .container>div{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -116,10 +119,39 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     </div>
   </div>
 </div></section>
-<section class="cta-section"><div class="container">
-  <h2>找到适合你的能力模块，现在就上手</h2>
-  <p>30 天免费试用 · 无需信用卡 · 专业技术团队全程支持</p>
-  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn" style="background:#fff;color:#1E3A8A;font-weight:700">免费试用</a><a href="#" class="btn btn-outline">预约 1 对 1 演示 →</a></div>
+<section class="form-section">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center">
+    <div>
+      <span class="tag">定制化解决方案</span>
+      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">获取你的专属文档处理方案</h2>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8">每个企业的文档处理场景都不一样。告诉我们你的需求，我们的解决方案工程师将为你定制方案 — 完全免费，无任何附加条件。</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">根据你的业务场景量身定制工作流方案</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">涵盖编辑、转换、AI 解析、软硬集成等全能力</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">技术团队 1 对 1 对接，提供 PoC 验证支持</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">立即提交需求</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的姓名" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
+        <input type="email" placeholder="工作邮箱" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
+        <input type="text" placeholder="公司名称" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
+        <select style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:14px;outline:none;width:100%">
+          <option value="">您需要的产品能力</option>
+          <option>PDF 编辑与注释</option>
+          <option>文件格式转换</option>
+          <option>RAG 知识库构建</option>
+          <option>软硬件一体集成</option>
+          <option>第三方平台对接</option>
+          <option>自定义工作流</option>
+        </select>
+        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">提交需求 → 获取方案</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center">提交后我们将在 1 个工作日内与您联系</p>
+      </form>
+    </div>
+  </div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 </body>
