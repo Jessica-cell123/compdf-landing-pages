@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第三方平台集合 | ComPDF 平台生态</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary)}nav ul a:hover,nav ul a.active{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#059669,#10B981);color:#fff;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.08) 0%,transparent 70%)}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:28px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.cat-title{font-size:14px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;padding-left:4px}
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:56px}
+.plat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.plat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.plat-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.plat-card .icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px}
+.plat-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.plat-card .desc{color:var(--text-muted);font-size:12px;margin-bottom:14px}
+.plat-card .status{font-size:10px;font-weight:600;padding:3px 10px;border-radius:10px}
+.st-online{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#34D399}
+.st-coming{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24}
+.plat-card .btn{width:100%;padding:8px;border-radius:6px;font-size:12px;font-weight:600;border:none;cursor:pointer;text-align:center;display:inline-block;background:rgba(37,99,235,.1);color:var(--primary-light);border:1px solid rgba(37,99,235,.2);transition:all .2s}
+.plat-card .btn:hover{background:rgba(37,99,235,.2)}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:768px){.hero h1{font-size:30px}nav ul{display:none}.plat-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="1-document-editing.html">文档编辑</a></li>
+    <li><a href="2-file-processing.html">文件处理</a></li>
+    <li><a href="3-document-automation.html">RAG知识库</a></li>
+    <li><a href="4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="5-ai-products.html">AI 产品</a></li>
+    <li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="workflow.html">Workflow</a></li>
+    <li><a href="third-party-platforms.html" class="active">第三方平台</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Sales</a>
+</div></nav>
+<section class="hero"><div class="container">
+  <div class="tag">14 个平台 & 持续上架中</div>
+  <h1>ComPDF 已上线的 <span class="gradient">第三方平台</span></h1>
+  <p>开发者工具、低代码平台、云市场、AI 协议全覆盖 —— 在你习惯的平台中直接使用 ComPDF 的文档处理能力</p>
+</div></section>
+<section><div class="container">
+  <div class="cat-title">📦 开发者平台</div>
+  <div class="plat-grid">
+    <div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">📦</div><h3>npm</h3><p class="desc">Web / Node.js 包管理器，一行命令集成 ComPDF Web SDK</p><span class="status st-online">已上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">🎯</div><h3>pub.dev</h3><p class="desc">Flutter 官方插件市场，一套代码覆盖 iOS + Android</p><span class="status st-online">已上线</span></div>
+  </div>
+  <div class="cat-title">⚡ 低代码 / 自动化平台</div>
+  <div class="plat-grid">
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">⚡</div><h3>Make</h3><p class="desc">可视化场景编排，支持 15+ ComPDF 动作模块，与 1000+ 应用联动</p><span class="status st-online">已上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🔄</div><h3>Zapier</h3><p class="desc">Zap 模板一键启用，自动处理邮件附件、发票提取、OCR 识别</p><span class="status st-online">已上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🔧</div><h3>n8n</h3><p class="desc">开源可自部署，ComPDF 节点支持本地化处理，数据不出企业内网</p><span class="status st-online">已上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">☁️</div><h3>Salesforce</h3><p class="desc">在 Flow 中直接调用 ComPDF API，自动生成报价单 PDF、合同模板填充</p><span class="status st-coming">即将上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🔷</div><h3>Microsoft Power Automate</h3><p class="desc">自定义连接器接入，与 Teams、Outlook、SharePoint 深度联动</p><span class="status st-coming">即将上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">📁</div><h3>SharePoint</h3><p class="desc">文档库自动触发 PDF 处理 —— 转换、OCR、水印、拆分归档</p><span class="status st-coming">即将上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🏗️</div><h3>Mendix</h3><p class="desc">Marketplace 模块或 REST 连接器，低代码应用中嵌入 PDF 能力</p><span class="status st-coming">即将上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🚀</div><h3>OutSystems</h3><p class="desc">Forge 组件安装，快速添加 PDF 生成、模板填充与文档归档</p><span class="status st-coming">即将上线</span></div>
+  </div>
+  <div class="cat-title">☁️ 云市场</div>
+  <div class="plat-grid">
+    <div class="plat-card"><div class="icon" style="background:rgba(234,179,8,.1)">🟠</div><h3>AWS Marketplace</h3><p class="desc">统一 AWS 账单，支持 Private Offer 和 EDP 抵扣，SOC 2 / HIPAA 合规</p><span class="status st-online">已上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">🔷</div><h3>Microsoft Azure</h3><p class="desc">通过 Azure 市场订阅，使用 MACC 承诺消费抵扣，Azure AD SSO</p><span class="status st-online">已上线</span></div>
+  </div>
+  <div class="cat-title">🤖 AI 能力协议</div>
+  <div class="plat-grid">
+    <div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🧩</div><h3>MCP Server</h3><p class="desc">基于 Model Context Protocol，让 Claude、GPT 等 AI 模型直接调用 PDF 能力</p><span class="status st-online">已上线</span></div>
+    <div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🧠</div><h3>Skills</h3><p class="desc">预构建的 AI 技能包，覆盖文档分类、字段提取、智能摘要等场景</p><span class="status st-online">已上线</span></div>
+  </div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>
