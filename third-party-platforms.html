@@ -38,6 +38,8 @@ section{padding:80px 0}
 .plat-card .status{font-size:10px;font-weight:600;padding:3px 10px;border-radius:10px}
 .st-online{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#34D399}
 .st-coming{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
 .plat-card .btn{width:100%;padding:8px;border-radius:6px;font-size:12px;font-weight:600;border:none;cursor:pointer;text-align:center;display:inline-block;background:rgba(37,99,235,.1);color:var(--primary-light);border:1px solid rgba(37,99,235,.2);transition:all .2s}
 .plat-card .btn:hover{background:rgba(37,99,235,.2)}
 .form-section{background:var(--bg-elevated);padding:80px 0}
@@ -67,6 +69,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
   <div class="tag">17 个平台 & 持续上架中</div>
   <h1>ComPDF 已上线的 <span class="gradient">第三方平台</span></h1>
   <p>开发者工具、低代码平台、云市场、AI 协议全覆盖 —— 在你习惯的平台中直接使用 ComPDF 的文档处理能力</p>
+  <div style="display:flex;gap:12px;justify-content:center;margin-top:32px"><a href="#form-section" class="btn btn-primary">获取集成方案</a></div>
 </div></section>
 <section><div class="container">
   <div class="cat-title">📦 开发者平台</div>
@@ -99,7 +102,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🌀</div><h3>Skills · Claude</h3><p class="desc">Claude Desktop / API 中通过 MCP 调用 ComPDF 文档处理能力</p><span class="status st-online">已上线</span></div>
   </div>
 </div></section>
-<section class="form-section">
+<section class="form-section" id="form-section">
 <div class="container">
   <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center">
     <div>
