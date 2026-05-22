@@ -16,11 +16,10 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 .logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
 nav ul{display:flex;gap:20px;list-style:none;font-size:13px;font-weight:500}
 nav ul a{color:var(--text-secondary)}nav ul a:hover,nav ul a.active{color:#fff}
-.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
-.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.08) 0%,transparent 70%)}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
 .hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
 .hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:16px;color:var(--text-secondary);max-width:640px;margin:0 auto 28px}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:620px;margin:0 auto 28px}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
 .btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
@@ -31,40 +30,48 @@ section{padding:80px 0}
 .section-alt{background:var(--bg-elevated)}
 .section-title{text-align:center;margin-bottom:48px}
 .section-title h2{font-size:30px;font-weight:700;margin-bottom:12px}
-.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
 .tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
 
-/* Capability Sections */
-.cap-hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px}
-.cap-hero:last-child{margin-bottom:0}
-.cap-hero:nth-child(even) .container{direction:rtl}
-.cap-hero:nth-child(even) .container > *{direction:ltr}
-.cap-info .cap-icon{font-size:44px;margin-bottom:12px}
-.cap-info h2{font-size:28px;font-weight:800;margin-bottom:12px}
-.cap-info .cap-desc{color:var(--text-secondary);font-size:14px;line-height:1.8;margin-bottom:20px}
-.cap-info .feat-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
-.cap-info .feat-list li{font-size:13px;padding:6px 0;color:var(--text-secondary);display:flex;align-items:center;gap:8px;list-style:none;border-bottom:1px solid var(--border)}
-.cap-info .feat-list li::before{content:'✓';color:var(--accent-green);font-weight:700}
-.cap-info .plat-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.cap-info .plat-tag{padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;border:1px solid var(--border);color:var(--text-muted);background:var(--bg-card)}
-.cap-info .plat-tag sup{color:var(--primary-light);margin-left:2px}
-.cap-info .cap-links{display:flex;gap:12px;flex-wrap:wrap}
-.cap-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;text-align:center;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.cap-visual .big-emoji{font-size:72px;margin-bottom:16px}
-.cap-visual .demo-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;width:100%}
-.cap-visual .df-step{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;min-width:80px}
-.cap-visual .df-step .emoji{font-size:22px}
-.cap-visual .df-step .label{font-size:10px;font-weight:600;margin-top:4px;color:var(--text-muted)}
-.cap-visual .df-arrow{font-size:16px;color:var(--accent);opacity:.6}
+/* Capability Cards */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cap-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);opacity:.7}
+.cap-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.cap-card .c-icon{font-size:40px;margin-bottom:14px}
+.cap-card h3{font-size:20px;font-weight:700;margin-bottom:10px}
+.cap-card .c-desc{color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:16px;flex:1}
+.cap-card .feats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.cap-card .feats span{font-size:11px;padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);color:var(--primary-light)}
+.cap-card .c-plats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;padding:12px;background:var(--bg-elevated);border-radius:8px}
+.cap-card .c-plats span{font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;border:1px solid var(--border);color:var(--text-muted)}
+.cap-card .c-plats span.supported{border-color:rgba(16,185,129,.25);color:var(--accent-green);background:rgba(16,185,129,.06)}
+.cap-card .c-links{display:flex;gap:10px;flex-wrap:wrap}
+.cap-card .c-links a{font-size:12px;font-weight:600}
 
-/* Code */
-.code-block{background:#0B1120;color:#E2E8F0;padding:24px;border-radius:var(--radius-sm);font-family:'SF Mono',Monaco,monospace;font-size:12px;line-height:1.8;overflow-x:auto;border:1px solid var(--border);text-align:left;width:100%;max-width:480px}
-.code-block .comment{color:#64748B}
-.code-block .keyword{color:#7DD3FC}
-.code-block .string{color:#86EFAC}
-.code-block .method{color:#FBBF24}
+/* Demo UI Showcase */
+.demo-showcase{padding:80px 0}
+.demo-showcase .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.demo-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;min-height:320px;display:flex;flex-direction:column}
+.demo-visual .toolbar{display:flex;gap:6px;padding:12px 16px;background:var(--bg-elevated);border-radius:8px;margin-bottom:16px;flex-wrap:wrap}
+.demo-visual .toolbar .t-btn{padding:5px 12px;border-radius:4px;font-size:11px;font-weight:600;border:1px solid var(--border);color:var(--text-muted);background:transparent;cursor:default}
+.demo-visual .toolbar .t-btn.active{border-color:var(--primary);color:var(--primary-light);background:rgba(37,99,235,.08)}
+.demo-visual .page-area{flex:1;background:var(--bg-elevated);border-radius:8px;border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px}
+.demo-visual .page-area .page-sim{width:160px;height:200px;background:linear-gradient(135deg,#2a3a5a,#1e2d4a);border-radius:4px;border:1px solid var(--border-light);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.demo-visual .page-area .page-sim .line{height:4px;border-radius:2px;background:rgba(148,163,184,.15);margin:4px 0;width:80%}
+.demo-visual .page-area .page-sim .line:nth-child(2){width:60%}
+.demo-visual .page-area .page-sim .line:nth-child(3){width:70%}
+.demo-visual .page-area .page-sim .line:nth-child(4){width:45%}
+.demo-visual .page-area .page-sim .highlight-line{height:4px;border-radius:2px;margin:4px 0;width:80%;background:rgba(59,130,246,.4);border:1px solid rgba(59,130,246,.3)}
+.demo-info{padding:0}
+.demo-info .d-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.demo-info h2{font-size:28px;font-weight:800;margin-bottom:12px}
+.demo-info p{color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8}
+.demo-info .d-points{display:flex;flex-direction:column;gap:10px}
+.demo-info .d-points li{font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:10px;list-style:none}
+.demo-info .d-points li::before{content:'✓';color:var(--accent-green);font-weight:700}
 
-/* Platform Grid */
+/* Platform Cards */
 .plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .plat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
 .plat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
@@ -81,12 +88,11 @@ section{padding:80px 0}
 .form-section input:focus,.form-section select:focus{border-color:var(--primary)}
 .form-section select{color:var(--text-muted)}
 .check{color:var(--accent-green);font-weight:700}
-
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
 
 @media(max-width:900px){
-  .cap-hero{grid-template-columns:1fr;gap:32px}
-  .plat-grid{grid-template-columns:1fr}
+  .cap-grid,.plat-grid{grid-template-columns:1fr}
+  .demo-showcase .container{grid-template-columns:1fr}
   .hero h1{font-size:30px}
   nav ul{display:none}
 }
@@ -115,169 +121,134 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 
 <section class="hero"><div class="container">
   <h1>ComPDF <span class="gradient">SDK</span></h1>
-  <p>PDF 编辑查看 · 格式转换 · PDF 生成 — 三大核心能力，覆盖 Web / iOS / Android / Windows / Mac / Server / Flutter / React Native 全平台。</p>
+  <p>PDF 编辑查看 · 格式转换 · PDF 生成 — 三大核心能力，覆盖 Web / iOS / Android / Windows / Mac / Server 全平台。</p>
   <div class="hero-btns">
-    <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary">在线 Demo</a>
+    <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary">在线体验 Demo</a>
     <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline">开发者文档</a>
-    <a href="https://www.compdf.com/pricing" target="_blank" class="btn btn-outline">获取免费试用</a>
+    <a href="https://www.compdf.com/pricing" target="_blank" class="btn btn-outline">免费试用</a>
   </div>
 </div></section>
 
-<section>
-<div class="container">
-
-  <!-- PDF Editor & Viewer -->
-  <div class="cap-hero">
-    <div class="cap-info">
-      <div class="cap-icon">✏️</div>
-      <h2>PDF Editor &amp; Viewer</h2>
-      <p class="cap-desc">高性能 PDF 渲染引擎，支持文本与图片编辑、20+ 批注工具、表单填写、数字签名、文档比较、密文处理等全套编辑能力。开箱即用的 UI 和可定制的工具栏，满足从简单查看到复杂文档编辑的所有需求。</p>
-      <ul class="feat-list">
-        <li>PDF 查看与多模式翻页</li><li>文本搜索与选择</li>
-        <li>文本 / 图片内容编辑</li><li>20+ 注释与标注工具</li>
-        <li>表单创建与自动填充</li><li>页面管理（增删旋转）</li>
-        <li>电子签名与数字签名</li><li>文档比较与密文涂黑</li>
-      </ul>
-      <div class="plat-tags">
-        <span class="plat-tag">Web<sup>✓</sup></span>
-        <span class="plat-tag">iOS<sup>✓</sup></span>
-        <span class="plat-tag">Android<sup>✓</sup></span>
-        <span class="plat-tag">Windows<sup>✓</sup></span>
-        <span class="plat-tag">macOS<sup>✓</sup></span>
-        <span class="plat-tag">Flutter<sup>✓</sup></span>
-        <span class="plat-tag">React Native<sup>✓</sup></span>
+<section><div class="container">
+  <div class="section-title"><span class="tag">三大核心能力</span><h2>一套 SDK，搞定 PDF 全场景</h2><p>ComPDF SDK 提供从查看编辑到转换生成的完整能力，按需选用</p></div>
+  <div class="cap-grid">
+    <div class="cap-card">
+      <div class="c-icon">✏️</div>
+      <h3>PDF Editor &amp; Viewer</h3>
+      <p class="c-desc">高性能 PDF 渲染引擎，文本与图片编辑、20+ 批注工具、表单填写与创建、数字签名、文档比较、密文涂黑。开箱即用 UI，也可完全自定义。</p>
+      <div class="feats">
+        <span>PDF 查看</span><span>文本编辑</span><span>注释批注</span>
+        <span>表单填写</span><span>数字签名</span><span>密文处理</span>
+        <span>文档比较</span><span>页面管理</span>
       </div>
-      <div class="cap-links">
-        <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary">查看 Demo</a>
-        <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline">集成文档 →</a>
+      <div class="c-plats">
+        <span class="supported">Web</span><span class="supported">iOS</span><span class="supported">Android</span>
+        <span class="supported">Windows</span><span class="supported">macOS</span>
+        <span class="supported">Flutter</span><span class="supported">React Native</span>
+      </div>
+      <div class="c-links">
+        <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary" style="font-size:12px;padding:8px 18px">在线体验</a>
+        <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 18px">文档 →</a>
       </div>
     </div>
-    <div class="cap-visual">
-      <div class="big-emoji">✏️</div>
-      <div class="demo-flow">
-        <div class="df-step"><div class="emoji">📄</div><div class="label">加载 PDF</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">✏️</div><div class="label">编辑 / 批注</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">✍️</div><div class="label">签名 / 填表</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">💾</div><div class="label">保存导出</div></div>
+    <div class="cap-card">
+      <div class="c-icon">🔄</div>
+      <h3>PDF Conversion</h3>
+      <p class="c-desc">30+ 文件格式双向转换引擎，PDF ⇄ Word / Excel / PPT / HTML / 图片。AI OCR 识别扫描件，表格结构智能保留，批量高并发处理。</p>
+      <div class="feats">
+        <span>PDF 转 Word</span><span>PDF 转 Excel</span><span>PDF 转 PPT</span>
+        <span>Office 转 PDF</span><span>AI OCR</span><span>PDF/A</span>
+        <span>批量处理</span><span>高并发</span>
       </div>
-      <div class="code-block">
-<span class="comment">// Web SDK - 初始化查看器</span>
-<span class="keyword">import</span> ComPDFKitViewer <span class="keyword">from</span> <span class="string">'@compdfkit/webviewer'</span>;
-ComPDFKitViewer.init({
-  pdfUrl: <span class="string">'document.pdf'</span>,
-  licenseKey: <span class="string">'your-key'</span>
-}, document.getElementById(<span class="string">'viewer'</span>));</div>
-    </div>
-  </div>
-
-  <!-- PDF Conversion -->
-  <div class="cap-hero">
-    <div class="cap-info">
-      <div class="cap-icon">🔄</div>
-      <h2>PDF Conversion</h2>
-      <p class="cap-desc">30+ 文件格式双向转换引擎，支持 PDF 与 Word、Excel、PPT、HTML、图片、CSV 等格式互转。AI OCR 识别扫描件，表格结构智能保留，批量处理流水线满足企业级海量文档转换需求。</p>
-      <ul class="feat-list">
-        <li>PDF ⇄ Word 双向转换</li><li>PDF ⇄ Excel 表格保留</li>
-        <li>PDF ⇄ PPT 排版保留</li><li>PDF ⇄ HTML / 图片</li>
-        <li>Office 转 PDF 统一归档</li><li>AI OCR 扫描件识别</li>
-        <li>PDF/A / PDF/X 标准转换</li><li>高并发批量处理</li>
-      </ul>
-      <div class="plat-tags">
-        <span class="plat-tag">Java Server<sup>✓</sup></span>
-        <span class="plat-tag">.NET Server<sup>✓</sup></span>
-        <span class="plat-tag">C++ Server<sup>✓</sup></span>
-        <span class="plat-tag">Web<sup>✓</sup></span>
-        <span class="plat-tag">Cloud API<sup>✓</sup></span>
-        <span class="plat-tag">Self-hosted<sup>✓</sup></span>
+      <div class="c-plats">
+        <span class="supported">Java Server</span><span class="supported">.NET Server</span>
+        <span class="supported">C++ Server</span><span class="supported">Web</span>
+        <span class="supported">Cloud API</span><span class="supported">Self-hosted</span>
       </div>
-      <div class="cap-links">
-        <a href="2-file-processing.html" class="btn btn-primary">查看详情</a>
-        <a href="https://www.compdf.com/conversion/office-files" target="_blank" class="btn btn-outline">格式支持列表 →</a>
+      <div class="c-links">
+        <a href="2-file-processing.html" class="btn btn-primary" style="font-size:12px;padding:8px 18px">查看详情</a>
+        <a href="https://www.compdf.com/conversion/office-files" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 18px">格式列表 →</a>
       </div>
     </div>
-    <div class="cap-visual">
-      <div class="big-emoji">🔄</div>
-      <div class="demo-flow">
-        <div class="df-step"><div class="emoji">📄</div><div class="label">输入 PDF</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">⚙️</div><div class="label">AI 解析 + 转换</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">📊</div><div class="label">Excel / Word</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">✅</div><div class="label">质量校验</div></div>
+    <div class="cap-card">
+      <div class="c-icon">📄</div>
+      <h3>PDF Generation</h3>
+      <p class="c-desc">从模板、HTML、图片或 JSON 快速生成 PDF。模板填充、动态内容注入、水印页码添加。适合报告生成、合同创建、批量票据输出。</p>
+      <div class="feats">
+        <span>HTML 转 PDF</span><span>模板填充</span><span>图片合成</span>
+        <span>水印添加</span><span>页眉页脚</span><span>PDF/A</span>
+        <span>批量生成</span><span>自定义尺寸</span>
       </div>
-      <div class="code-block">
-<span class="comment">// Java Server - PDF 转 Excel</span>
-CPDFConverter converter = <span class="keyword">new</span> CPDFConverter();
-converter.<span class="method">setInputFile</span>(<span class="string">"invoice.pdf"</span>);
-converter.<span class="method">setOutputFormat</span>(<span class="string">"xlsx"</span>);
-converter.<span class="method">enableAIOCR</span>(<span class="keyword">true</span>);
-ConvertResult result = converter.<span class="method">convert</span>();</div>
+      <div class="c-plats">
+        <span class="supported">Java Server</span><span class="supported">.NET Server</span>
+        <span class="supported">Web</span><span class="supported">Cloud API</span>
+      </div>
+      <div class="c-links">
+        <a href="https://www.compdf.com/pdf-sdk/pdf-generation" target="_blank" class="btn btn-primary" style="font-size:12px;padding:8px 18px">查看详情</a>
+        <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 18px">文档 →</a>
+      </div>
     </div>
   </div>
-
-  <!-- PDF Generation -->
-  <div class="cap-hero">
-    <div class="cap-info">
-      <div class="cap-icon">📄</div>
-      <h2>PDF Generation</h2>
-      <p class="cap-desc">从模板、HTML、图片或纯文本快速生成 PDF。支持模板填充、动态内容注入、水印添加、页码和页眉页脚设置。适合报告生成、合同自动创建、批量票据输出等场景。</p>
-      <ul class="feat-list">
-        <li>HTML / 模板转 PDF</li><li>图片合成 PDF</li>
-        <li>文本 / JSON 转 PDF</li><li>动态模板填充</li>
-        <li>水印与页眉页脚</li><li>PDF/A 归档格式</li>
-        <li>批量生成流水线</li><li>自定义页面尺寸</li>
-      </ul>
-      <div class="plat-tags">
-        <span class="plat-tag">Java Server<sup>✓</sup></span>
-        <span class="plat-tag">.NET Server<sup>✓</sup></span>
-        <span class="plat-tag">Web<sup>✓</sup></span>
-        <span class="plat-tag">Cloud API<sup>✓</sup></span>
-      </div>
-      <div class="cap-links">
-        <a href="https://www.compdf.com/pdf-sdk/pdf-generation" target="_blank" class="btn btn-primary">查看详情</a>
-        <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline">集成文档 →</a>
-      </div>
-    </div>
-    <div class="cap-visual">
-      <div class="big-emoji">📄</div>
-      <div class="demo-flow">
-        <div class="df-step"><div class="emoji">📋</div><div class="label">数据输入</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">📐</div><div class="label">模板渲染</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">📄</div><div class="label">生成 PDF</div></div>
-        <div class="df-arrow">→</div>
-        <div class="df-step"><div class="emoji">📤</div><div class="label">分发归档</div></div>
-      </div>
-      <div class="code-block">
-<span class="comment">// .NET - HTML 转 PDF</span>
-<span class="keyword">using</span> ComPDFKit.PDFGeneration;
-
-PDFGenerator generator = <span class="keyword">new</span> PDFGenerator();
-generator.<span class="method">LoadHTML</span>(<span class="string">"<h1>Report</h1><p>Data</p>"</span>);
-generator.<span class="method">SetPageSize</span>(PageSize.A4);
-generator.<span class="method">SaveToFile</span>(<span class="string">"output.pdf"</span>);</div>
-    </div>
-  </div>
-
 </div></section>
 
-<section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">全平台覆盖</span><h2>选择你的平台</h2><p>每个 SDK 都包含 Editor、Conversion、Generation 能力，按需选用</p></div>
+<section class="demo-showcase section-alt"><div class="container">
+  <div class="demo-visual">
+    <div class="toolbar">
+      <span class="t-btn active">✏️ 编辑</span>
+      <span class="t-btn">📝 批注</span>
+      <span class="t-btn">📋 表单</span>
+      <span class="t-btn">✍️ 签名</span>
+      <span class="t-btn">🔍 搜索</span>
+      <span class="t-btn">🔐 加密</span>
+      <span class="t-btn" style="margin-left:auto">💾 保存</span>
+    </div>
+    <div class="page-area">
+      <div class="page-sim">
+        <div style="position:absolute;top:8px;left:8px;font-size:9px;color:var(--text-muted);opacity:.5">Contract_2026.pdf</div>
+        <div style="position:absolute;top:28px;left:8px;width:calc(100% - 16px);height:1px;background:var(--border-light);opacity:.3"></div>
+        <div class="line" style="width:55%;margin-top:40px"></div>
+        <div class="line" style="width:70%"></div>
+        <div class="line" style="width:60%"></div>
+        <div class="highlight-line" style="width:75%;margin-top:8px"></div>
+        <div class="line" style="width:50%"></div>
+        <div class="line" style="width:65%"></div>
+        <div style="display:flex;gap:6px;margin-top:8px;width:80%">
+          <div style="height:4px;border-radius:2px;background:rgba(148,163,184,.15);flex:1"></div>
+          <div style="height:4px;border-radius:2px;background:rgba(148,163,184,.15);flex:1"></div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;width:60px;height:18px;background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.2);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--primary-light)">签名区</div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-info">
+    <div class="d-badge">实时交互 Demo</div>
+    <h2>像这样 — 直接嵌入你的应用</h2>
+    <p>上面模拟的是 ComPDF SDK 的 Web 端界面。完整的工具栏、页面渲染、编辑和签名能力 — 所有 UI 都可自定义主题色、按钮布局和交互行为，无缝融入你的产品设计。</p>
+    <ul class="d-points">
+      <li>开箱即用的完整 UI，也可按需隐藏或替换组件</li>
+      <li>支持 React / Vue / Angular / 原生 JS 集成</li>
+      <li>可自定义主题色、字体、工具栏布局</li>
+      <li>5 分钟完成集成，30 天免费试用</li>
+    </ul>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary">体验完整 Demo</a>
+      <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline">查看集成文档 →</a>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-title"><span class="tag">全平台覆盖</span><h2>选择你的平台</h2><p>每个平台 SDK 都包含 Editor · Conversion · Generation 全套能力</p></div>
   <div class="plat-grid">
-    <div class="plat-card"><div class="p-icon">🌐</div><h3>Web SDK</h3><p class="p-desc">JavaScript / TypeScript，支持 React / Vue / Angular，浏览器端完整的 PDF 查看、编辑与生成。</p><div class="p-links"><a href="https://www.compdf.com/web" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">☕</div><h3>Java SDK</h3><p class="p-desc">服务端 PDF 库，适用于 Spring Boot 后端，提供转换、生成、提取等批量处理能力。</p><div class="p-links"><a href="https://www.compdf.com/pdf-library/java" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/java/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">🔷</div><h3>.NET SDK</h3><p class="p-desc">.NET Core / Framework PDF 库，服务端和桌面端双支持，丰富的 PDF 操作 API。</p><div class="p-links"><a href="https://www.compdf.com/pdf-library/dotnet" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/dotnet-core/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">🤖</div><h3>Android SDK</h3><p class="p-desc">原生 Kotlin / Java SDK，PDF 查看、批注、编辑、表单填写，移动端完整体验。</p><div class="p-links"><a href="https://www.compdf.com/android" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/android/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">🍎</div><h3>iOS SDK</h3><p class="p-desc">原生 Swift / Obj-C SDK，高性能渲染，支持 Apple Pencil 批注和离线使用。</p><div class="p-links"><a href="https://www.compdf.com/ios" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/ios/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">⚡</div><h3>Flutter SDK</h3><p class="p-desc">一套 Dart 代码跨 iOS / Android，Material Design 风格，快速构建 PDF App。</p><div class="p-links"><a href="https://www.compdf.com/flutter" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/flutter/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">⚛️</div><h3>React Native SDK</h3><p class="p-desc">RN 原生组件，JS 层调用完整 PDF 能力，保持双端一致体验。</p><div class="p-links"><a href="https://www.compdf.com/react-native" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/react-native/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">🪟</div><h3>Windows SDK</h3><p class="p-desc">C# WinForms / WPF SDK，丰富的桌面端 PDF 编辑与转换接口。</p><div class="p-links"><a href="https://www.compdf.com/windows" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/windows/overview" target="_blank">文档 →</a></div></div>
-    <div class="plat-card"><div class="p-icon">🖥️</div><h3>macOS SDK</h3><p class="p-desc">原生 Mac SDK，支持 Mac Catalyst 和 AppKit，专业文档能力。</p><div class="p-links"><a href="https://www.compdf.com/contact-sales" target="_blank">查看详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/mac/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">🌐</div><h3>Web SDK</h3><p class="p-desc">JavaScript / TypeScript，支持 React / Vue / Angular，浏览器端完整 PDF 能力。</p><div class="p-links"><a href="https://www.compdf.com/web" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">☕</div><h3>Java SDK</h3><p class="p-desc">服务端 PDF 库，Spring Boot 后端集成，转换、生成、提取批量处理。</p><div class="p-links"><a href="https://www.compdf.com/pdf-library/java" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/java/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">🔷</div><h3>.NET SDK</h3><p class="p-desc">.NET Core / Framework 库，服务端和桌面端双支持。</p><div class="p-links"><a href="https://www.compdf.com/pdf-library/dotnet" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/dotnet-core/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">🤖</div><h3>Android SDK</h3><p class="p-desc">原生 Kotlin / Java SDK，移动端 PDF 查看、批注与编辑。</p><div class="p-links"><a href="https://www.compdf.com/android" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/android/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">🍎</div><h3>iOS SDK</h3><p class="p-desc">Swift / Obj-C SDK，Apple Pencil 批注，离线可用。</p><div class="p-links"><a href="https://www.compdf.com/ios" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/ios/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">⚡</div><h3>Flutter SDK</h3><p class="p-desc">一套 Dart 代码跨 iOS / Android，快速构建 PDF App。</p><div class="p-links"><a href="https://www.compdf.com/flutter" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/flutter/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">⚛️</div><h3>React Native SDK</h3><p class="p-desc">RN 原生组件，JS 调用完整 PDF 能力，双端一致。</p><div class="p-links"><a href="https://www.compdf.com/react-native" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/react-native/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">🪟</div><h3>Windows SDK</h3><p class="p-desc">C# WinForms / WPF SDK，桌面端 PDF 编辑转换。</p><div class="p-links"><a href="https://www.compdf.com/windows" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/windows/overview" target="_blank">文档 →</a></div></div>
+    <div class="plat-card"><div class="p-icon">🖥️</div><h3>macOS SDK</h3><p class="p-desc">原生 Mac SDK，Mac Catalyst + AppKit 支持。</p><div class="p-links"><a href="https://www.compdf.com/contact-sales" target="_blank">详情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/mac/overview" target="_blank">文档 →</a></div></div>
   </div>
 </div></section>
 
