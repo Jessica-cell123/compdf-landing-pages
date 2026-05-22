@@ -25,38 +25,30 @@ nav ul a{color:var(--text-secondary)}nav ul a:hover,nav ul a.active{color:#fff}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
 .btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
 .btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
-section{padding:80px 0}
-.section-alt{background:var(--bg-elevated)}
-.section-title{text-align:center;margin-bottom:48px}
-.section-title h2{font-size:30px;font-weight:700;margin-bottom:12px}
-.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
-
-/* Industry Full Sections */
-.ind-section{padding:80px 0;position:relative;overflow:hidden}
-.ind-section .container{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.ind-section:nth-child(even){background:var(--bg-elevated)}
-.ind-section:nth-child(even) .container{direction:rtl}
-.ind-section:nth-child(even) .container > *{direction:ltr}
-.ind-info .ind-icon{font-size:48px;margin-bottom:12px}
-.ind-info .ind-label{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:11px;font-weight:600;padding:3px 12px;border-radius:16px;margin-bottom:12px}
-.ind-info h2{font-size:26px;font-weight:800;margin-bottom:12px}
-.ind-info .ind-desc{color:var(--text-secondary);font-size:14px;margin-bottom:20px;line-height:1.8}
-.ind-info .points{list-style:none}
-.ind-info .points li{font-size:13px;padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;color:var(--text-secondary)}
-.ind-info .points li:last-child{border:none}
-.ind-info .points li::before{content:'›';color:var(--accent);font-weight:700;font-size:18px}
-.ind-info .ind-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
-.ind-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.ind-visual .v-icon{font-size:72px;margin-bottom:16px}
-.ind-visual .v-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.ind-visual .v-tag{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:16px}
+section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:28px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ind-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.ind-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.ind-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.ind-card .icon{font-size:36px;margin-bottom:12px}
+.ind-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.ind-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:14px;flex:1;line-height:1.7}
+.ind-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.ind-card .tag-item{font-size:10.5px;padding:3px 9px;border-radius:4px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--primary-light)}
+.ind-card .card-link{font-size:12px;font-weight:600;color:var(--primary-light);display:inline-flex;align-items:center;gap:4px}
+.ind-card .card-link:hover{color:var(--accent)}
+.form-section{background:var(--bg-elevated);padding:60px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
-@media(max-width:900px){
-  .ind-section .container,.ind-section:nth-child(even) .container{grid-template-columns:1fr;direction:ltr}
-  .ind-section:nth-child(even) .container > *{direction:ltr}
-  .hero h1{font-size:30px}
-  nav ul{display:none}
-}
+@media(max-width:900px){.ind-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}nav ul{display:none}}
+@media(max-width:500px){.ind-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -82,223 +74,41 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <section class="hero"><div class="container">
   <div class="hero-badge">覆盖 9 大行业 · 持续扩展中</div>
   <h1>为每个行业量身打造的 <span class="gradient">文档处理方案</span></h1>
-  <p>无论你身处建筑、金融、教育还是医疗行业，ComPDF 的 SDK、AI 和云服务都能为你解决文档处理的痛点，加速业务数字化。</p>
+  <p>ComPDF 的 SDK、AI 和云服务为建筑、金融、教育、医疗等行业解决文档处理痛点，加速业务数字化。</p>
 </div></section>
 
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">🏗️</div>
-    <div class="ind-label">Construction</div>
-    <h2>建筑行业文档数字化</h2>
-    <p class="ind-desc">建筑行业涉及大量的图纸、合同、质检报告和施工文档。ComPDF 提供跨平台的 PDF SDK，支持在移动端和桌面端查看、标注和签署工程图纸，让现场人员和管理团队实时同步文档信息。</p>
-    <ul class="points">
-      <li>工程图纸移动端查看与标注，支持离线使用</li>
-      <li>施工合同、质检报告格式转换与归档</li>
-      <li>现场拍照扫描自动 OCR 识别并同步至后台</li>
-      <li>与 BIM 系统、项目管理平台集成对接</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/construction" target="_blank" class="btn btn-primary">查看建筑方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">🏗️</div>
-    <div class="v-tags"><span class="v-tag">图纸标注</span><span class="v-tag">合同管理</span><span class="v-tag">现场 OCR</span><span class="v-tag">BIM 集成</span></div>
+<section><div class="container">
+  <div class="ind-grid">
+    <div class="ind-card"><div class="icon">🏗️</div><h3>建筑 Construction</h3><p class="desc">图纸移动端查看与标注、施工合同转换归档、现场拍照 OCR 识别、BIM 系统集成对接</p><div class="tags"><span class="tag-item">图纸标注</span><span class="tag-item">合同管理</span><span class="tag-item">现场 OCR</span></div><a href="https://www.compdf.com/solutions/construction" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">✈️</div><h3>航空 Aviation</h3><p class="desc">飞行手册移动端批注、维修工单 OCR 提取、合规文档 PDF/A 归档、多语言文档管理</p><div class="tags"><span class="tag-item">手册管理</span><span class="tag-item">维修工单</span><span class="tag-item">合规归档</span></div><a href="https://www.compdf.com/solutions/aviation" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🏭</div><h3>制造 Manufacturing</h3><p class="desc">技术图纸与 BOM 管理、质检报告 OCR 提取、ERP/MES/PLM 集成、高并发批量处理</p><div class="tags"><span class="tag-item">ERP 集成</span><span class="tag-item">MES 对接</span><span class="tag-item">批量处理</span></div><a href="https://www.compdf.com/solutions/manufacturing" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">💰</div><h3>金融 Finance</h3><p class="desc">财报与招股书解析、合同条款 AI 提取、敏感信息密文处理、支持私有化合规部署</p><div class="tags"><span class="tag-item">财报解析</span><span class="tag-item">合同提取</span><span class="tag-item">密文处理</span></div><a href="https://www.compdf.com/solutions/finance" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">📚</div><h3>教育 Education</h3><p class="desc">课件多格式转换分发、试卷自动批注归档、学术论文 PDF 解析、LMS 教育平台集成</p><div class="tags"><span class="tag-item">课件转换</span><span class="tag-item">论文提取</span><span class="tag-item">LMS 集成</span></div><a href="https://www.compdf.com/solutions/education" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🖨️</div><h3>印刷 Printing</h3><p class="desc">PDF/X 印刷标准转换、色彩分离与色彩管理、字体检测与嵌入、印刷预检自动化</p><div class="tags"><span class="tag-item">PDF/X 标准</span><span class="tag-item">色彩分离</span><span class="tag-item">预检校验</span></div><a href="https://www.compdf.com/solutions/printing" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🏛️</div><h3>政务 Government</h3><p class="desc">公文国标 PDF 生成转换、纸质档案批量 OCR 归档、PDF/A 长期保存、信创环境适配</p><div class="tags"><span class="tag-item">公文处理</span><span class="tag-item">档案数字化</span><span class="tag-item">信创适配</span></div><a href="https://www.compdf.com/solutions/government" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🏥</div><h3>医疗 Healthcare</h3><p class="desc">病历跨科室共享查看、手写处方 OCR 提取、保险理赔单分类录入、HIPAA 合规私有化</p><div class="tags"><span class="tag-item">病历管理</span><span class="tag-item">OCR 识别</span><span class="tag-item">HIPAA 合规</span></div><a href="https://www.compdf.com/solutions/healthcare" target="_blank" class="card-link">查看方案 →</a></div>
   </div>
 </div></section>
 
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">✈️</div>
-    <div class="ind-label">Aviation</div>
-    <h2>航空业文档管理方案</h2>
-    <p class="ind-desc">航空业对文档的准确性、安全性和合规性有极高的要求。ComPDF 为航空公司、机场和维修企业提供专业的 PDF 处理能力，涵盖飞行手册管理、维修记录数字化和合规文档归档。</p>
-    <ul class="points">
-      <li>飞行手册与操作指南的移动端查看与批注</li>
-      <li>维修工单、检查记录的 OCR 识别与结构化提取</li>
-      <li>合规文档的 PDF/A 长期归档与全文检索</li>
-      <li>多语言文档的统一管理与格式互转</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/aviation" target="_blank" class="btn btn-primary">查看航空方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">✈️</div>
-    <div class="v-tags"><span class="v-tag">手册管理</span><span class="v-tag">维修工单</span><span class="v-tag">OCR 识别</span><span class="v-tag">合规归档</span></div>
-  </div>
-</div></section>
-
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">🏭</div>
-    <div class="ind-label">Manufacturing</div>
-    <h2>制造业文档数字化转型</h2>
-    <p class="ind-desc">制造业的生产运营依赖大量技术文档、质检报告和供应链单据。ComPDF 提供企业级的文档处理 SDK 和 AI 能力，可嵌入 ERP、MES 和 PLM 系统，实现文档流程的全面数字化。</p>
-    <ul class="points">
-      <li>技术图纸、BOM 表的 PDF 管理与格式互转</li>
-      <li>质检报告、采购订单的 OCR 识别与数据提取</li>
-      <li>与 ERP / MES / PLM 系统深度集成</li>
-      <li>批量文档处理流水线，支持高并发生产环境</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/manufacturing" target="_blank" class="btn btn-primary">查看制造方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">🏭</div>
-    <div class="v-tags"><span class="v-tag">ERP 集成</span><span class="v-tag">MES 对接</span><span class="v-tag">PLM 协同</span><span class="v-tag">批量处理</span></div>
-  </div>
-</div></section>
-
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">💰</div>
-    <div class="ind-label">Finance</div>
-    <h2>金融行业智能文档方案</h2>
-    <p class="ind-desc">金融行业每天处理大量合同、报表和合规文件。ComPDF 提供高安全性的 PDF SDK 和 AI 文档提取能力，支持财务报表解析、合同条款提取和合规文档自动化处理。</p>
-    <ul class="points">
-      <li>财务报表、招股书的 PDF 解析与结构化数据提取</li>
-      <li>合同关键条款的 AI 自动识别与风险标记</li>
-      <li>敏感信息的自动密文处理与权限控制</li>
-      <li>支持私有化部署，满足金融合规要求</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/finance" target="_blank" class="btn btn-primary">查看金融方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">💰</div>
-    <div class="v-tags"><span class="v-tag">财报解析</span><span class="v-tag">合同提取</span><span class="v-tag">密文处理</span><span class="v-tag">私有化部署</span></div>
-  </div>
-</div></section>
-
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">📚</div>
-    <div class="ind-label">Education</div>
-    <h2>教育行业文档解决方案</h2>
-    <p class="ind-desc">教育机构需要处理课件、试卷、论文和教材等各类文档。ComPDF 提供跨平台的 PDF SDK，支持在线教育平台、电子图书馆和教务系统中的文档查看、编辑与格式转换。</p>
-    <ul class="points">
-      <li>课件、教材的多格式转换与跨平台分发</li>
-      <li>试卷的自动识别、批注与成绩归档</li>
-      <li>学术论文的 PDF 解析与引用信息提取</li>
-      <li>与 LMS、在线教育平台的无缝集成</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/education" target="_blank" class="btn btn-primary">查看教育方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">📚</div>
-    <div class="v-tags"><span class="v-tag">课件转换</span><span class="v-tag">试卷批注</span><span class="v-tag">论文提取</span><span class="v-tag">LMS 集成</span></div>
-  </div>
-</div></section>
-
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">🖨️</div>
-    <div class="ind-label">Printing</div>
-    <h2>印刷出版行业文档方案</h2>
-    <p class="ind-desc">印刷和出版行业对 PDF 的色彩管理、字体嵌入和印刷标准有严格要求。ComPDF 支持 PDF/X、PDF/A 等印刷标准格式，提供专业的色彩分离、预检和转换能力。</p>
-    <ul class="points">
-      <li>PDF/X 标准转换，满足印刷输出要求</li>
-      <li>色彩分离与色彩空间管理</li>
-      <li>字体嵌入与缺失字体检测</li>
-      <li>印刷预检与质量校验自动化</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/printing" target="_blank" class="btn btn-primary">查看印刷方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">🖨️</div>
-    <div class="v-tags"><span class="v-tag">PDF/X 标准</span><span class="v-tag">色彩分离</span><span class="v-tag">预检校验</span><span class="v-tag">印刷自动化</span></div>
-  </div>
-</div></section>
-
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">🏛️</div>
-    <div class="ind-label">Government</div>
-    <h2>政府行业文档数字化方案</h2>
-    <p class="ind-desc">政府部门的文档管理需要兼顾安全性、合规性和可访问性。ComPDF 提供符合国标要求的 PDF SDK，支持公文处理、档案数字化和电子政务系统的文档能力集成。</p>
-    <ul class="points">
-      <li>公文格式的 PDF 生成与转换，符合国标要求</li>
-      <li>纸质档案的批量扫描 OCR 与电子化归档</li>
-      <li>PDF/A 长期保存格式转换与元数据管理</li>
-      <li>信创环境适配，支持国产操作系统与处理器</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/government" target="_blank" class="btn btn-primary">查看政务方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">🏛️</div>
-    <div class="v-tags"><span class="v-tag">公文处理</span><span class="v-tag">档案数字化</span><span class="v-tag">信创适配</span><span class="v-tag">PDF/A 归档</span></div>
-  </div>
-</div></section>
-
-<section class="ind-section"><div class="container">
-  <div class="ind-info">
-    <div class="ind-icon">🏥</div>
-    <div class="ind-label">Healthcare</div>
-    <h2>医疗行业智能文档方案</h2>
-    <p class="ind-desc">医疗行业涉及病历、检查报告、处方和保险单据等海量文档。ComPDF 提供符合 HIPAA 合规要求的文档处理 SDK，支持医疗文档的查看、转换、OCR 和数据提取。</p>
-    <ul class="points">
-      <li>病历、检查报告的 PDF 查看与跨科室共享</li>
-      <li>手写处方的 OCR 识别与结构化提取</li>
-      <li>保险理赔单据的自动分类与数据录入</li>
-      <li>支持私有化部署，满足医疗数据隐私合规</li>
-    </ul>
-    <div class="ind-links">
-      <a href="https://www.compdf.com/solutions/healthcare" target="_blank" class="btn btn-primary">查看医疗方案 →</a>
-      <a href="#form" class="btn btn-outline">预约行业演示</a>
-    </div>
-  </div>
-  <div class="ind-visual">
-    <div class="v-icon">🏥</div>
-    <div class="v-tags"><span class="v-tag">病历管理</span><span class="v-tag">OCR 识别</span><span class="v-tag">保险单据</span><span class="v-tag">HIPAA 合规</span></div>
-  </div>
-</div></section>
-
-<section class="section-alt" id="form"><div class="container">
+<section class="form-section" id="form"><div class="container">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
     <div>
-      <div class="ind-label" style="display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:11px;font-weight:600;padding:3px 12px;border-radius:16px;margin-bottom:12px">免费咨询</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:11px;font-weight:600;padding:3px 12px;border-radius:16px;margin-bottom:12px">免费咨询</div>
       <h2 style="font-size:28px;font-weight:700;margin:12px 0 16px">获取你的行业专属方案</h2>
       <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">告诉我们你所在的行业和需求，我们的行业解决方案团队将为你定制方案</p>
       <div style="display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">针对你的行业场景提供定制化方案</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">行业案例参考与技术可行性评估</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">团队 1 对 1 对接，30 天免费试用</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">针对你的行业场景提供定制化方案</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">行业案例参考与技术可行性评估</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">团队 1 对 1 对接，30 天免费试用</span></div>
       </div>
     </div>
     <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
       <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">获取行业方案</h3>
       <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="您的姓名" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
-        <input type="email" placeholder="工作邮箱" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
-        <input type="text" placeholder="公司名称" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
-        <select style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:14px;outline:none;width:100%">
-          <option value="">您所在的行业</option>
-          <option>建筑 Construction</option>
-          <option>航空 Aviation</option>
-          <option>制造 Manufacturing</option>
-          <option>金融 Finance</option>
-          <option>教育 Education</option>
-          <option>印刷 Printing</option>
-          <option>政府 Government</option>
-          <option>医疗 Healthcare</option>
-          <option>其他</option>
-        </select>
+        <input type="text" placeholder="您的姓名">
+        <input type="email" placeholder="工作邮箱">
+        <input type="text" placeholder="公司名称">
+        <select><option value="">您所在的行业</option><option>建筑 Construction</option><option>航空 Aviation</option><option>制造 Manufacturing</option><option>金融 Finance</option><option>教育 Education</option><option>印刷 Printing</option><option>政府 Government</option><option>医疗 Healthcare</option><option>其他</option></select>
         <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">获取行业方案 →</button>
       </form>
     </div>
