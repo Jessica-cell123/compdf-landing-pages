@@ -40,8 +40,11 @@ section{padding:80px 0}
 .st-coming{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24}
 .plat-card .btn{width:100%;padding:8px;border-radius:6px;font-size:12px;font-weight:600;border:none;cursor:pointer;text-align:center;display:inline-block;background:rgba(37,99,235,.1);color:var(--primary-light);border:1px solid rgba(37,99,235,.2);transition:all .2s}
 .plat-card .btn:hover{background:rgba(37,99,235,.2)}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
-@media(max-width:768px){.hero h1{font-size:30px}nav ul{display:none}.plat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.hero h1{font-size:30px}nav ul{display:none}.plat-grid{grid-template-columns:repeat(2,1fr)}.form-section .container>div{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -94,6 +97,41 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🧠</div><h3>Skills · ClawHub</h3><p class="desc">ClawHub 上架 ComPDF AI Skills，AI Agent 一键调用文档处理能力</p><span class="status st-online">已上线</span></div>
     <div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">💬</div><h3>Skills · ChatGPT</h3><p class="desc">ChatGPT 插件 / GPTs 中集成 ComPDF，对话式完成文档操作</p><span class="status st-coming">即将上线</span></div>
     <div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🌀</div><h3>Skills · Claude</h3><p class="desc">Claude Desktop / API 中通过 MCP 调用 ComPDF 文档处理能力</p><span class="status st-online">已上线</span></div>
+  </div>
+</div></section>
+<section class="form-section">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center">
+    <div>
+      <span class="tag">定制化解决方案</span>
+      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">获取你的专属平台集成方案</h2>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8">每个企业的技术栈和业务场景都不一样。告诉我们你使用的平台和需求，我们的解决方案工程师将为你定制集成方案 — 完全免费。</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">根据你的技术栈匹配最佳集成路径</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">提供目标平台的完整集成指南与示例代码</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">技术团队 1 对 1 对接，30 天免费试用</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">立即提交需求</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的姓名" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
+        <input type="email" placeholder="工作邮箱" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
+        <input type="text" placeholder="公司名称" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%">
+        <select style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:14px;outline:none;width:100%">
+          <option value="">您感兴趣的平台</option>
+          <option>GitHub / npm / pub.dev</option>
+          <option>Make / Zapier / n8n</option>
+          <option>Salesforce</option>
+          <option>Microsoft Power Automate / SharePoint</option>
+          <option>AWS / Azure 云市场</option>
+          <option>MCP / AI Skills</option>
+          <option>其他</option>
+        </select>
+        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">提交需求 → 获取方案</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center">提交后我们将在 1 个工作日内与您联系</p>
+      </form>
+    </div>
   </div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
