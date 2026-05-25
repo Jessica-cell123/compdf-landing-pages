@@ -51,20 +51,21 @@ section{padding:80px 0}
 .step-card a:hover h3{color:var(--primary-light)}
 .step-card p{color:var(--text-secondary);font-size:12.5px;line-height:1.7}
 .step-arrow{font-size:24px;color:var(--accent);opacity:.6;padding:0 12px}
-.bookmark-section{padding:60px 0}
-.bookmark-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 40px;display:flex;align-items:center;gap:24px;max-width:720px;margin:0 auto;transition:all .3s}
-.bookmark-card:hover{border-color:rgba(37,99,235,.3)}
-.bookmark-card .bk-icon{font-size:44px;flex-shrink:0}
+.bookmark-section{padding:60px 0;background:var(--bg-elevated)}
+.bookmark-card{background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(6,182,212,.04));border:1px solid rgba(37,99,235,.2);border-radius:var(--radius);padding:48px 56px;display:flex;align-items:center;gap:32px;max-width:900px;margin:0 auto;transition:all .3s;position:relative;overflow:hidden}
+.bookmark-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.bookmark-card:hover{border-color:rgba(37,99,235,.4)}
+.bookmark-card .bk-icon{font-size:56px;flex-shrink:0}
 .bookmark-card .bk-info{flex:1}
-.bookmark-card .bk-info h3{font-size:17px;font-weight:700;margin-bottom:6px}
-.bookmark-card .bk-info p{color:var(--text-secondary);font-size:13px;line-height:1.6}
-.bookmark-card .bk-hint{font-size:12px;color:var(--text-muted)}
-.bookmark-card .bk-hint kbd{padding:3px 8px;border-radius:4px;border:1px solid var(--border);background:var(--bg-elevated);font-family:inherit;font-size:11px;color:var(--text-secondary)}
+.bookmark-card .bk-info h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.bookmark-card .bk-info p{color:var(--text-secondary);font-size:14px;line-height:1.7}
+.bookmark-card .bk-hint{font-size:13px;color:var(--text-muted);padding:10px 20px;border:1px dashed var(--border);border-radius:8px;background:var(--bg-elevated);white-space:nowrap}
+.bookmark-card .bk-hint kbd{padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--bg-card);font-family:inherit;font-size:12px;color:var(--text-secondary);font-weight:600}
 .form-section{background:var(--bg-elevated);padding:80px 0}
 .form-section input::placeholder{color:var(--text-muted)}
 .form-section input:focus,.form-section select:focus{border-color:var(--primary)}
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
-@media(max-width:768px){.hero h1{font-size:30px}nav ul{display:none}.plat-grid{grid-template-columns:repeat(2,1fr)}.steps-flow{flex-direction:column;gap:12px}.step-arrow{transform:rotate(90deg)}.bookmark-card{flex-direction:column;text-align:center;padding:28px 24px}.form-section .container>div{grid-template-columns:1fr!important}}
+@media(max-width:768px){.hero h1{font-size:30px}nav ul{display:none}.plat-grid{grid-template-columns:repeat(2,1fr)}.steps-flow{flex-direction:column;gap:12px}.step-arrow{transform:rotate(90deg)}.bookmark-card{flex-direction:column;text-align:center;padding:32px 24px;gap:16px}.bookmark-card .bk-hint{white-space:normal;width:100%;text-align:center}.form-section .container>div{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
