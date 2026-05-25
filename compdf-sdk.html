@@ -95,6 +95,14 @@ section{padding:80px 0}
 .connector-line{width:2px;height:20px;background:var(--gradient);border-radius:1px;opacity:.4}
 .connector-arrow{font-size:20px;color:var(--accent);opacity:.6;line-height:1}
 
+.indus-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.indus-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:all .3s;position:relative;overflow:hidden}
+.indus-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.indus-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px)}
+.indus-card .indus-icon{font-size:36px;margin-bottom:10px}
+.indus-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.indus-card p{color:var(--text-secondary);font-size:12.5px;line-height:1.6}
+
 .form-section{background:var(--bg-elevated);padding:80px 0}
 .form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
 .form-section input::placeholder{color:var(--text-muted)}
@@ -105,6 +113,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 
 @media(max-width:900px){
   .cap-grid,.plat-grid{grid-template-columns:1fr}
+  .indus-cards{grid-template-columns:repeat(2,1fr)}
   .flow-steps{flex-direction:column;align-items:center}
   .flow-connector{flex-direction:row;padding:4px 0}
   .flow-connector .connector-line{width:20px;height:2px}
@@ -301,6 +310,35 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
       <p>查看官方开发文档，选择对应平台的 SDK 集成指南，5 分钟跑通 Demo。</p>
       <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-primary">立即开始试用</a>
     </div>
+  </div>
+</div></section>
+
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">行业应用</span><h2>为你的行业量身打造</h2><p>ComPDF SDK 已广泛应用于多个行业，覆盖文档处理全场景</p></div>
+  <div class="indus-cards">
+    <a href="https://www.compdf.com/solutions/construction" target="_blank" class="indus-card">
+      <div class="indus-icon">🏗️</div>
+      <h4>建筑</h4>
+      <p>图纸标注、合同管理、现场 OCR，移动端即可查看与签署工程文档。</p>
+    </a>
+    <a href="https://www.compdf.com/solutions/manufacturing" target="_blank" class="indus-card">
+      <div class="indus-icon">🏭</div>
+      <h4>制造</h4>
+      <p>ERP/MES 集成、质检报告提取、BOM 管理，高并发批量文档处理。</p>
+    </a>
+    <a href="https://www.compdf.com/solutions/finance" target="_blank" class="indus-card">
+      <div class="indus-icon">⚖️</div>
+      <h4>法律</h4>
+      <p>合同条款 AI 提取、密文处理、电子签名，保障法务文档安全合规。</p>
+    </a>
+    <a href="https://www.compdf.com/solutions/finance" target="_blank" class="indus-card">
+      <div class="indus-icon">💰</div>
+      <h4>金融</h4>
+      <p>财报解析、票据 OCR、合规归档，支持私有化部署保障数据安全。</p>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:28px">
+    <a href="industries.html" style="font-size:14px;font-weight:600;color:var(--primary-light)">查看全部行业应用方案 →</a>
   </div>
 </div></section>
 
