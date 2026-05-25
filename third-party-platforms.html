@@ -47,9 +47,9 @@ section{padding:80px 0}
 .step-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-3px)}
 .step-card .step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
 .step-card .s-icon{font-size:40px;margin-bottom:12px}
-.step-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
-.step-card p{color:var(--text-secondary);font-size:12.5px;margin-bottom:18px;line-height:1.7}
-.step-card .btn{width:100%;justify-content:center;font-size:13px;padding:10px}
+.step-card h3{font-size:17px;font-weight:700;margin-bottom:8px;transition:color .2s}
+.step-card a:hover h3{color:var(--primary-light)}
+.step-card p{color:var(--text-secondary);font-size:12.5px;line-height:1.7}
 .step-arrow{font-size:24px;color:var(--accent);opacity:.6;padding:0 12px}
 .form-section{background:var(--bg-elevated);padding:80px 0}
 .form-section input::placeholder{color:var(--text-muted)}
@@ -122,25 +122,22 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <div class="step-card">
       <div class="step-num">1</div>
       <div class="s-icon">🔑</div>
-      <h3>获取 License</h3>
+      <a href="https://api.compdf.com/login" target="_blank" style="text-decoration:none;color:inherit"><h3>获取 License</h3></a>
       <p>注册 ComPDF 会员，在后台一键生成免费试用 License Key。</p>
-      <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">立即开始试用</a>
     </div>
     <div class="step-arrow">→</div>
     <div class="step-card">
       <div class="step-num">2</div>
       <div class="s-icon">📖</div>
-      <h3>查看 Documentation</h3>
+      <a href="https://www.compdf.com/documentation" target="_blank" style="text-decoration:none;color:inherit"><h3>查看 Documentation</h3></a>
       <p>查阅对应平台的集成文档与 SDK 指南，获取示例代码。</p>
-      <a href="https://www.compdf.com/documentation" target="_blank" class="btn btn-primary">查看文档</a>
     </div>
     <div class="step-arrow">→</div>
     <div class="step-card">
       <div class="step-num">3</div>
       <div class="s-icon">⚡</div>
-      <h3>无缝集成 ComPDF</h3>
+      <a href="#form-section" style="text-decoration:none;color:inherit"><h3>无缝集成 ComPDF</h3></a>
       <p>在你的平台中接入 ComPDF，用户无需离开即可完成文档处理。</p>
-      <a href="#form-section" class="btn btn-primary">咨询方案</a>
     </div>
   </div>
 </div></section>
