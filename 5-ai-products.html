@@ -29,18 +29,6 @@ section{padding:80px 0}
 .section-title h2{font-size:36px;font-weight:700;margin-bottom:12px;color:#fff}
 .section-title p{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto}
 .tag{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:13px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:12px}
-.flow-section{background:var(--bg)}
-.flow-group{margin-bottom:48px}
-.flow-group h3{text-align:center;font-size:20px;font-weight:700;margin-bottom:20px;color:var(--text)}
-.flow-group h3 .badge{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:12px;font-weight:600;padding:3px 12px;border-radius:16px;margin-right:8px}
-.flow-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:12px}
-.flow-node{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;text-align:center;min-width:130px}
-.flow-node .emoji{font-size:26px}
-.flow-node .label{font-size:12px;font-weight:600;margin-top:4px}
-.flow-node .desc{font-size:11px;color:var(--muted)}
-.flow-node.highlight-node{border-color:var(--primary);background:rgba(245,158,11,.08)}
-.flow-node.blue-node{border-color:var(--accent-blue);background:rgba(37,99,235,.08)}
-.flow-arrow{font-size:24px;color:var(--primary);padding:0 6px}
 .product-section{padding:100px 0;position:relative}
 .product-section:nth-child(odd){background:var(--bg)}
 .product-section:nth-child(even){background:var(--bg2)}
@@ -61,7 +49,7 @@ section{padding:80px 0}
 .cta-section h2{font-size:36px;font-weight:700;margin-bottom:14px}
 .cta-section p{font-size:18px;opacity:.8;margin-bottom:32px}
 footer{background:#000;color:#64748b;text-align:center;padding:32px 0;font-size:14px}
-@media(max-width:768px){.flow-row{flex-direction:column;gap:8px}.flow-arrow{transform:rotate(90deg)}.product-layout{grid-template-columns:1fr}.hero h1{font-size:30px}}
+@media(max-width:768px){.product-layout{grid-template-columns:1fr}.hero h1{font-size:30px}}
 </style>
 </head>
 <body>
@@ -90,43 +78,6 @@ footer{background:#000;color:#64748b;text-align:center;padding:32px 0;font-size:
   <p>ComPDF AI . AI 助手 . AI Skills . MCP Server<br>四大产品覆盖智能文档处理全场景，赋能企业业务系统</p>
   <a href="#products" class="btn btn-gold">了解产品</a>
   <a href="#" class="btn btn-outline">申请试用 →</a>
-</div>
-</section>
-<section class="flow-section">
-<div class="container">
-  <div class="section-title"><span class="tag">产品能力闭环</span><h2>从 AI 赋能到业务系统的完整链路</h2></div>
-  <div class="flow-group">
-    <h3><span class="badge">AI 功能</span>智能文档处理流程</h3>
-    <div class="flow-row">
-      <div class="flow-node"><div class="emoji">📄</div><div class="label">文档输入</div><div class="desc">PDF / 扫描件 / 图片</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node highlight-node"><div class="emoji">🤖</div><div class="label">ComPDF AI</div><div class="desc">智能抽取 / 智能解析</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node highlight-node"><div class="emoji">💬</div><div class="label">AI 助手</div><div class="desc">问答 / 批量处理</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><div class="emoji">📊</div><div class="label">结构化数据</div><div class="desc">JSON / CSV / API</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node blue-node"><div class="emoji">🏢</div><div class="label">客户业务系统</div><div class="desc">ERP / OA / CRM</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node blue-node"><div class="emoji">✅</div><div class="label">业务执行</div><div class="desc">自动入账 / 合同归档<br>风控审核 / 报表生成</div></div>
-    </div>
-  </div>
-  <div class="flow-group">
-    <h3><span class="badge">PDF 功能</span>PDF 文档处理流程</h3>
-    <div class="flow-row">
-      <div class="flow-node"><div class="emoji">📄</div><div class="label">PDF 文档</div><div class="desc">编辑 / 转换 / 合并</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node highlight-node"><div class="emoji">⚡</div><div class="label">AI Skills</div><div class="desc">30+ PDF 处理能力</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node highlight-node"><div class="emoji">🔌</div><div class="label">MCP Server</div><div class="desc">标准化协议接入</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><div class="emoji">✅</div><div class="label">处理结果</div><div class="desc">转换 / 提取 / 生成</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node blue-node"><div class="emoji">🏢</div><div class="label">客户业务系统</div><div class="desc">SaaS / 工作流 / 自建平台</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node blue-node"><div class="emoji">✅</div><div class="label">业务执行</div><div class="desc">文档分发 / 客户交付<br>数据同步 / 流程触发</div></div>
-    </div>
-  </div>
 </div>
 </section>
 <section class="product-section" id="products">
