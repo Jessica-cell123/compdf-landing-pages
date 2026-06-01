@@ -51,7 +51,24 @@ section{padding:80px 0}
 .sdk-form-wrap h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center}
 .sdk-form{display:flex;flex-direction:column;gap:14px}
 .sdk-form input,.sdk-form select,.sdk-form textarea{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%}
-.sdk-form input::placeholder,.sdk-form textarea::placeholder{color:var(--text-muted)}
+
+
+.sf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sf-field{margin-bottom:4px}
+.sf-label{display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:8px}
+.sf-req{color:#FF5050;margin-right:2px}
+.sf-radio-group,.sf-check-group{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.sf-radio,.sf-check{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:var(--text-secondary)}
+.sf-radio input,.sf-check input{accent-color:var(--primary);width:16px;height:16px;cursor:pointer}
+.sf-terms{display:flex;align-items:flex-start;gap:8px;margin:8px 0;font-size:11px;color:var(--text-muted);line-height:1.5}
+.sf-terms a{color:var(--primary-light);text-decoration:underline}
+.sf-terms svg{flex-shrink:0;margin-top:2px}
+.sdk-form textarea{width:100%;min-height:80px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;resize:vertical;font-family:inherit}
+.sdk-form textarea::placeholder{color:var(--text-muted)}
+.sdk-form textarea:focus{border-color:var(--primary)}
+.sdk-form input[type="text"],.sdk-form input[type="email"],.sdk-form input[type="tel"]{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none}
+.sdk-form input::placeholder{color:var(--text-muted)}
+.sdk-form input:focus{border-color:var(--primary)}.sdk-form input::placeholder,.sdk-form textarea::placeholder{color:var(--text-muted)}
 .sdk-form input:focus,.sdk-form select:focus,.sdk-form textarea:focus{border-color:var(--primary)}
 .sdk-form select{color:var(--text-muted)}
 
@@ -132,14 +149,47 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
           </div>
     <div class="sdk-form-wrap">
       <h3>获取 SDK 报价</h3>
-      <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Business Email">
-        <input type="tel" placeholder="Phone number (optional)">
-        <input type="text" placeholder="Company Name">
-        <textarea placeholder="Describe your project — features, platforms, and requirements" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
-        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:12px">提交获取报价</button>
-        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">提交后 1 个工作日内回复</p>
+            <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
+        <div class="sf-row">
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Full Name</label><input type="text" placeholder="Full Name"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Business Email</label><input type="email" placeholder="name@company.com"></div>
+        </div>
+        <div class="sf-row">
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Phone Number</label><input type="tel" placeholder="Phone number"></div>
+          <div class="sf-field"><label class="sf-label">Company Name</label><input type="text" placeholder="Enter company name"></div>
+        </div>
+        <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Who are you building this for?</label>
+          <div class="sf-radio-group">
+            <label class="sf-radio"><input type="radio" name="audience" checked> <span>A product for customers</span></label>
+            <label class="sf-radio"><input type="radio" name="audience"> <span>A product for internal use</span></label>
+            <label class="sf-radio"><input type="radio" name="audience"> <span>A product for another company</span></label>
+          </div>
+        </div>
+        <div class="sf-field"><label class="sf-label">Please select the products and features you need: <a href="https://www.compdf.com/pdf-sdk/features-list" target="_blank" style="color:var(--primary-light);text-decoration:underline;margin-left:8px">Check Our Full Feature List</a></label>
+          <div class="sf-check-group">
+            <label class="sf-check"><input type="checkbox" checked> <span>PDF SDK</span></label>
+            <label class="sf-check"><input type="checkbox"> <span>Cloud API</span></label>
+            <label class="sf-check"><input type="checkbox"> <span>AI Document Parsing</span></label>
+            <label class="sf-check"><input type="checkbox"> <span>PDF Generation</span></label>
+            <label class="sf-check"><input type="checkbox"> <span>Conversion</span></label>
+          </div>
+        </div>
+        <div class="sf-field"><label class="sf-label">Which deployment option do you prefer?</label>
+          <div class="sf-radio-group">
+            <label class="sf-radio"><input type="radio" name="deploy" checked> <span>Self-hosted</span></label>
+            <label class="sf-radio"><input type="radio" name="deploy"> <span>Cloud API</span></label>
+            <label class="sf-radio"><input type="radio" name="deploy"> <span>Offline SDK</span></label>
+          </div>
+        </div>
+        <div class="sf-field"><label class="sf-label">Please describe your project</label>
+          <textarea placeholder="Detailed project description will help us understand your needs and provide suitable solutions along with accurate quotations."></textarea>
+        </div>
+        <div class="sf-terms">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" style="flex-shrink:0"><rect width="22" height="22" x="1" y="1" fill="var(--primary)" rx="4"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 9-6.667 6.667-4.243-4.243"/></svg>
+          <span>I have read and agreed to the <a href="https://www.compdf.com/terms-of-service" target="_blank">Service Terms</a> and <a href="https://www.compdf.com/privacy-policy" target="_blank">Privacy Policy</a>. (The data you submit is treated confidentially and will never be disclosed to third parties.)</span>
+        </div>
+        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;max-width:380px;margin:0 auto">Submit</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:8px">We will be in touch in one business day.</p>
       </form>
     </div>
   </div>
