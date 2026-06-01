@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>PDF SDK Buyer's Guide | ComPDF — Features · Value · ROI Assessment</title>
 <style>
 :root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
@@ -62,7 +63,7 @@ section{padding:80px 0}
 .tco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .tco-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;text-align:center;position:relative}
 .tco-card.featured{border-color:var(--primary)}
-.tco-card.featured::before{content:'推荐选择';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:20px}
+.tco-card.featured::before{content:'推荐Select';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:20px}
 .tco-card h4{font-size:16px;font-weight:700;margin-bottom:4px}
 .tco-card .price{font-size:28px;font-weight:800;color:var(--primary-light);margin:12px 0 4px}
 .tco-card .price-note{font-size:12px;color:var(--text-muted);margin-bottom:16px}
@@ -84,144 +85,144 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 @media(max-width:900px){.checklist-grid,.tco-grid,.steps-grid{grid-template-columns:1fr}.roi-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}}
 </style>
 </head>
-<body>
-<nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<body><nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
 <ul>
-    <li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
-    <li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
-    <li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
-    <li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
-    <li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
-    <li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html" class="active">选型指南</a></li>
-    <li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
-    <li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
-    <li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
-    <li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
-    <li><a href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
-    <li><a href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
-    <li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
-    <li><a href="/compdf-landing-pages/en/pricing.html">定价</a></li>
-    <li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
+<li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
+<li><a class="active" href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/en/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
 </ul>
 </div></nav>
+
 <section class="hero"><div class="container">
-  <div class="hero-badge">📊 面向 CTO / Technical Decision Makers</div>
-  <h1>PDF SDK Buyer's Guide<br><span class="gradient">功能 · 性价比 · ROI Comprehensive Assessment</span></h1>
-  <p>帮你做出最明智的技术选型决策<br>Avoid Wasting Money、踩Integration坑、被供应商锁定</p>
-  <div style="display:flex;gap:12px;justify-content:center"><a href="#" class="btn btn-primary">Free Trial ComPDF</a><a href="#" class="btn btn-outline">Book a Technical Assessment →</a></div>
+<div class="hero-badge">📊 for CTO/ Technical Decision Makers</div>
+<h1>PDF SDK Buyer's Guide<br/><span class="gradient">Feature · Cost Effective · ROI Comprehensive Assessment</span></h1>
+<p> most<br/>Avoid Wasting Money, Integration, by Supplier</p>
+<div style="display:flex;gap:12px;justify-content:center"><a class="btnbtn-primary"href="#">Free Trial ComPDF</a><a class="btnbtn-outline"href="#">Book a Technical Assessment →</a></div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">Evaluation Checklist</span><h2>选 PDF SDK 前，必须回答的 9 个问题</h2><p>来自 500+ Selection Experience from Enterprise Customers</p></div>
-  <div class="checklist-grid">
-    <div class="cl-card"><h3><span class="num">1</span>Feature Coverage</h3><ul><li>📋 Does it CoverEdit、注释、Conversion、Form？</li><li>🔍 Does it Support OCR 和 AI Extraction？</li><li>✍️ Are e-Signatures and Redaction Supported?？</li></ul></div>
-    <div class="cl-card"><h3><span class="num">2</span>Platform兼容</h3><ul><li>🌐 Does it Cover Web/iOS/Android/Desktop？</li><li>⚛️ Does it Support React Native / Flutter？</li><li>☁️ 是否Provides Cloud API？</li></ul></div>
-    <div class="cl-card"><h3><span class="num">3</span>Integration与成本</h3><ul><li>⏱️ Is Integration Time Predictable?（< 1 周）？</li><li>💰 Is Pricing Transparent?、无隐藏费用？</li><li>🔓 Is There Vendor Lock-In Risk?？</li></ul></div>
-  </div>
+<div class="section-title"><span class="tag">Evaluation Checklist</span><h2> PDF SDK before, Must 9</h2><p> 500+ Selection Experience from Enterprise Customers</p></div>
+<div class="checklist-grid">
+<div class="cl-card"><h3><span class="num">1</span>Feature Coverage</h3><ul><li>📋 Does it CoverEdit, Annotation, Conversion, Form?</li><li>🔍 Does it Support OCR and AI Extraction?</li><li>✍️ Are e-Signatures and Redaction Supported??</li></ul></div>
+<div class="cl-card"><h3><span class="num">2</span>Platformcompatible</h3><ul><li>🌐 Does it Cover Web/iOS/Android/Desktop?</li><li>⚛️ Does it Support React Native/ Flutter?</li><li>☁️ whether Provides Cloud API?</li></ul></div>
+<div class="cl-card"><h3><span class="num">3</span>Integration and cost</h3><ul><li>⏱️ Is Integration Time Predictable?(&lt; 1 )?</li><li>💰 Is Pricing Transparent?, no hidefee?</li><li>🔓 Is There Vendor Lock-In Risk??</li></ul></div>
+</div>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">Feature Comparison</span><h2>主流 PDF SDK 功能全面对比</h2><p>Data来源：Information from each vendor's official website（2026 年 5 月更新）</p></div>
-  <div style="overflow-x:auto">
-  <table class="compare-table">
-    <thead><tr><th>Capabilities维度</th><th class="highlight-col">ComPDF</th><th>Nutrient</th><th>Apryse</th></tr></thead>
-    <tbody>
-      <tr><td>Web SDK</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>iOS / Android 原生 SDK</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>Windows / macOS SDK</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>React Native</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
-      <tr><td>Cloud API</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>AI OCR</td><td class="highlight-col check">✓ 100+ Language</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>AI 表格Recognition</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>XFDF 注释互操作</td><td class="highlight-col check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Sensitive Data Redaction</td><td class="highlight-col check">✓ AI</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>Digital Signatures</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>Make / Zapier Integration</td><td class="highlight-col check">✓ 官方</td><td class="check">✓</td><td class="cross">✗</td></tr>
-      <tr><td>AI Skills / MCP</td><td class="highlight-col check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
-      <tr><td>Private Deployment</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>Free Trial</td><td class="highlight-col" style="color:var(--primary-light);font-weight:700">✓ 充足</td><td>有限</td><td>有限</td></tr>
-      <tr><td style="font-weight:700">性价比</td><td class="highlight-col" style="color:var(--accent-green);font-weight:700">⭐ 高</td><td>偏高</td><td>较高</td></tr>
-    </tbody>
-  </table>
-  </div>
+<div class="section-title"><span class="tag">Feature Comparison</span><h2> PDF SDK Feature all Comparison</h2><p>Datasource:Information from each vendor's official website(2026 5 Update)</p></div>
+<div style="overflow-x:auto">
+<table class="compare-table">
+<thead><tr><th>Capabilities</th><th class="highlight-col">ComPDF</th><th>Nutrient</th><th>Apryse</th></tr></thead>
+<tbody>
+<tr><td>Web SDK</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>iOS/ Android SDK</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Windows/ macOS SDK</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>React Native</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>Cloud API</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>AI OCR</td><td class="highlight-colcheck">✓ 100+ Language</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>AI TableRecognition</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>XFDF Annotation operation</td><td class="highlight-colcheck">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
+<tr><td>Sensitive Data Redaction</td><td class="highlight-colcheck">✓ AI</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Digital Signatures</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Make/ Zapier Integration</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>AI Skills/ MCP</td><td class="highlight-colcheck">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+<tr><td>Private Deployment</td><td class="highlight-colcheck">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Free Trial</td><td class="highlight-col"style="color:var(--primary-light);font-weight:700">✓</td><td>has</td><td>has</td></tr>
+<tr><td style="font-weight:700">Cost Effective</td><td class="highlight-col"style="color:var(--accent-green);font-weight:700">⭐ high</td><td> high</td><td>comparatively high</td></tr>
+</tbody>
+</table>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">ROI Calculator</span><h2>算一算 — ComPDF How Much Can You Save?？</h2><p>Enter Your Business Parameters，即时计算投资回报</p></div>
-  <div class="roi-grid">
-    <div class="roi-form">
-      <h3>📊 Enter Your Parameters</h3>
-      <div class="field"><label>Monthly Document Volume</label><input type="range" min="100" max="100000" value="5000" step="100" id="docVolume" oninput="calcROI()"><div class="range-val" id="docVolumeVal">5,000  docs/月</div></div>
-      <div class="field"><label>Manual Processing Time per Document（minutes）</label><input type="range" min="1" max="30" value="10" step="1" id="manualTime" oninput="calcROI()"><div class="range-val" id="manualTimeVal">10 minutes</div></div>
-      <div class="field"><label>Hourly Wage（美元）</label><input type="range" min="10" max="200" value="40" step="5" id="hourlyRate" oninput="calcROI()"><div class="range-val" id="hourlyRateVal">$40 / hours</div></div>
-      <div class="field"><label>Current Error Rate（%）</label><input type="range" min="0" max="10" value="3" step="0.5" id="errorRate" oninput="calcROI()"><div class="range-val" id="errorRateVal">3%</div></div>
-    </div>
-    <div class="roi-results">
-      <h3>💰 你的 ROI 估算</h3>
-      <div class="roi-metric"><span class="label">Monthly节省人工时间</span><span class="val" id="timeSaved">750 hours</span></div>
-      <div class="roi-metric"><span class="label">Monthly Labor Cost Savings</span><span class="val green" id="costSaved">$30,000</span></div>
-      <div class="roi-metric"><span class="label">错误率降低</span><span class="val green" id="errorReduction">95%</span></div>
-      <div class="roi-metric"><span class="label">Payback Period</span><span class="val" id="paybackPeriod">< 1 个月</span></div>
-      <div class="roi-total"><div class="big" id="annualSaving">$360,000</div><div class="note">Estimated Annual Savings</div></div>
-    </div>
-  </div>
+<div class="section-title"><span class="tag">ROI Calculator</span><h2> One — ComPDF How Much Can You Save??</h2><p>Enter Your Business Parameters, time Calculateinvestmentreturn</p></div>
+<div class="roi-grid">
+<div class="roi-form">
+<h3>📊 Enter Your Parameters</h3>
+<div class="field"><label>Monthly Document Volume</label><input id="docVolume"max="100000"min="100"oninput="calcROI()"step="100"type="range"value="5000"/><div class="range-val"id="docVolumeVal">5,000 docs/</div></div>
+<div class="field"><label>Manual Processing Time per Document(minutes)</label><input id="manualTime"max="30"min="1"oninput="calcROI()"step="1"type="range"value="10"/><div class="range-val"id="manualTimeVal">10 minutes</div></div>
+<div class="field"><label>Hourly Wage( )</label><input id="hourlyRate"max="200"min="10"oninput="calcROI()"step="5"type="range"value="40"/><div class="range-val"id="hourlyRateVal">$40/ hours</div></div>
+<div class="field"><label>Current Error Rate(%)</label><input id="errorRate"max="10"min="0"oninput="calcROI()"step="0.5"type="range"value="3"/><div class="range-val"id="errorRateVal">3%</div></div>
+</div>
+<div class="roi-results">
+<h3>💰 ROI Estimate</h3>
+<div class="roi-metric"><span class="label">Monthly Personnel time between</span><span class="val"id="timeSaved">750 hours</span></div>
+<div class="roi-metric"><span class="label">Monthly Labor Cost Savings</span><span class="valgreen"id="costSaved">$30,000</span></div>
+<div class="roi-metric"><span class="label">Error Rate low</span><span class="valgreen"id="errorReduction">95%</span></div>
+<div class="roi-metric"><span class="label">Payback Period</span><span class="val"id="paybackPeriod">&lt; 1</span></div>
+<div class="roi-total"><div class="big"id="annualSaving">$360,000</div><div class="note">Estimated Annual Savings</div></div>
+</div>
+</div>
 </div></section>
 <script>
 function calcROI(){
-  const vol=+document.getElementById('docVolume').value;
-  const time=+document.getElementById('manualTime').value;
-  const rate=+document.getElementById('hourlyRate').value;
-  const err=+document.getElementById('errorRate').value;
-  document.getElementById('docVolumeVal').textContent=vol.toLocaleString()+'  docs/月';
-  document.getElementById('manualTimeVal').textContent=time+' minutes';
-  document.getElementById('hourlyRateVal').textContent='$'+rate+' / hours';
-  document.getElementById('errorRateVal').textContent=err+'%';
-  const monthlyHours=vol*time/60;
-  const saved=Math.round(monthlyHours*0.9);
-  const costMonth=Math.round(saved*rate);
-  const annual=costMonth*12;
-  document.getElementById('timeSaved').textContent=saved.toLocaleString()+' hours';
-  document.getElementById('costSaved').textContent='$'+costMonth.toLocaleString();
-  document.getElementById('errorReduction').textContent=Math.min(95,Math.round(err/err*95))+'%';
-  document.getElementById('paybackPeriod').textContent=costMonth>5000?'< 1 个月':costMonth>1000?'< 3 个月':'< 6 个月';
-  document.getElementById('annualSaving').textContent='$'+annual.toLocaleString();
+const vol=+document.getElementById('docVolume').value;
+const time=+document.getElementById('manualTime').value;
+const rate=+document.getElementById('hourlyRate').value;
+const err=+document.getElementById('errorRate').value;
+document.getElementById('docVolumeVal').textContent=vol.toLocaleString()+'docs/';
+document.getElementById('manualTimeVal').textContent=time+'minutes';
+document.getElementById('hourlyRateVal').textContent='$'+rate+'/ hours';
+document.getElementById('errorRateVal').textContent=err+'%';
+const monthlyHours=vol*time/60;
+const saved=Math.round(monthlyHours*0.9);
+const costMonth=Math.round(saved*rate);
+const annual=costMonth*12;
+document.getElementById('timeSaved').textContent=saved.toLocaleString()+'hours';
+document.getElementById('costSaved').textContent='$'+costMonth.toLocaleString();
+document.getElementById('errorReduction').textContent=Math.min(95,Math.round(err/err*95))+'%';
+document.getElementById('paybackPeriod').textContent=costMonth>5000?'< 1':costMonth>1000?'< 3':'< 6';
+document.getElementById('annualSaving').textContent='$'+annual.toLocaleString();
 }
 </script>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">总拥有成本</span><h2>Build vs Buy vs ComPDF — 怎么选最划算？</h2></div>
-  <div class="tco-grid">
-    <div class="tco-card"><h4>🔨 自研 PDF 引擎</h4><div class="price">$500K+</div><div class="price-note">First-Year Development Cost</div><ul><li>✗ 6-12 个月Development周期</li><li>✗ 需要 3-5 名专职工程师</li><li>✗ 持续维护成本高</li><li>✗ Feature Coverage有限</li><li>✗ Security & Compliance — Your Responsibility</li></ul></div>
-    <div class="tco-card featured"><h4>⭐ ComPDF SDK</h4><div class="price" style="color:var(--accent-green)">$X,XXX</div><div class="price-note">Annual License Fee</div><ul><li>✓ 5 Integration Complete in Minutes</li><li>✓ 0 名专职维护人员</li><li>✓ 持续Free更新</li><li>✓ 全Feature Coverage + AI</li><li>✓ Built-in Security & Compliance</li></ul></div>
-    <div class="tco-card"><h4>💎 竞品 SDK</h4><div class="price">$XX,XXX+</div><div class="price-note">Annual License Fee</div><ul><li>✓ 1-2 周Integration</li><li>✓ 功能完善</li><li>✗ 价格 3-5 倍于 ComPDF</li><li>✗ By Platform/功能加收</li><li>✗ 厂商锁定风险</li></ul></div>
-  </div>
+<div class="section-title"><span class="tag">Total Cost of Ownership</span><h2>Build vs Buy vs ComPDF — How most?</h2></div>
+<div class="tco-grid">
+<div class="tco-card"><h4>🔨 Self-Developed PDF Engine</h4><div class="price">$500K+</div><div class="price-note">First-Year Development Cost</div><ul><li>✗ 6-12 Development</li><li>✗ Need 3-5 engineer</li><li>✗ cost high</li><li>✗ Feature Coveragehas</li><li>✗ Security &amp; Compliance — Your Responsibility</li></ul></div>
+<div class="tco-cardfeatured"><h4>⭐ ComPDF SDK</h4><div class="price"style="color:var(--accent-green)">$X,XXX</div><div class="price-note">Annual License Fee</div><ul><li>✓ 5 Integration Complete in Minutes</li><li>✓ 0 Personnel</li><li>✓ FreeUpdate</li><li>✓ all Feature Coverage + AI</li><li>✓ Built-in Security &amp; Compliance</li></ul></div>
+<div class="tco-card"><h4>💎 SDK</h4><div class="price">$XX,XXX+</div><div class="price-note">Annual License Fee</div><ul><li>✓ 1-2 Integration</li><li>✓ Feature</li><li>✗ price 3-5 in ComPDF</li><li>✗ By Platform/Feature</li><li>✗ risk</li></ul></div>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">Quick Start</span><h2>4 Steps to Complete Technical Evaluation</h2></div>
-  <div class="steps-grid">
-    <div class="step-card"><div class="step-num">1</div><h4>Free Registration</h4><p>注册账号Get API Key</p></div>
-    <div class="step-card"><div class="step-num">2</div><h4>选择 SDK</h4><p>根据Platform选择对应 SDK</p></div>
-    <div class="step-card"><div class="step-num">3</div><h4>POC Verify</h4><p>用你的真实Docs测试</p></div>
-    <div class="step-card"><div class="step-num">4</div><h4>Contact Us</h4><p>Get企业Quote</p></div>
-  </div>
+<div class="section-title"><span class="tag">Quick Start</span><h2>4 Steps to Complete Technical Evaluation</h2></div>
+<div class="steps-grid">
+<div class="step-card"><div class="step-num">1</div><h4>Free Registration</h4><p>RegisterAccountGet API Key</p></div>
+<div class="step-card"><div class="step-num">2</div><h4>Select SDK</h4><p>according toPlatformSelect for SDK</p></div>
+<div class="step-card"><div class="step-num">3</div><h4>POC Verify</h4><p>use Docstest</p></div>
+<div class="step-card"><div class="step-num">4</div><h4>Contact Us</h4><p>GetEnterpriseQuote</p></div>
+</div>
 </div></section>
 <section class="form-section"><div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <span class="tag">Exclusive for Technical Decision Makers</span>
-      <h2 style="font-size:28px;font-weight:700;margin:12px 0 16px">Book a Technical Selection Assessment</h2>
-      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Our 解决Solution Architecture师将根据你的技术栈、业务场景和预算，Provides定制化的选型建议和 POC Solution</p>
-    </div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px">
-      <h3 style="font-size:18px;font-weight:700;margin-bottom:18px;text-align:center">📋 Book a Technical Assessment</h3>
-      <form style="display:flex;flex-direction:column;gap:12px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="Your Name"><input type="email" placeholder="Work Email"><input type="text" placeholder="Company Name">
-        <select><option value="">Your Role</option><option>CTO / VP of Engineering</option><option>Tech Lead / Architect</option><option>Developer / 工程师</option><option>Product Manager</option><option>IT 采购</option></select>
-        <button type="submit" class="fbtn" style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">Book a Technical Assessment →</button>
-      </form>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:1fr1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">Exclusive for Technical Decision Makers</span>
+<h2 style="font-size:28px;font-weight:700;margin:12px 016px">Book a Technical Selection Assessment</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Our Solution Architecture according to, BusinessScenario and Budget,ProvidesCustomized selection suggestion and POC Solution</p>
+</div>
+<div style="background:var(--bg-card);border:1px solidvar(--border);border-radius:var(--radius);padding:32px">
+<h3 style="font-size:18px;font-weight:700;margin-bottom:18px;text-align:center">📋 Book a Technical Assessment</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓Submitted';this.querySelector('.fbtn').style.background='#10b981'"style="display:flex;flex-direction:column;gap:12px">
+<input placeholder="YourName"type="text"/><input placeholder="WorkEmail"type="email"/><input placeholder="CompanyName"type="text"/>
+<select><option value="">Your Role</option><option>CTO/ VP of Engineering</option><option>Tech Lead/ Architect</option><option>Developer/ engineer</option><option>Product Manager</option><option>IT Procurement</option></select>
+<button class="fbtn"style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer"type="submit">Book a Technical Assessment →</button>
+</form>
+</div>
+</div>
 </div></section>
 <section class="cta-section"><div class="container">
-  <h2>Make the Smartest Technical Decision — 从 ComPDF 开始</h2>
-  <p>Free Trial · No credit card required · 5 Integration Verified in Minutes</p>
-  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A">Start Free Trial</a><a href="#" class="btn btn-outline">View Full Docs →</a></div>
+<h2>Make the Smartest Technical Decision — from ComPDF open</h2>
+<p>Free Trial · No credit card required · 5 Integration Verified in Minutes</p>
+<div style="display:flex;gap:12px;justify-content:center;position:relative"><a class="btnbtn-primary"href="#"style="background:#fff;color:#1E3A8A">Start Free Trial</a><a class="btnbtn-outline"href="#">View Full Docs →</a></div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 </body>

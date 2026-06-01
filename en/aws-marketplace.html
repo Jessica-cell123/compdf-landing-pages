@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ComPDF AWS Marketplace | Deploy ComPDF on AWS with One Click</title>
 <style>
 :root{--primary:#FF9900;--primary-dark:#E88B00;--accent:#2563EB;--accent-green:#10B981;--gradient:linear-gradient(135deg,#FF9900,#2563EB);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
@@ -75,115 +76,115 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 @media(max-width:900px){.hero .container{grid-template-columns:1fr}.benefits-grid,.features-grid,.arch-grid{grid-template-columns:1fr}.hero-text h1{font-size:30px}nav ul{display:none}}
 </style>
 </head>
-<body>
-<nav><div class="container">
-  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
-  <ul>
-    <li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
-    <li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
-    <li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
-    <li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
-    <li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
-    <li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
-    <li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
-    <li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
-    <li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
-    <li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
-    <li><a href="/compdf-landing-pages/en/aws-marketplace.html" class="active">AWS</a></li>
-    <li><a href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
-    <li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
-    <li><a href="/compdf-landing-pages/en/pricing.html">定价</a></li>
-    <li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
+<body><nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
+<li><a class="active" href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/en/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
 </ul>
 </div></nav>
+
 <section class="hero"><div class="container">
-  <div class="hero-text">
-    <div class="tag">ComPDF × AWS Marketplace</div>
-    <h1>在 AWS 上<span class="gradient">One-Click Deploy ComPDF</span></h1>
-    <p>ComPDF Published AWS Marketplace，以 AMI 镜像形式Provides。在 EC2 上启动实例即可获得完整的 PDF ConversionCapabilities —— 统一 AWS 账单、Private Network Deployment、Data never leaves VPC，Enterprise Document Processing Infrastructureminutes级就绪。</p>
-    <div class="hero-btns">
-      <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview" target="_blank" class="btn btn-aws">View Deployment Guide</a>
-      <a href="#form" class="btn btn-outline">Get License →</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="big-icon">🟠</div>
-    <div class="aws-arch">
-      <div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
-      <div class="aws-arrow">→</div>
-      <div class="aws-node" style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 实例</div></div>
-      <div class="aws-arrow">→</div>
-      <div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
-      <div class="aws-arrow">→</div>
-      <div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
-    </div>
-    <p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI 镜像 · Instant-On · Private Deployment · Data never leaves VPC</p>
-  </div>
+<div class="hero-text">
+<div class="tag">ComPDF × AWS Marketplace</div>
+<h1> in AWS on<span class="gradient">One-Click Deploy ComPDF</span></h1>
+<p>ComPDF Published AWS Marketplace, to AMI Like Provides. In EC2 on startinstance can Complete PDF ConversionCapabilities - One AWS Bill, Private Network Deployment, Data never leaves VPC,Enterprise Document Processing Infrastructureminutes ready.</p>
+<div class="hero-btns">
+<a class="btnbtn-aws"href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview"target="_blank">View Deployment Guide</a>
+<a class="btnbtn-outline"href="#form">Get License →</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="big-icon">🟠</div>
+<div class="aws-arch">
+<div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
+<div class="aws-arrow">→</div>
+<div class="aws-node"style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 instance</div></div>
+<div class="aws-arrow">→</div>
+<div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
+<div class="aws-arrow">→</div>
+<div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
+</div>
+<p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI Like · Instant-On · Private Deployment · Data never leaves VPC</p>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">核心优势</span><h2>为什么选择 AWS Marketplace Deploy ComPDF</h2></div>
-  <div class="benefits-grid">
-    <div class="benefit-card"><div class="icon">🚀</div><div><h4>One-Click Deploy，minutes级上线</h4><p>从 AWS Marketplace Subscribe AMI 镜像后，启动 EC2 实例即可获得完整的 ComPDF Document Processing服务，No Manual Environment Setup Needed。</p></div></div>
-    <div class="benefit-card"><div class="icon">💰</div><div><h4>统一 AWS 账单</h4><p>Subscribe费用Merge到 AWS Monthly Billing，Supports Enterprise Discount Program 抵扣，Streamline procurement and financial reconciliation。</p></div></div>
-    <div class="benefit-card"><div class="icon">🔒</div><div><h4>Data never leaves VPC</h4><p>Deploy在自有 VPC Within Private Network，Document Processing请求Via内网传输，Data never traverses public networks，Meets financial、compliance requirements for healthcare and other industries。</p></div></div>
-    <div class="benefit-card"><div class="icon">📈</div><div><h4>弹性扩缩容</h4><p>Based on EC2 的弹性Capabilities，根据Document Processing量随时调整实例规格，高负载时自动扩展，空闲时降低成本。</p></div></div>
-  </div>
+<div class="section-title"><span class="tag">Coreexcellent</span><h2>WhySelect AWS Marketplace Deploy ComPDF</h2></div>
+<div class="benefits-grid">
+<div class="benefit-card"><div class="icon">🚀</div><div><h4>One-Click Deploy,minutes on</h4><p> from AWS Marketplace Subscribe AMI Likeafter,start EC2 instance can Complete ComPDF Document ProcessingService,No Manual Environment Setup Needed.</p></div></div>
+<div class="benefit-card"><div class="icon">💰</div><div><h4> One AWS Bill</h4><p>SubscribefeeMerge to AWS Monthly Billing,Supports Enterprise Discount Program,Streamline procurement and financial reconciliation.</p></div></div>
+<div class="benefit-card"><div class="icon">🔒</div><div><h4>Data never leaves VPC</h4><p>Deploy in has VPC Within Private Network,Document ProcessingRequestVia within Transfer,Data never traverses public networks,Meets financial, compliance requirements for healthcare and other industries.</p></div></div>
+<div class="benefit-card"><div class="icon">📈</div><div><h4>Elastic</h4><p>Based on EC2 ElasticCapabilities,according toDocument Processing time whole instance,high negative time AutoExpand, time low cost.</p></div></div>
+</div>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">Technical Architecture</span><h2>AMI Deploy架构</h2><p>ComPDF AWS AMI Based on Docker Compose Management，Out of the Box</p></div>
-  <div class="arch-grid">
-    <div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF Conversion HTTP API 服务，端口 7000</p></div>
-    <div class="arch-card"><div class="emoji">🗄️</div><h4>MySQL Data库</h4><p>服务Data库，与 processor 自动启动</p></div>
-    <div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>Container编排，文件路径 /var/www/compdf/</p></div>
-    <div class="arch-card"><div class="emoji">🔑</div><h4>License 激活</h4><p>购买 License Configure to Activate</p></div>
-  </div>
-  <h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px">从subscribe to launch</h3>
-  <div class="arch-flow">
-    <div class="af-node highlight"><div class="af-icon">🛒</div><div class="af-label">Subscribe AMI</div></div>
-    <div class="af-arrow">→</div>
-    <div class="af-node"><div class="af-icon">🚀</div><div class="af-label">启动 EC2</div></div>
-    <div class="af-arrow">→</div>
-    <div class="af-node"><div class="af-icon">🔑</div><div class="af-label">配置 License</div></div>
-    <div class="af-arrow">→</div>
-    <div class="af-node"><div class="af-icon">▶️</div><div class="af-label">启动服务</div></div>
-    <div class="af-arrow">→</div>
-    <div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API 调用</div></div>
-  </div>
+<div class="section-title"><span class="tag">Technical Architecture</span><h2>AMI DeployArchitecture</h2><p>ComPDF AWS AMI Based on Docker Compose Management,Out of the Box</p></div>
+<div class="arch-grid">
+<div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF Conversion HTTP API Service,Port 7000</p></div>
+<div class="arch-card"><div class="emoji">🗄️</div><h4>MySQL Datalibrary</h4><p>ServiceDatalibrary, and processor Autostart</p></div>
+<div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>Container,FilePath/var/www/compdf/</p></div>
+<div class="arch-card"><div class="emoji">🔑</div><h4>License</h4><p> License Configure to Activate</p></div>
+</div>
+<h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px"> from subscribe to launch</h3>
+<div class="arch-flow">
+<div class="af-nodehighlight"><div class="af-icon">🛒</div><div class="af-label">Subscribe AMI</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">🚀</div><div class="af-label">start EC2</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">🔑</div><div class="af-label">Configure License</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">▶️</div><div class="af-label">startService</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API Call</div></div>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">Core Capabilities</span><h2>AMI Provides的Document ProcessingCapabilities</h2><p>Covers PDF ConversionFull-Scene，Via HTTP API 轻松接入</p></div>
-  <div class="features-grid">
-    <div class="feature-card"><div class="emoji">🔄</div><h4>PDF Format Conversion</h4><p>PDF ↔ Word / Excel / PPT / HTML / 图片，Bidirectional Conversion，保留原始排版</p></div>
-    <div class="feature-card"><div class="emoji">📄</div><h4>Office 转 PDF</h4><p>Word、Excel、PPT DocsBatch convert to换为 PDF，Best for Unified Archiving & Distribution</p></div>
-    <div class="feature-card"><div class="emoji">🖼️</div><h4>图片Conversion</h4><p>Supports JPG、PNG、TIFF、BMP 等常见图片格式与 PDF 互转</p></div>
-    <div class="feature-card"><div class="emoji">📐</div><h4>PDF 规格Conversion</h4><p>PDF/A、PDF/X、PDF/E 等标准Format Conversion，Meet archiving and printing requirements</p></div>
-    <div class="feature-card"><div class="emoji">⚡</div><h4>Batch Processing</h4><p>SupportsHigh ConcurrencyBatchDocument Processing，自动负载均衡，Best for Large-Scale Production</p></div>
-    <div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>标准 HTTP API 接口，任何Language都可调用，轻松Integration到现有System</p></div>
-  </div>
+<div class="section-title"><span class="tag">Core Capabilities</span><h2>AMI Provides Document ProcessingCapabilities</h2><p>Covers PDF ConversionFull-Scene,Via HTTP API access</p></div>
+<div class="features-grid">
+<div class="feature-card"><div class="emoji">🔄</div><h4>PDF Format Conversion</h4><p>PDF ↔ Word/ Excel/ PPT/ HTML/ Image,Bidirectional Conversion, Original</p></div>
+<div class="feature-card"><div class="emoji">📄</div><h4>Office PDF</h4><p>Word, Excel, PPT DocsBatch convert to for PDF,Best for Unified Archiving &amp; Distribution</p></div>
+<div class="feature-card"><div class="emoji">🖼️</div><h4>ImageConversion</h4><p>Supports JPG, PNG, TIFF, BMP, etc. ImageFormat and PDF</p></div>
+<div class="feature-card"><div class="emoji">📐</div><h4>PDF Conversion</h4><p>PDF/A, PDF/X, PDF/E, etc.StandardFormat Conversion,Meet archiving and printing requirements</p></div>
+<div class="feature-card"><div class="emoji">⚡</div><h4>Batch Processing</h4><p>SupportsHigh ConcurrencyBatchDocument Processing,AutoLoad Balancing,Best for Large-Scale Production</p></div>
+<div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>Standard HTTP API API, how Language all can Call, Integration to has System</p></div>
+</div>
 </div></section>
-<section class="form-section" id="form"><div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <span class="tag">Get License</span>
-      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">Get Started ComPDF on AWS</h2>
-      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Submit Info to Get License 和Deployment Options，Our 技术Team将协助你完成 AWS 上的Deploy配置</p>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">专属 License 与Deployment Options</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWS 架构配置建议与最佳实践</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">Full Technical Team Support，30-Day Free Trial</span></div>
-      </div>
-    </div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">Get AWS Deployment Options</h3>
-      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Work Email">
-        <input type="text" placeholder="Company Name">
-        <select><option value="">预计月ProcessingDocument Volume</option><option>< 10,000  docs</option><option>10,000 - 100,000  docs</option><option>100,000 - 1,000,000  docs</option><option>> 1,000,000  docs</option></select>
-        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">Get Solutions →</button>
-      </form>
-    </div>
-  </div>
+<section class="form-section"id="form"><div class="container">
+<div style="display:grid;grid-template-columns:1fr1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">Get License</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 016px">Get Started ComPDF on AWS</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Submit Info to Get License and Deployment Options,Our Team complete AWS on DeployConfigure</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px"> License and Deployment Options</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWS ArchitectureConfigureSuggestion and most</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">Full Technical Team Support,30-Day Free Trial</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solidvar(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">Get AWS Deployment Options</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓Submitted';this.querySelector('.fbtn').style.background='#10b981'"style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="YourName"type="text"/>
+<input placeholder="WorkEmail"type="email"/>
+<input placeholder="CompanyName"type="text"/>
+<select><option value=""> ProcessingDocument Volume</option><option>&lt; 10,000 docs</option><option>10,000 - 100,000 docs</option><option>100,000 - 1,000,000 docs</option><option>&gt; 1,000,000 docs</option></select>
+<button class="fbtn"style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer"type="submit">Get Solutions →</button>
+</form>
+</div>
+</div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 </body>

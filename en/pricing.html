@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pricing | ComPDF SDK & API Plans</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | ComPDF SDK &amp; API Plans</title>
 <style>
 :root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -94,161 +95,154 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 }
 </style>
 </head>
-<body>
-<nav><div class="container">
-  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
-  <ul>
-    <li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
-    <li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
-    <li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
-    <li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
-    <li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
-    <li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
-    <li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
-    <li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
-    <li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
-    <li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
-    <li><a href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
-    <li><a href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
-    <li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
-    <li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
-    <li><a href="/compdf-landing-pages/en/pricing.html" class="active">定价</a></li>
-  </ul>
+<body><nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
+<li><a class="active" href="/compdf-landing-pages/en/pricing.html">定价</a></li>
+</ul>
 </div></nav>
 
 <section class="hero"><div class="container">
-  <h1>灵活的 <span class="gradient">Pricing Plans</span></h1>
-  <p>SDK Annual License，API Usage-Based Pricing。无论你是独立Developer还是企业Team，find the right solution。</p>
+<h1>Flexible<span class="gradient">Pricing Plans</span></h1>
+<p>SDK Annual License,API Usage-Based Pricing. No is Developer or EnterpriseTeam,find the right solution.</p>
 </div></section>
-
 <section><div class="container">
-  <div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('sdk')">SDK 授权</button>
-    <button class="tab-btn" onclick="switchTab('api')">Cloud API</button>
-  </div>
-
-  <!-- SDK Tab -->
-  <div class="tab-panel active" id="tab-sdk">
-    <div class="sdk-hero">
-      <div class="price">$1,300</div>
-      <div class="price-note">/year starting from · Priced by platform and feature combination · UnlimitedDocument Volume</div>
-      <div class="sdk-plats">
-        <span>🌐 Web</span><span>🤖 Android</span><span>🍎 iOS</span>
-        <span>⚡ Flutter</span><span>⚛️ React Native</span>
-        <span>🪟 Windows</span><span>🖥️ macOS</span><span>☕ Java</span><span>🔷 .NET</span>
-      </div>
-    </div>
-    <div class="sdk-form-wrap">
-      <h3>Get SDK Quote</h3>
-      <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Business Email">
-        <input type="tel" placeholder="Phone number (optional)">
-        <input type="text" placeholder="Company Name">
-        <textarea placeholder="Describe your project — features, platforms, and requirements" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
-        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:12px">Submit for Quote</button>
-        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">We'll respond within 1 business day</p>
-      </form>
-    </div>
-  </div>
-
-  <!-- API Tab -->
-  <div class="tab-panel" id="tab-api">
-    <div class="section-title"><p>Per-Document Pricing，Buy Online，即买即用</p></div>
-    <div class="api-grid">
-      <div class="api-card">
-        <h3>Free</h3>
-        <div class="sub">Best for Trial & Testing</div>
-        <div class="api-price"><span class="curr">$</span>0</div>
-        <div class="api-price-note">/月 · Annual $0</div>
-        <ul class="api-feats">
-          <li>Monthly 200  docsDocs</li>
-          <li>All API tools available</li>
-          <li>High Security</li>
-          <li>24h Email Support</li>
-        </ul>
-        <a href="https://api.compdf.com/signup" target="_blank" class="btn btn-outline">Free Registration</a>
-      </div>
-      <div class="api-card featured">
-        <h3>Growth</h3>
-        <div class="sub">Best for Growing Teams</div>
-        <div class="api-price"><span class="curr">$</span>80</div>
-        <div class="api-price-note">/月 · Annual $960</div>
-        <ul class="api-feats">
-          <li>Monthly 5,000  docsDocs</li>
-          <li>All API tools available</li>
-          <li>High Security</li>
-          <li>24h Email Support</li>
-          <li>Unlimited parallel tasks</li>
-        </ul>
-        <a href="https://api.compdf.com/login" target="_blank" class="btn btn-green">Buy Now</a>
-      </div>
-      <div class="api-card">
-        <h3>Pro</h3>
-        <div class="sub">Best for Enterprise</div>
-        <div class="api-price"><span class="curr">$</span>144</div>
-        <div class="api-price-note">/月 · Annual $1,728</div>
-        <ul class="api-feats">
-          <li>Monthly 10,000  docsDocs</li>
-          <li>All API tools available</li>
-          <li>High Security</li>
-          <li>PriorityTechnical Support</li>
-          <li>Unlimited parallel tasks</li>
-          <li>Unlimited file size</li>
-        </ul>
-        <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">Buy Now</a>
-      </div>
-    </div>
-    <p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:20px">Volume exceeds 10,000  docs/月？<a href="mailto:sales@compdf.com" style="color:var(--primary-light);font-weight:600">Contact Us for Custom Solutions →</a></p>
-  </div>
+<div class="tab-bar">
+<button class="tab-btnactive"onclick="switchTab('sdk')">SDK Authorization</button>
+<button class="tab-btn"onclick="switchTab('api')">Cloud API</button>
+</div>
+<!-- SDK Tab -->
+<div class="tab-panelactive"id="tab-sdk">
+<div class="sdk-hero">
+<div class="price">$1,300</div>
+<div class="price-note">/year starting from · Priced by platform and feature combination · UnlimitedDocument Volume</div>
+<div class="sdk-plats">
+<span>🌐 Web</span><span>🤖 Android</span><span>🍎 iOS</span>
+<span>⚡ Flutter</span><span>⚛️ React Native</span>
+<span>🪟 Windows</span><span>🖥️ macOS</span><span>☕ Java</span><span>🔷.NET</span>
+</div>
+</div>
+<div class="sdk-form-wrap">
+<h3>Get SDK Quote</h3>
+<form class="sdk-form"onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓Submitted';this.querySelector('.fbtn').style.background='#10b981'">
+<input placeholder="FullName"type="text"/>
+<input placeholder="BusinessEmail"type="email"/>
+<input placeholder="Phone number(optional)"type="tel"/>
+<input placeholder="CompanyName"type="text"/>
+<textarea placeholder="Describe your project — features, platforms, andrequirements"style="padding:10px 14px;border:1px solidvar(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
+<button class="fbtn btnbtn-primary"style="width:100%;justify-content:center;font-size:15px;padding:12px"type="submit">Submit for Quote</button>
+<p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">We'll respond within 1 business day</p>
+</form>
+</div>
+</div>
+<!-- API Tab -->
+<div class="tab-panel"id="tab-api">
+<div class="section-title"><p>Per-Document Pricing,Buy Online, use</p></div>
+<div class="api-grid">
+<div class="api-card">
+<h3>Free</h3>
+<div class="sub">Best for Trial &amp; Testing</div>
+<div class="api-price"><span class="curr">$</span>0</div>
+<div class="api-price-note">/ · Annual $0</div>
+<ul class="api-feats">
+<li>Monthly 200 docsDocs</li>
+<li>All API tools available</li>
+<li>High Security</li>
+<li>24h Email Support</li>
+</ul>
+<a class="btnbtn-outline"href="https://api.compdf.com/signup"target="_blank">Free Registration</a>
+</div>
+<div class="api-cardfeatured">
+<h3>Growth</h3>
+<div class="sub">Best for Growing Teams</div>
+<div class="api-price"><span class="curr">$</span>80</div>
+<div class="api-price-note">/ · Annual $960</div>
+<ul class="api-feats">
+<li>Monthly 5,000 docsDocs</li>
+<li>All API tools available</li>
+<li>High Security</li>
+<li>24h Email Support</li>
+<li>Unlimited parallel tasks</li>
+</ul>
+<a class="btnbtn-green"href="https://api.compdf.com/login"target="_blank">Buy Now</a>
+</div>
+<div class="api-card">
+<h3>Pro</h3>
+<div class="sub">Best for Enterprise</div>
+<div class="api-price"><span class="curr">$</span>144</div>
+<div class="api-price-note">/ · Annual $1,728</div>
+<ul class="api-feats">
+<li>Monthly 10,000 docsDocs</li>
+<li>All API tools available</li>
+<li>High Security</li>
+<li>PriorityTechnical Support</li>
+<li>Unlimited parallel tasks</li>
+<li>Unlimited file size</li>
+</ul>
+<a class="btnbtn-primary"href="https://api.compdf.com/login"target="_blank">Buy Now</a>
+</div>
+</div>
+<p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:20px">Volume exceeds 10,000 docs/?<a href="mailto:sales@compdf.com"style="color:var(--primary-light);font-weight:600">Contact Us for Custom Solutions →</a></p>
+</div>
 </div></section>
-
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">FAQ</span><h2>FAQ</h2></div>
-  <div class="faq-list">
-    <div class="faq-item open">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ComPDF SDK How Pricing Works？<span class="arrow">▼</span></div>
-      <div class="faq-a">SDK Annual License，Price based on selected platform（Web / Mobile / Desktop / Server）and feature combination，最低 $1,300/年Starting from。UnlimitedDocument Processing量和Unlimited用户数。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK Which Platforms Are Supported?？<span class="arrow">▼</span></div>
-      <div class="faq-a">Supports Web（JavaScript）、iOS、Android、Flutter、React Native、Windows、macOS、Java、.NET 共 9 大Platform。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How to Get Started SDK 试用？<span class="arrow">▼</span></div>
-      <div class="faq-a">注册 ComPDF 会员即可申请 30 daysFull-FeaturedFree Trial License，No credit card required。试用期间可体验All功能和Platform。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud API How is Document Volume Calculated?？<span class="arrow">▼</span></div>
-      <div class="faq-a">Per 次 API Processing one page = one document。Free Tier: monthly 200  docs，Growth  tier 5,000  docs，Pro  tier 10,000  docs。超过部分可购买附加包或升级Solution。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">API What Features Are Supported?？<span class="arrow">▼</span></div>
-      <div class="faq-a">Supports PDF Conversion（Office/图片/HTML）、PDF Edit（Merge/Split/旋转）、OCR Recognition、Watermark Addition、Compression、AI Document Parsing & Extraction等。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is Private Deployment Supported?？<span class="arrow">▼</span></div>
-      <div class="faq-a">Supports。SDK Supports Private Deployment，API 也Provides Self-hosted Solution。DataDeploy在自有服务器，不出企业内网。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are Enterprise Discounts Available?？<span class="arrow">▼</span></div>
-      <div class="faq-a">Provides。Volume discounts available for large annual purchases，Supports OEM 授权模式。请Contact SalesTeamGet定制Quote。</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK 和 API Can I Use Both?？<span class="arrow">▼</span></div>
-      <div class="faq-a">Can。Many customers use both SDK（For客户端View/Edit）和 API（ForServerBatch Processing），They complement each other。</div>
-    </div>
-  </div>
+<div class="section-title"><span class="tag">FAQ</span><h2>FAQ</h2></div>
+<div class="faq-list">
+<div class="faq-itemopen">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">ComPDF SDK How Pricing Works?<span class="arrow">▼</span></div>
+<div class="faq-a">SDK Annual License,Price based on selected platform(Web/ Mobile/ Desktop/ Server)and feature combination,mostlow $1,300/ Starting from.UnlimitedDocument Processing and UnlimitedUser.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">SDK Which Platforms Are Supported??<span class="arrow">▼</span></div>
+<div class="faq-a">Supports Web(JavaScript), iOS, Android, Flutter, React Native, Windows, macOS, Java,.NET total 9 large Platform.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">How to Get Started SDK use?<span class="arrow">▼</span></div>
+<div class="faq-a">Register ComPDF will can 30 daysFull-FeaturedFree Trial License,No credit card required. use between can AllFeature and Platform.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">Cloud API How is Document Volume Calculated??<span class="arrow">▼</span></div>
+<div class="faq-a">Per API Processing one page = one document.Free Tier: monthly 200 docs,Growth tier 5,000 docs,Pro tier 10,000 docs. over through partcan or upgradeSolution.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">API What Features Are Supported??<span class="arrow">▼</span></div>
+<div class="faq-a">Supports PDF Conversion(Office/Image/HTML), PDF Edit(Merge/Split/ ), OCR Recognition, Watermark Addition, Compression, AI Document Parsing &amp; Extraction, etc..</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">Is Private Deployment Supported??<span class="arrow">▼</span></div>
+<div class="faq-a">Supports.SDK Supports Private Deployment,API also Provides Self-hosted Solution.DataDeploy in has Service,not Enterprise within.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">Are Enterprise Discounts Available??<span class="arrow">▼</span></div>
+<div class="faq-a">Provides.Volume discounts available for large annual purchases,Supports OEM Authorization. Contact SalesTeamGet Quote.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">SDK and API Can I Use Both??<span class="arrow">▼</span></div>
+<div class="faq-a">Can.Many customers usebothSDK(ForClientView/Edit) and API(ForServerBatch Processing),They complement each other.</div>
+</div>
+</div>
 </div></section>
-
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
-
 <script>
 function switchTab(name) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelector(`.tab-btn[onclick*="'${name}'"]`).classList.add('active');
-  document.getElementById(`tab-${name}`).classList.add('active');
+document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+document.querySelector(`.tab-btn[onclick*="'${name}'"]`).classList.add('active');
+document.getElementById(`tab-${name}`).classList.add('active');
 }
 </script>
 </body>

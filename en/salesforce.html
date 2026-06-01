@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ComPDF Salesforce Integration | Process PDFs Directly in Salesforce</title>
 <style>
 :root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
@@ -69,120 +70,120 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 @media(max-width:900px){.hero .container{grid-template-columns:1fr}.benefits-grid,.features-grid{grid-template-columns:1fr}.hero-text h1{font-size:30px}nav ul{display:none}.workflow{flex-direction:column;gap:10px}.wf-arrow{transform:rotate(90deg)}}
 </style>
 </head>
-<body>
-<nav><div class="container">
-  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
-  <ul>
-    <li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
-    <li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
-    <li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
-    <li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
-    <li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
-    <li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
-    <li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
-    <li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
-    <li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
-    <li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
-    <li><a href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
-    <li><a href="/compdf-landing-pages/en/salesforce.html" class="active">Salesforce</a></li>
-    <li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
-    <li><a href="/compdf-landing-pages/en/pricing.html">定价</a></li>
-    <li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
+<body><nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/en/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/en/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/en/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/en/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/en/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/en/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/en/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/en/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/en/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/en/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/en/aws-marketplace.html">AWS</a></li>
+<li><a class="active" href="/compdf-landing-pages/en/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/en/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/en/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/en/workflow.html">Workflow</a></li>
 </ul>
 </div></nav>
+
 <section class="hero"><div class="container">
-  <div class="hero-text">
-    <div class="tag">ComPDF × Salesforce Integration</div>
-    <h1>Process PDFs Directly in Salesforce<br><span class="gradient">No Need to Leave，No Need to Switch Tools</span></h1>
-    <p>ComPDF Web SDK 以 Lightning Web Component 形式嵌入 Salesforce，Empower Your Sales、法务、OperationsTeam在 Salesforce completed directly in the interface PDF View、Edit、批注、Signature和Form Filling — Data never leaves Salesforce，Workflows不中断。</p>
-    <div style="display:flex;gap:12px">
-      <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-sf">View Live Demo</a>
-      <a href="https://www.compdf.com/guides/pdf-sdk/web/integrations/salesforce/overview" target="_blank" class="btn btn-outline">Integration Docs →</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="big-icon">☁️</div>
-    <div class="sf-integration">
-      <div class="sf-node"><div class="emoji">📄</div><div class="label">Salesforce 记录</div></div>
-      <div class="sf-arrow">→</div>
-      <div class="sf-node" style="border-color:var(--primary);background:rgba(37,99,235,.06)"><div class="emoji">⚙️</div><div class="label">ComPDF LWC</div></div>
-      <div class="sf-arrow">→</div>
-      <div class="sf-node"><div class="emoji">✅</div><div class="label">Processing Complete</div></div>
-    </div>
-    <p style="color:var(--text-muted);font-size:12px;margin-top:20px">Lightning Web Component · Plug & Play · Data never leaves your site</p>
-  </div>
+<div class="hero-text">
+<div class="tag">ComPDF × Salesforce Integration</div>
+<h1>Process PDFs Directly in Salesforce<br/><span class="gradient">No Need to Leave,No Need to Switch Tools</span></h1>
+<p>ComPDF Web SDK to Lightning Web Component Embed Salesforce,Empower Your Sales, legal, OperationsTeam in Salesforce completed directly in the interface PDF View, Edit, Comment, Signature and Form Filling — Data never leaves Salesforce,Workflowsnot in.</p>
+<div style="display:flex;gap:12px">
+<a class="btnbtn-sf"href="https://www.compdf.com/demo/webviewer"target="_blank">View Live Demo</a>
+<a class="btnbtn-outline"href="https://www.compdf.com/guides/pdf-sdk/web/integrations/salesforce/overview"target="_blank">Integration Docs →</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="big-icon">☁️</div>
+<div class="sf-integration">
+<div class="sf-node"><div class="emoji">📄</div><div class="label">Salesforce</div></div>
+<div class="sf-arrow">→</div>
+<div class="sf-node"style="border-color:var(--primary);background:rgba(37,99,235,.06)"><div class="emoji">⚙️</div><div class="label">ComPDF LWC</div></div>
+<div class="sf-arrow">→</div>
+<div class="sf-node"><div class="emoji">✅</div><div class="label">Processing Complete</div></div>
+</div>
+<p style="color:var(--text-muted);font-size:12px;margin-top:20px">Lightning Web Component · Plug &amp; Play · Data never leaves your site</p>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">Integration Benefits</span><h2>为什么在 Salesforce 中选择 ComPDF</h2></div>
-  <div class="benefits-grid">
-    <div class="benefit-card"><div class="icon">🔗</div><div><h4>无缝嵌入 Salesforce</h4><p>以 Lightning Web Component 形式嵌入 Salesforce 记录Page、Flow 弹窗和 Experience Cloud 站点，用户No Need to Leave Salesforce 环境即可ProcessingAll PDF Docs。</p></div></div>
-    <div class="benefit-card"><div class="icon">🔒</div><div><h4>DataSecurity & Compliance</h4><p>直接从 Salesforce 的 ContentVersion、Attachment 或外部 S3 加载文件，完整继承 Salesforce Permission System，Data never passes through third-party servers。</p></div></div>
-    <div class="benefit-card"><div class="icon">🎨</div><div><h4>UI 灵活定制</h4><p>Tools栏、按钮、Interaction behavior can be customized per Salesforce Brand guidelines and business process customization，Match Unified User Experience。</p></div></div>
-    <div class="benefit-card"><div class="icon">⚡</div><div><h4>Quick Integration</h4><p>ProvidesOut of the Box的 LWC + Apex 示例代码，Developer几hours内即可完成IntegrationDeploy，No Need to Start From Scratch。</p></div></div>
-  </div>
+<div class="section-title"><span class="tag">Integration Benefits</span><h2>Why in Salesforce in Select ComPDF</h2></div>
+<div class="benefits-grid">
+<div class="benefit-card"><div class="icon">🔗</div><div><h4> no Embed Salesforce</h4><p> to Lightning Web Component Embed Salesforce Page, Flow and Experience Cloud,UserNo Need to Leave Salesforce Environment can ProcessingAll PDF Docs.</p></div></div>
+<div class="benefit-card"><div class="icon">🔒</div><div><h4>DataSecurity &amp; Compliance</h4><p>Direct from Salesforce ContentVersion, Attachment or outside S3 loadFile,Completeinheritance Salesforce Permission System,Data never passes through third-party servers.</p></div></div>
+<div class="benefit-card"><div class="icon">🎨</div><div><h4>UI Flexible</h4><p>Tools, by, Interaction behavior can be customized per Salesforce Brand guidelines and business process customization,Match Unified User Experience.</p></div></div>
+<div class="benefit-card"><div class="icon">⚡</div><div><h4>Quick Integration</h4><p>ProvidesOut of the Box LWC + Apex exampleCode,Developer several hours within can completeIntegrationDeploy,No Need to Start From Scratch.</p></div></div>
+</div>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">Core Features</span><h2>在 Salesforce 中能做什么</h2><p>ComPDF Web SDK Full features in Salesforce fully available within</p></div>
-  <div class="features-grid">
-    <div class="feature-card"><div class="emoji">👁️</div><h4>PDF View</h4><p>高性能渲染引擎，Large File Support秒级打开、流畅翻页与缩放</p></div>
-    <div class="feature-card"><div class="emoji">✏️</div><h4>DocsEdit</h4><p>Modify text, images, and watermarks directly while preserving original layout不变</p></div>
-    <div class="feature-card"><div class="emoji">📝</div><h4>Annotations & Comments</h4><p>20+ annotation tools including highlight, underline, shapes, and stickers，Multi-User Collaboration</p></div>
-    <div class="feature-card"><div class="emoji">📋</div><h4>Form Filling</h4><p>交互式Form控件Auto Recognition，Supports data validation and auto-fill</p></div>
-    <div class="feature-card"><div class="emoji">✍️</div><h4>e-Signatures</h4><p>在 Salesforce complete contract signing directly inside，No Third-Party Signature Tool Needed</p></div>
-    <div class="feature-card"><div class="emoji">🔐</div><h4>安全与导出</h4><p>PDF 加密、Access Control、Redaction Processing，Processing后Save回 Salesforce</p></div>
-  </div>
+<div class="section-title"><span class="tag">Core Features</span><h2> in Salesforce in can What</h2><p>ComPDF Web SDK Full features in Salesforce fully available within</p></div>
+<div class="features-grid">
+<div class="feature-card"><div class="emoji">👁️</div><h4>PDF View</h4><p>High PerformancerenderingEngine,Large File Support open, and</p></div>
+<div class="feature-card"><div class="emoji">✏️</div><h4>DocsEdit</h4><p>Modify text, images, and watermarks directly while preserving original layoutnot</p></div>
+<div class="feature-card"><div class="emoji">📝</div><h4>Annotations &amp; Comments</h4><p>20+ annotation tools including highlight, underline, shapes, and stickers,Multi-User Collaboration</p></div>
+<div class="feature-card"><div class="emoji">📋</div><h4>Form Filling</h4><p> Form Auto Recognition,Supports data validation and auto-fill</p></div>
+<div class="feature-card"><div class="emoji">✍️</div><h4>e-Signatures</h4><p> in Salesforce complete contract signing directly inside,No Third-Party Signature Tool Needed</p></div>
+<div class="feature-card"><div class="emoji">🔐</div><h4>Security and Export</h4><p>PDF Encryption, Access Control, Redaction Processing,ProcessingafterSave Salesforce</p></div>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">Typical Workflows</span><h2>Salesforce + ComPDF Workflow Examples</h2></div>
-  <div class="workflow">
-    <div class="wf-node highlight"><div class="wf-icon">📄</div><div class="wf-label">Opportunity  in Quote单 PDF</div></div>
-    <div class="wf-arrow">→</div>
-    <div class="wf-node highlight"><div class="wf-icon">✏️</div><div class="wf-label">Sales directly in Salesforce edit</div></div>
-    <div class="wf-arrow">→</div>
-    <div class="wf-node highlight"><div class="wf-icon">✍️</div><div class="wf-label">Customers sign and confirm online</div></div>
-    <div class="wf-arrow">→</div>
-    <div class="wf-node highlight"><div class="wf-icon">💾</div><div class="wf-label">auto-save & write Salesforce</div></div>
-  </div>
-  <p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:16px">From Quote to Contract Signing，全程在 Salesforce 内完成，No Download Needed、Edit、再上传的繁琐操作</p>
+<div class="section-title"><span class="tag">Typical Workflows</span><h2>Salesforce + ComPDF Workflow Examples</h2></div>
+<div class="workflow">
+<div class="wf-nodehighlight"><div class="wf-icon">📄</div><div class="wf-label">Opportunity in Quotesingle- PDF</div></div>
+<div class="wf-arrow">→</div>
+<div class="wf-nodehighlight"><div class="wf-icon">✏️</div><div class="wf-label">Sales directly in Salesforce edit</div></div>
+<div class="wf-arrow">→</div>
+<div class="wf-nodehighlight"><div class="wf-icon">✍️</div><div class="wf-label">Customers sign and confirm online</div></div>
+<div class="wf-arrow">→</div>
+<div class="wf-nodehighlight"><div class="wf-icon">💾</div><div class="wf-label">auto-save &amp; write Salesforce</div></div>
+</div>
+<p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:16px">From Quote to Contract Signing, all in Salesforce within complete,No Download Needed, Edit, again Upload operation</p>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">Quick Integration</span><h2>Complete Integration in Hours</h2><p>Provides完整的 LWC 组件 + Apex 代码示例，Out of the Box</p></div>
-  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;max-width:640px;margin:0 auto">
-    <div style="background:#0B1120;color:#CBD5E1;font-family:monospace;font-size:12px;padding:16px;border-radius:8px;border:1px solid var(--border);overflow-x:auto;line-height:1.8;white-space:pre"><span style="color:#475569">// Install via npm</span>
+<div class="section-title"><span class="tag">Quick Integration</span><h2>Complete Integration in Hours</h2><p>ProvidesComplete LWC Component + Apex Codeexample,Out of the Box</p></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;max-width:640px;margin:0auto">
+<div style="background:#0B1120;color:#CBD5E1;font-family:monospace;font-size:12px;padding:16px;border-radius:8px;border:1px solidvar(--border);overflow-x:auto;line-height:1.8;white-space:pre"><span style="color:#475569">// Install via npm</span>
 $ npm install @compdf/web-sdk
 
 <span style="color:#475569">// Import LWC component</span>
-<span style="color:#7DD3FC">import</span> { LightningElement, track } <span style="color:#7DD3FC">from</span> <span style="color:#86EFAC">'lwc'</span>;
-<span style="color:#7DD3FC">import</span> PDFViewer <span style="color:#7DD3FC">from</span> <span style="color:#86EFAC">'@compdf/salesforce-lwc'</span>;
+<span style="color:#7DD3FC">import</span> { LightningElement, track }<span style="color:#7DD3FC">from</span><span style="color:#86EFAC">'lwc'</span>;
+<span style="color:#7DD3FC">import</span> PDFViewer<span style="color:#7DD3FC">from</span><span style="color:#86EFAC">'@compdf/salesforce-lwc'</span>;
 
 <span style="color:#475569">// Open PDF from Salesforce ContentVersion</span>
-<span style="color:#7DD3FC">const</span> viewer = <span style="color:#7DD3FC">new</span> PDFViewer();
+<span style="color:#7DD3FC">const</span> viewer =<span style="color:#7DD3FC">new</span> PDFViewer();
 viewer.<span style="color:#FBBF24">loadFromSalesforce</span>(contentVersionId);</div>
-  </div>
+</div>
 </div></section>
 <section class="form-section"><div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <span class="tag">Free Trial</span>
-      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">在 Salesforce 中体验 ComPDF</h2>
-      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Book a Private Demo，看看 ComPDF 如何在你的 Salesforce 实例中运行</p>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">在真实 Salesforce 环境中演示</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">Provides LWC Integration代码示例</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">30 daysFreeFull-Featured试用</span></div>
-      </div>
-    </div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">预约 Salesforce Integration演示</h3>
-      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Work Email">
-        <input type="text" placeholder="Company Name">
-        <select><option value="">您的 Salesforce 版本</option><option>Sales Cloud</option><option>Service Cloud</option><option>Marketing Cloud</option><option>Experience Cloud</option><option>Other</option></select>
-        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">Book a Demo Now</button>
-      </form>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:1fr1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">Free Trial</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 016px"> in Salesforce in ComPDF</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Book a Private Demo, ComPDF Howin your Salesforce instance in Run</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px"> in Salesforce Environment in</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">Provides LWC IntegrationCodeexample</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">30 daysFreeFull-Featured use</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solidvar(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center"> approx Salesforce Integration</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓Submitted';this.querySelector('.fbtn').style.background='#10b981'"style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="YourName"type="text"/>
+<input placeholder="WorkEmail"type="email"/>
+<input placeholder="CompanyName"type="text"/>
+<select><option value=""> Salesforce Version</option><option>Sales Cloud</option><option>Service Cloud</option><option>Marketing Cloud</option><option>Experience Cloud</option><option>Other</option></select>
+<button class="fbtn"style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer"type="submit">Book a Demo Now</button>
+</form>
+</div>
+</div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 </body>
