@@ -238,4 +238,143 @@ function switchTab(name) {
 }
 </script>
 </body>
+</html>      <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Full Name</span><input type="text" placeholder="Full Name" style="margin-top:8px"></div>
+          <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Business Email</span><input type="email" placeholder="name@company.com" style="margin-top:8px"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Phone Number</span><input type="tel" placeholder="Phone number" style="margin-top:8px"></div>
+          <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)">Company Name</span><input type="text" placeholder="Enter company name" style="margin-top:8px"></div>
+        </div>
+        <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Who are you building this for?</span>
+          <div style="display:flex;gap:16px;margin-top:8px">
+            <label style="font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:6px;cursor:pointer"><input type="radio" name="audience" checked style="accent-color:var(--primary)"> A product for customers</label>
+            <label style="font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:6px;cursor:pointer"><input type="radio" name="audience" style="accent-color:var(--primary)"> A product for internal use</label>
+          </div>
+        </div>
+        <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)">Please select the products and features you need:</span>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" checked style="accent-color:var(--primary)"> PDF SDK</label>
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" style="accent-color:var(--primary)"> Cloud API</label>
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" style="accent-color:var(--primary)"> AI Document Parsing</label>
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" style="accent-color:var(--primary)"> PDF Generation</label>
+          </div>
+        </div>
+        <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)">Which deployment option do you prefer?</span>
+          <div style="display:flex;gap:16px;margin-top:8px;flex-wrap:wrap">
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="radio" name="deploy" checked style="accent-color:var(--primary)"> Self-hosted</label>
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="radio" name="deploy" style="accent-color:var(--primary)"> Cloud API</label>
+            <label style="font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:4px;cursor:pointer"><input type="radio" name="deploy" style="accent-color:var(--primary)"> Offline SDK</label>
+          </div>
+        </div>
+        <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)">Please describe your project</span>
+          <textarea placeholder="Detailed project description will help us understand your needs and provide suitable solutions along with accurate quotations." style="margin-top:8px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin:4px 0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><rect width="22" height="22" x="1" y="1" fill="var(--primary)" rx="4"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 9-6.667 6.667-4.243-4.243"/></svg>
+          <span style="font-size:11px;color:var(--text-muted);line-height:1.5">I have read and agreed to the <a href="https://www.compdf.com/terms-of-service" target="_blank" style="color:var(--primary-light);text-decoration:underline">Service Terms</a> and <a href="https://www.compdf.com/privacy-policy" target="_blank" style="color:var(--primary-light);text-decoration:underline">Privacy Policy</a>.</span>
+        </div>
+        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px">Submit</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">We will be in touch in one business day.</p>
+      </form>
+</div>
+</div>
+<!-- API Tab -->
+<div class="tab-panel" id="tab-api">
+<div class="section-title"><p>Our team is happy to customize a plan for you. Pricing depends on your needs: products, features, and deployment options.</p></div>
+<div class="api-grid">
+<div class="api-card">
+<h3>Free</h3>
+<div class="sub">경험과 테스트에 적합</div>
+<div class="api-price"><span class="curr">$</span>0</div>
+<div class="api-price-note">/월 · 연간 지불액 $0</div>
+<ul class="api-feats">
+<li>매월 문서 200개</li>
+<li>모든 API 도구 사용 가능</li>
+<li>높은 보안</li>
+<li>24시간 이메일 지원</li>
+</ul>
+<a class="btn btn-outline" href="https://api.compdf.com/signup" target="_blank">무료 등록</a>
+</div>
+<div class="api-card featured">
+<h3>Growth</h3>
+<div class="sub">성장하는 팀에 적합</div>
+<div class="api-price"><span class="curr">$</span>80</div>
+<div class="api-price-note">/월 · 연간 지불액 $960</div>
+<ul class="api-feats">
+<li>월별 문서 5,000개</li>
+<li>모든 API 도구 사용 가능</li>
+<li>높은 보안</li>
+<li>24시간 이메일 지원</li>
+<li>무제한 병렬 작업</li>
+</ul>
+<a class="btn btn-green" href="https://api.compdf.com/login" target="_blank">지금 구매</a>
+</div>
+<div class="api-card">
+<h3>Pro</h3>
+<div class="sub">엔터프라이즈 시나리오에 적합</div>
+<div class="api-price"><span class="curr">$</span>144</div>
+<div class="api-price-note">/월 · 연간 지불액 $1,728</div>
+<ul class="api-feats">
+<li>매월 문서 10,000개</li>
+<li>모든 API 도구 사용 가능</li>
+<li>높은 보안</li>
+<li>우선 기술 지원</li>
+<li>무제한 병렬 작업</li>
+<li>파일 크기 무제한</li>
+</ul>
+<a class="btn btn-primary" href="https://api.compdf.com/login" target="_blank">지금 구매</a>
+</div>
+</div>
+<p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:20px">월별 문서가 10,000개 이상입니까?<a href="mailto:sales@compdf.com" style="color:var(--primary-light);font-weight:600">맞춤형 솔루션을 원하시면 문의해주세요 →</a></p>
+</div>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">FAQ</span><h2>자주 묻는 질문</h2></div>
+<div class="faq-list">
+<div class="faq-item open">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ComPDF SDK의 가격은 어떻게 책정되나요?<span class="arrow">▼</span></div>
+<div class="faq-a">SDK는 연간 단위로 라이센스가 부여되며 가격은 선택한 플랫폼(웹/모바일/데스크톱/서버) 및 기능 조합에 따라 최소 $1,300/년부터 결정됩니다. 문서 처리량이 무제한이고 사용자 수가 무제한입니다.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK는 어떤 플랫폼을 지원하나요?<span class="arrow">▼</span></div>
+<div class="faq-a">웹(JavaScript), iOS, Android, Flutter, React Native, Windows, macOS, Java, .NET 등 9가지 주요 플랫폼을 지원합니다.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK 평가판을 구하는 방법은 무엇입니까?<span class="arrow">▼</span></div>
+<div class="faq-a">ComPDF 회원으로 등록하여 30일 동안 모든 기능을 갖춘 무료 평가판 라이선스를 신청하세요. 신용카드는 필요하지 않습니다. 평가판 기간 동안 모든 기능과 플랫폼을 경험할 수 있습니다.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud API의 문서량은 어떻게 계산되나요?<span class="arrow">▼</span></div>
+<div class="faq-a">문서의 한 페이지를 처리하는 각 API 호출은 한 페이지로 계산됩니다. 무료 등급은 월 200개, 성장 등급은 5,000개, 프로 등급은 10,000개입니다. 추가 패키지 또는 업그레이드를 구매할 수 있습니다.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">API는 어떤 기능을 지원하나요?<span class="arrow">▼</span></div>
+<div class="faq-a">PDF 변환(오피스/그림/HTML), PDF 편집(병합/분할/회전), OCR 인식, 워터마크 추가, 압축, AI 문서 파싱 및 추출 등 지원</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">민영화된 배포를 지원합니까?<span class="arrow">▼</span></div>
+<div class="faq-a">지원하다. SDK는 프라이빗 배포를 지원하고 API는 자체 호스팅 솔루션도 제공합니다. 데이터는 자체 서버에 배포되며 회사 인트라넷 외부로 유출되지 않습니다.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">기업 할인을 제공합니까?<span class="arrow">▼</span></div>
+<div class="faq-a">제공됩니다. 연간 대량 구매 고객은 대량 구매 할인을 누리고 OEM 인증 모델을 지원할 수 있습니다. 맞춤 견적을 받으려면 영업팀에 문의하세요.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK와 API를 동시에 사용할 수 있나요?<span class="arrow">▼</span></div>
+<div class="faq-a">예. 많은 고객이 서로를 보완하는 SDK(클라이언트 측 보기/편집용)와 API(서버 측 일괄 처리용)를 모두 사용합니다.</div>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>Our team is happy to customize a plan for you. Pricing depends on your needs: products, features, and deployment options.</p></div></footer>
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.tab-btn[onclick*="'${name}'"]`).classList.add('active');
+  document.getElementById(`tab-${name}`).classList.add('active');
+}
+</script>
+</body>
 </html>
