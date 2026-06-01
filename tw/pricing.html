@@ -149,23 +149,23 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
           </div>
     <div class="sdk-form-wrap">
       <h3>獲取 SDK 報價</h3>
-            <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
+                  <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 提交';this.querySelector('.fbtn').style.background='#10b981'">
         <div class="sf-row">
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Full Name</label><input type="text" placeholder="Full Name"></div>
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Business Email</label><input type="email" placeholder="name@company.com"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 您的姓名</label><input type="text" placeholder="您的姓名"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 工作郵箱</label><input type="email" placeholder="name@company.com"></div>
         </div>
         <div class="sf-row">
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Phone Number</label><input type="tel" placeholder="Phone number"></div>
-          <div class="sf-field"><label class="sf-label">Company Name</label><input type="text" placeholder="Enter company name"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 手機號碼</label><input type="tel" placeholder="手機號碼"></div>
+          <div class="sf-field"><label class="sf-label">公司名稱</label><input type="text" placeholder="公司名稱"></div>
         </div>
-        <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> Who are you building this for?</label>
+        <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 您為誰構建此產品？</label>
           <div class="sf-radio-group">
-            <label class="sf-radio"><input type="radio" name="audience" checked> <span>A product for customers</span></label>
-            <label class="sf-radio"><input type="radio" name="audience"> <span>A product for internal use</span></label>
-            <label class="sf-radio"><input type="radio" name="audience"> <span>A product for another company</span></label>
+            <label class="sf-radio"><input type="radio" name="audience" checked> <span>對外客戶產品</span></label>
+            <label class="sf-radio"><input type="radio" name="audience"> <span>對內使用</span></label>
+            <label class="sf-radio"><input type="radio" name="audience"> <span>為其他公司</span></label>
           </div>
         </div>
-        <div class="sf-field"><label class="sf-label">Please select the products and features you need: <a href="https://www.compdf.com/pdf-sdk/features-list" target="_blank" style="color:var(--primary-light);text-decoration:underline;margin-left:8px">Check Our Full Feature List</a></label>
+        <div class="sf-field"><label class="sf-label">請選擇您需要的產品和功能： <a href="https://www.compdf.com/pdf-sdk/features-list" target="_blank" style="color:var(--primary-light);text-decoration:underline;margin-left:4px">查看完整功能列表</a></label>
           <div class="sf-check-group">
             <label class="sf-check"><input type="checkbox" checked> <span>PDF SDK</span></label>
             <label class="sf-check"><input type="checkbox"> <span>Cloud API</span></label>
@@ -174,22 +174,22 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
             <label class="sf-check"><input type="checkbox"> <span>Conversion</span></label>
           </div>
         </div>
-        <div class="sf-field"><label class="sf-label">Which deployment option do you prefer?</label>
+        <div class="sf-field"><label class="sf-label">您偏好的部署方式？</label>
           <div class="sf-radio-group">
-            <label class="sf-radio"><input type="radio" name="deploy" checked> <span>Self-hosted</span></label>
+            <label class="sf-radio"><input type="radio" name="deploy" checked> <span>私有化部署</span></label>
             <label class="sf-radio"><input type="radio" name="deploy"> <span>Cloud API</span></label>
-            <label class="sf-radio"><input type="radio" name="deploy"> <span>Offline SDK</span></label>
+            <label class="sf-radio"><input type="radio" name="deploy"> <span>離線 SDK</span></label>
           </div>
         </div>
-        <div class="sf-field"><label class="sf-label">Please describe your project</label>
-          <textarea placeholder="Detailed project description will help us understand your needs and provide suitable solutions along with accurate quotations."></textarea>
+        <div class="sf-field"><label class="sf-label">請描述您的項目</label>
+          <textarea placeholder="詳細的項目描述有助於我們理解您的需求，並提供合適的解決方案和精準報價。"></textarea>
         </div>
         <div class="sf-terms">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" style="flex-shrink:0"><rect width="22" height="22" x="1" y="1" fill="var(--primary)" rx="4"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 9-6.667 6.667-4.243-4.243"/></svg>
-          <span>I have read and agreed to the <a href="https://www.compdf.com/terms-of-service" target="_blank">Service Terms</a> and <a href="https://www.compdf.com/privacy-policy" target="_blank">Privacy Policy</a>. (The data you submit is treated confidentially and will never be disclosed to third parties.)</span>
+          <span>我已閱讀並同意服務條款和隱私政策。（您提交的數據將被保密處理，絕不會洩露給第三方。）</span>
         </div>
-        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;max-width:380px;margin:0 auto">Submit</button>
-        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:8px">We will be in touch in one business day.</p>
+        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;max-width:380px;margin:0 auto">提交</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:8px">我們將在 1 個工作日內與您聯繫。</p>
       </form>
     </div>
   </div>
@@ -297,7 +297,7 @@ function switchTab(name) {
 </html>      <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ Submitted';this.querySelector('.fbtn').style.background='#10b981'">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Full Name</span><input type="text" placeholder="Full Name" style="margin-top:8px"></div>
-          <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Business Email</span><input type="email" placeholder="name@company.com" style="margin-top:8px"></div>
+          <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> 工作郵箱</span><input type="email" placeholder="name@company.com" style="margin-top:8px"></div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div><span style="font-size:13px;font-weight:600;color:var(--text-secondary)"><span style="color:#FF5050">*</span> Phone Number</span><input type="tel" placeholder="Phone number" style="margin-top:8px"></div>
