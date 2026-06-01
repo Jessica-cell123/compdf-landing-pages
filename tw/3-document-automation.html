@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF AI - RAG 知識庫解決方案 | 智能文檔解析驅動企業知識庫構建</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--primary-light);text-decoration:none;transition:all .2s}a:hover{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:100px 0 80px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(139,92,246,.1) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:44px;font-weight:800;line-height:1.3;max-width:820px;margin:0 auto 18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#A78BFA,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:680px;margin:0 auto 32px;line-height:1.8}
+.hero-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.hero-tag{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}.btn-outline:hover{border-color:var(--primary)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);color:#A78BFA;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.cap-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all .3s;position:relative;overflow:hidden}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);opacity:.7}
+.cap-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px)}
+.cap-card .icon{font-size:36px;margin-bottom:14px}
+.cap-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.cap-card p{color:var(--text-secondary);font-size:14px;margin-bottom:12px;line-height:1.7}
+.cap-card .detail-list{list-style:none;padding:0}
+.cap-card .detail-list li{color:var(--text-muted);font-size:12.5px;padding:3px 0;padding-left:16px;position:relative}
+.cap-card .detail-list li::before{content:'✓';position:absolute;left:0;color:var(--accent-green);font-weight:700}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pain-card{background:var(--bg-card);border:1px solid rgba(239,68,68,.15);border-radius:var(--radius-sm);padding:24px;text-align:center;transition:all .3s}
+.pain-card:hover{border-color:rgba(239,68,68,.3)}
+.pain-card .emoji{font-size:36px;margin-bottom:10px}
+.pain-card h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.pain-card p{color:var(--text-muted);font-size:12px;line-height:1.6}
+.flow-section{margin:40px 0}
+.flow-row{display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap}
+.flow-node{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 20px;text-align:center;min-width:130px;flex:1;max-width:180px}
+.flow-node .emoji{font-size:26px}
+.flow-node .label{font-size:12.5px;font-weight:700;margin-top:6px}
+.flow-node .desc{font-size:11px;color:var(--text-muted);margin-top:3px;line-height:1.5}
+.flow-node.highlight{border-color:var(--primary);background:rgba(37,99,235,.06)}
+.flow-arrow{font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center}
+.output-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.output-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;text-align:center;transition:all .3s}
+.output-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.output-card .emoji{font-size:32px;margin-bottom:10px}
+.output-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.output-card p{color:var(--text-muted);font-size:12px;line-height:1.6}
+.output-card .format-tag{display:inline-block;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.25);color:var(--accent);font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-top:8px}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.adv-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:26px;transition:all .3s}
+.adv-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.adv-card .icon{font-size:28px;margin-bottom:10px}
+.adv-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.adv-card p{color:var(--text-secondary);font-size:13px;line-height:1.7}
+.scenario-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.scenario-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all .3s}
+.scenario-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.scenario-card .icon{font-size:36px;margin-bottom:12px}
+.scenario-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.scenario-card p{color:var(--text-secondary);font-size:14px;margin-bottom:12px;line-height:1.7}
+.scenario-card .scenes{display:flex;gap:8px;flex-wrap:wrap}
+.scenario-card .scene-tag{background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);color:var(--accent);font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px}
+.compare-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:13.5px}
+.compare-table th,.compare-table td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--border)}
+.compare-table thead th{background:var(--bg-card);color:var(--text-secondary);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.compare-table tbody td{color:var(--text-secondary)}
+.compare-table tbody td:first-child{color:var(--text);font-weight:600}
+.compare-table .highlight-col{background:rgba(37,99,235,.04);color:var(--primary-light);font-weight:600}
+.compare-table thead .highlight-col{background:rgba(37,99,235,.1);color:var(--primary-light)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:30px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:15px;opacity:.85;margin-bottom:28px;position:relative;max-width:600px;margin-left:auto;margin-right:auto}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:768px){.cap-grid,.scenario-grid{grid-template-columns:1fr}.pain-grid,.adv-grid,.output-grid{grid-template-columns:1fr}.flow-row{flex-direction:column;gap:8px}.flow-arrow{transform:rotate(90deg)}.hero h1{font-size:28px}.compare-table{font-size:12px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html" class="active">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+  <div class="hero-badge">🧠 ComPDF AI 智能文檔解析 × RAG</div>
+  <h1>用<span class="gradient">高精度文檔解析</span><br>為 RAG 知識庫注入可靠數據</h1>
+  <p>ComPDF AI 基於自研 PDF 原生解析引擎與深度學習模型，精準還原複雜文檔的版面結構、表格與層級關係，輸出 RAG 場景可直接使用的 Markdown / JSON 結構化數據。</p>
+  <div class="hero-tags">
+    <span class="hero-tag">PDF 原生解析</span>
+    <span class="hero-tag">AI 版面識別</span>
+    <span class="hero-tag">複雜表格提取</span>
+    <span class="hero-tag">Markdown / JSON 輸出</span>
+    <span class="hero-tag">20+ 格式支持</span>
+  </div>
+  <div style="display:flex;gap:12px;justify-content:center"><a href="#" class="btn btn-primary">免費試用 API</a><a href="#" class="btn btn-outline">查看文檔 →</a></div>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">RAG 場景痛點</span><h2>知識庫效果差？問題往往出在文檔解析環節</h2><p>RAG 系統的回答質量，取決於底層文檔解析的精度與結構保持能力</p></div>
+  <div class="pain-grid">
+    <div class="pain-card"><div class="emoji">📊</div><h4>表格信息丟失</h4><p>普通 OCR 無法保留複雜表格的行列關係，合併單元格和跨頁表格幾乎全部損壞</p></div>
+    <div class="pain-card"><div class="emoji">🧩</div><h4>版面結構混亂</h4><p>多欄、圖文混排、側邊欄等複雜佈局被錯誤拼接，破壞原始語義邏輯</p></div>
+    <div class="pain-card"><div class="emoji">✂️</div><h4>切分質量低下</h4><p>因缺少結構信息，Chunk 切分粒度不當，導致關鍵上下文被截斷或冗餘</p></div>
+    <div class="pain-card"><div class="emoji">❌</div><h4>RAG 答非所問</h4><p>底層解析質量不足，向量檢索召回率低，LLM 基於錯誤上下文生成幻覺</p></div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">核心解析能力</span><h2>ComPDF AI 為 RAG 場景提供什麼？</h2><p>基於自研 PDF 解析內核 + AI 深度學習模型，提供遠超通用 OCR 的文檔理解能力</p></div>
+  <div class="cap-grid">
+    <div class="cap-card"><div class="icon">📐</div><h3>PDF 原生解析引擎</h3><p>直接讀取 PDF 底層文字流、字體信息與座標位置，無需 OCR 即可精準還原數字 PDF 的文本與結構，保留原始排版的語義層級。</p><ul class="detail-list"><li>直接提取文字流，無 OCR 誤差</li><li>保留字體、字號、顏色等格式信息</li><li>精準還原標題層級與段落關係</li><li>支持 PDF 內嵌書籤與目錄結構</li></ul></div>
+    <div class="cap-card"><div class="icon">🧠</div><h3>AI 驅動的版面分析</h3><p>基於深度學習的版面檢測模型，可識別 10+ 種版面元素（標題、正文、表格、圖片、頁眉頁腳、腳註等），正確劃分文檔的邏輯閱讀順序。</p><ul class="detail-list"><li>多欄、圖文混排自動分區</li><li>標題與正文的層級自動關聯</li><li>頁眉頁腳、水印自動過濾</li><li>跨頁段落與表格自動拼接</li></ul></div>
+    <div class="cap-card"><div class="icon">📊</div><h3>複雜表格結構提取</h3><p>採用專項表格檢測與單元格識別模型，準確還原合併單元格、嵌套表格、無線框表格的行列關係，輸出結構化表格數據。</p><ul class="detail-list"><li>合併單元格精準還原行列映射</li><li>無線框/虛線框表格識別</li><li>跨頁表格自動拼接與續表識別</li><li>表格數據輸出為 HTML / Markdown / JSON</li></ul></div>
+    <div class="cap-card"><div class="icon">🔤</div><h3>掃描件 OCR + 版面還原</h3><p>對圖片型 PDF 和掃描件，先進行高精度 OCR 文字識別，再通過版面分析還原文檔結構，使其達到與數字 PDF 相同的解析質量。</p><ul class="detail-list"><li>支持 50+ 語種 OCR 識別</li><li>傾斜校正與圖像增強預處理</li><li>OCR 結果自動套用版面結構</li><li>手寫體與印刷體混合識別</li></ul></div>
+  </div>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">完整流程</span><h2>知識庫搭建全鏈路：從文檔到智能問答</h2><p>ComPDF AI 覆蓋文檔解析與結構化處理環節，打通知識庫構建的關鍵瓶頸</p></div>
+  <div class="flow-section">
+    <div class="flow-row">
+      <div class="flow-node"><div class="emoji">📁</div><div class="label">① 文檔收集</div><div class="desc">PDF / 掃描件 / Word<br>PPT / Excel / 圖片</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight"><div class="emoji">🤖</div><div class="label">② 文檔解析</div><div class="desc">ComPDF AI<br>版面分析 + 內容提取</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight"><div class="emoji">✂️</div><div class="label">③ 智能切分</div><div class="desc">結構感知 Chunk<br>按語義邊界分塊</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="emoji">🧮</div><div class="label">④ 向量化</div><div class="desc">Embedding 生成<br>向量數據庫存儲</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="emoji">🔍</div><div class="label">⑤ 檢索召回</div><div class="desc">語義匹配<br>相關片段檢索</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="emoji">💬</div><div class="label">⑥ LLM 生成</div><div class="desc">結合上下文<br>精準回答 + 溯源</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin:32px 0 40px">
+    <div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
+      <span style="color:var(--primary-light);font-weight:700;font-size:13px">🟦 ComPDF AI 覆蓋範圍：步驟 ②③ — 文檔解析 + 智能切分</span>
+      <span style="display:block;color:var(--text-muted);font-size:12px;margin-top:4px">輸出 Markdown / JSON 結構化數據，可直接對接下游向量化與 RAG 框架</span>
+    </div>
+  </div>
+  <div style="margin-top:20px">
+    <h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px;color:var(--text-secondary)">ComPDF AI 在步驟 ②③ 中的具體處理</h3>
+    <div class="output-grid">
+      <div class="output-card"><div class="emoji">📐</div><h4>版面分析與元素檢測</h4><p>識別標題、正文、表格、圖片、頁眉頁腳等 10+ 種元素，確定正確閱讀順序</p><span class="format-tag">深度學習模型</span></div>
+      <div class="output-card"><div class="emoji">📊</div><h4>內容提取與結構重建</h4><p>文本精準提取、複雜表格行列還原、跨頁段落拼接、標題層級關聯</p><span class="format-tag">PDF 原生引擎</span></div>
+      <div class="output-card"><div class="emoji">✂️</div><h4>結構感知智能切分</h4><p>基於標題層級與段落邊界切分 Chunk，保留表格完整性，避免語義截斷</p><span class="format-tag">輸出 Markdown / JSON</span></div>
+    </div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">解析效果 & 跑分</span><h2>為什麼用 ComPDF AI 解析搭建您的知識庫</h2><p>表格還原、版面分析、文本提取精度全面公開 — 每一項都有量化基準和真實數據支撐</p></div>
+  <table class="compare-table">
+    <thead><tr><th>能力維度</th><th class="highlight-col">ComPDF AI</th><th>通用 OCR 方案</th><th>開源解析工具</th></tr></thead>
+    <tbody>
+      <tr><td>數字 PDF 解析</td><td class="highlight-col">原生引擎直接提取，無損精度</td><td>依賴 OCR，存在識別誤差</td><td>基礎提取，丟失格式</td></tr>
+      <tr><td>複雜表格還原</td><td class="highlight-col">AI 模型識別行列關係與合併單元格</td><td>識別率有限，合併單元格易出錯</td><td>僅支持簡單表格</td></tr>
+      <tr><td>多欄版面處理</td><td class="highlight-col">深度學習版面分割，正確還原閱讀順序</td><td>按行讀取，多欄內容錯誤拼接</td><td>需手動規則配置</td></tr>
+      <tr><td>跨頁內容拼接</td><td class="highlight-col">自動識別續表與跨頁段落</td><td>不支持</td><td>不支持</td></tr>
+      <tr><td>輸出格式</td><td class="highlight-col">Markdown / JSON / HTML</td><td>純文本為主</td><td>純文本 / 簡單 HTML</td></tr>
+      <tr><td>部署方式</td><td class="highlight-col">雲端 API + 私有化部署</td><td>雲端 API</td><td>本地部署，需自行維護</td></tr>
+    </tbody>
+  </table>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">應用場景</span><h2>ComPDF AI 解析能力在 RAG 場景中的落地</h2></div>
+  <div class="scenario-grid">
+    <div class="scenario-card"><div class="icon">🏦</div><h3>金融研報 / 財報知識庫</h3><p>財報中的複雜財務表格、多欄註釋與跨頁附註，通過 ComPDF AI 的表格提取與版面分析能力，輸出結構化數據供投研問答系統使用。</p><div class="scenes"><span class="scene-tag">財務表格提取</span><span class="scene-tag">研報結構解析</span><span class="scene-tag">投研問答</span></div></div>
+    <div class="scenario-card"><div class="icon">⚖️</div><h3>合同 / 法律文書知識庫</h3><p>利用 PDF 原生解析保留合同條款的精確層級關係，結合版面分析識別附件、簽章區等特殊區域，構建可檢索的法務知識體系。</p><div class="scenes"><span class="scene-tag">條款層級解析</span><span class="scene-tag">合同比對</span><span class="scene-tag">法務檢索</span></div></div>
+    <div class="scenario-card"><div class="icon">📚</div><h3>教材 / 科研論文知識庫</h3><p>教材中的公式、圖表標註、參考文獻索引等複雜元素，ComPDF AI 可分類識別並保留關聯關係，支撐教學問答與學術檢索。</p><div class="scenes"><span class="scene-tag">公式識別</span><span class="scene-tag">圖表關聯</span><span class="scene-tag">學術問答</span></div></div>
+    <div class="scenario-card"><div class="icon">🏥</div><h3>醫學文獻 / 臨床指南知識庫</h3><p>醫學文獻中的藥物表格、診療流程圖和多欄排版，通過精準解析確保臨床知識的完整性與準確性，輔助醫學知識問答。</p><div class="scenes"><span class="scene-tag">藥物表格解析</span><span class="scene-tag">指南結構化</span><span class="scene-tag">臨床輔助問答</span></div></div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">技術優勢</span><h2>為什麼 ComPDF AI 更適合 RAG 前處理？</h2></div>
+  <div class="adv-grid">
+    <div class="adv-card"><div class="icon">⚡</div><h4>雙引擎架構</h4><p>數字 PDF 用原生引擎直接提取，掃描件用 AI OCR + 版面分析，兩種路徑均輸出高質量結構化數據</p></div>
+    <div class="adv-card"><div class="icon">🎯</div><h4>結構感知切分</h4><p>基於版面分析結果進行語義級 Chunk 切分，按標題層級、段落邊界和表格範圍自動劃分，避免硬切截斷</p></div>
+    <div class="adv-card"><div class="icon">📊</div><h4>表格專項優化</h4><p>專項訓練的表格檢測與單元格識別模型，對財報表格、多層表頭等複雜場景針對性優化</p></div>
+    <div class="adv-card"><div class="icon">🔌</div><h4>框架即插即用</h4><p>輸出的 Markdown 可直接被 LangChain、LlamaIndex、Dify、FastGPT 等主流框架消費，無需二次轉換</p></div>
+    <div class="adv-card"><div class="icon">📄</div><h4>20+ 格式覆蓋</h4><p>除 PDF 外，支持 Word、PPT、Excel、圖片等 20+ 格式的統一解析，一個 API 處理全部文檔類型</p></div>
+    <div class="adv-card"><div class="icon">🛡️</div><h4>靈活部署方式</h4><p>提供雲端 API 與私有化部署選項，滿足金融、政務、醫療等行業的數據合規與安全要求</p></div>
+  </div>
+</div></section>
+<section class="cta-section"><div class="container">
+  <h2>讓文檔解析不再是 RAG 的瓶頸</h2>
+  <p>ComPDF AI 為您的知識庫項目提供高精度的文檔預處理能力<br>從複雜 PDF 到可用的結構化 Chunk，只需一次 API 調用</p>
+  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A">免費試用 API →</a><a href="#" class="btn btn-outline">查看接入文檔</a></div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

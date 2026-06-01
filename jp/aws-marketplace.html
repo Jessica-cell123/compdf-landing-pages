@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComPDF AWS Marketplace | AWS で ComPDF をワンクリックデプロイ</title>
+<style>
+:root{--primary:#FF9900;--primary-dark:#E88B00;--accent:#2563EB;--accent-green:#10B981;--gradient:linear-gradient(135deg,#FF9900,#2563EB);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(255,153,0,.08) 0%,transparent 70%)}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero-text .tag{display:inline-flex;align-items:center;gap:4px;background:rgba(255,153,0,.1);border:1px solid rgba(255,153,0,.25);color:#FFB347;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.hero-text h1{font-size:38px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero-text h1 .gradient{background:linear-gradient(90deg,#FF9900,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-text p{font-size:15px;color:var(--text-secondary);margin-bottom:28px;line-height:1.8}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-aws{background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A}.btn-aws:hover{box-shadow:0 4px 20px rgba(255,153,0,.3);color:#0F172A}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.hero-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.hero-visual .big-icon{font-size:72px;margin-bottom:16px}
+.hero-visual .aws-arch{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.hero-visual .aws-node{background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center;min-width:100px}
+.hero-visual .aws-node .emoji{font-size:24px}
+.hero-visual .aws-node .label{font-size:11px;font-weight:600;margin-top:4px}
+.hero-visual .aws-arrow{font-size:16px;color:var(--primary)}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.benefit-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;gap:16px;align-items:flex-start;transition:all .3s}
+.benefit-card:hover{border-color:rgba(255,153,0,.3);transform:translateY(-2px)}
+.benefit-card .icon{font-size:32px;flex-shrink:0}
+.benefit-card h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.benefit-card p{color:var(--text-secondary);font-size:13px}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.feature-card:hover{border-color:rgba(255,153,0,.4);transform:translateY(-2px)}
+.feature-card .emoji{font-size:36px;margin-bottom:12px}
+.feature-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:13px}
+.arch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.arch-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;text-align:center}
+.arch-card .emoji{font-size:28px;margin-bottom:8px}
+.arch-card h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.arch-card p{color:var(--text-muted);font-size:11px}
+.arch-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.af-node{text-align:center;min-width:90px}
+.af-node .af-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 6px;border:1px solid var(--border);background:var(--bg-elevated)}
+.af-node .af-label{font-size:11px;font-weight:600;color:var(--text-muted)}
+.af-node.highlight .af-icon{border-color:var(--primary);background:rgba(255,153,0,.08)}
+.af-arrow{font-size:16px;color:var(--primary);opacity:.6}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.hero .container{grid-template-columns:1fr}.benefits-grid,.features-grid,.arch-grid{grid-template-columns:1fr}.hero-text h1{font-size:30px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a class="active" href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="hero-text">
+<div class="tag">ComPDF × AWS Marketplace</div>
+<h1>在 AWS 上<span class="gradient">一键部署 ComPDF</span></h1>
+<p>ComPDF は AWS Marketplace に出品され、AMI イメージとして提供されています。EC2 でインスタンスを起動するだけで完全な PDF 変換機能を取得。統一 AWS 課金、プライベートネットワークデプロイ、VPC 内データ処理により、エンタープライズ級の文書処理インフラが数分で準備できます。</p>
+<div class="hero-btns">
+<a class="btn btn-aws" href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview" target="_blank">デプロイガイドを見る</a>
+<a class="btn btn-outline" href="#form">获取 License →</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="big-icon">🟠</div>
+<div class="aws-arch">
+<div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
+<div class="aws-arrow">→</div>
+<div class="aws-node" style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 实例</div></div>
+<div class="aws-arrow">→</div>
+<div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
+<div class="aws-arrow">→</div>
+<div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
+</div>
+<p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI イメージ · すぐに使える · プライベートデプロイ · VPC 内データ処理</p>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">コアアドバンテージ</span><h2>AWS Marketplace での ComPDF デプロイを選ぶ理由</h2></div>
+<div class="benefits-grid">
+<div class="benefit-card"><div class="icon">🚀</div><div><h4>ワンクリックデプロイ、数分で本番稼働</h4><p>AWS Marketplace で AMI イメージをサブスクライブ後、EC2 インスタンスを起動するだけで完全な ComPDF 文書処理サービスを取得。手動での環境構築は不要。</p></div></div>
+<div class="benefit-card"><div class="icon">💰</div><div><h4>統一 AWS 課金</h4><p>サブスクリプション費用は AWS 月額請求書に統合。Enterprise Discount Program による充当に対応し、企業の調達と財務照合フローを簡素化。</p></div></div>
+<div class="benefit-card"><div class="icon">🔒</div><div><h4>VPC 内データ処理</h4><p>自社 VPC プライベートネットワーク内にデプロイ。文書処理リクエストは内部ネットワーク経由で転送され、データは公網を通過しません。金融、医療などの業界コンプライアンス要件を満たします。</p></div></div>
+<div class="benefit-card"><div class="icon">📈</div><div><h4>弾力的なスケーリング</h4><p>EC2 の弾力的な能力に基づき、文書処理量に応じてインスタンス仕様を随時調整。高負荷時は自動拡張、アイドル時はコスト削減。</p></div></div>
+</div>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">技術アーキテクチャ</span><h2>AMI デプロイアーキテクチャ</h2><p>ComPDF AWS AMI は Docker Compose で管理され、すぐに使用可能</p></div>
+<div class="arch-grid">
+<div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF 変換 HTTP API サービス、ポート 7000</p></div>
+<div class="arch-card"><div class="emoji">🗄️</div><h4>MySQL データベース</h4><p>服务数据库，与 processor 自动启动</p></div>
+<div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>容器编排，文件路径 /var/www/compdf/</p></div>
+<div class="arch-card"><div class="emoji">🔑</div><h4>ライセンス認証</h4><p>ライセンスを購入・設定後、すぐにサービスをアクティベート</p></div>
+</div>
+<h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px">サブスクリプションから本番稼働までの全フロー</h3>
+<div class="arch-flow">
+<div class="af-node highlight"><div class="af-icon">🛒</div><div class="af-label">AMI をサブスクライブ</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">🚀</div><div class="af-label">EC2 を起動</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">🔑</div><div class="af-label">ライセンス設定</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">▶️</div><div class="af-label">サービス起動</div></div>
+<div class="af-arrow">→</div>
+<div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API 调用</div></div>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">コア機能</span><h2>AMI 提供的文档处理能力</h2><p>覆盖 PDF 转换全场景，通过 HTTP API 簡単接続</p></div>
+<div class="features-grid">
+<div class="feature-card"><div class="emoji">🔄</div><h4>PDF フォーマット変換</h4><p>PDF ↔ Word / Excel / PPT / HTML / 画像、双方向変換、元のレイアウトを保持</p></div>
+<div class="feature-card"><div class="emoji">📄</div><h4>Office 转 PDF</h4><p>Word、Excel、PPT 文書を一括で PDF に変換。一元的なアーカイブと配布に最適</p></div>
+<div class="feature-card"><div class="emoji">🖼️</div><h4>图片转换</h4><p>JPG、PNG、TIFF、BMP などの一般的な画像形式と PDF の相互変換をサポート</p></div>
+<div class="feature-card"><div class="emoji">📐</div><h4>PDF 仕様変換</h4><p>PDF/A、PDF/X、PDF/E などの標準フォーマット変換に対応。アーカイブと印刷要件を満たす</p></div>
+<div class="feature-card"><div class="emoji">⚡</div><h4>バッチ処理</h4><p>高並行バッチ文書処理をサポート。自動ロードバランシングにより大規模本番環境に最適</p></div>
+<div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>標準 HTTP API インターフェース。任意の言語から呼び出し可能で、既存システムに簡単に統合</p></div>
+</div>
+</div></section>
+<section class="form-section" id="form"><div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">获取 License</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">使い始める ComPDF on AWS</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">情報を送信してライセンスとデプロイソリューションを取得。技術チームが AWS 上のデプロイ設定を支援</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">专属 License 与部署方案</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWS 架构配置建议与最佳实践</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">技术团队全程支持，30 天無料トライアル</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">AWS デプロイソリューションを入手</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="您的姓名" type="text"/>
+<input placeholder="工作邮箱" type="email"/>
+<input placeholder="公司名称" type="text"/>
+<select><option value="">想定月間文書処理量</option><option>&lt; 10,000 份</option><option>10,000 - 100,000 份</option><option>100,000 - 1,000,000 份</option><option>&gt; 1,000,000 份</option></select>
+<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">ソリューションを入手 →</button>
+</form>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

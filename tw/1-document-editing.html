@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF - 重新定義 PDF 編輯體驗 | 像 Word 一樣自由編輯</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--primary-light);text-decoration:none;transition:all .2s}
+a:hover{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.1) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:44px;font-weight:800;line-height:1.25;max-width:700px;margin:0 auto 18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto 32px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}.btn-outline:hover{border-color:var(--primary);background:rgba(37,99,235,.06)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.feature-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.fi-blue{background:rgba(37,99,235,.12);color:#60A5FA}
+.fi-purple{background:rgba(139,92,246,.12);color:#A78BFA}
+.fi-green{background:rgba(16,185,129,.12);color:#34D399}
+.fi-orange{background:rgba(245,158,11,.12);color:#FBBF24}
+.fi-pink{background:rgba(236,72,153,.12);color:#F472B6}
+.feature-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:13px;line-height:1.7}
+.feature-card .links{margin-top:14px;display:flex;flex-direction:column;gap:4px}
+.feature-card .links a{font-size:12px;color:var(--primary-light)}
+.highlights{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.hl-item{padding:16px;border-radius:var(--radius-sm);border:1px solid transparent;background-image:linear-gradient(var(--bg-card),var(--bg-card)),linear-gradient(135deg,rgba(37,99,235,.4),rgba(6,182,212,.4));background-origin:border-box;background-clip:padding-box,border-box}
+.hl-item .num{font-size:36px;font-weight:800;background:linear-gradient(135deg,#fff,#94A3B8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hl-item .label{color:var(--text-muted);font-size:12px;margin-top:4px}
+.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.scene-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;transition:all .3s}
+.scene-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.scene-card .icon{font-size:32px;flex-shrink:0}
+.scene-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.scene-card p{color:var(--text-secondary);font-size:13px}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all .3s}
+.case-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.case-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:44px}
+.case-card:nth-child(1) .case-thumb{background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(6,182,212,.1))}
+.case-card:nth-child(2) .case-thumb{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(37,99,235,.1))}
+.case-card:nth-child(3) .case-thumb{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(6,182,212,.1))}
+.case-body{padding:20px}
+.case-body h4{font-size:15px;font-weight:700;margin-bottom:8px}
+.case-body p{color:var(--text-secondary);font-size:13px;margin-bottom:14px}
+.platform-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:24px}
+.platform-badge{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 24px;text-align:center;min-width:130px;transition:all .3s}
+.platform-badge:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.platform-badge .emoji{font-size:28px;margin-bottom:6px}
+.platform-badge .name{font-size:12px;font-weight:600;color:var(--text-secondary)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.form-section select option{background:var(--bg-card)}
+.check{color:var(--accent-green);font-weight:700}
+@media(max-width:768px){
+  .features-grid,.scene-grid,.case-grid{grid-template-columns:1fr}
+  .highlights{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:30px}
+  nav ul{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html" class="active">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div>
+</nav>
+<section class="hero">
+<div class="container">
+  <div class="hero-badge">🚀 告別 PDF 編輯難題</div>
+  <h1>降低 PDF 編輯的門檻<br><span class="gradient">像 Word 一樣自由掌控每一頁</span></h1>
+  <p>註釋、批註、實時協作 — 覆蓋 Web / iOS / Android / Windows / Mac / Server 全平臺<br>讓團隊協作效率翻倍，文檔審閱不再是瓶頸</p>
+  <div style="display:flex;gap:12px;justify-content:center">
+    <a href="#" class="btn btn-primary">免費試用</a>
+    <a href="#" class="btn btn-outline">查看演示 →</a>
+  </div>
+</div>
+</section>
+<section>
+<div class="container">
+  <div class="section-title">
+    <span class="tag">嵌入式架構</span>
+    <h2>PDF 編輯能力，無縫嵌入你的系統</h2>
+    <p>ComPDF 作為編輯引擎層嵌入企業應用，用戶無需跳轉外部工具即可完成文檔操作</p>
+  </div>
+  <div style="display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">用戶操作</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">在你的 App / 系統<br>中打開文檔</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ComPDF 編輯引擎</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">編輯 / 批註 / 簽名<br>表單 / 協作</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">自動保存回寫</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">文檔修改後<br>自動同步回系統</div></div>
+    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">觸發下游流程</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">審批 / 歸檔 / 通知<br>繼續業務流轉</div></div>
+  </div>
+  <div style="text-align:center;margin-bottom:40px">
+    <div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
+      <span style="color:var(--primary-light);font-weight:700;font-size:13px">💡 用戶全程在你的系統內操作，無需跳轉第三方工具，體驗無縫、數據不出站</span>
+    </div>
+  </div>
+  <div class="section-title" style="margin-top:20px">
+    <h2>開箱即用的 PDF 全能力引擎</h2>
+    <p>編輯、批註、表單、比較 — 你需要的文檔能力，全部就緒</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>內容編輯</h3><p>文本、圖片、水印直接修改，保留原始排版</p></div>
+    <div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>註釋批註</h3><p>高亮、下劃線、形狀、貼紙等 20+ 標註工具</p></div>
+    <div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>表單填寫</h3><p>交互式表單控件，支持自動識別與數據驗證</p></div>
+    <div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>頁面管理</h3><p>插入、刪除、旋轉、拆分、合併頁面</p></div>
+    <div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>文檔比較</h3><p>逐頁對比差異，自動標記變更內容</p></div>
+    <a href="https://www.compdf.com/pdf-sdk" target="_blank" class="feature-card" style="text-decoration:none;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div class="feature-icon" style="background:rgba(37,99,235,.08)">➕</div>
+      <h3>更多 PDF 編輯功能</h3>
+      <p>查看完整功能列表 →</p>
+    </a>
+  </div>
+</div>
+</section>
+<section class="section-alt">
+<div class="container">
+  <div class="section-title">
+    <span class="tag">集成場景</span>
+    <h2>嵌入業務系統，讓文檔編輯不再脫離工作流</h2>
+    <p>ComPDF 編輯能力可嵌入 CRM、ERP、OA 及各類業務系統，文檔操作即業務操作</p>
+  </div>
+  <div class="scene-grid">
+    <div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce 集成</h4><p>銷售人員在 CRM 中直接編輯報價單、合同 PDF，修改後自動關聯客戶記錄，無需下載-編輯-再上傳的繁瑣操作</p></div></div>
+    <div class="scene-card"><div class="icon">📱</div><div><h4>移動 App 內嵌編輯</h4><p>在你的 iOS / Android App 內提供完整 PDF 編輯體驗 — 用戶直接在 App 中籤名、批註、填表，無需跳轉第三方應用</p></div></div>
+    <div class="scene-card"><div class="icon">🔗</div><div><h4>OA / 審批工作流</h4><p>文檔審批節點中嵌入編輯能力，審批人可直接修改文檔內容或添加批註意見，修改完成自動流轉到下一審批環節</p></div></div>
+    <div class="scene-card"><div class="icon">🏢</div><div><h4>ERP / 業務系統工作流</h4><p>採購訂單、質檢報告、發貨單等業務文檔在系統內直接編輯簽署，操作完成後自動觸發後續流程（入庫、付款、歸檔）</p></div></div>
+    <div class="scene-card"><div class="icon">📋</div><div><h4>合同管理平臺</h4><p>合同文本在線修訂、條款標註、多方會籤，所有版本變更自動記錄，支持審計追溯與合規存檔</p></div></div>
+    <div class="scene-card"><div class="icon">🏗️</div><div><h4>現場作業 App</h4><p>工程人員在移動端查看圖紙 PDF 並直接標註問題點、簽字確認，數據實時同步回後臺管理系統</p></div></div>
+  </div>
+</div>
+</section>
+<section>
+<div class="container">
+  <div class="section-title"><span class="tag">技術亮點</span><h2>選擇 ComPDF 的 4 個硬核理由</h2></div>
+  <div class="highlights">
+    <div class="hl-item"><div class="num">5 min</div><div class="label">快速集成</div></div>
+    <div class="hl-item"><div class="num">6+</div><div class="label">支持平臺</div></div>
+    <div class="hl-item"><div class="num">99.9%</div><div class="label">渲染精度</div></div>
+    <div class="hl-item"><div class="num">< 200ms</div><div class="label">平均響應</div></div>
+  </div>
+  <div class="platform-row">
+    <div class="platform-badge"><div class="emoji">🌐</div><div class="name">Web / JavaScript</div></div>
+    <div class="platform-badge"><div class="emoji">🍎</div><div class="name">iOS / Swift</div></div>
+    <div class="platform-badge"><div class="emoji">🤖</div><div class="name">Android / Kotlin</div></div>
+    <div class="platform-badge"><div class="emoji">🪟</div><div class="name">Windows / C#</div></div>
+    <div class="platform-badge"><div class="emoji">🖥️</div><div class="name">macOS / Obj-C</div></div>
+    <div class="platform-badge"><div class="emoji">⚛️</div><div class="name">React Native</div></div>
+  </div>
+</div>
+</section>
+<section>
+<div class="container">
+  <div class="section-title"><span class="tag">客戶案例</span><h2>客戶實踐 — 看看他們如何使用 ComPDF 解決實際問題</h2></div>
+  <div class="case-grid">
+    <div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>建築現場 PDF 圖紙標註方案</h4><p>將註釋和表單功能集成到建築現場應用，工人可直接在 PDF 圖紙上標註缺陷、進度和簽字確認</p><a href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 18px">查看方案 →</a></div></div>
+    <div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>全功能 PDF 編輯器快速構建方案</h4><p>從零搭建專業 PDF 編輯器，覆蓋編輯、批註、表單全流程，開發週期縮短 80%</p><a href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 18px">查看方案 →</a></div></div>
+    <div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>桌面端 PDF 工具快速上線方案</h4><p>基於 ComPDF SDK 構建桌面 PDF 工具，3 周內完成從集成到上線的全流程</p><a href="https://www.compdf.com/blog/case-study-tweaking-technologies" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 18px">查看方案 →</a></div></div>
+  </div>
+</div>
+</section>
+<section class="form-section" id="contact">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <span class="tag">免費體驗</span>
+      <h2 style="font-size:32px;font-weight:700;margin:12px 0 16px">預約 1 對 1 技術演示<br>看 ComPDF 如何解決你的場景</h2>
+      <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px">我們的解決方案工程師將根據你的具體需求，現場演示集成方案並提供技術建議 — 完全免費，無任何附加條件</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">30 分鐘定製化演示，針對你的業務場景</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">獲取專屬集成方案 + 示例代碼</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">解答技術選型、架構和合規問題</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">演示後立即開通免費試用 + 技術支持</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">🚀 預約免費演示</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.form-btn').textContent='✓ 已提交';this.querySelector('.form-btn').style.background='#10b981'">
+        <input type="text" placeholder="您的姓名">
+        <input type="email" placeholder="工作邮箱">
+        <input type="text" placeholder="公司名称">
+        <select><option value="">您感興趣的場景</option><option>PDF 編輯器集成</option><option>文檔註釋與協作</option><option>表單填寫與簽名</option><option>文檔自動化工作流</option><option>AI 文檔處理</option><option>其他</option></select>
+        <button type="submit" class="form-btn" style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">立即預約演示 →</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center">提交後我們將在 1 個工作日內與您確認時間</p>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+  <h2>5 分鐘集成，立刻擁有專業級 PDF 編輯能力</h2>
+  <p>零成本啟動 · 免費試用 · 即刻讓你的應用脫胎換骨</p>
+  <div style="display:flex;gap:12px;justify-content:center;position:relative">
+    <a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A">開始免費試用</a>
+    <a href="#" class="btn btn-outline">查看完整文檔 →</a>
+  </div>
+</div>
+</section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

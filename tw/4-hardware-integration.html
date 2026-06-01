@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF AI - 軟硬結合智能文檔方案 | 掃描儀 + AI 文檔處理</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--primary-light);text-decoration:none;transition:all .2s}a:hover{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(13,148,136,.08) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:44px;font-weight:800;line-height:1.25;max-width:750px;margin:0 auto 18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#2DD4BF,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:640px;margin:0 auto 32px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}.btn-outline:hover{border-color:var(--primary)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.25);color:#2DD4BF;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.arch-flow{display:flex;align-items:stretch;justify-content:center;gap:0;margin:40px 0;flex-wrap:wrap}
+.arch-node{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px 20px;text-align:center;flex:1;max-width:200px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.arch-node .emoji{font-size:36px;margin-bottom:8px}
+.arch-node h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.arch-node p{font-size:11px;color:var(--text-muted)}
+.arch-arrow{display:flex;align-items:center;font-size:28px;color:var(--accent);padding:0 4px}
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cap-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;gap:18px;transition:all .3s;position:relative;overflow:hidden}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.cap-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.cap-card .icon{font-size:40px;flex-shrink:0}
+.cap-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.cap-card p{color:var(--text-secondary);font-size:13px}
+.compat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.compat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;transition:all .3s}
+.compat-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.compat-card h4{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.compat-card h4 .emoji{font-size:22px}
+.compat-list{list-style:none;padding:0}
+.compat-list li{font-size:13px;color:var(--text-secondary);padding:5px 0;border-bottom:1px solid rgba(51,65,85,.4);display:flex;align-items:center;gap:6px}
+.compat-list li:last-child{border-bottom:none}
+.compat-list li::before{content:'✓';color:var(--accent-green);font-weight:700;font-size:12px}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.adv-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;text-align:center;transition:all .3s}
+.adv-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.adv-card .emoji{font-size:40px;margin-bottom:12px}
+.adv-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.adv-card p{color:var(--text-secondary);font-size:13px}
+.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.scene-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all .3s}
+.scene-card:hover{border-color:rgba(37,99,235,.3)}
+.scene-header{padding:18px 24px;display:flex;align-items:center;gap:12px}
+.scene-header .emoji{font-size:28px}
+.scene-header h4{font-size:16px;font-weight:700}
+.scene-body{padding:0 24px 20px}
+.scene-body .flow-steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.flow-step{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--primary-light)}
+.flow-arrow-sm{color:var(--accent);font-weight:700;font-size:12px;display:flex;align-items:center}
+.scene-body .result{font-size:13px;font-weight:600;color:var(--accent-green)}
+.case-highlight{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.case-highlight .icon{font-size:56px}
+.case-highlight h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.case-highlight p{color:var(--text-secondary);font-size:14px;margin-bottom:14px}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:768px){.cap-grid,.scene-grid{grid-template-columns:1fr}.arch-flow{flex-direction:column;align-items:center}.arch-arrow{transform:rotate(90deg)}.compat-grid,.adv-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html" class="active">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+  <div class="hero-badge">🖨️ ComPDF AI × 掃描儀 — 軟硬結合方案</div>
+  <h1>軟硬一體化智能方案<br><span class="gradient">從掃描儀到業務系統的全鏈路打通</span></h1>
+  <p>直連掃描儀完成文檔採集，ComPDF AI 進行智能文檔抽取與解析<br>將非結構化文檔轉化為結構化數據，無縫迴流至客戶業務系統</p>
+  <div style="display:flex;gap:12px;justify-content:center"><a href="#cta" class="btn btn-primary">申請演示 / 方案</a></div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">方案架構</span><h2>軟硬結合全鏈路 — 從紙質到數據的完整閉環</h2></div>
+  <div class="arch-flow">
+    <div class="arch-node"><div class="emoji">🖨️</div><h4>掃描儀連接</h4><p>直連各類掃描設備<br>批量採集紙質文檔</p></div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node"><div class="emoji">📤</div><h4>掃描上傳</h4><p>文檔自動傳輸<br>支持批量隊列處理</p></div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node"><div class="emoji">🤖</div><h4>ComPDF AI 處理</h4><p>智能文檔抽取<br>智能文檔解析</p></div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node"><div class="emoji">📊</div><h4>結構化數據</h4><p>輸出 JSON / CSV<br>可用的數據資產</p></div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node"><div class="emoji">🏢</div><h4>業務系統</h4><p>ERP / OA / CRM<br>迴流客戶業務體系</p></div>
+  </div>
+  <p style="text-align:center;color:var(--text-secondary);font-size:14px;max-width:700px;margin:0 auto;line-height:1.8">通過 ComPDF AI 軟硬結合方案，企業無需改變現有紙質文檔流程。掃描儀直接將紙質單據採集為電子文檔，ComPDF AI 自動完成智能抽取與解析，將發票、合同、報告等各類文檔轉化為結構化數據資產，最終迴流至 ERP、OA 等業務系統，實現從紙質到數字的無縫閉環。</p>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">核心能力</span><h2>四大能力驅動軟硬結合方案</h2></div>
+  <div class="cap-grid">
+    <div class="cap-card"><div class="icon">🖨️</div><div><h3>掃描儀直連採集</h3><p>支持市面主流掃描儀設備直連，包括高速文檔掃描儀、平板掃描儀等，通過 TWAIN / WIA 協議實現批量文檔採集與自動傳輸</p></div></div>
+    <div class="cap-card"><div class="icon">🤖</div><div><h3>智能文檔抽取</h3><p>ComPDF AI 自動識別掃描文檔中的關鍵字段，從發票、合同、報告等文檔中精準抽取金額、日期、供應商等核心信息</p></div></div>
+    <div class="cap-card"><div class="icon">📄</div><div><h3>智能文檔解析</h3><p>對掃描文檔進行深度解析，支持表格識別、版面分析、多語言 OCR，將非結構化內容轉化為可用的結構化數據</p></div></div>
+    <div class="cap-card"><div class="icon">🔗</div><div><h3>業務系統無縫集成</h3><p>結構化數據通過 API / Webhook 自動迴流至 ERP、OA、CRM、財務系統等客戶現有業務體系，無需二次開發</p></div></div>
+  </div>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">方案優勢</span><h2>軟硬結合方案為客戶帶來的核心價值</h2></div>
+  <div class="adv-grid">
+    <div class="adv-card"><div class="emoji">⚡</div><h4>即掃即用，快速部署</h4><p>連接掃描儀即可使用，無需複雜的系統改造或長週期的項目實施</p></div>
+    <div class="adv-card"><div class="emoji">🔄</div><h4>數據自動迴流</h4><p>掃描數據經 AI 處理後自動進入業務系統，消除手工錄入環節</p></div>
+    <div class="adv-card"><div class="emoji">🛡️</div><h4>國產信創兼容</h4><p>適配國產操作系統與處理器，滿足信創環境下的軟硬結合需求</p></div>
+    <div class="adv-card"><div class="emoji">📈</div><h4>提升處理效率</h4><p>批量掃描 + AI 自動處理，大幅縮短文檔從紙質到數據的處理時間</p></div>
+    <div class="adv-card"><div class="emoji">🎯</div><h4>提高數據準確性</h4><p>AI 智能抽取替代人工錄入，有效降低因手工操作導致的數據錯誤</p></div>
+    <div class="adv-card"><div class="emoji">💰</div><h4>降低運營成本</h4><p>減少人工處理工作量，降低紙質文檔管理的人力與時間成本</p></div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-title"><span class="tag">應用場景</span><h2>軟硬結合方案的典型場景</h2></div>
+  <div class="scene-grid">
+    <div class="scene-card"><div class="scene-header"><div class="emoji">💰</div><h4>財務票據處理</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">掃描儀批量採集發票</span><span class="flow-arrow-sm">→</span><span class="flow-step">ComPDF AI 識別抽取</span><span class="flow-arrow-sm">→</span><span class="flow-step">結構化數據輸出</span><span class="flow-arrow-sm">→</span><span class="flow-step">財務系統自動入賬</span></div><div class="result">📋 掃描儀 + AI 抽取，實現發票從紙質到入賬的自動化流程</div></div></div>
+    <div class="scene-card"><div class="scene-header"><div class="emoji">📑</div><h4>合同檔案管理</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">掃描儀採集紙質合同</span><span class="flow-arrow-sm">→</span><span class="flow-step">AI 解析關鍵條款</span><span class="flow-arrow-sm">→</span><span class="flow-step">結構化字段提取</span><span class="flow-arrow-sm">→</span><span class="flow-step">合同管理系統存檔</span></div><div class="result">📋 紙質合同掃描後自動解析並歸檔，提升合同管理效率</div></div></div>
+    <div class="scene-card"><div class="scene-header"><div class="emoji">🏭</div><h4>製造業單據入庫</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">掃描採購單/送貨單</span><span class="flow-arrow-sm">→</span><span class="flow-step">AI 抽取關鍵信息</span><span class="flow-arrow-sm">→</span><span class="flow-step">數據結構化處理</span><span class="flow-arrow-sm">→</span><span class="flow-step">ERP 自動對賬入庫</span></div><div class="result">📋 掃描儀 + AI 處理，減少供應鏈環節的手工錄入工作</div></div></div>
+    <div class="scene-card"><div class="scene-header"><div class="emoji">🏥</div><h4>醫療病歷數字化</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">掃描儀採集紙質病歷</span><span class="flow-arrow-sm">→</span><span class="flow-step">AI 解析病歷內容</span><span class="flow-arrow-sm">→</span><span class="flow-step">關鍵字段結構化</span><span class="flow-arrow-sm">→</span><span class="flow-step">HIS 系統自動錄入</span></div><div class="result">📋 紙質病歷經掃描和 AI 解析後，自動進入醫院信息系統</div></div></div>
+  </div>
+</div></section>
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">客戶案例</span><h2>ComPDF AI + 掃描儀：軟硬結合方案實踐</h2></div>
+  <div class="case-highlight">
+    <div class="icon">🖨️</div>
+    <div><h3>企業級掃描儀 + ComPDF AI 智能文檔處理方案</h3><p>客戶通過部署 ComPDF AI 軟硬結合方案，將高速掃描儀與 ComPDF AI 智能文檔處理能力對接。紙質文檔經掃描儀批量採集後，ComPDF AI 自動完成文檔分類、關鍵字段抽取與結構化解析，數據直接回流至客戶的 ERP 與 OA 系統，實現從紙質文檔到業務數據的全鏈路自動化。</p><a href="https://www.compdf.com/blog/lead-mobile-app-document-processing-a1office-compdfkit" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 20px">查看完整案例 →</a></div>
+  </div>
+</div></section>
+<section class="cta-section" id="cta"><div class="container">
+  <h2>瞭解 ComPDF AI 軟硬結合方案如何落地</h2>
+  <p>提交申請，我們的方案團隊將為您提供定製化的軟硬結合解決方案與現場演示</p>
+  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A;font-size:16px;padding:14px 32px">申請演示 / 方案</a></div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

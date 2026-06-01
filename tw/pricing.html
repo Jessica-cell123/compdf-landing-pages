@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定價 | ComPDF SDK & API 價格方案</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:20px;list-style:none;font-size:13px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:560px;margin:0 auto}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:30px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.btn-outline:hover{border-color:var(--primary)}
+.btn-green{background:linear-gradient(135deg,#10B981,#059669);color:#fff}
+
+/* Tabs */
+.tab-bar{display:flex;justify-content:center;gap:0;margin-bottom:48px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;max-width:400px;margin-left:auto;margin-right:auto}
+.tab-btn{padding:14px 36px;font-size:15px;font-weight:600;border:none;cursor:pointer;background:transparent;color:var(--text-muted);transition:all .2s;flex:1}
+.tab-btn.active{background:var(--primary);color:#fff}
+.tab-btn:not(.active):hover{color:var(--text);background:rgba(37,99,235,.06)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* SDK section */
+.sdk-hero{text-align:center;max-width:600px;margin:0 auto 40px}
+.sdk-hero .price{font-size:48px;font-weight:800;background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sdk-hero .price-note{color:var(--text-muted);font-size:14px;margin-top:4px}
+.sdk-hero .sdk-plats{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.sdk-hero .sdk-plats span{font-size:12px;padding:4px 12px;border-radius:6px;border:1px solid var(--border);color:var(--text-muted)}
+
+/* SDK Form */
+.sdk-form-wrap{max-width:600px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px}
+.sdk-form-wrap h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center}
+.sdk-form{display:flex;flex-direction:column;gap:14px}
+.sdk-form input,.sdk-form select,.sdk-form textarea{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%}
+.sdk-form input::placeholder,.sdk-form textarea::placeholder{color:var(--text-muted)}
+.sdk-form input:focus,.sdk-form select:focus,.sdk-form textarea:focus{border-color:var(--primary)}
+.sdk-form select{color:var(--text-muted)}
+
+/* API Grid */
+.api-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+.api-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 28px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all .3s}
+.api-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.api-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px)}
+.api-card.featured{border-color:var(--primary)}
+.api-card.featured::after{content:'最受欢迎';position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px}
+.api-card h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.api-card .sub{color:var(--text-muted);font-size:12px;margin-bottom:16px}
+.api-card .api-price{font-size:36px;font-weight:800;color:var(--primary-light);margin-bottom:4px}
+.api-card .api-price .curr{font-size:18px}
+.api-card .api-price-note{color:var(--text-muted);font-size:12px;margin-bottom:16px}
+.api-card .api-feats{list-style:none;margin-bottom:20px;flex:1}
+.api-card .api-feats li{font-size:13px;padding:7px 0;border-bottom:1px solid var(--border);color:var(--text-secondary);display:flex;align-items:center;gap:8px}
+.api-card .api-feats li:last-child{border:none}
+.api-card .api-feats li::before{content:'✓';color:var(--accent-green);font-weight:700}
+.api-card .btn{width:100%;justify-content:center}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
+.faq-q{padding:18px 22px;font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+.faq-q:hover{background:rgba(37,99,235,.04)}
+.faq-q .arrow{transition:transform .3s;font-size:16px;color:var(--text-muted)}
+.faq-a{padding:0 22px 18px;color:var(--text-secondary);font-size:13px;line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .arrow{transform:rotate(180deg)}
+
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+
+@media(max-width:900px){
+  .api-grid{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+  nav ul{display:none}
+}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html" class="active">定价</a></li>
+  </ul>
+</div></nav>
+
+<section class="hero"><div class="container">
+  <h1>靈活的 <span class="gradient">定價方案</span></h1>
+  <p>SDK 按年授權，API 按量計費。無論你是獨立開發者還是企業團隊，都能找到適合的方案。</p>
+</div></section>
+
+<section><div class="container">
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('sdk')">SDK 授權</button>
+    <button class="tab-btn" onclick="switchTab('api')">Cloud API</button>
+  </div>
+
+  <!-- SDK Tab -->
+  <div class="tab-panel active" id="tab-sdk">
+    <div class="sdk-hero">
+      <div class="price">$1,300</div>
+      <div class="price-note">起/年 · 按平臺和功能組合定價 · 不限文檔量</div>
+      <div class="sdk-plats">
+        <span>🌐 Web</span><span>🤖 Android</span><span>🍎 iOS</span>
+        <span>⚡ Flutter</span><span>⚛️ React Native</span>
+        <span>🪟 Windows</span><span>🖥️ macOS</span><span>☕ Java</span><span>🔷 .NET</span>
+      </div>
+    </div>
+    <div class="sdk-form-wrap">
+      <h3>獲取 SDK 報價</h3>
+      <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Business Email">
+        <input type="tel" placeholder="Phone number (optional)">
+        <input type="text" placeholder="Company Name">
+        <textarea placeholder="Describe your project — features, platforms, and requirements" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
+        <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:12px">提交獲取報價</button>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">提交後 1 個工作日內回覆</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- API Tab -->
+  <div class="tab-panel" id="tab-api">
+    <div class="section-title"><p>按文檔量計費，在線購買，即買即用</p></div>
+    <div class="api-grid">
+      <div class="api-card">
+        <h3>Free</h3>
+        <div class="sub">適合體驗與測試</div>
+        <div class="api-price"><span class="curr">$</span>0</div>
+        <div class="api-price-note">/月 · 年付 $0</div>
+        <ul class="api-feats">
+          <li>每月 200 份文檔</li>
+          <li>所有 API 工具可用</li>
+          <li>高安全性</li>
+          <li>24h 郵件支持</li>
+        </ul>
+        <a href="https://api.compdf.com/signup" target="_blank" class="btn btn-outline">免費註冊</a>
+      </div>
+      <div class="api-card featured">
+        <h3>Growth</h3>
+        <div class="sub">適合成長型團隊</div>
+        <div class="api-price"><span class="curr">$</span>80</div>
+        <div class="api-price-note">/月 · 年付 $960</div>
+        <ul class="api-feats">
+          <li>每月 5,000 份文檔</li>
+          <li>所有 API 工具可用</li>
+          <li>高安全性</li>
+          <li>24h 郵件支持</li>
+          <li>無限並行任務</li>
+        </ul>
+        <a href="https://api.compdf.com/login" target="_blank" class="btn btn-green">立即購買</a>
+      </div>
+      <div class="api-card">
+        <h3>Pro</h3>
+        <div class="sub">適合企業級場景</div>
+        <div class="api-price"><span class="curr">$</span>144</div>
+        <div class="api-price-note">/月 · 年付 $1,728</div>
+        <ul class="api-feats">
+          <li>每月 10,000 份文檔</li>
+          <li>所有 API 工具可用</li>
+          <li>高安全性</li>
+          <li>優先技術支持</li>
+          <li>無限並行任務</li>
+          <li>無限文件大小</li>
+        </ul>
+        <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">立即購買</a>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:20px">文檔量超過 10,000 份/月？<a href="mailto:sales@compdf.com" style="color:var(--primary-light);font-weight:600">聯繫我們獲取定製方案 →</a></p>
+  </div>
+</div></section>
+
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">FAQ</span><h2>常見問題</h2></div>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ComPDF SDK 如何定價？<span class="arrow">▼</span></div>
+      <div class="faq-a">SDK 按年授權，價格根據所選平臺（Web / 移動端 / 桌面端 / 服務端）和功能組合確定，最低 $1,300/年起。不限文檔處理量和不限用戶數。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK 支持哪些平臺？<span class="arrow">▼</span></div>
+      <div class="faq-a">支持 Web（JavaScript）、iOS、Android、Flutter、React Native、Windows、macOS、Java、.NET 共 9 大平臺。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">如何獲取 SDK 試用？<span class="arrow">▼</span></div>
+      <div class="faq-a">註冊 ComPDF 會員即可申請 30 天全功能免費試用 License，無需信用卡。試用期間可體驗所有功能和平臺。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud API 的文檔量如何計算？<span class="arrow">▼</span></div>
+      <div class="faq-a">每次 API 調用處理一頁文檔計為一份。免費層每月 200 份，Growth 層 5,000 份，Pro 層 10,000 份。超過部分可購買附加包或升級方案。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">API 支持哪些功能？<span class="arrow">▼</span></div>
+      <div class="faq-a">支持 PDF 轉換（Office/圖片/HTML）、PDF 編輯（合併/拆分/旋轉）、OCR 識別、水印添加、壓縮、AI 文檔解析與抽取等。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">是否支持私有化部署？<span class="arrow">▼</span></div>
+      <div class="faq-a">支持。SDK 支持私有化部署，API 也提供 Self-hosted 方案。數據部署在自有服務器，不出企業內網。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">是否提供企業折扣？<span class="arrow">▼</span></div>
+      <div class="faq-a">提供。年採購量大的客戶可享受批量折扣，支持 OEM 授權模式。請聯繫銷售團隊獲取定製報價。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK 和 API 可以同時使用嗎？<span class="arrow">▼</span></div>
+      <div class="faq-a">可以。許多客戶同時使用 SDK（用於客戶端查看/編輯）和 API（用於服務端批量處理），兩者互補。</div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.tab-btn[onclick*="'${name}'"]`).classList.add('active');
+  document.getElementById(`tab-${name}`).classList.add('active');
+}
+</script>
+</body>
+</html>

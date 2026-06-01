@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>โซลูชั่นอุตสาหกรรม | โซลูชันการประมวลผลเอกสารทั่วทั้งอุตสาหกรรม ComPDF</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:20px;list-style:none;font-size:13px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(37,99,235,.08) 0%,transparent 60%)}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:580px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:28px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ind-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.ind-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.ind-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.ind-card .icon{font-size:36px;margin-bottom:12px}
+.ind-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.ind-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:14px;flex:1;line-height:1.7}
+.ind-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.ind-card .tag-item{font-size:10.5px;padding:3px 9px;border-radius:4px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--primary-light)}
+.ind-card .card-link{font-size:12px;font-weight:600;color:var(--primary-light);display:inline-flex;align-items:center;gap:4px}
+.ind-card .card-link:hover{color:var(--accent)}
+.form-section{background:var(--bg-elevated);padding:60px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.ind-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}nav ul{display:none}}
+@media(max-width:500px){.ind-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a class="active" href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="hero-badge">ครอบคลุม 9+ อุตสาหกรรม · ขยายตัวอย่างต่อเนื่อง</div>
+<h1>เหมาะสำหรับทุกอุตสาหกรรม<span class="gradient">โซลูชันการประมวลผลเอกสาร</span></h1>
+<p>บริการ SDK, AI และบริการคลาวด์ของ ComPDF แก้ปัญหาในการประมวลผลเอกสารและเร่งการแปลงธุรกิจเป็นดิจิทัลสำหรับอุตสาหกรรมต่างๆ เช่น การก่อสร้าง การเงิน การศึกษา และการดูแลรักษาทางการแพทย์</p>
+</div></section>
+<section><div class="container">
+<div class="ind-grid">
+<div class="ind-card"><div class="icon">🏗️</div><h3>การก่อสร้าง</h3><p class="desc">การดูและใส่คำอธิบายแบบมือถือ การแปลงและการเก็บถาวรสัญญาก่อสร้าง การจดจำ OCR ภาพถ่ายในสถานที่ การรวมระบบ BIM และการเชื่อมต่อ</p><div class="tags"><span class="tag-item">การวาดคำอธิบายประกอบ</span><span class="tag-item">การจัดการสัญญา</span><span class="tag-item">OCR สด</span></div><a class="card-link" href="https://www.compdf.com/solutions/construction" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">✈️</div><h3>การบิน การบิน</h3><p class="desc">คำอธิบายประกอบมือถือด้วยตนเองบนเครื่องบิน, การแยก OCR คำสั่งงานบำรุงรักษา, เอกสารการปฏิบัติตามข้อกำหนด PDF/A, การจัดการเอกสารหลายภาษา</p><div class="tags"><span class="tag-item">การจัดการด้วยตนเอง</span><span class="tag-item">คำสั่งงานบำรุงรักษา</span><span class="tag-item">การยื่นปฏิบัติตามข้อกำหนด</span></div><a class="card-link" href="https://www.compdf.com/solutions/aviation" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">🏭</div><h3>การผลิต การผลิต</h3><p class="desc">การเขียนแบบทางเทคนิคและการจัดการ BOM, รายงานการตรวจสอบคุณภาพ การแยก OCR, การรวม ERP/MES/PLM, การประมวลผลชุดงานพร้อมกันสูง</p><div class="tags"><span class="tag-item">บูรณาการระบบ ERP</span><span class="tag-item">การเชื่อมต่อ MES</span><span class="tag-item">การประมวลผลเป็นชุด</span></div><a class="card-link" href="https://www.compdf.com/solutions/manufacturing" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">💰</div><h3>การเงิน การเงิน</h3><p class="desc">รายงานทางการเงินและการวิเคราะห์หนังสือชี้ชวน, การแยกเงื่อนไขสัญญาโดย AI, การประมวลผลไซเฟอร์เท็กซ์ข้อมูลที่ละเอียดอ่อน, การสนับสนุนการปรับใช้การปฏิบัติตามข้อกำหนดการแปรรูป</p><div class="tags"><span class="tag-item">การวิเคราะห์รายงานทางการเงิน</span><span class="tag-item">การสกัดสัญญา</span><span class="tag-item">การประมวลผลไซเฟอร์เท็กซ์</span></div><a class="card-link" href="https://www.compdf.com/solutions/finance" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">📚</div><h3>การศึกษาการศึกษา</h3><p class="desc">การแปลงและการแจกจ่ายบทเรียนหลายรูปแบบ คำอธิบายประกอบอัตโนมัติและการเก็บถาวรเอกสารทดสอบ การวิเคราะห์เอกสารทางวิชาการในรูปแบบ PDF การบูรณาการแพลตฟอร์มการศึกษา LMS</p><div class="tags"><span class="tag-item">การแปลงบทเรียน</span><span class="tag-item">การสกัดกระดาษ</span><span class="tag-item">บูรณาการ LMS</span></div><a class="card-link" href="https://www.compdf.com/solutions/education" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">🖨️</div><h3>การพิมพ์</h3><p class="desc">การแปลงมาตรฐานการพิมพ์ PDF/X การแยกสีและการจัดการสี การตรวจจับและการฝังแบบอักษร การพิมพ์อัตโนมัติก่อนการบิน</p><div class="tags"><span class="tag-item">มาตรฐาน PDF/X</span><span class="tag-item">การแยกสี</span><span class="tag-item">การตรวจสอบก่อนการบิน</span></div><a class="card-link" href="https://www.compdf.com/solutions/printing" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">🏛️</div><h3>กิจการภาครัฐ</h3><p class="desc">การสร้างและการแปลงเอกสารทางการ PDF มาตรฐานแห่งชาติ, การเก็บถาวร OCR ของไฟล์กระดาษเป็นชุด, การเก็บรักษา PDF/A ในระยะยาว และการปรับสภาพแวดล้อม Xinchuang</p><div class="tags"><span class="tag-item">การประมวลผลเอกสาร</span><span class="tag-item">คลังเก็บการแปลงเป็นดิจิทัล</span><span class="tag-item">การปรับตัวของซินจวง</span></div><a class="card-link" href="https://www.compdf.com/solutions/government" target="_blank">ดูแผน →</a></div>
+<div class="ind-card"><div class="icon">🏥</div><h3>การแพทย์ การดูแลสุขภาพ</h3><p class="desc">การดูเวชระเบียนร่วมกันระหว่างแผนกต่างๆ การแยก OCR ของใบสั่งยาที่เขียนด้วยลายมือ รายการเคลมประกันแบบแยกประเภท และการแปรรูปการปฏิบัติตาม HIPAA</p><div class="tags"><span class="tag-item">การจัดการเวชระเบียน</span><span class="tag-item">การรับรู้โอซีอาร์</span><span class="tag-item">การปฏิบัติตามข้อกำหนดของ HIPAA</span></div><a class="card-link" href="https://www.compdf.com/solutions/healthcare" target="_blank">ดูแผน →</a></div>
+<div class="ind-card" style="border:1px dashed var(--border);cursor:default">
+<div class="icon">➕</div>
+<h3>อุตสาหกรรมมากขึ้น</h3>
+<p class="desc">อุตสาหกรรมของคุณไม่อยู่ในรายชื่อใช่ไหม? ติดต่อเราเพื่อรับโซลูชันการประมวลผลเอกสารที่ปรับแต่งได้ และทีมงานด้านเทคนิคจะให้คำแนะนำอย่างมืออาชีพตามสถานการณ์ทางธุรกิจของคุณ</p>
+<div class="tags"><span class="tag-item">โซลูชันที่กำหนดเอง</span><span class="tag-item">ให้คำปรึกษาด้านเทคนิค</span></div>
+<a class="card-link" href="#form">ติดต่อเรา →</a>
+</div>
+</div>
+</div></section>
+<section class="form-section" id="form"><div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div>
+<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:11px;font-weight:600;padding:3px 12px;border-radius:16px;margin-bottom:12px">ปรึกษาฟรี</div>
+<h2 style="font-size:28px;font-weight:700;margin:12px 0 16px">รับโซลูชันเฉพาะอุตสาหกรรมของคุณ</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">บอกอุตสาหกรรมและความต้องการของคุณให้เราทราบ แล้วทีมโซลูชันอุตสาหกรรมของเราจะปรับแต่งโซลูชันให้กับคุณ</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">มอบโซลูชันที่ปรับแต่งให้เหมาะกับสถานการณ์อุตสาหกรรมของคุณ</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">การอ้างอิงกรณีอุตสาหกรรมและการประเมินความเป็นไปได้ทางเทคนิค</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">การเชื่อมต่อแบบทีม 1 ต่อ 1 ทดลองใช้ฟรี 30 วัน</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">รับโซลูชั่นอุตสาหกรรม</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="ชื่อของคุณ" type="text"/>
+<input placeholder="อีเมล์ที่ทำงาน" type="email"/>
+<input placeholder="ชื่อบริษัท" type="text"/>
+<select><option value="">อุตสาหกรรมของคุณ</option><option>การก่อสร้าง</option><option>การบิน การบิน</option><option>การผลิต การผลิต</option><option>การเงิน การเงิน</option><option>การศึกษาการศึกษา</option><option>การพิมพ์</option><option>รัฐบาล รัฐบาล</option><option>การแพทย์ การดูแลสุขภาพ</option><option>อื่น</option></select>
+<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">รับโซลูชันด้านอุตสาหกรรม →</button>
+</form>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

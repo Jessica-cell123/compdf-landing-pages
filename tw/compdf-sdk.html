@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF SDK | PDF Editor · Conversion · Generation</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:20px;list-style:none;font-size:13px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:620px;margin:0 auto 28px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.btn-outline:hover{border-color:var(--primary)}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:30px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+
+/* Capability Cards */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cap-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);opacity:.7}
+.cap-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.cap-card .c-icon{font-size:40px;margin-bottom:14px}
+.cap-card h3{font-size:20px;font-weight:700;margin-bottom:10px}
+.cap-card .c-desc{color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:16px;flex:1}
+.cap-card .feats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.cap-card .feats span{font-size:11px;padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);color:var(--primary-light)}
+.cap-card .c-links{display:flex;gap:10px;flex-wrap:wrap}
+.cap-card .c-links a{font-size:12px;font-weight:600}
+
+/* Demo UI Showcase */
+.demo-showcase{padding:80px 0}
+.demo-showcase .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.demo-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;min-height:320px;display:flex;flex-direction:column}
+.demo-visual .toolbar{display:flex;gap:6px;padding:12px 16px;background:var(--bg-elevated);border-radius:8px;margin-bottom:16px;flex-wrap:wrap}
+.demo-visual .toolbar .t-btn{padding:5px 12px;border-radius:4px;font-size:11px;font-weight:600;border:1px solid var(--border);color:var(--text-muted);background:transparent;cursor:default}
+.demo-visual .toolbar .t-btn.active{border-color:var(--primary);color:var(--primary-light);background:rgba(37,99,235,.08)}
+.demo-visual .page-area{flex:1;background:var(--bg-elevated);border-radius:8px;border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px}
+.demo-visual .page-area .page-sim{width:160px;height:200px;background:linear-gradient(135deg,#2a3a5a,#1e2d4a);border-radius:4px;border:1px solid var(--border-light);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.demo-visual .page-area .page-sim .line{height:4px;border-radius:2px;background:rgba(148,163,184,.15);margin:4px 0;width:80%}
+.demo-visual .page-area .page-sim .line:nth-child(2){width:60%}
+.demo-visual .page-area .page-sim .line:nth-child(3){width:70%}
+.demo-visual .page-area .page-sim .line:nth-child(4){width:45%}
+.demo-visual .page-area .page-sim .highlight-line{height:4px;border-radius:2px;margin:4px 0;width:80%;background:rgba(59,130,246,.4);border:1px solid rgba(59,130,246,.3)}
+.demo-info{padding:0}
+.demo-info .d-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.demo-info h2{font-size:28px;font-weight:800;margin-bottom:12px}
+.demo-info p{color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8}
+.demo-info .d-points{display:flex;flex-direction:column;gap:10px}
+.demo-info .d-points li{font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:10px;list-style:none}
+.demo-info .d-points li::before{content:'✓';color:var(--accent-green);font-weight:700}
+
+/* Platform Cards */
+/* Flow Steps */
+.flow-steps{display:flex;align-items:stretch;justify-content:center;gap:0;margin-top:16px}
+.flow-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 28px;text-align:center;flex:1;max-width:320px;position:relative;transition:all .3s}
+.flow-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.flow-card .step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.flow-card .f-icon{font-size:40px;margin-bottom:12px}
+.flow-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.flow-card p{color:var(--text-secondary);font-size:12.5px;margin-bottom:18px;line-height:1.7}
+.flow-card .btn{width:100%;justify-content:center;font-size:13px;padding:10px}
+.flow-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 8px}
+.connector-line{width:2px;height:20px;background:var(--gradient);border-radius:1px;opacity:.4}
+.connector-arrow{font-size:20px;color:var(--accent);opacity:.6;line-height:1}
+
+/* Platform Categories */
+.plat-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.plat-cat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.plat-cat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.plat-cat:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px)}
+.plat-cat .cat-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.plat-cat .cat-icon{font-size:32px}
+.plat-cat h3{font-size:18px;font-weight:700}
+.plat-cat .cat-desc{color:var(--text-secondary);font-size:13px;line-height:1.7;margin-bottom:16px;flex:1}
+.plat-cat .cat-links{display:flex;gap:12px;flex-wrap:wrap}
+.plat-cat .cat-links a{font-size:13px;font-weight:600;color:var(--primary-light)}
+.plat-cat .cat-sub{display:flex;flex-wrap:wrap;gap:10px}
+.plat-cat .cat-sub a{font-size:13px;font-weight:600;color:var(--primary-light);padding:4px 0}
+
+.cta-banner{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);padding:0;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.15) 0%,transparent 60%)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:56px 0;position:relative}
+.cta-inner h2{font-size:24px;font-weight:700;margin-bottom:8px;color:#fff}
+.cta-inner p{font-size:14px;opacity:.85;color:#fff}
+
+.indus-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.indus-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:all .3s;position:relative;overflow:hidden}
+.indus-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.indus-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px)}
+.indus-card .indus-icon{font-size:36px;margin-bottom:10px}
+.indus-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.indus-card p{color:var(--text-secondary);font-size:12.5px;line-height:1.6}
+
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+
+@media(max-width:900px){
+  .cap-grid{grid-template-columns:1fr}
+  .plat-cats{grid-template-columns:1fr}
+  .indus-cards{grid-template-columns:repeat(2,1fr)}
+  .flow-steps{flex-direction:column;align-items:center}
+  .cta-inner{flex-direction:column;text-align:center;padding:40px 0}
+  .flow-connector{flex-direction:row;padding:4px 0}
+  .demo-showcase .container{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+  nav ul{display:none}
+}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html" class="active">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+
+<section class="hero"><div class="container">
+  <h1>ComPDF <span class="gradient">SDK</span></h1>
+  <p>PDF 編輯查看 · 格式轉換 · PDF 生成 — 三大核心能力，覆蓋 Web / iOS / Android / Windows / Mac / Server 全平臺。</p>
+  <div class="hero-btns">
+    <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary">在線體驗 Demo</a>
+    <a href="https://www.compdf.com/pricing" target="_blank" class="btn btn-outline">免費試用</a>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-title"><span class="tag">三大核心能力</span><h2>一套 SDK，搞定 PDF 全場景</h2><p>ComPDF SDK 提供從查看編輯到轉換生成的完整能力，按需選用</p></div>
+  <div class="cap-grid">
+    <div class="cap-card">
+      <div class="c-icon">✏️</div>
+      <h3>PDF Editor &amp; Viewer</h3>
+      <p class="c-desc">高性能 PDF 渲染引擎，文本與圖片編輯、20+ 批註工具、表單填寫與創建、數字簽名、文檔比較、密文塗黑。開箱即用 UI，也可完全自定義。</p>
+      <div class="feats">
+        <span>PDF 查看</span><span>文本編輯</span><span>註釋批註</span>
+        <span>表單填寫</span><span>數字簽名</span><span>密文處理</span>
+        <span>文檔比較</span><span>頁面管理</span>
+      </div>
+            <div class="c-links">
+        <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary" style="font-size:12px;padding:8px 18px">在線體驗</a>
+        <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 18px">文檔 →</a>
+      </div>
+    </div>
+    <div class="cap-card">
+      <div class="c-icon">🔄</div>
+      <h3>PDF Conversion</h3>
+      <p class="c-desc">30+ 文件格式雙向轉換引擎，PDF ⇄ Word / Excel / PPT / HTML / 圖片。AI OCR 識別掃描件，表格結構智能保留，批量高併發處理。</p>
+      <div class="feats">
+        <span>PDF 轉 Word</span><span>PDF 轉 Excel</span><span>PDF 轉 PPT</span>
+        <span>Office 轉 PDF</span><span>AI OCR</span><span>PDF/A</span>
+        <span>批量處理</span><span>高併發</span>
+      </div>
+            <div class="c-links">
+        <a href="2-file-processing.html" class="btn btn-primary" style="font-size:12px;padding:8px 18px">查看詳情</a>
+        <a href="https://www.compdf.com/conversion/office-files" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 18px">格式列表 →</a>
+      </div>
+    </div>
+    <div class="cap-card">
+      <div class="c-icon">📄</div>
+      <h3>PDF Generation</h3>
+      <p class="c-desc">從模板、HTML、圖片或 JSON 快速生成 PDF。模板填充、動態內容注入、水印頁碼添加。適合報告生成、合同創建、批量票據輸出。</p>
+      <div class="feats">
+        <span>HTML 轉 PDF</span><span>模板填充</span><span>圖片合成</span>
+        <span>水印添加</span><span>頁眉頁腳</span><span>PDF/A</span>
+        <span>批量生成</span><span>自定義尺寸</span>
+      </div>
+            <div class="c-links">
+        <a href="https://www.compdf.com/pdf-sdk/pdf-generation" target="_blank" class="btn btn-primary" style="font-size:12px;padding:8px 18px">查看詳情</a>
+        <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 18px">文檔 →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="demo-showcase section-alt"><div class="container">
+  <div class="demo-visual">
+    <div class="toolbar">
+      <span class="t-btn active">✏️ 編輯</span>
+      <span class="t-btn">📝 批註</span>
+      <span class="t-btn">📋 表單</span>
+      <span class="t-btn">✍️ 簽名</span>
+      <span class="t-btn">🔍 搜索</span>
+      <span class="t-btn">🔐 加密</span>
+      <span class="t-btn" style="margin-left:auto">💾 保存</span>
+    </div>
+    <div class="page-area">
+      <div class="page-sim">
+        <div style="position:absolute;top:8px;left:8px;font-size:9px;color:var(--text-muted);opacity:.5">Contract_2026.pdf</div>
+        <div style="position:absolute;top:28px;left:8px;width:calc(100% - 16px);height:1px;background:var(--border-light);opacity:.3"></div>
+        <div class="line" style="width:55%;margin-top:40px"></div>
+        <div class="line" style="width:70%"></div>
+        <div class="line" style="width:60%"></div>
+        <div class="highlight-line" style="width:75%;margin-top:8px"></div>
+        <div class="line" style="width:50%"></div>
+        <div class="line" style="width:65%"></div>
+        <div style="display:flex;gap:6px;margin-top:8px;width:80%">
+          <div style="height:4px;border-radius:2px;background:rgba(148,163,184,.15);flex:1"></div>
+          <div style="height:4px;border-radius:2px;background:rgba(148,163,184,.15);flex:1"></div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;width:60px;height:18px;background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.2);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--primary-light)">簽名區</div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-info">
+    <div class="d-badge">實時交互 Demo</div>
+    <h2>像這樣 — 直接嵌入你的應用</h2>
+    <p>上面模擬的是 ComPDF SDK 的 Web 端界面。完整的工具欄、頁面渲染、編輯和簽名能力 — 所有 UI 都可自定義主題色、按鈕佈局和交互行為，無縫融入你的產品設計。</p>
+    <ul class="d-points">
+      <li>開箱即用的完整 UI，也可按需隱藏或替換組件</li>
+      <li>支持 React / Vue / Angular / 原生 JS 集成</li>
+      <li>可自定義主題色、字體、工具欄佈局</li>
+      <li>5 分鐘完成集成，30 天免費試用</li>
+    </ul>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-primary">體驗完整 Demo</a>
+      <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-outline">查看集成文檔 →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">全平臺覆蓋</span><h2>選擇你的平臺</h2><p>每個平臺 SDK 都包含 Editor · Conversion · Generation 全套能力</p></div>
+  <div class="plat-cats">
+    <div class="plat-cat">
+      <div class="cat-header"><div class="cat-icon">🌐</div><h3>Web SDK</h3></div>
+      <p class="cat-desc">JavaScript / TypeScript，支持 React / Vue / Angular，瀏覽器端完整 PDF 查看、編輯與生成能力。</p>
+      <div class="cat-links"><a href="https://www.compdf.com/web" target="_blank">查看詳情 →</a><a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank">文檔 →</a></div>
+    </div>
+    <div class="plat-cat">
+      <div class="cat-header"><div class="cat-icon">☁️</div><h3>Server SDK</h3></div>
+      <p class="cat-desc">Java / .NET 服務端 PDF 庫，適用於 Spring Boot、.NET Core 後端，提供轉換、生成、提取等批量處理能力。</p>
+      <div class="cat-sub">
+        <a href="https://www.compdf.com/pdf-library/java" target="_blank">Java SDK →</a>
+        <a href="https://www.compdf.com/pdf-library/dotnet" target="_blank">.NET SDK →</a>
+      </div>
+    </div>
+    <div class="plat-cat">
+      <div class="cat-header"><div class="cat-icon">📱</div><h3>Mobile SDK</h3></div>
+      <p class="cat-desc">原生 Android / iOS、Flutter、React Native，一套代碼或多平臺各自原生，覆蓋移動端所有 PDF 需求。</p>
+      <div class="cat-sub">
+        <a href="https://www.compdf.com/android" target="_blank">Android →</a>
+        <a href="https://www.compdf.com/ios" target="_blank">iOS →</a>
+        <a href="https://www.compdf.com/flutter" target="_blank">Flutter →</a>
+        <a href="https://www.compdf.com/react-native" target="_blank">React Native →</a>
+      </div>
+    </div>
+    <div class="plat-cat">
+      <div class="cat-header"><div class="cat-icon">🖥️</div><h3>Desktop SDK</h3></div>
+      <p class="cat-desc">Windows (WinForms / WPF) 和 macOS (AppKit / Mac Catalyst) 原生 SDK，桌面端專業 PDF 編輯與轉換。</p>
+      <div class="cat-sub">
+        <a href="https://www.compdf.com/windows" target="_blank">Windows →</a>
+        <a href="https://www.compdf.com/contact-sales" target="_blank">macOS →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">免費試用流程</span><h2>三步獲取 License，開始集成</h2><p>註冊會員 · 生成 License · 查看文檔，全程 5 分鐘完成</p></div>
+  <div class="flow-steps">
+    <div class="flow-card">
+      <div class="step-num">1</div>
+      <div class="f-icon">📝</div>
+      <h3>註冊會員</h3>
+      <p>訪問 ComPDF 官網註冊賬號，填寫基本信息即可完成註冊，無需信用卡。</p>
+      <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">立即開始試用</a>
+    </div>
+    <div class="flow-connector">
+      <div class="connector-line"></div>
+      <div class="connector-arrow">→</div>
+      <div class="connector-line"></div>
+    </div>
+    <div class="flow-card">
+      <div class="step-num">2</div>
+      <div class="f-icon">🔑</div>
+      <h3>獲取 License</h3>
+      <p>登錄會員後臺，在 License 管理頁面一鍵生成免費試用 License Key，複製即可使用。</p>
+      <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary">立即開始試用</a>
+    </div>
+    <div class="flow-connector">
+      <div class="connector-line"></div>
+      <div class="connector-arrow">→</div>
+      <div class="connector-line"></div>
+    </div>
+    <div class="flow-card">
+      <div class="step-num">3</div>
+      <div class="f-icon">📖</div>
+      <h3>集成開發</h3>
+      <p>查看官方開發文檔，選擇對應平臺的 SDK 集成指南，5 分鐘跑通 Demo。</p>
+      <a href="https://www.compdf.com/guides/pdf-sdk/web/overview" target="_blank" class="btn btn-primary">立即開始試用</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">行業應用</span><h2>為你的行業量身打造</h2><p>ComPDF SDK 已廣泛應用於多個行業，覆蓋文檔處理全場景</p></div>
+  <div class="indus-cards">
+    <a href="https://www.compdf.com/solutions/construction" target="_blank" class="indus-card">
+      <div class="indus-icon">🏗️</div>
+      <h4>建築</h4>
+      <p>圖紙標註、合同管理、現場 OCR，移動端即可查看與簽署工程文檔。</p>
+    </a>
+    <a href="https://www.compdf.com/solutions/manufacturing" target="_blank" class="indus-card">
+      <div class="indus-icon">🏭</div>
+      <h4>製造</h4>
+      <p>ERP/MES 集成、質檢報告提取、BOM 管理，高併發批量文檔處理。</p>
+    </a>
+    <a href="https://www.compdf.com/solutions/finance" target="_blank" class="indus-card">
+      <div class="indus-icon">⚖️</div>
+      <h4>法律</h4>
+      <p>合同條款 AI 提取、密文處理、電子簽名，保障法務文檔安全合規。</p>
+    </a>
+    <a href="https://www.compdf.com/solutions/finance" target="_blank" class="indus-card">
+      <div class="indus-icon">💰</div>
+      <h4>金融</h4>
+      <p>財報解析、票據 OCR、合規歸檔，支持私有化部署保障數據安全。</p>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:28px">
+    <a href="industries.html" style="font-size:14px;font-weight:600;color:var(--primary-light)">查看全部行業應用方案 →</a>
+  </div>
+</div></section>
+
+<section class="cta-banner"><div class="container">
+  <div class="cta-inner">
+    <div>
+      <h2>準備好了？註冊會員，立即開始試用</h2>
+      <p>免費 30 天全功能試用 License · 無需信用卡 · 5 分鐘完成集成</p>
+    </div>
+    <a href="https://api.compdf.com/login" target="_blank" class="btn btn-primary" style="flex-shrink:0;padding:14px 36px;font-size:16px">立即註冊試用 →</a>
+  </div>
+</div></section>
+
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

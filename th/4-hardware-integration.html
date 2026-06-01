@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComPDF AI - โซลูชันเอกสารอัจฉริยะที่รวมซอฟต์แวร์และฮาร์ดแวร์ | สแกนเนอร์ + การประมวลผลเอกสาร AI</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--primary-light);text-decoration:none;transition:all .2s}a:hover{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(13,148,136,.08) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:44px;font-weight:800;line-height:1.25;max-width:750px;margin:0 auto 18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#2DD4BF,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:640px;margin:0 auto 32px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}.btn-outline:hover{border-color:var(--primary)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.25);color:#2DD4BF;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.arch-flow{display:flex;align-items:stretch;justify-content:center;gap:0;margin:40px 0;flex-wrap:wrap}
+.arch-node{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px 20px;text-align:center;flex:1;max-width:200px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.arch-node .emoji{font-size:36px;margin-bottom:8px}
+.arch-node h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.arch-node p{font-size:11px;color:var(--text-muted)}
+.arch-arrow{display:flex;align-items:center;font-size:28px;color:var(--accent);padding:0 4px}
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cap-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;gap:18px;transition:all .3s;position:relative;overflow:hidden}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.cap-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.cap-card .icon{font-size:40px;flex-shrink:0}
+.cap-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.cap-card p{color:var(--text-secondary);font-size:13px}
+.compat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.compat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;transition:all .3s}
+.compat-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.compat-card h4{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.compat-card h4 .emoji{font-size:22px}
+.compat-list{list-style:none;padding:0}
+.compat-list li{font-size:13px;color:var(--text-secondary);padding:5px 0;border-bottom:1px solid rgba(51,65,85,.4);display:flex;align-items:center;gap:6px}
+.compat-list li:last-child{border-bottom:none}
+.compat-list li::before{content:'✓';color:var(--accent-green);font-weight:700;font-size:12px}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.adv-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;text-align:center;transition:all .3s}
+.adv-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.adv-card .emoji{font-size:40px;margin-bottom:12px}
+.adv-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.adv-card p{color:var(--text-secondary);font-size:13px}
+.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.scene-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all .3s}
+.scene-card:hover{border-color:rgba(37,99,235,.3)}
+.scene-header{padding:18px 24px;display:flex;align-items:center;gap:12px}
+.scene-header .emoji{font-size:28px}
+.scene-header h4{font-size:16px;font-weight:700}
+.scene-body{padding:0 24px 20px}
+.scene-body .flow-steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.flow-step{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--primary-light)}
+.flow-arrow-sm{color:var(--accent);font-weight:700;font-size:12px;display:flex;align-items:center}
+.scene-body .result{font-size:13px;font-weight:600;color:var(--accent-green)}
+.case-highlight{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.case-highlight .icon{font-size:56px}
+.case-highlight h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.case-highlight p{color:var(--text-secondary);font-size:14px;margin-bottom:14px}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:768px){.cap-grid,.scene-grid{grid-template-columns:1fr}.arch-flow{flex-direction:column;align-items:center}.arch-arrow{transform:rotate(90deg)}.compat-grid,.adv-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a class="active" href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="hero-badge">🖨️ ComPDF AI × Scanner — การผสมผสานระหว่างซอฟต์แวร์และฮาร์ดแวร์</div>
+<h1>โซลูชันอัจฉริยะที่ผสานรวมซอฟต์แวร์และฮาร์ดแวร์<br/><span class="gradient">เปิดลิงก์ทั้งหมดจากเครื่องสแกนไปยังระบบธุรกิจ</span></h1>
+<p>เครื่องสแกนที่เชื่อมต่อโดยตรงทำให้การรวบรวมเอกสารเสร็จสมบูรณ์ และ ComPDF AI ดำเนินการแยกและวิเคราะห์เอกสารอย่างชาญฉลาด<br/>แปลงเอกสารที่ไม่มีโครงสร้างให้เป็นข้อมูลที่มีโครงสร้างและไหลกลับไปยังระบบธุรกิจของลูกค้าได้อย่างราบรื่น</p>
+<div style="display:flex;gap:12px;justify-content:center"><a class="btn btn-primary" href="#cta">ขอการสาธิต/โครงการ</a></div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">สถาปัตยกรรมโซลูชัน</span><h2>การเชื่อมโยงเต็มรูปแบบที่รวมซอฟต์แวร์และฮาร์ดแวร์—วงจรปิดที่สมบูรณ์ตั้งแต่กระดาษไปจนถึงข้อมูล</h2></div>
+<div class="arch-flow">
+<div class="arch-node"><div class="emoji">🖨️</div><h4>การเชื่อมต่อเครื่องสแกน</h4><p>เชื่อมต่อโดยตรงกับอุปกรณ์สแกนต่างๆ<br/>การรวบรวมเอกสารกระดาษเป็นชุด</p></div>
+<div class="arch-arrow">→</div>
+<div class="arch-node"><div class="emoji">📤</div><h4>สแกนและอัปโหลด</h4><p>การโอนเอกสารอัตโนมัติ<br/>รองรับการประมวลผลคิวแบบแบตช์</p></div>
+<div class="arch-arrow">→</div>
+<div class="arch-node"><div class="emoji">🤖</div><h4>การประมวลผล ComPDF AI</h4><p>การแยกเอกสารอัจฉริยะ<br/>การแยกวิเคราะห์เอกสารอัจฉริยะ</p></div>
+<div class="arch-arrow">→</div>
+<div class="arch-node"><div class="emoji">📊</div><h4>ข้อมูลที่มีโครงสร้าง</h4><p>เอาต์พุต JSON/CSV<br/>สินทรัพย์ข้อมูลที่มีอยู่</p></div>
+<div class="arch-arrow">→</div>
+<div class="arch-node"><div class="emoji">🏢</div><h4>ระบบธุรกิจ</h4><p>ERP / OA / CRM<br/>ระบบธุรกิจคืนสินค้าให้กับลูกค้า</p></div>
+</div>
+<p style="text-align:center;color:var(--text-secondary);font-size:14px;max-width:700px;margin:0 auto;line-height:1.8">ด้วยโซลูชันการรวมซอฟต์แวร์-ฮาร์ดแวร์ของ ComPDF AI องค์กรต่างๆ จึงไม่จำเป็นต้องเปลี่ยนแปลงกระบวนการเอกสารกระดาษที่มีอยู่ เครื่องสแกนรวบรวมเอกสารกระดาษเป็นเอกสารอิเล็กทรอนิกส์โดยตรง และ ComPDF AI ทำการแยกและวิเคราะห์อัจฉริยะโดยอัตโนมัติ โดยแปลงเอกสารต่างๆ เช่น ใบแจ้งหนี้ สัญญา และรายงานเป็นสินทรัพย์ข้อมูลที่มีโครงสร้าง และสุดท้ายจะไหลกลับไปยังระบบธุรกิจ เช่น ERP และ OA ทำให้ทราบถึงวงจรปิดที่ราบรื่นจากกระดาษไปสู่ดิจิทัล</p>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">ความสามารถหลัก</span><h2>ความสามารถหลักสี่ประการขับเคลื่อนโซลูชันการรวมซอฟต์แวร์และฮาร์ดแวร์</h2></div>
+<div class="cap-grid">
+<div class="cap-card"><div class="icon">🖨️</div><div><h3>การได้มาซึ่งการเชื่อมต่อโดยตรงของสแกนเนอร์</h3><p>รองรับการเชื่อมต่อโดยตรงกับอุปกรณ์สแกนเนอร์กระแสหลักในตลาด รวมถึงเครื่องสแกนเอกสารความเร็วสูง เครื่องสแกนแบบแท่น ฯลฯ และตระหนักถึงการรวบรวมเอกสารเป็นชุดและการส่งข้อมูลอัตโนมัติผ่านโปรโตคอล TWAIN / WIA</p></div></div>
+<div class="cap-card"><div class="icon">🤖</div><div><h3>การแยกเอกสารอัจฉริยะ</h3><p>ComPDF AI ระบุฟิลด์สำคัญในเอกสารที่สแกนโดยอัตโนมัติ และดึงข้อมูลหลักอย่างแม่นยำ เช่น จำนวนเงิน วันที่ ซัพพลายเออร์ ฯลฯ จากใบแจ้งหนี้ สัญญา รายงาน ฯลฯ</p></div></div>
+<div class="cap-card"><div class="icon">📄</div><div><h3>การแยกวิเคราะห์เอกสารอัจฉริยะ</h3><p>ทำการวิเคราะห์เชิงลึกของเอกสารที่สแกน รองรับการจดจำตาราง การวิเคราะห์เลย์เอาต์ OCR หลายภาษา และแปลงเนื้อหาที่ไม่มีโครงสร้างให้เป็นข้อมูลที่มีโครงสร้างที่ใช้งานได้</p></div></div>
+<div class="cap-card"><div class="icon">🔗</div><div><h3>บูรณาการระบบธุรกิจได้อย่างราบรื่น</h3><p>ข้อมูลที่มีโครงสร้างจะถูกส่งกลับไปยังระบบธุรกิจที่มีอยู่ของลูกค้า เช่น ERP, OA, CRM และระบบการเงินโดยอัตโนมัติผ่าน API/Webhook ซึ่งช่วยลดความจำเป็นในการพัฒนาขั้นที่สอง</p></div></div>
+</div>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">ข้อดีของการแก้ปัญหา</span><h2>ค่านิยมหลักที่การผสมผสานระหว่างโซลูชันซอฟต์แวร์และฮาร์ดแวร์นำมาสู่ลูกค้า</h2></div>
+<div class="adv-grid">
+<div class="adv-card"><div class="emoji">⚡</div><h4>สแกนและใช้งาน ปรับใช้อย่างรวดเร็ว</h4><p>เพียงเชื่อมต่อเครื่องสแกนและใช้งานได้โดยไม่ต้องดัดแปลงระบบที่ซับซ้อนหรือดำเนินโครงการในระยะยาว</p></div>
+<div class="adv-card"><div class="emoji">🔄</div><h4>จัดเรียงข้อมูลอัตโนมัติ</h4><p>ข้อมูลที่สแกนจะถูกป้อนเข้าสู่ระบบธุรกิจโดยอัตโนมัติหลังจากประมวลผลด้วย AI โดยกำจัดลิงก์การป้อนข้อมูลด้วยตนเอง</p></div>
+<div class="adv-card"><div class="emoji">🛡️</div><h4>รองรับ Xinchuang ในประเทศ</h4><p>ปรับให้เข้ากับระบบปฏิบัติการและโปรเซสเซอร์ในประเทศเพื่อตอบสนองความต้องการของการรวมซอฟต์แวร์และฮาร์ดแวร์ในสภาพแวดล้อม Xinchuang</p></div>
+<div class="adv-card"><div class="emoji">📈</div><h4>ปรับปรุงประสิทธิภาพการประมวลผล</h4><p>การสแกนเป็นชุด + การประมวลผลอัตโนมัติด้วย AI ช่วยลดระยะเวลาการประมวลผลจากกระดาษไปยังข้อมูลได้อย่างมาก</p></div>
+<div class="adv-card"><div class="emoji">🎯</div><h4>ปรับปรุงความถูกต้องของข้อมูล</h4><p>การสกัดอัจฉริยะของ AI เข้ามาแทนที่การป้อนข้อมูลด้วยตนเอง ซึ่งช่วยลดข้อผิดพลาดของข้อมูลที่เกิดจากการดำเนินการด้วยตนเองได้อย่างมีประสิทธิภาพ</p></div>
+<div class="adv-card"><div class="emoji">💰</div><h4>ลดต้นทุนการดำเนินงาน</h4><p>ลดภาระงานการประมวลผลด้วยตนเองและลดต้นทุนแรงงานและเวลาในการจัดการเอกสารกระดาษ</p></div>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">สถานการณ์การใช้งาน</span><h2>สถานการณ์ทั่วไปของโซลูชันการรวมซอฟต์แวร์-ฮาร์ดแวร์</h2></div>
+<div class="scene-grid">
+<div class="scene-card"><div class="scene-header"><div class="emoji">💰</div><h4>การประมวลผลบันทึกทางการเงิน</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">เครื่องสแกนเพื่อรวบรวมใบแจ้งหนี้เป็นชุด</span><span class="flow-arrow-sm">→</span><span class="flow-step">การสกัดการจดจำ ComPDF AI</span><span class="flow-arrow-sm">→</span><span class="flow-step">เอาต์พุตข้อมูลที่มีโครงสร้าง</span><span class="flow-arrow-sm">→</span><span class="flow-step">เข้าบัญชีในระบบการเงินอัตโนมัติ</span></div><div class="result">📋 เครื่องสแกน + การแยก AI เพื่อให้ทราบถึงกระบวนการอัตโนมัติของใบแจ้งหนี้จากกระดาษไปยังบัญชี</div></div></div>
+<div class="scene-card"><div class="scene-header"><div class="emoji">📑</div><h4>การจัดการไฟล์สัญญา</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">เครื่องสแกนจับสัญญากระดาษ</span><span class="flow-arrow-sm">→</span><span class="flow-step">AI แยกวิเคราะห์คำศัพท์สำคัญ</span><span class="flow-arrow-sm">→</span><span class="flow-step">การสกัดสนามแบบมีโครงสร้าง</span><span class="flow-arrow-sm">→</span><span class="flow-step">เอกสารระบบการจัดการสัญญา</span></div><div class="result">📋 สัญญาที่เป็นกระดาษจะถูกแยกวิเคราะห์และเก็บถาวรโดยอัตโนมัติหลังจากการสแกน เพื่อปรับปรุงประสิทธิภาพการจัดการสัญญา</div></div></div>
+<div class="scene-card"><div class="scene-header"><div class="emoji">🏭</div><h4>ผลิตเอกสารคลังสินค้า</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">สแกนใบสั่งซื้อ/ใบส่งสินค้า</span><span class="flow-arrow-sm">→</span><span class="flow-step">AI ดึงข้อมูลสำคัญออกมา</span><span class="flow-arrow-sm">→</span><span class="flow-step">โครงสร้างข้อมูล</span><span class="flow-arrow-sm">→</span><span class="flow-step">การกระทบยอดและการจัดเก็บ ERP อัตโนมัติ</span></div><div class="result">📋 เครื่องสแกน + การประมวลผล AI เพื่อลดการทำงานด้วยตนเองในห่วงโซ่อุปทาน</div></div></div>
+<div class="scene-card"><div class="scene-header"><div class="emoji">🏥</div><h4>การแปลงเวชระเบียนให้เป็นดิจิทัล</h4></div><div class="scene-body"><div class="flow-steps"><span class="flow-step">สแกนเนอร์รวบรวมเวชระเบียนกระดาษ</span><span class="flow-arrow-sm">→</span><span class="flow-step">AI วิเคราะห์เนื้อหาเวชระเบียน</span><span class="flow-arrow-sm">→</span><span class="flow-step">โครงสร้างฟิลด์คีย์</span><span class="flow-arrow-sm">→</span><span class="flow-step">ระบบ HIS เข้าอัตโนมัติ</span></div><div class="result">📋 เวชระเบียนแบบกระดาษจะถูกป้อนเข้าสู่ระบบข้อมูลโรงพยาบาลโดยอัตโนมัติหลังจากการสแกนและการวิเคราะห์ AI</div></div></div>
+</div>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">กรณีลูกค้า</span><h2>เครื่องสแกน ComPDF AI +: แนวทางปฏิบัติด้านโซลูชันการรวมซอฟต์แวร์และฮาร์ดแวร์</h2></div>
+<div class="case-highlight">
+<div class="icon">🖨️</div>
+<div><h3>เครื่องสแกนระดับองค์กร + โซลูชันการประมวลผลเอกสารอัจฉริยะ ComPDF AI</h3><p>ลูกค้าปรับใช้ซอฟต์แวร์ ComPDF AI และโซลูชันการรวมฮาร์ดแวร์เพื่อเชื่อมต่อเครื่องสแกนความเร็วสูงด้วยความสามารถในการประมวลผลเอกสารอัจฉริยะ ComPDF AI หลังจากที่เครื่องสแกนรวบรวมเอกสารกระดาษเป็นชุดแล้ว ComPDF AI จะดำเนินการจำแนกเอกสาร การแยกฟิลด์คีย์ และการวิเคราะห์เชิงโครงสร้างโดยอัตโนมัติ และข้อมูลจะถูกส่งกลับไปยังระบบ ERP และ OA ของลูกค้าโดยตรง ทำให้เกิดการเชื่อมโยงอัตโนมัติตั้งแต่เอกสารกระดาษไปจนถึงข้อมูลธุรกิจ</p><a class="btn btn-primary" href="https://www.compdf.com/blog/lead-mobile-app-document-processing-a1office-compdfkit" style="font-size:13px;padding:8px 20px" target="_blank">ดูกรณีเต็ม →</a></div>
+</div>
+</div></section>
+<section class="cta-section" id="cta"><div class="container">
+<h2>ทำความเข้าใจวิธีการนำโซลูชันการรวมซอฟต์แวร์-ฮาร์ดแวร์ ComPDF AI ไปใช้</h2>
+<p>ส่งใบสมัครของคุณ แล้วทีมโซลูชันของเราจะจัดหาโซลูชันฮาร์ดแวร์และซอฟต์แวร์ที่ปรับแต่งเฉพาะให้กับคุณ และการสาธิตถึงสถานที่</p>
+<div style="display:flex;gap:12px;justify-content:center;position:relative"><a class="btn btn-primary" href="#" style="background:#fff;color:#1E3A8A;font-size:16px;padding:14px 32px">ขอการสาธิต/โครงการ</a></div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

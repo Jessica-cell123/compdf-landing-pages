@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workflow 集 | ComPDF 文書ワークフローソリューション</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(245,158,11,.08) 0%,transparent 70%)}
+.hero h1{font-size:42px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto 32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wf-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.wf-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.wf-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.wf-card .card-icon{font-size:36px;margin-bottom:12px}
+.wf-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.wf-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:14px;flex:1}
+.wf-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.wf-card .tag-item{font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(148,163,184,.08);border:1px solid var(--border);color:var(--text-secondary)}
+.wf-card .btn{width:100%;justify-content:center;font-size:13px;padding:10px}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.wf-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}.form-section .container>div{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a class="active" href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="tag">文書処理機能の集合ページ</div>
+<h1>必要なもの<span class="gradient">文档处理能力</span>，都在这里</h1>
+<p>6 つの製品モジュールエントリーをワンストップで集約 · 編集 / 変換 / AI 解析 / ハード＆ソフト統合 / プラットフォーム統合 · すぐにご利用可能</p>
+</div></section>
+<section class="section-alt">
+<div class="container">
+<div class="section-title"><span class="tag">必要なものを選んで、すぐにご利用</span><h2>企業の文書処理のあらゆるシナリオをカバー</h2><p>PDF 編集、フォーマット変換、知識ベース構築、スキャナー連携、プラットフォーム統合 — あらゆるニーズに対応する製品ソリューションがこちらに揃っています。すぐにお使いいただけます。</p></div>
+<div class="wf-grid">
+<div class="wf-card">
+<div class="card-icon">🔗</div>
+<h3>サードパーティプラットフォーム統合</h3>
+<p class="desc">ComPDF の文書処理機能を普段使いのサードパーティプラットフォームに組み込み — Make、Zapier、Salesforce 内で直接 PDF 編集、変換、AI 抽出を完了。ツールを切り替える必要なく、ワークフローが一気通貫します。</p>
+<div class="tags"><span class="tag-item">Low-Code</span><span class="tag-item">クラウドマーケット</span><span class="tag-item">MCP</span></div>
+<a class="btn btn-primary" href="8-third-party-platforms-v5.html">統合ソリューションを見る →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">✏️</div>
+<h3>ドキュメント編集</h3>
+<p class="desc">PDF 編集、注釈、フォーム入力、ページ管理、文書比較 — Word のように自由に編集。Web / iOS / Android / デスクトップ全プラットフォーム対応</p>
+<div class="tags"><span class="tag-item">コンテンツ編集</span><span class="tag-item">注釈</span><span class="tag-item">フォーム入力</span></div>
+<a class="btn btn-primary" href="1-document-editing.html">編集ソリューションを見る →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">🔄</div>
+<h3>ファイル処理</h3>
+<p class="desc">30 以上の形式双方向変換、AI OCR 認識、テーブル構造抽出、バッチ処理パイプライン — PDF からあらゆる形式へ、インテリジェント変換でロスゼロ</p>
+<div class="tags"><span class="tag-item">フォーマット変換</span><span class="tag-item">OCR 認識</span><span class="tag-item">バッチ処理</span></div>
+<a class="btn btn-primary" href="2-file-processing.html">処理ソリューションを見る →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">🧠</div>
+<h3>RAG 知識ベース</h3>
+<p class="desc">PDF ネイティブ解析と AI レイアウト認識に基づき、複雑な文書構造を高精度に再現。Markdown / JSON を出力し RAG フレームワークが直接消費可能</p>
+<div class="tags"><span class="tag-item">文書解析</span><span class="tag-item">スマートチャンク分割</span><span class="tag-item">向量化</span></div>
+<a class="btn btn-primary" href="3-document-automation.html">知識ベースソリューションを見る →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">📱</div>
+<h3>ハード＆ソフト統合</h3>
+<p class="desc">スキャナー直接接続 + AI インテリジェント解析。紙文書から構造化データへの全チェーン自動化、データを ERP / OA / CRM システムに還流</p>
+<div class="tags"><span class="tag-item">扫描仪集成</span><span class="tag-item">AI 抽取</span><span class="tag-item">業務システム連携</span></div>
+<a class="btn btn-primary" href="4-hardware-integration.html">ハード＆ソフトソリューションを見る →</a>
+</div>
+<div class="wf-card" style="border:1px dashed var(--border);cursor:default">
+<div class="card-icon">🔧</div>
+<h3>カスタムワークフロー</h3>
+<p class="desc">ComPDF 製品に基づき、専用の文書処理フローを柔軟に構築し、非標準的な業務シナリオ要件に対応。カスタマイズソリューションのコンサルティングと技術サポートを提供し、ワークフロー効率を継続的に最適化します。</p>
+<div class="tags"><span class="tag-item">组合方案</span><span class="tag-item">定制开发</span></div>
+<a class="btn btn-outline" href="#">お問い合わせ →</a>
+</div>
+</div>
+</div></section>
+<section class="form-section">
+<div class="container">
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">カスタマイズソリューション</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">获取你的专属文档处理方案</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8">企業ごとに文書処理シナリオは異なります。お客様のご要望をお聞かせください。ソリューションエンジニアがカスタマイズしたソリューションをご提案します — 完全無料、一切の条件はございません。</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">お客様の業務シナリオに合わせてワークフローソリューションをカスタマイズ</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">編集、変換、AI 解析、ハード＆ソフト統合などの全機能を網羅</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">技术团队 1 对 1 对接，提供 PoC 验证支持</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">今すぐ要件を送信</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="您的姓名" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="text"/>
+<input placeholder="工作邮箱" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="email"/>
+<input placeholder="公司名称" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="text"/>
+<select style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:14px;outline:none;width:100%">
+<option value="">必要な製品機能</option>
+<option>PDF 編集と注釈</option>
+<option>ファイル形式変換</option>
+<option>RAG 知識ベース構築</option>
+<option>ハード＆ソフト一体化統合</option>
+<option>サードパーティプラットフォーム連携</option>
+<option>カスタムワークフロー</option>
+</select>
+<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">提交需求 → 获取方案</button>
+<p style="font-size:12px;color:var(--text-muted);text-align:center">送信後 1 営業日以内にご連絡いたします</p>
+</form>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

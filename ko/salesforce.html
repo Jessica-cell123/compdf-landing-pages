@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComPDF Salesforce 集成 | 在 Salesforce 中直接处理 PDF</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(0,169,224,.08) 0%,transparent 70%)}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero-text .tag{display:inline-flex;align-items:center;gap:4px;background:rgba(0,169,224,.1);border:1px solid rgba(0,169,224,.25);color:#00A9E0;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.hero-text h1{font-size:38px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero-text h1 .gradient{background:linear-gradient(90deg,#00A9E0,#2563EB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-text p{font-size:15px;color:var(--text-secondary);margin-bottom:28px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-sf{background:linear-gradient(135deg,#00A9E0,#2563EB);color:#fff}.btn-sf:hover{box-shadow:0 4px 20px rgba(0,169,224,.3);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.hero-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.hero-visual .big-icon{font-size:72px;margin-bottom:16px}
+.hero-visual .sf-integration{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-visual .sf-node{background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:16px 20px;text-align:center;min-width:110px}
+.hero-visual .sf-node .emoji{font-size:28px}
+.hero-visual .sf-node .label{font-size:12px;font-weight:600;margin-top:4px}
+.hero-visual .sf-arrow{font-size:20px;color:var(--accent)}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.benefit-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;gap:16px;align-items:flex-start;transition:all .3s}
+.benefit-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.benefit-card .icon{font-size:32px;flex-shrink:0}
+.benefit-card h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.benefit-card p{color:var(--text-secondary);font-size:13px}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.feature-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px)}
+.feature-card .emoji{font-size:36px;margin-bottom:12px}
+.feature-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:13px}
+.workflow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:32px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.wf-node{text-align:center;min-width:100px}
+.wf-node .wf-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 8px;border:1px solid var(--border);background:var(--bg-elevated)}
+.wf-node .wf-label{font-size:11px;font-weight:600;color:var(--text-muted)}
+.wf-node.highlight .wf-icon{background:rgba(37,99,235,.1);border-color:var(--primary)}
+.wf-node.highlight .wf-label{color:var(--primary-light)}
+.wf-arrow{font-size:18px;color:var(--accent);opacity:.6}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.hero .container{grid-template-columns:1fr}.benefits-grid,.features-grid{grid-template-columns:1fr}.hero-text h1{font-size:30px}nav ul{display:none}.workflow{flex-direction:column;gap:10px}.wf-arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a class="active" href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="hero-text">
+<div class="tag">ComPDF × Salesforce 통합</div>
+<h1>Salesforce에서 직접 PDF 처리<br/><span class="gradient">떠날 필요도 없고 뛰어내릴 필요도 없어</span></h1>
+<p>ComPDF 웹 SDK는 Salesforce에 Lightning 웹 구성 요소 형태로 포함되어 있으므로 판매, 법무 및 운영 팀이 Salesforce 인터페이스 내에서 직접 PDF 보기, 편집, 주석, 서명 및 양식 작성을 완료할 수 있습니다. 데이터가 Salesforce를 떠나지 않으며 작업 흐름이 중단되지 않습니다.</p>
+<div style="display:flex;gap:12px">
+<a class="btn btn-sf" href="https://www.compdf.com/demo/webviewer" target="_blank">라이브 데모 보기</a>
+<a class="btn btn-outline" href="https://www.compdf.com/guides/pdf-sdk/web/integrations/salesforce/overview" target="_blank">통합 문서 →</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="big-icon">☁️</div>
+<div class="sf-integration">
+<div class="sf-node"><div class="emoji">📄</div><div class="label">Salesforce 기록</div></div>
+<div class="sf-arrow">→</div>
+<div class="sf-node" style="border-color:var(--primary);background:rgba(37,99,235,.06)"><div class="emoji">⚙️</div><div class="label">ComPDF LWC</div></div>
+<div class="sf-arrow">→</div>
+<div class="sf-node"><div class="emoji">✅</div><div class="label">처리 완료</div></div>
+</div>
+<p style="color:var(--text-muted);font-size:12px;margin-top:20px">Lightning 웹 구성 요소 · 플러그 앤 플레이 · 데이터 아웃바운드 없음</p>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">통합 이점</span><h2>Salesforce에서 ComPDF를 선택하는 이유</h2></div>
+<div class="benefits-grid">
+<div class="benefit-card"><div class="icon">🔗</div><div><h4>Salesforce를 원활하게 포함</h4><p>Salesforce 레코드 페이지, Flow 팝업 및 Experience Cloud 사이트를 Lightning 웹 구성 요소로 포함하면 사용자가 Salesforce 환경을 떠나지 않고도 모든 PDF 문서를 처리할 수 있습니다.</p></div></div>
+<div class="benefit-card"><div class="icon">🔒</div><div><h4>데이터 보안 규정 준수</h4><p>Salesforce의 ContentVersion, 첨부 파일 또는 외부 S3에서 직접 파일을 로드하여 Salesforce 권한 시스템을 완전히 상속하며 데이터는 타사 서버를 통과하지 않습니다.</p></div></div>
+<div class="benefit-card"><div class="icon">🎨</div><div><h4>유연한 UI 사용자 정의</h4><p>도구 모음, 버튼 및 대화형 동작은 회사의 Salesforce 브랜드 사양 및 비즈니스 프로세스에 따라 통합된 사용자 환경에 맞게 사용자 정의할 수 있습니다.</p></div></div>
+<div class="benefit-card"><div class="icon">⚡</div><div><h4>신속한 통합</h4><p>즉시 사용 가능한 LWC + Apex 샘플 코드를 제공하므로 개발자는 처음부터 시작하지 않고도 몇 시간 내에 통합 배포를 완료할 수 있습니다.</p></div></div>
+</div>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">핵심 기능</span><h2>Salesforce에서 무엇을 할 수 있나요</h2><p>ComPDF 웹 SDK의 전체 기능은 Salesforce |||에서 모두 사용할 수 있습니다. PDF 보기</p></div>
+<div class="features-grid">
+<div class="feature-card"><div class="emoji">👁️</div><h4>고성능 렌더링 엔진, 몇 초 만에 대용량 파일 열기, 부드러운 페이지 넘김 및 확대/축소 지원</h4><p>문서 편집</p></div>
+<div class="feature-card"><div class="emoji">✏️</div><h4>원본 레이아웃을 변경하지 않고 텍스트, 그림, 워터마크를 직접 수정</h4><p>주석</p></div>
+<div class="feature-card"><div class="emoji">📝</div><h4>여러 사람의 공동 작업을 지원하는 강조 표시, 밑줄, 도형, 스티커 등 20개 이상의 주석 도구 | | 고객 온라인 서명 확인</h4><p>Salesforce에 자동으로 다시 저장됨</p></div>
+<div class="feature-card"><div class="emoji">📋</div><h4>다운로드, 편집, 업로드의 지루한 작업 없이 견적부터 계약까지 모든 과정이 Salesforce 내에서 완료됩니다</h4><p>빠른 통합</p></div>
+<div class="feature-card"><div class="emoji">✍️</div><h4>몇 시간 안에 통합을 완료하세요</h4><p>완전한 LWC 구성 요소 + Apex 코드 샘플을 즉시 제공</p></div>
+<div class="feature-card"><div class="emoji">🔐</div><h4>무료 평가판</h4><p>Salesforce에서 ComPDF를 경험해 보세요</p></div>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">Salesforce 인스턴스에서 ComPDF가 어떻게 실행되는지 확인하려면 독점 데모를 예약하세요</span><h2>Salesforce 환경에서 실제 시연</h2></div>
+<div class="workflow">
+<div class="wf-node highlight"><div class="wf-icon">📄</div><div class="wf-label">LWC 통합 코드 예시 제공</div></div>
+<div class="wf-arrow">→</div>
+<div class="wf-node highlight"><div class="wf-icon">✏️</div><div class="wf-label">모든 기능을 갖춘 무료 30일 평가판</div></div>
+<div class="wf-arrow">→</div>
+<div class="wf-node highlight"><div class="wf-icon">✍️</div><div class="wf-label">Salesforce 통합 데모 예약</div></div>
+<div class="wf-arrow">→</div>
+<div class="wf-node highlight"><div class="wf-icon">💾</div><div class="wf-label">Salesforce 버전</div></div>
+</div>
+<p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:16px">기타</p>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">지금 데모 예약</span><h2>ComPDF Salesforce 통합 | Salesforce에서 직접 PDF 작업</h2><p>당신의 이름</p></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;max-width:640px;margin:0 auto">
+<div style="background:#0B1120;color:#CBD5E1;font-family:monospace;font-size:12px;padding:16px;border-radius:8px;border:1px solid var(--border);overflow-x:auto;line-height:1.8;white-space:pre"><span style="color:#475569">// Install via npm</span>
+$ npm install @compdf/web-sdk
+
+<span style="color:#475569">// Import LWC component</span>
+<span style="color:#7DD3FC">import</span> { LightningElement, track } <span style="color:#7DD3FC">from</span> <span style="color:#86EFAC">'lwc'</span>;
+<span style="color:#7DD3FC">import</span> PDFViewer <span style="color:#7DD3FC">from</span> <span style="color:#86EFAC">'@compdf/salesforce-lwc'</span>;
+
+<span style="color:#475569">// Open PDF from Salesforce ContentVersion</span>
+<span style="color:#7DD3FC">const</span> viewer = <span style="color:#7DD3FC">new</span> PDFViewer();
+viewer.<span style="color:#FBBF24">loadFromSalesforce</span>(contentVersionId);</div>
+</div>
+</div></section>
+<section class="form-section"><div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">직장 이메일</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">회사명</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">Salesforce 버전</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">다른</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">提供 LWC 集成代码示例</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">30 天免费全功能试用</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">预约 Salesforce 集成演示</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="您的姓名" type="text"/>
+<input placeholder="工作邮箱" type="email"/>
+<input placeholder="公司名称" type="text"/>
+<select><option value="">您的 Salesforce 版本</option><option>Sales Cloud</option><option>Service Cloud</option><option>Marketing Cloud</option><option>Experience Cloud</option><option>其他</option></select>
+<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">立即预约演示</button>
+</form>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行業解決方案 | ComPDF 全行業文檔處理方案</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:20px;list-style:none;font-size:13px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(37,99,235,.08) 0%,transparent 60%)}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:580px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:28px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ind-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.ind-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.ind-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.ind-card .icon{font-size:36px;margin-bottom:12px}
+.ind-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.ind-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:14px;flex:1;line-height:1.7}
+.ind-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.ind-card .tag-item{font-size:10.5px;padding:3px 9px;border-radius:4px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--primary-light)}
+.ind-card .card-link{font-size:12px;font-weight:600;color:var(--primary-light);display:inline-flex;align-items:center;gap:4px}
+.ind-card .card-link:hover{color:var(--accent)}
+.form-section{background:var(--bg-elevated);padding:60px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.ind-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}nav ul{display:none}}
+@media(max-width:500px){.ind-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html" class="active">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+
+<section class="hero"><div class="container">
+  <div class="hero-badge">覆蓋 9+ 行業 · 持續擴展中</div>
+  <h1>為每個行業量身打造的 <span class="gradient">文檔處理方案</span></h1>
+  <p>ComPDF 的 SDK、AI 和雲服務為建築、金融、教育、醫療等行業解決文檔處理痛點，加速業務數字化。</p>
+</div></section>
+
+<section><div class="container">
+  <div class="ind-grid">
+    <div class="ind-card"><div class="icon">🏗️</div><h3>建築 Construction</h3><p class="desc">圖紙移動端查看與標註、施工合同轉換歸檔、現場拍照 OCR 識別、BIM 系統集成對接</p><div class="tags"><span class="tag-item">圖紙標註</span><span class="tag-item">合同管理</span><span class="tag-item">現場 OCR</span></div><a href="https://www.compdf.com/solutions/construction" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">✈️</div><h3>航空 Aviation</h3><p class="desc">飛行手冊移動端批註、維修工單 OCR 提取、合規文檔 PDF/A 歸檔、多語言文檔管理</p><div class="tags"><span class="tag-item">手冊管理</span><span class="tag-item">維修工單</span><span class="tag-item">合規歸檔</span></div><a href="https://www.compdf.com/solutions/aviation" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🏭</div><h3>製造 Manufacturing</h3><p class="desc">技術圖紙與 BOM 管理、質檢報告 OCR 提取、ERP/MES/PLM 集成、高併發批量處理</p><div class="tags"><span class="tag-item">ERP 集成</span><span class="tag-item">MES 對接</span><span class="tag-item">批量處理</span></div><a href="https://www.compdf.com/solutions/manufacturing" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">💰</div><h3>金融 Finance</h3><p class="desc">財報與招股書解析、合同條款 AI 提取、敏感信息密文處理、支持私有化合規部署</p><div class="tags"><span class="tag-item">財報解析</span><span class="tag-item">合同提取</span><span class="tag-item">密文處理</span></div><a href="https://www.compdf.com/solutions/finance" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">📚</div><h3>教育 Education</h3><p class="desc">課件多格式轉換分發、試卷自動批註歸檔、學術論文 PDF 解析、LMS 教育平臺集成</p><div class="tags"><span class="tag-item">課件轉換</span><span class="tag-item">論文提取</span><span class="tag-item">LMS 集成</span></div><a href="https://www.compdf.com/solutions/education" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🖨️</div><h3>印刷 Printing</h3><p class="desc">PDF/X 印刷標準轉換、色彩分離與色彩管理、字體檢測與嵌入、印刷預檢自動化</p><div class="tags"><span class="tag-item">PDF/X 標準</span><span class="tag-item">色彩分離</span><span class="tag-item">預檢校驗</span></div><a href="https://www.compdf.com/solutions/printing" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🏛️</div><h3>政務 Government</h3><p class="desc">公文國標 PDF 生成轉換、紙質檔案批量 OCR 歸檔、PDF/A 長期保存、信創環境適配</p><div class="tags"><span class="tag-item">公文處理</span><span class="tag-item">檔案數字化</span><span class="tag-item">信創適配</span></div><a href="https://www.compdf.com/solutions/government" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card"><div class="icon">🏥</div><h3>醫療 Healthcare</h3><p class="desc">病歷跨科室共享查看、手寫處方 OCR 提取、保險理賠單分類錄入、HIPAA 合規私有化</p><div class="tags"><span class="tag-item">病歷管理</span><span class="tag-item">OCR 識別</span><span class="tag-item">HIPAA 合規</span></div><a href="https://www.compdf.com/solutions/healthcare" target="_blank" class="card-link">查看方案 →</a></div>
+    <div class="ind-card" style="border:1px dashed var(--border);cursor:default">
+      <div class="icon">➕</div>
+      <h3>更多行業</h3>
+      <p class="desc">你的行業不在列表中？聯繫我們獲取定製化文檔處理方案，技術團隊將根據你的業務場景提供專業建議。</p>
+      <div class="tags"><span class="tag-item">定製方案</span><span class="tag-item">技術諮詢</span></div>
+      <a href="#form" class="card-link">聯繫我們 →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="form-section" id="form"><div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:11px;font-weight:600;padding:3px 12px;border-radius:16px;margin-bottom:12px">免費諮詢</div>
+      <h2 style="font-size:28px;font-weight:700;margin:12px 0 16px">獲取你的行業專屬方案</h2>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">告訴我們你所在的行業和需求，我們的行業解決方案團隊將為你定製方案</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">針對你的行業場景提供定製化方案</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">行業案例參考與技術可行性評估</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">團隊 1 對 1 對接，30 天免費試用</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">獲取行業方案</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的姓名">
+        <input type="email" placeholder="工作邮箱">
+        <input type="text" placeholder="公司名称">
+        <select><option value="">您所在的行業</option><option>建築 Construction</option><option>航空 Aviation</option><option>製造 Manufacturing</option><option>金融 Finance</option><option>教育 Education</option><option>印刷 Printing</option><option>政府 Government</option><option>醫療 Healthcare</option><option>其他</option></select>
+        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">獲取行業方案 →</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

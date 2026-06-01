@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>직장 이메일</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.08) 0%,transparent 70%)}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:28px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.cat-title{font-size:14px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;padding-left:4px}
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:56px}
+.plat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.plat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.plat-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
+.plat-card .icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px}
+.plat-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.plat-card .desc{color:var(--text-muted);font-size:12px;margin-bottom:14px}
+.plat-card .status{font-size:10px;font-weight:600;padding:3px 10px;border-radius:10px}
+.st-online{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#34D399}
+.st-coming{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}.btn-primary:hover{box-shadow:0 4px 20px rgba(37,99,235,.4);color:#fff}
+.plat-card .btn{width:100%;padding:8px;border-radius:6px;font-size:12px;font-weight:600;border:none;cursor:pointer;text-align:center;display:inline-block;background:rgba(37,99,235,.1);color:var(--primary-light);border:1px solid rgba(37,99,235,.2);transition:all .2s}
+.plat-card .btn:hover{background:rgba(37,99,235,.2)}
+.steps-section{padding:80px 0;background:var(--bg-elevated)}
+.steps-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-top:16px}
+.step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 28px;text-align:center;flex:1;max-width:300px;position:relative;transition:all .3s}
+.step-card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-3px)}
+.step-card .step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.step-card .s-icon{font-size:40px;margin-bottom:12px}
+.step-card h3{font-size:17px;font-weight:700;margin-bottom:8px;transition:color .2s}
+.step-card a:hover h3{color:var(--primary-light)}
+.step-card p{color:var(--text-secondary);font-size:12.5px;line-height:1.7}
+.step-arrow{font-size:24px;color:var(--accent);opacity:.6;padding:0 12px}
+.bookmark-section{background:linear-gradient(135deg,rgba(37,99,235,.08),rgba(6,182,212,.04));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
+.bookmark-card{max-width:1200px;margin:0 auto;padding:60px 24px;display:flex;align-items:center;justify-content:center;gap:36px;position:relative}
+.bookmark-card .bk-icon{font-size:60px;flex-shrink:0}
+.bookmark-card .bk-info{text-align:left}
+.bookmark-card .bk-info h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.bookmark-card .bk-info p{color:var(--text-secondary);font-size:14px;line-height:1.7;max-width:480px}
+.bookmark-card .bk-hint{font-size:13px;color:var(--text-muted);padding:12px 24px;border:1px dashed var(--border);border-radius:8px;background:var(--bg-elevated);white-space:nowrap}
+.bookmark-card .bk-hint kbd{padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--bg-card);font-family:inherit;font-size:12px;color:var(--text-secondary);font-weight:600}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:768px){.hero h1{font-size:30px}nav ul{display:none}.plat-grid{grid-template-columns:repeat(2,1fr)}.steps-flow{flex-direction:column;gap:12px}.step-arrow{transform:rotate(90deg)}.bookmark-card{flex-direction:column;text-align:center;padding:40px 24px;gap:16px}.bookmark-card .bk-info{text-align:center}.bookmark-card .bk-hint{white-space:normal;width:100%;text-align:center}.form-section .container>div{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a class="active" href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="tag">17개 플랫폼 및 진행 중</div>
+<h1>ComPDF가 이미 온라인 상태입니다<span class="gradient">타사 플랫폼</span></h1>
+<p>개발자 도구, 로우 코드 플랫폼, 클라우드 시장, AI 프로토콜에 대한 전체 범위 - ComPDF의 문서 처리 기능을 익숙한 플랫폼에서 직접 사용</p>
+<div style="display:flex;gap:12px;justify-content:center;margin-top:32px"><a class="btn btn-primary" href="#form-section">통합 솔루션 얻기</a></div>
+</div></section>
+<section><div class="container">
+<div class="cat-title">📦 개발자 플랫폼</div>
+<div class="plat-grid">
+<div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">🐙</div><h3>GitHub</h3><p class="desc">전체 플랫폼 SDK 소스 코드 및 데모 오픈 소스, Star 최신 버전 업데이트에 주목</p><span class="status st-online">온라인</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">📦</div><h3>npm</h3><p class="desc">웹/Node.js 패키지 관리자, 한 줄 명령 통합 ComPDF 웹 SDK</p><span class="status st-online">Flutter 공식 플러그인 마켓, iOS + Android를 포괄하는 코드 세트</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">🎯</div><h3>pub.dev</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">⚡ 로우 코드/자동화 플랫폼</span></div>
+</div>
+<div class="cat-title">시각적 장면 오케스트레이션, 15개 이상의 ComPDF 작업 모듈 지원, 1000개 이상의 애플리케이션과 연결됨</div>
+<div class="plat-grid">
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">⚡</div><h3>Make</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">Zap 템플릿은 한 번의 클릭으로 활성화되어 이메일 첨부 파일, 송장 추출, OCR 식별을 자동으로 처리할 수 있습니다</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🔄</div><h3>Zapier</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">오픈 소스 및 자체 배포 가능한 ComPDF 노드는 현지화된 처리를 지원하며 데이터는 인트라넷을 떠나지 않습니다</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🔧</div><h3>n8n</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">Flow에서 ComPDF API를 직접 호출하여 견적 PDF 및 계약 템플릿 작성을 자동으로 생성</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">☁️</div><h3>Salesforce</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">사용자 정의 커넥터 액세스, Teams, Outlook 및 SharePoint와의 딥 링크</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🔷</div><h3>Microsoft Power Automate</h3><p class="desc">곧 온라인에 접속됩니다</p><span class="status st-coming">문서 라이브러리가 자동으로 PDF 처리를 시작합니다 —— 변환, OCR, 워터마킹, 분할 보관</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">📁</div><h3>SharePoint</h3><p class="desc">곧 출시 예정</p><span class="status st-coming">마켓플레이스 모듈 또는 REST 커넥터, 로우 코드 애플리케이션에 PDF를 포함하는 기능</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🏗️</div><h3>Mendix</h3><p class="desc">곧 출시 예정</p><span class="status st-coming">Forge 구성 요소 설치, PDF 생성, 템플릿 채우기 및 문서 보관을 빠르게 추가</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(245,158,11,.1)">🚀</div><h3>OutSystems</h3><p class="desc">곧 출시 예정</p><span class="status st-coming">☁️ 클라우드 마켓</span></div>
+</div>
+<div class="cat-title">통합 AWS 청구, 비공개 제안 및 EDP 공제 지원, SOC 2 / HIPAA 규정 준수</div>
+<div class="plat-grid">
+<div class="plat-card"><div class="icon" style="background:rgba(234,179,8,.1)">🟠</div><h3>AWS Marketplace</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">Azure Marketplace를 통해 구독하고 MACC를 사용하여 소비 공제 커밋, Azure AD SSO</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(37,99,235,.1)">🔷</div><h3>Microsoft Azure</h3><p class="desc">곧 출시 예정</p><span class="status st-coming">🤖 AI 역량 프로토콜</span></div>
+</div>
+<div class="cat-title">Model Context Protocol을 기반으로 Claude, GPT 및 기타 AI 모델이 PDF 기능을 직접 호출하도록 허용</div>
+<div class="plat-grid">
+<div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🧩</div><h3>MCP Server</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">ClawHub는 ComPDF AI Skills를 출시했으며, AI Agent는 한 번의 클릭으로 문서 처리 기능을 호출할 수 있습니다</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🧠</div><h3>Skills · ClawHub</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">ChatGPT 플러그인 / ComPDF를 GPT에 통합하고 대화 방식으로 문서 작업 완료</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">💬</div><h3>Skills · ChatGPT</h3><p class="desc">곧 출시 예정</p><span class="status st-coming">Claude Desktop/API의 MCP를 통해 ComPDF 문서 처리 기능 호출</span></div>
+<div class="plat-card"><div class="icon" style="background:rgba(139,92,246,.1)">🌀</div><h3>Skills · Claude</h3><p class="desc">이미 온라인 상태</p><span class="status st-online">세 단계만 거치면 타사 플랫폼에 ComPDF를 통합할 수 있습니다</span></div>
+</div>
+</div></section>
+<section class="steps-section" id="steps"><div class="container">
+<div class="section-title"><h2>라이센스 받기</h2></div>
+<div class="steps-flow">
+<div class="step-card">
+<div class="step-num">1</div>
+<div class="s-icon">🔑</div>
+<a href="https://api.compdf.com/login" style="text-decoration:none;color:inherit" target="_blank"><h3>ComPDF 회원으로 등록하고 백그라운드에서 한 번의 클릭으로 무료 평가판 라이센스 키를 생성하십시오.</h3></a>
+<p>문서 보기</p>
+</div>
+<div class="step-arrow">→</div>
+<div class="step-card">
+<div class="step-num">2</div>
+<div class="s-icon">📖</div>
+<a href="https://www.compdf.com/documentation" style="text-decoration:none;color:inherit" target="_blank"><h3>샘플 코드를 얻으려면 해당 플랫폼에 대한 통합 문서 및 SDK 가이드를 확인하세요.</h3></a>
+<p>ComPDF의 원활한 통합</p>
+</div>
+<div class="step-arrow">→</div>
+<div class="step-card">
+<div class="step-num">3</div>
+<div class="s-icon">⚡</div>
+<a href="#form-section" style="text-decoration:none;color:inherit"><h3>ComPDF를 플랫폼에 통합하면 사용자는 떠나지 않고도 문서 처리를 완료할 수 있습니다.</h3></a>
+<p>ComPDF를 북마크에 추가하고 다음번에는 더 빠르게 찾아보세요</p>
+</div>
+</div>
+</div></section>
+<section class="bookmark-section"><div class="container">
+<div class="bookmark-card">
+<div class="bk-icon">🔖</div>
+<div class="bk-info">
+<h3>ComPDF 관련 페이지를 브라우저 즐겨찾기 또는 타사 플랫폼 즐겨찾기 목록에 추가하면 다음에 필요할 때 다시 검색할 필요 없이 한 번의 클릭으로 직접 액세스할 수 있습니다.</h3>
+<p>|||를 누르세요 (맥) 또는</p>
+</div>
+<div class="bk-actions">
+<span class="bk-hint">(Windows) 즐겨찾기에 추가하려면<kbd>Cmd + D</kbd>맞춤형 솔루션<kbd>Ctrl + D</kbd>독점적인 플랫폼 통합 솔루션을 확보하세요</span>
+</div>
+</div>
+</div></section>
+
+
+<section class="form-section" id="form-section">
+<div class="container">
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">모든 기업의 기술 스택과 비즈니스 시나리오는 다릅니다. 귀하의 플랫폼과 요구 사항을 알려주시면 당사의 솔루션 엔지니어가 귀하를 위해 무료로 통합을 맞춤화해 드립니다.</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">기술 스택에 따라 최상의 통합 경로를 선택하세요</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8">대상 플랫폼에 대한 완전한 통합 가이드 및 샘플 코드 제공</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">기술팀과의 1:1 연결, 30일 무료 평가판</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">즉시 요구사항 제출</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">관심 있는 플랫폼</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">AWS / Azure 클라우드 시장</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="회사명" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="text"/>
+<input placeholder="관심 있는 플랫폼" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="email"/>
+<input placeholder="AWS / Azure 클라우드 시장" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="text"/>
+<select style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:14px;outline:none;width:100%">
+<option value="">기타</option>
+<option>GitHub / npm / pub.dev</option>
+<option>Make / Zapier / n8n</option>
+<option>Salesforce</option>
+<option>Microsoft Power Automate / SharePoint</option>
+<option>요구 사항 제출 → 솔루션 얻기</option>
+<option>MCP / AI Skills</option>
+<option>제출 후 영업일 기준 1일 이내에 연락드리겠습니다</option>
+</select>
+<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">타사 플랫폼 컬렉션 | ComPDF 플랫폼 생태학</button>
+<p style="font-size:12px;color:var(--text-muted);text-align:center">당신의 이름</p>
+</form>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>คู่มือการเลือก PDF SDK | ComPDF — ฟังก์ชันการทำงาน · ความคุ้มค่า · การประเมิน ROI ที่ครอบคลุม</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.08) 0%,transparent 70%)}
+.hero h1{font-size:44px;font-weight:800;line-height:1.25;max-width:750px;margin:0 auto 18px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:620px;margin:0 auto 32px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.check{color:var(--accent-green);font-weight:700}.cross{color:#EF4444;font-weight:700}
+.checklist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cl-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;position:relative;overflow:hidden}
+.cl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.cl-card h3{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.cl-card h3 .num{background:var(--primary);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.cl-card ul{list-style:none}.cl-card ul li{padding:6px 0;font-size:13px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);color:var(--text-secondary)}.cl-card ul li:last-child{border:none}
+.compare-table{width:100%;border-collapse:collapse;background:var(--bg-card);border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border)}
+.compare-table th,.compare-table td{padding:12px 16px;text-align:center;font-size:13px;border-bottom:1px solid var(--border)}
+.compare-table th:first-child,.compare-table td:first-child{text-align:left;font-weight:600}
+.compare-table thead{background:var(--bg-elevated)}
+.compare-table thead th{font-weight:700;color:var(--text-secondary)}
+.compare-table .highlight-col{background:rgba(37,99,235,.04)}
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.roi-form{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:32px}
+.roi-form h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center}
+.roi-form .field{margin-bottom:16px}
+.roi-form label{font-size:13px;font-weight:600;display:block;margin-bottom:6px;color:var(--text-secondary)}
+.roi-form input[type="range"]{width:100%;accent-color:var(--primary)}
+.roi-form .range-val{font-size:13px;color:var(--primary-light);font-weight:700;text-align:right}
+.roi-results{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:32px}
+.roi-results h3{font-size:20px;font-weight:700;margin-bottom:24px;text-align:center}
+.roi-metric{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}
+.roi-metric .label{font-size:14px;color:var(--text-secondary)}
+.roi-metric .val{font-size:22px;font-weight:800;color:var(--primary-light)}.roi-metric .val.green{color:var(--accent-green)}
+.roi-total{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);border-radius:var(--radius-sm);padding:20px;text-align:center;margin-top:16px}
+.roi-total .big{font-size:38px;font-weight:800;background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.roi-total .note{font-size:13px;color:var(--text-muted)}
+.tco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tco-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;text-align:center;position:relative}
+.tco-card.featured{border-color:var(--primary)}
+.tco-card.featured::before{content:'推荐选择';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:20px}
+.tco-card h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.tco-card .price{font-size:28px;font-weight:800;color:var(--primary-light);margin:12px 0 4px}
+.tco-card .price-note{font-size:12px;color:var(--text-muted);margin-bottom:16px}
+.tco-card ul{list-style:none;text-align:left;font-size:13px;color:var(--text-secondary)}
+.tco-card ul li{padding:5px 0;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}.tco-card ul li:last-child{border:none}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;text-align:center}
+.step-card .step-num{width:36px;height:36px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;margin:0 auto 12px}
+.step-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.step-card p{font-size:12px;color:var(--text-muted)}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.checklist-grid,.tco-grid,.steps-grid{grid-template-columns:1fr}.roi-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a class="active" href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="hero-badge">📊 สำหรับ CTO/ผู้มีอำนาจตัดสินใจด้านเทคนิค</div>
+<h1>คู่มือการเลือก PDF SDK<br/><span class="gradient">ฟังก์ชั่น · ความคุ้มค่า · การประเมิน ROI ที่ครอบคลุม</span></h1>
+<p>ช่วยให้คุณตัดสินใจเลือกเทคโนโลยีที่มีข้อมูลครบถ้วนที่สุด<br/>หลีกเลี่ยงการเสียเงิน ก้าวเข้าสู่หลุมบูรณาการ และถูกซัพพลายเออร์ล็อคไว้</p>
+<div style="display:flex;gap:12px;justify-content:center"><a class="btn btn-primary" href="#">ทดลองใช้ฟรี ComPDF</a><a class="btn btn-outline" href="#">นัดหมายเพื่อรับการประเมินด้านเทคนิค →</a></div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">รายการตรวจสอบการประเมิน</span><h2>คำถาม 9 ข้อที่คุณต้องตอบก่อนเลือก PDF SDK</h2><p>สรุปประสบการณ์การคัดเลือกจากลูกค้าองค์กรมากกว่า 500 ราย</p></div>
+<div class="checklist-grid">
+<div class="cl-card"><h3><span class="num">1</span>ครอบคลุมฟังก์ชัน</h3><ul><li>📋 การแก้ไขปก คำอธิบายประกอบ การแปลงแบบฟอร์ม?</li><li>🔍 รองรับการแยก OCR และ AI หรือไม่</li><li>✍️ รองรับลายเซ็นอิเล็กทรอนิกส์และการปิดทึบหรือไม่</li></ul></div>
+<div class="cl-card"><h3><span class="num">2</span>เข้ากันได้กับแพลตฟอร์ม</h3><ul><li>🌐 ครอบคลุมเว็บ/iOS/Android/เดสก์ท็อปหรือไม่?</li><li>⚛️ รองรับ React Native/Flutter หรือไม่</li><li>☁️ มี Cloud API ให้มาหรือไม่</li></ul></div>
+<div class="cl-card"><h3><span class="num">3</span>บูรณาการและต้นทุน</h3><ul><li>⏱️ สามารถจัดการเวลาบูรณาการได้หรือไม่ (&lt; 1 สัปดาห์)</li><li>💰 ราคามีความโปร่งใสโดยไม่มีค่าธรรมเนียมแอบแฝงหรือไม่?</li><li>🔓 มีความเสี่ยงที่ผู้ขายล็อคอินหรือไม่?</li></ul></div>
+</div>
+</div></section>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">การเปรียบเทียบฟังก์ชัน</span><h2>การเปรียบเทียบฟังก์ชัน PDF SDK กระแสหลักอย่างครอบคลุม</h2><p>แหล่งข้อมูล: ข้อมูลสาธารณะจากเว็บไซต์อย่างเป็นทางการของผู้ผลิตแต่ละราย (อัปเดตเมื่อเดือนพฤษภาคม 2569)</p></div>
+<div style="overflow-x:auto">
+<table class="compare-table">
+<thead><tr><th>มิติความสามารถ</th><th class="highlight-col">ComPDF</th><th>Nutrient</th><th>Apryse</th></tr></thead>
+<tbody>
+<tr><td>Web SDK</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>SDK เนทิฟ iOS/Android</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>Windows / macOS SDK</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>React Native</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>Cloud API</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>AI OCR</td><td class="highlight-col check">✓ 100+ ภาษา</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>การจดจำแบบฟอร์ม AI</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>การทำงานร่วมกันของคำอธิบายประกอบ XFDF</td><td class="highlight-col check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
+<tr><td>ข้อมูลที่ละเอียดอ่อนถูกปกปิด</td><td class="highlight-col check">✓ AI</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>ลายเซ็นดิจิทัล</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>การรวม Make / Zapier</td><td class="highlight-col check">✓ เป็นทางการ</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>AI Skills / MCP</td><td class="highlight-col check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+<tr><td>การใช้งานส่วนตัว</td><td class="highlight-col check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>ทดลองใช้ฟรี</td><td class="highlight-col" style="color:var(--primary-light);font-weight:700">✓ เพียงพอ</td><td>จำกัด</td><td>จำกัด</td></tr>
+<tr><td style="font-weight:700">ความคุ้มค่า</td><td class="highlight-col" style="color:var(--accent-green);font-weight:700">⭐ สูง</td><td>ทางด้านสูง</td><td>สูงกว่า</td></tr>
+</tbody>
+</table>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">เครื่องคำนวณ ROI</span><h2>ลองคำนวณดูว่า ComPDF ช่วยคุณประหยัดได้มากแค่ไหน?</h2><p>ป้อนพารามิเตอร์ทางธุรกิจของคุณและคำนวณผลตอบแทนจากการลงทุนทันที</p></div>
+<div class="roi-grid">
+<div class="roi-form">
+<h3>📊 ป้อนพารามิเตอร์ของคุณ</h3>
+<div class="field"><label>ปริมาณเอกสารที่ประมวลผลต่อเดือน</label><input id="docVolume" max="100000" min="100" oninput="calcROI()" step="100" type="range" value="5000"/><div class="range-val" id="docVolumeVal">5,000 ชุด/เดือน</div></div>
+<div class="field"><label>ระยะเวลาดำเนินการด้วยตนเองต่อเอกสาร (นาที)</label><input id="manualTime" max="30" min="1" oninput="calcROI()" step="1" type="range" value="10"/><div class="range-val" id="manualTimeVal">10 นาที</div></div>
+<div class="field"><label>ค่าจ้างพนักงานรายชั่วโมง (USD)</label><input id="hourlyRate" max="200" min="10" oninput="calcROI()" step="5" type="range" value="40"/><div class="range-val" id="hourlyRateVal">$40/ชั่วโมง</div></div>
+<div class="field"><label>อัตราข้อผิดพลาดปัจจุบัน (%)</label><input id="errorRate" max="10" min="0" oninput="calcROI()" step="0.5" type="range" value="3"/><div class="range-val" id="errorRateVal">3%</div></div>
+</div>
+<div class="roi-results">
+<h3>💰 ค่าประมาณ ROI ของคุณ</h3>
+<div class="roi-metric"><span class="label">ประหยัดเวลาแรงงานทุกเดือน</span><span class="val" id="timeSaved">750 ชม</span></div>
+<div class="roi-metric"><span class="label">ประหยัดค่าแรงรายเดือน</span><span class="val green" id="costSaved">$30,000</span></div>
+<div class="roi-metric"><span class="label">อัตราข้อผิดพลาดลดลง</span><span class="val green" id="errorReduction">95%</span></div>
+<div class="roi-metric"><span class="label">ระยะเวลาคืนทุน</span><span class="val" id="paybackPeriod">&lt; 1 เดือน</span></div>
+<div class="roi-total"><div class="big" id="annualSaving">$360,000</div><div class="note">ประหยัดต้นทุนโดยประมาณต่อปี</div></div>
+</div>
+</div>
+</div></section>
+<script>
+function calcROI(){
+  const vol=+document.getElementById('docVolume').value;
+  const time=+document.getElementById('manualTime').value;
+  const rate=+document.getElementById('hourlyRate').value;
+  const err=+document.getElementById('errorRate').value;
+  document.getElementById('docVolumeVal').textContent=vol.toLocaleString()+' 份/月';
+  document.getElementById('manualTimeVal').textContent=time+' 分钟';
+  document.getElementById('hourlyRateVal').textContent='$'+rate+' / 小时';
+  document.getElementById('errorRateVal').textContent=err+'%';
+  const monthlyHours=vol*time/60;
+  const saved=Math.round(monthlyHours*0.9);
+  const costMonth=Math.round(saved*rate);
+  const annual=costMonth*12;
+  document.getElementById('timeSaved').textContent=saved.toLocaleString()+' 小时';
+  document.getElementById('costSaved').textContent='$'+costMonth.toLocaleString();
+  document.getElementById('errorReduction').textContent=Math.min(95,Math.round(err/err*95))+'%';
+  document.getElementById('paybackPeriod').textContent=costMonth>5000?'< 1 个月':costMonth>1000?'< 3 个月':'< 6 个月';
+  document.getElementById('annualSaving').textContent='$'+annual.toLocaleString();
+}
+</script>
+<section class="section-alt"><div class="container">
+<div class="section-title"><span class="tag">ต้นทุนการเป็นเจ้าของทั้งหมด</span><h2>Build vs Buy vs ComPDF — อันไหนคุ้มที่สุด?</h2></div>
+<div class="tco-grid">
+<div class="tco-card"><h4>🔨 เอ็นจิ้น PDF ที่พัฒนาตนเอง</h4><div class="price">$500K+</div><div class="price-note">ต้นทุนการพัฒนาในปีแรก</div><ul><li>✗ วงจรการพัฒนา 6-12 เดือน</li><li>✗ ต้องมีวิศวกรเต็มเวลา 3-5 คน</li><li>✗ ค่าบำรุงรักษาต่อเนื่องสูง</li><li>✗ ครอบคลุมฟีเจอร์อย่างจำกัด</li><li>✗ รับผิดชอบต่อความปลอดภัยและการปฏิบัติตามกฎระเบียบของคุณเอง</li></ul></div>
+<div class="tco-card featured"><h4>⭐ ComPDF SDK</h4><div class="price" style="color:var(--accent-green)">$X,XXX</div><div class="price-note">ค่าธรรมเนียมใบอนุญาตรายปี</div><ul><li>✓ บูรณาการเสร็จภายใน 5 นาที</li><li>✓ พนักงานซ่อมบำรุงเต็มเวลา 0 คน</li><li>✓ อัปเดตฟรีอย่างต่อเนื่อง</li><li>✓ ครอบคลุมฟังก์ชันการทำงานเต็มรูปแบบ + AI</li><li>✓ การปฏิบัติตามข้อกำหนดด้านความปลอดภัยในตัว</li></ul></div>
+<div class="tco-card"><h4>💎 SDK ของคู่แข่ง</h4><div class="price">$XX,XXX+</div><div class="price-note">ค่าธรรมเนียมใบอนุญาตรายปี</div><ul><li>✓ 1-2 สัปดาห์สำหรับการบูรณาการ</li><li>✓ ฟังก์ชั่นที่สมบูรณ์</li><li>✗ ราคา 3-5 เท่าของ ComPDF</li><li>✗ ค่าบริการเพิ่มเติมขึ้นอยู่กับแพลตฟอร์ม/ฟังก์ชัน</li><li>✗ ความเสี่ยงจากการล็อคอินของผู้ขาย</li></ul></div>
+</div>
+</div></section>
+<section><div class="container">
+<div class="section-title"><span class="tag">เริ่มต้นอย่างรวดเร็ว</span><h2>การประเมินเทคโนโลยีเสร็จสมบูรณ์ใน 4 ขั้นตอน</h2></div>
+<div class="steps-grid">
+<div class="step-card"><div class="step-num">1</div><h4>ลงทะเบียนฟรี</h4><p>ลงทะเบียนบัญชีเพื่อรับรหัส API</p></div>
+<div class="step-card"><div class="step-num">2</div><h4>เลือก SDK</h4><p>เลือก SDK ที่เกี่ยวข้องตามแพลตฟอร์ม</p></div>
+<div class="step-card"><div class="step-num">3</div><h4>การตรวจสอบ POC</h4><p>ทดสอบด้วยเอกสารจริงของคุณ</p></div>
+<div class="step-card"><div class="step-num">4</div><h4>ติดต่อเรา</h4><p>รับใบเสนอราคาทางธุรกิจ</p></div>
+</div>
+</div></section>
+<section class="form-section"><div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">เฉพาะสำหรับผู้มีอำนาจตัดสินใจทางเทคนิค</span>
+<h2 style="font-size:28px;font-weight:700;margin:12px 0 16px">การประเมินการคัดเลือกเทคโนโลยีการนัดหมาย</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">สถาปนิกโซลูชันของเราจะให้คำแนะนำในการเลือกแบบกำหนดเองและโซลูชัน POC โดยอิงตามกลุ่มเทคโนโลยี สถานการณ์ทางธุรกิจ และงบประมาณของคุณ</p>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+<h3 style="font-size:18px;font-weight:700;margin-bottom:18px;text-align:center">📋 นัดหมายเพื่อประเมินทางเทคนิค</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:12px">
+<input placeholder="ชื่อของคุณ" type="text"/><input placeholder="อีเมล์ที่ทำงาน" type="email"/><input placeholder="ชื่อบริษัท" type="text"/>
+<select><option value="">บทบาทของคุณ</option><option>CTO / VP of Engineering</option><option>ผู้นำด้านเทคนิค/สถาปนิก</option><option>นักพัฒนา/วิศวกร</option><option>ผู้จัดการผลิตภัณฑ์</option><option>การจัดซื้อจัดจ้างไอที</option></select>
+<button class="fbtn" style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">นัดหมายเพื่อรับการประเมินด้านเทคนิค →</button>
+</form>
+</div>
+</div>
+</div></section>
+<section class="cta-section"><div class="container">
+<h2>เลือกตัวเลือกเทคโนโลยีที่ชาญฉลาดที่สุด — เริ่มต้นด้วย ComPDF</h2>
+<p>ทดลองใช้ฟรี · ไม่ต้องใช้บัตรเครดิต · การยืนยันแบบรวม 5 นาที</p>
+<div style="display:flex;gap:12px;justify-content:center;position:relative"><a class="btn btn-primary" href="#" style="background:#fff;color:#1E3A8A">เริ่มทดลองใช้ฟรี</a><a class="btn btn-outline" href="#">ดูเอกสารฉบับเต็ม →</a></div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

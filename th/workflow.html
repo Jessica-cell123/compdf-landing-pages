@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>การรวบรวมเวิร์กโฟลว์ | โซลูชันเวิร์กโฟลว์เอกสาร ComPDF</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(245,158,11,.08) 0%,transparent 70%)}
+.hero h1{font-size:42px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto 32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:600px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#FBBF24;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wf-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.wf-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.wf-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.wf-card .card-icon{font-size:36px;margin-bottom:12px}
+.wf-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.wf-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:14px;flex:1}
+.wf-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.wf-card .tag-item{font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(148,163,184,.08);border:1px solid var(--border);color:var(--text-secondary)}
+.wf-card .btn{width:100%;justify-content:center;font-size:13px;padding:10px}
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(6,182,212,.2) 0%,transparent 60%)}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.wf-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav ul{display:none}.form-section .container>div{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a class="active" href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero"><div class="container">
+<div class="tag">หน้าการรวบรวมความสามารถในการประมวลผลเอกสาร</div>
+<h1>สิ่งที่คุณต้องการ<span class="gradient">ความสามารถในการประมวลผลเอกสาร</span>ทั้งหมดที่นี่</h1>
+<p>คอลเลกชันแบบครบวงจรของทางเข้าโมดูลผลิตภัณฑ์หลัก 6 รายการ · การแก้ไข / การแปลง / การวิเคราะห์ AI / การรวมกันของซอฟต์แวร์และฮาร์ดแวร์ / การรวมแพลตฟอร์ม · คลิกเพื่อใช้</p>
+</div></section>
+<section class="section-alt">
+<div class="container">
+<div class="section-title"><span class="tag">เลือกสิ่งที่คุณต้องการและใช้งานได้ทันที</span><h2>ครอบคลุมทุกสถานการณ์การประมวลผลเอกสารระดับองค์กร</h2><p>ไม่ว่าคุณจะต้องการแก้ไข PDF, การแปลงรูปแบบ, การสร้างฐานความรู้, การเชื่อมต่อสแกนเนอร์ หรือการรวมแพลตฟอร์ม - มีโซลูชันผลิตภัณฑ์ที่เกี่ยวข้องอยู่ที่นี่ คลิกเพื่อใช้</p></div>
+<div class="wf-grid">
+<div class="wf-card">
+<div class="card-icon">🔗</div>
+<h3>การรวมแพลตฟอร์มของบุคคลที่สาม</h3>
+<p class="desc">ฝังความสามารถในการประมวลผลเอกสารของ ComPDF ลงในแพลตฟอร์มบุคคลที่สามที่ใช้กันทั่วไปของคุณ - ทำการแก้ไข PDF, การแปลง และการแตกไฟล์ AI ได้โดยตรงใน Make, Zapier และ Salesforce โดยไม่ต้องเปลี่ยนเครื่องมือ และเวิร์กโฟลว์ก็ผสานรวมเข้าด้วยกัน</p>
+<div class="tags"><span class="tag-item">Low-Code</span><span class="tag-item">ตลาดคลาวด์</span><span class="tag-item">MCP</span></div>
+<a class="btn btn-primary" href="8-third-party-platforms-v5.html">ดูโซลูชันการรวมระบบ →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">✏️</div>
+<h3>การแก้ไขเอกสาร</h3>
+<p class="desc">การแก้ไข PDF, คำอธิบายประกอบ, การกรอกแบบฟอร์ม, การจัดการหน้า, การเปรียบเทียบเอกสาร - แก้ไขได้อย่างอิสระเหมือน Word ครอบคลุมทุกแพลตฟอร์มบนเว็บ/iOS/Android/เดสก์ท็อป</p>
+<div class="tags"><span class="tag-item">การแก้ไขเนื้อหา</span><span class="tag-item">คำอธิบายประกอบ คำอธิบายประกอบ</span><span class="tag-item">การกรอกแบบฟอร์ม</span></div>
+<a class="btn btn-primary" href="1-document-editing.html">ดูแผนการแก้ไข →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">🔄</div>
+<h3>การประมวลผลไฟล์</h3>
+<p class="desc">การแปลงแบบสองทิศทาง 30 รูปแบบขึ้นไป, การจดจำ AI OCR, การแยกโครงสร้างตาราง, ไปป์ไลน์การประมวลผลแบบแบตช์ - จาก PDF เป็นรูปแบบใดก็ได้, การแปลงอัจฉริยะโดยไม่มีการสูญเสีย</p>
+<div class="tags"><span class="tag-item">การแปลงรูปแบบ</span><span class="tag-item">การรับรู้โอซีอาร์</span><span class="tag-item">การประมวลผลเป็นชุด</span></div>
+<a class="btn btn-primary" href="2-file-processing.html">ดูแผนการรักษา →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">🧠</div>
+<h3>ฐานความรู้ RAG</h3>
+<p class="desc">จากการแยกวิเคราะห์ PDF แบบเนทีฟและการจดจำเค้าโครง AI ระบบจะกู้คืนโครงสร้างเอกสารที่ซับซ้อนและส่งออก Markdown/JSON สำหรับการใช้งานโดยตรงโดยเฟรมเวิร์ก RAG ได้อย่างแม่นยำ</p>
+<div class="tags"><span class="tag-item">การแยกวิเคราะห์เอกสาร</span><span class="tag-item">การแบ่งส่วนอัจฉริยะ</span><span class="tag-item">การทำเวกเตอร์</span></div>
+<a class="btn btn-primary" href="3-document-automation.html">ดูโซลูชันฐานความรู้ →</a>
+</div>
+<div class="wf-card">
+<div class="card-icon">📱</div>
+<h3>การรวมกันของซอฟต์แวร์และฮาร์ดแวร์</h3>
+<p class="desc">การได้รับการเชื่อมต่อโดยตรงของสแกนเนอร์ + การวิเคราะห์อัจฉริยะ AI, การเชื่อมโยงอัตโนมัติเต็มรูปแบบตั้งแต่เอกสารกระดาษไปจนถึงข้อมูลที่มีโครงสร้าง, การไหลของข้อมูลกลับไปยังระบบ ERP / OA / CRM</p>
+<div class="tags"><span class="tag-item">บูรณาการสแกนเนอร์</span><span class="tag-item">การสกัดด้วยเอไอ</span><span class="tag-item">การเชื่อมต่อระบบธุรกิจ</span></div>
+<a class="btn btn-primary" href="4-hardware-integration.html">ดูโซลูชันซอฟต์แวร์และฮาร์ดแวร์ →</a>
+</div>
+<div class="wf-card" style="border:1px dashed var(--border);cursor:default">
+<div class="card-icon">🔧</div>
+<h3>ขั้นตอนการทำงานที่กำหนดเอง</h3>
+<p class="desc">สร้างกระบวนการประมวลผลเอกสารเฉพาะอย่างยืดหยุ่นโดยใช้ผลิตภัณฑ์ ComPDF เพื่อตอบสนองความต้องการของสถานการณ์ทางธุรกิจที่ไม่ได้มาตรฐาน เราให้คำปรึกษาด้านโซลูชันที่ปรับแต่งตามความต้องการและการสนับสนุนด้านเทคนิคเพื่อเพิ่มประสิทธิภาพขั้นตอนการทำงานของคุณอย่างต่อเนื่อง</p>
+<div class="tags"><span class="tag-item">แผนผสมผสาน</span><span class="tag-item">การพัฒนาที่กำหนดเอง</span></div>
+<a class="btn btn-outline" href="#">ติดต่อเรา →</a>
+</div>
+</div>
+</div></section>
+<section class="form-section">
+<div class="container">
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">โซลูชันที่กำหนดเอง</span>
+<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">รับโซลูชันการประมวลผลเอกสารสุดพิเศษของคุณ</h2>
+<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.8">สถานการณ์การประมวลผลเอกสารของแต่ละองค์กรมีความแตกต่างกัน บอกเราว่าคุณต้องการอะไร แล้ววิศวกรโซลูชันของเราจะปรับแต่งโซลูชันให้กับคุณโดยไม่มีค่าใช้จ่ายใดๆ ทั้งสิ้น ไม่มีการผูกมัดใดๆ</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">โซลูชันเวิร์กโฟลว์ที่ปรับแต่งตามสถานการณ์ทางธุรกิจของคุณ</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">ครอบคลุมความสามารถเต็มรูปแบบ เช่น การแก้ไข การแปลง การวิเคราะห์ AI การรวมซอฟต์แวร์และฮาร์ดแวร์ ฯลฯ</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="color:var(--accent-green);font-weight:700">✓</span><span style="font-size:13px">ทีมเทคนิคมีการเชื่อมต่อแบบ 1 ต่อ 1 และให้การสนับสนุนการตรวจสอบ PoC</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">ส่งคำขอของคุณตอนนี้</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="ชื่อของคุณ" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="text"/>
+<input placeholder="อีเมล์ที่ทำงาน" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="email"/>
+<input placeholder="ชื่อบริษัท" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%" type="text"/>
+<select style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-muted);font-size:14px;outline:none;width:100%">
+<option value="">ความสามารถของผลิตภัณฑ์ที่คุณต้องการ</option>
+<option>การแก้ไข PDF และคำอธิบายประกอบ</option>
+<option>การแปลงรูปแบบไฟล์</option>
+<option>การสร้างฐานความรู้ RAG</option>
+<option>ซอฟต์แวร์และฮาร์ดแวร์แบบรวม</option>
+<option>การเชื่อมต่อแพลตฟอร์มของบุคคลที่สาม</option>
+<option>ขั้นตอนการทำงานที่กำหนดเอง</option>
+</select>
+<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">ส่งข้อกำหนด → รับแนวทางแก้ไข</button>
+<p style="font-size:12px;color:var(--text-muted);text-align:center">เราจะติดต่อคุณภายใน 1 วันทำการหลังจากส่ง</p>
+</form>
+</div>
+</div>
+</div></section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

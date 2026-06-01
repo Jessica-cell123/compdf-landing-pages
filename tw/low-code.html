@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF Low-Code 方案 | 無代碼文檔自動化</title>
+<style>
+:root{--primary:#10B981;--primary-dark:#059669;--accent:#2563EB;--accent-green:#34D399;--gradient:linear-gradient(135deg,#10B981,#2563EB);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#064E3B 100%);padding:100px 0 80px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(16,185,129,.08) 0%,transparent 60%)}
+.hero .container{position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#34D399;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-size:42px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#34D399,#10B981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:620px;margin:0 auto 32px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-lc{background:linear-gradient(135deg,#10B981,#059669);color:#fff}.btn-lc:hover{box-shadow:0 4px 20px rgba(16,185,129,.3);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:640px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+
+/* Platform Full Sections */
+.plat-section{padding:80px 0;position:relative;overflow:hidden}
+.plat-section .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.plat-section:nth-child(even){background:var(--bg-elevated)}
+.plat-section:nth-child(even) .container{direction:rtl}
+.plat-section:nth-child(even) .container > *{direction:ltr}
+.plat-info .plat-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:14px}
+.plat-info .plat-badge .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.plat-info h2{font-size:28px;font-weight:800;margin-bottom:12px}
+.plat-info .plat-desc{color:var(--text-secondary);font-size:14px;margin-bottom:20px;line-height:1.8}
+.plat-info .features{list-style:none}
+.plat-info .features li{font-size:13px;padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;color:var(--text-secondary)}
+.plat-info .features li::before{content:'✓';color:var(--accent-green);font-weight:700}
+.plat-info .plat-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.plat-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.plat-visual .big-emoji{font-size:64px;margin-bottom:16px}
+.plat-visual .scene-label{font-size:12px;color:var(--text-muted);margin-bottom:12px}
+.plat-visual .scene-flow{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.plat-visual .sf-step{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;min-width:80px}
+.plat-visual .sf-step .emoji{font-size:22px}
+.plat-visual .sf-step .label{font-size:10px;font-weight:600;margin-top:4px;color:var(--text-muted)}
+.plat-visual .sf-arrow{font-size:14px;color:var(--primary);opacity:.6}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;transition:all .3s;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.cat-card:hover{border-color:rgba(16,185,129,.3);transform:translateY(-2px)}
+.cat-card .icon{font-size:36px;margin-bottom:14px}
+.cat-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.cat-card p{color:var(--text-secondary);font-size:13px;margin-bottom:16px;line-height:1.7}
+.cat-card .cat-link{font-size:13px;font-weight:600;color:var(--primary)}
+
+/* Workflow Flow */
+.flow-wrapper{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:40px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.fw-node{text-align:center;min-width:100px}
+.fw-node .fw-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 8px;border:1px solid var(--border);background:var(--bg-elevated)}
+.fw-node .fw-label{font-size:12px;font-weight:600;color:var(--text-muted)}
+.fw-node.highlight .fw-icon{border-color:var(--accent-green);background:rgba(16,185,129,.08)}
+.fw-node.highlight .fw-label{color:var(--accent-green)}
+.fw-arrow{font-size:18px;color:var(--accent-green);opacity:.6}
+
+/* Form */
+.form-section{background:var(--bg-elevated);padding:80px 0}
+.form-section input,.form-section select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:#fff;font-size:14px;outline:none;width:100%}
+.form-section input::placeholder{color:var(--text-muted)}
+.form-section input:focus,.form-section select:focus{border-color:var(--primary)}
+.form-section select{color:var(--text-muted)}
+.check{color:var(--accent-green);font-weight:700}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){
+  .plat-section .container,.plat-section:nth-child(even) .container{grid-template-columns:1fr;direction:ltr}
+  .plat-section:nth-child(even) .container > *{direction:ltr}
+  .cat-grid{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+  nav ul{display:none}
+}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/low-code.html" class="active">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+    <li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+
+<section class="hero"><div class="container">
+  <div class="hero-badge">⚡ 無代碼 · 拖拽即用</div>
+  <h1>不寫一行代碼<br><span class="gradient">構建文檔自動化工作流</span></h1>
+  <p>在 Make、Zapier、Power Automate 等低代碼平臺上，通過拖拽 ComPDF 模塊即可完成 PDF 編輯、轉換、OCR 識別和數據提取 —— 無需任何編程經驗。</p>
+  <div class="hero-btns">
+    <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-lc">開始使用</a>
+    <a href="#form" class="btn btn-outline">預約演示 →</a>
+  </div>
+</div></section>
+
+<section class="plat-section"><div class="container">
+  <div class="plat-info">
+    <div class="plat-badge" style="background:rgba(255,153,0,.1);border:1px solid rgba(255,153,0,.25);color:#FFB347"><span class="dot" style="background:#FF9900"></span>Make 官方集成</div>
+    <h2>在 Make 中拖拽搭建 <br>PDF 自動化工作流</h2>
+    <p class="plat-desc">ComPDF 是 Make 官方認證的集成應用，提供 15+ 動作模塊。無需編寫代碼，在 Make 的可視化編輯器中拖拽 ComPDF 模塊，即可將 PDF 處理能力嵌入你的自動化場景。</p>
+    <ul class="features">
+      <li>PDF 轉 Word / Excel / 圖片，雙向轉換格式保留</li>
+      <li>AI OCR 識別掃描件，自動提取文本與表格數據</li>
+      <li>PDF 合併、拆分、壓縮、水印添加等批量操作</li>
+      <li>與 Salesforce、Slack、Google Sheets 等 1000+ 應用聯動</li>
+    </ul>
+    <div class="plat-links">
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-lc">在 Make 中使用</a>
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-outline">查看工作流模板</a>
+    </div>
+  </div>
+  <div class="plat-visual">
+    <div class="big-emoji">⚡</div>
+    <div class="scene-label">典型場景：發票附件自動處理</div>
+    <div class="scene-flow">
+      <div class="sf-step"><div class="emoji">📧</div><div class="label">收到郵件</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📄</div><div class="label">解析附件</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🔍</div><div class="label">ComPDF OCR</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📊</div><div class="label">入 Sheets</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">💬</div><div class="label">Slack 通知</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="plat-section"><div class="container">
+  <div class="plat-info">
+    <div class="plat-badge" style="background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.25);color:#E74C3C"><span class="dot" style="background:#E74C3C"></span>Zapier 已上線</div>
+    <h2>通過 Zapier 連接 ComPDF <br>到 5000+ 應用</h2>
+    <p class="plat-desc">ComPDF 在 Zapier 上提供預製 Zap 模板，一鍵啟用即可將 PDF 處理能力接入你的自動化流程。從郵件附件到雲存儲，從發票提取到合同歸檔，全程自動執行。</p>
+    <ul class="features">
+      <li>郵件附件自動觸發 PDF 轉換與 OCR 識別</li>
+      <li>提取發票、合同中的關鍵字段輸出結構化數據</li>
+      <li>轉換結果自動保存到 Google Drive / Dropbox / OneDrive</li>
+      <li>預置多步驟工作流模板，即用即配</li>
+    </ul>
+    <div class="plat-links">
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-lc">在 Zapier 中查看</a>
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-outline">瀏覽 Zap 模板</a>
+    </div>
+  </div>
+  <div class="plat-visual">
+    <div class="big-emoji">🔄</div>
+    <div class="scene-label">典型場景：發票數據自動提取</div>
+    <div class="scene-flow">
+      <div class="sf-step"><div class="emoji">📎</div><div class="label">Gmail 附件</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🔍</div><div class="label">ComPDF 提取</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">💰</div><div class="label">金額 / 日期</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📊</div><div class="label">寫 Sheets</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📧</div><div class="label">郵件確認</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="plat-section"><div class="container">
+  <div class="plat-info">
+    <div class="plat-badge" style="background:rgba(0,169,224,.1);border:1px solid rgba(0,169,224,.25);color:#00A9E0"><span class="dot" style="background:#00A9E0"></span>Power Automate 即將上線</div>
+    <h2>在 Power Platform 中 <br>實現 PDF 流程自動化</h2>
+    <p class="plat-desc">通過自定義連接器將 ComPDF API 接入 Microsoft Power Automate，在 Power Platform 生態內完成 PDF 轉換、數據提取與文檔歸檔，與 Teams、Outlook、SharePoint 深度聯動。</p>
+    <ul class="features">
+      <li>SharePoint 文檔庫新增文件自動觸發 PDF 處理</li>
+      <li>Teams 審批流程中自動生成 PDF 附件</li>
+      <li>Outlook 郵件附件自動轉換並保存到指定位置</li>
+      <li>與 Power Apps 結合構建自定義 PDF 處理應用</li>
+    </ul>
+    <div class="plat-links">
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-lc">查看集成方式</a>
+      <a href="#form" class="btn btn-outline">諮詢方案</a>
+    </div>
+  </div>
+  <div class="plat-visual">
+    <div class="big-emoji">🔷</div>
+    <div class="scene-label">典型場景：SharePoint 文檔自動處理</div>
+    <div class="scene-flow">
+      <div class="sf-step"><div class="emoji">📁</div><div class="label">文檔上傳</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🔄</div><div class="label">ComPDF 轉換</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🔍</div><div class="label">OCR 識別</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">💾</div><div class="label">歸檔回庫</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📧</div><div class="label">郵件通知</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="plat-section"><div class="container">
+  <div class="plat-info">
+    <div class="plat-badge" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#34D399"><span class="dot" style="background:#10B981"></span>n8n 自託管部署</div>
+    <h2>在 n8n 中自建 <br>私密文檔處理流水線</h2>
+    <p class="plat-desc">n8n 是開源可自部署的自動化平臺。ComPDF 節點支持在 n8n 中直接調用，文檔數據不離開企業內網，滿足金融、政務、醫療等高合規要求的業務場景。</p>
+    <ul class="features">
+      <li>ComPDF 官方節點，拖拽即用無需自定義代碼</li>
+      <li>支持本地部署，數據不出企業網絡</li>
+      <li>靈活的觸發方式：Webhook、定時、文件監聽</li>
+      <li>開源生態，可自定義擴展和調試</li>
+    </ul>
+    <div class="plat-links">
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-lc">在 n8n 中查看</a>
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-outline">查看節點文檔</a>
+    </div>
+  </div>
+  <div class="plat-visual">
+    <div class="big-emoji">🔧</div>
+    <div class="scene-label">典型場景：定時批量文檔處理</div>
+    <div class="scene-flow">
+      <div class="sf-step"><div class="emoji">⏰</div><div class="label">定時觸發</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📂</div><div class="label">讀取文件夾</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🔄</div><div class="label">ComPDF 批量</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">📊</div><div class="label">寫數據庫</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">✅</div><div class="label">完成通知</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="plat-section"><div class="container">
+  <div class="plat-info">
+    <div class="plat-badge" style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);color:#A78BFA"><span class="dot" style="background:#8B5CF6"></span>RPA 流程自動化</div>
+    <h2>用 RPA + ComPDF AI <br>自動處理非結構化文檔</h2>
+    <p class="plat-desc">將 ComPDF AI 的企業級智能文檔處理能力嵌入傳統 RPA 流程，自動識別、提取和分類發票、合同、報表等非結構化文檔。消除 98% 的重複性人工數據錄入，讓文檔處理流程真正實現端到端自動化。</p>
+    <ul class="features">
+      <li>自動識別發票類型並提取金額、日期、供應商等字段</li>
+      <li>合同文檔的關鍵條款自動標註與分類歸檔</li>
+      <li>掃描件 OCR 識別後自動進入審批或入賬流程</li>
+      <li>與 UiPath、Blue Prism、Power Automate 等 RPA 平臺無縫集成</li>
+    </ul>
+    <div class="plat-links">
+      <a href="https://www.compdf.com/low-code" target="_blank" class="btn btn-lc">瞭解 RPA 方案</a>
+      <a href="#form" class="btn btn-outline">預約演示 →</a>
+    </div>
+  </div>
+  <div class="plat-visual">
+    <div class="big-emoji">🤖</div>
+    <div class="scene-label">典型場景：發票自動錄入 ERP</div>
+    <div class="scene-flow">
+      <div class="sf-step"><div class="emoji">📄</div><div class="label">掃描發票</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🔍</div><div class="label">ComPDF AI 提取</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">✅</div><div class="label">RPA 校驗入賬</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">🏢</div><div class="label">ERP 自動同步</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="emoji">💬</div><div class="label">通知完成</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">方案分類</span><h2>覆蓋多種低代碼場景</h2></div>
+  <div class="cat-grid">
+    <div class="cat-card"><div class="icon">🏗️</div><h3>低代碼開發平臺</h3><p>通過 Mendix、OutSystems 等低代碼開發平臺，以拖拽方式快速構建 PDF 處理應用，無需從零編寫代碼，顯著縮短開發週期。</p><a href="https://www.compdf.com/low-code" target="_blank" class="cat-link">瞭解 LCDP 方案 →</a></div>
+    <div class="cat-card"><div class="icon">🔗</div><h3>iPaaS 集成平臺</h3><p>在 Microsoft Power Automate、Make、Zapier 等 iPaaS 平臺上，通過可視化界面編排文檔處理工作流，實現跨系統數據流轉。</p><a href="https://www.compdf.com/low-code" target="_blank" class="cat-link">瞭解 iPaaS 方案 →</a></div>
+    <div class="cat-card"><div class="icon">🤖</div><h3>RPA 流程自動化</h3><p>將 ComPDF AI 與 RPA 平臺結合，自動處理非結構化文檔。消除 98% 的重複性數據錄入工作，提效降本。</p><a href="https://www.compdf.com/low-code" target="_blank" class="cat-link">瞭解 RPA 方案 →</a></div>
+  </div>
+</div></section>
+
+<section class="form-section" id="form"><div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <span class="tag">免費體驗</span>
+      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">開始使用 ComPDF Low-Code</h2>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">告訴我們你使用的低代碼平臺，獲取專屬集成方案與技術支持</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">針對你使用的平臺提供集成指南</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">提供預配置的工作流模板</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">技術團隊 1 對 1 支持，30 天免費試用</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">獲取 Low-Code 方案</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的姓名">
+        <input type="email" placeholder="工作邮箱">
+        <input type="text" placeholder="公司名称">
+        <select><option value="">您使用的低代碼平臺</option><option>Make</option><option>Zapier</option><option>Microsoft Power Automate</option><option>n8n</option><option>Mendix</option><option>OutSystems</option><option>其他</option></select>
+        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#10B981,#059669);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">獲取方案 →</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>

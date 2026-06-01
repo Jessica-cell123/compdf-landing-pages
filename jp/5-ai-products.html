@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComPDF AI - 4 大 AI プロダクトマトリックス | インテリジェント文書処理</title>
+<style>
+:root{--primary:#f59e0b;--primary-dark:#d97706;--accent-blue:#2563EB;--bg:#0f172a;--bg2:#1e293b;--card:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--border:#334155;--success:#10b981;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:22px;font-weight:800;color:#60a5fa}.logo span{color:var(--primary)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500;color:var(--muted)}
+nav ul a{color:var(--muted);white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#0f172a 50%);color:#fff;padding:100px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.15),transparent 70%);border-radius:50%}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(96,165,250,.1),transparent 70%);border-radius:50%}
+.hero h1{font-size:48px;font-weight:800;line-height:1.25;max-width:820px;margin:0 auto 20px;position:relative;z-index:1}
+.hero h1 .highlight{background:linear-gradient(90deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:20px;opacity:.8;max-width:660px;margin:0 auto 36px;position:relative;z-index:1}
+.btn{display:inline-block;padding:14px 36px;border-radius:8px;font-weight:600;font-size:16px;transition:all .2s}
+.btn-gold{background:var(--primary);color:#0f172a}.btn-gold:hover{background:var(--primary-dark)}
+.btn-outline{border:2px solid rgba(255,255,255,.3);color:#fff;margin-left:12px}.btn-outline:hover{background:rgba(255,255,255,.1)}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-size:36px;font-weight:700;margin-bottom:12px;color:#fff}
+.section-title p{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto}
+.tag{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:13px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:12px}
+.product-section{padding:100px 0;position:relative}
+.product-section:nth-child(odd){background:var(--bg)}
+.product-section:nth-child(even){background:var(--bg2)}
+.product-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.product-info .product-tag{display:inline-block;background:rgba(245,158,11,.15);color:var(--primary);font-size:12px;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:16px}
+.product-info h2{font-size:34px;font-weight:800;margin-bottom:16px;line-height:1.3}
+.product-info .subtitle{font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.8}
+.product-features{list-style:none;padding:0}
+.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;display:flex;align-items:center;gap:10px}
+.product-features li:last-child{border-bottom:none}
+.product-features li .icon{font-size:18px}
+.product-visual{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.product-visual .big-icon{font-size:72px;margin-bottom:20px}
+.product-visual .capabilities{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.product-visual .cap-tag{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--primary);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px}
+.product-visual .cap-tag.blue{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.25);color:#60a5fa}
+.cta-section{background:linear-gradient(135deg,#1e293b,#0f172a);border-top:1px solid var(--border);color:#fff;text-align:center;padding:80px 0}
+.cta-section h2{font-size:36px;font-weight:700;margin-bottom:14px}
+.cta-section p{font-size:18px;opacity:.8;margin-bottom:32px}
+footer{background:#000;color:#64748b;text-align:center;padding:32px 0;font-size:14px}
+@media(max-width:768px){.product-layout{grid-template-columns:1fr}.hero h1{font-size:30px}}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo">Com<span>PDF</span></div>
+<ul>
+<li><a href="/compdf-landing-pages/1-document-editing.html">文档编辑</a></li>
+<li><a href="/compdf-landing-pages/2-file-processing.html">文件处理</a></li>
+<li><a href="/compdf-landing-pages/3-document-automation.html">RAG知识库</a></li>
+<li><a href="/compdf-landing-pages/4-hardware-integration.html">软硬件结合</a></li>
+<li><a class="active" href="/compdf-landing-pages/5-ai-products.html" style="color:var(--primary)">AI 产品</a></li>
+<li><a href="/compdf-landing-pages/7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="/compdf-landing-pages/8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="/compdf-landing-pages/compdf-sdk.html">SDK</a></li>
+<li><a href="/compdf-landing-pages/industries.html">行业方案</a></li>
+<li><a href="/compdf-landing-pages/low-code.html">Low-Code</a></li>
+<li><a href="/compdf-landing-pages/aws-marketplace.html">AWS</a></li>
+<li><a href="/compdf-landing-pages/salesforce.html">Salesforce</a></li>
+<li><a href="/compdf-landing-pages/third-party-platforms.html">第三方平台</a></li>
+<li><a href="/compdf-landing-pages/pricing.html">定价</a></li>
+<li><a href="/compdf-landing-pages/workflow.html">Workflow</a></li>
+</ul>
+</div></nav>
+<section class="hero">
+<div class="container">
+<span class="tag" style="background:rgba(245,158,11,.25);color:#fbbf24">ComPDF AI プロダクトマトリックス</span>
+<h1>为你的业务装上<br/><span class="highlight">AI 文書スーパーパワー</span></h1>
+<p>ComPDF AI · AI アシスタント · AI Skills · MCP Server<br/>4 つの製品がインテリジェント文書処理の全シナリオをカバーし、企業の業務システムを強化</p>
+<a class="btn btn-gold" href="#products">了解产品</a>
+<a class="btn btn-outline" href="#">トライアルを申し込む →</a>
+</div>
+</section>
+<section class="product-section" id="products">
+<div class="container">
+<div class="product-layout">
+<div class="product-info">
+<div class="product-tag">产品 1</div>
+<h2>ComPDF AI<br/>智能文档处理引擎</h2>
+<div class="subtitle">ComPDF AI は中核となるインテリジェント文書処理エンジンであり、複雑な PDF レイアウト、表、段落構造を自動解析し、キーフィールドデータを高精度に抽出します。デジタル PDF でもスキャン文書でも、RAG、BI、エンタープライズシステムに直接利用可能な構造化データを出力できます。</div>
+<ul class="product-features">
+<li><span class="icon">📤</span><strong>智能文档抽取</strong> — 从发票、合同、报表中自动提取金额、日期、供应商等关键字段</li>
+<li><span class="icon">📄</span><strong>智能文書解析</strong>— レイアウト、テーブル、段落階層を深層解析し、Markdown / JSON を出力</li>
+<li><span class="icon">🌐</span><strong>多言語サポート</strong> — 覆盖中、英、日、韩等 50+ 语言文档</li>
+<li><span class="icon">🔗</span><strong>RAG 就绪</strong>— 出力は LangChain、LlamaIndex、Dify などのフレームワークで直接利用可能</li>
+<li><span class="icon">🛡️</span><strong>フレキシブルデプロイ</strong>— クラウド API 或プライベートデプロイ，满足データコンプライアンス要求</li>
+</ul>
+</div>
+<div class="product-visual">
+<div class="big-icon">🤖</div>
+<h3 style="font-size:20px;margin-bottom:12px">コア機能</h3>
+<div class="capabilities">
+<span class="cap-tag">智能文書解析</span>
+<span class="cap-tag">智能文档抽取</span>
+<span class="cap-tag">テーブル認識</span>
+<span class="cap-tag">レイアウト分析</span>
+<span class="cap-tag">OCR 認識</span>
+<span class="cap-tag">多言語</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="product-section">
+<div class="container">
+<div class="product-layout" style="direction:rtl">
+<div class="product-info" style="direction:ltr">
+<div class="product-tag">产品 2</div>
+<h2>AI アシスタント<br/>自然言語で AI に文書処理を指示</h2>
+<div class="subtitle">AI アシスタントが Web Demo に組み込まれており、自然言語で要件を伝えるだけです — 「すべての金額をハイライト」「ID番号を黒塗り」「契約書の当事者を抽出」— AI アシスタントが意図を理解し自動実行。操作トレーニングは一切不要です。</div>
+<ul class="product-features">
+<li><span class="icon">💬</span><strong>リアルタイム QA</strong> — 针对文档内容提问，AI 即时回答并标注来源</li>
+<li><span class="icon">📝</span><strong>一括注釈</strong> — 一句话批量添加高亮、下划线、删除线等标注</li>
+<li><span class="icon">✏️</span><strong>コンテンツ編集</strong>— "タイトルを赤色に変更"、"第 3 段落を削除"，AI 准确执行</li>
+<li><span class="icon">🔒</span><strong>機密マーク</strong> — 自动识别敏感信息并进行涂黑脱敏处理</li>
+<li><span class="icon">🌐</span><strong>すぐに使える</strong> — 集成在 Web Demo 中，零配置即可体验</li>
+</ul>
+</div>
+<div class="product-visual" style="direction:ltr">
+<div class="big-icon">💬</div>
+<h3 style="font-size:20px;margin-bottom:12px">対話型操作</h3>
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:left;width:100%;max-width:320px;font-size:13px;color:var(--muted);line-height:1.8">
+<div style="margin-bottom:8px"><span style="color:var(--primary)">用户：</span>把第 3 页所有金额数字高亮标注</div>
+<div style="margin-bottom:8px"><span style="color:#60a5fa">AI アシスタント：</span>已完成，共标注 12 处金额数字 ✓</div>
+<div style="margin-bottom:8px"><span style="color:var(--primary)">用户：</span>将文档中所有身份证号做機密情報処理</div>
+<div><span style="color:#60a5fa">AI アシスタント：</span>已识别 5 处身份证号并完成涂黑 ✓</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="product-section">
+<div class="container">
+<div class="product-layout">
+<div class="product-info">
+<div class="product-tag">产品 3</div>
+<h2>AI Skills<br/>30+ PDF 技能，AI Agent プラグアンドプレイ</h2>
+<div class="subtitle">AI Skills は ComPDF の全 30 以上の PDF 処理機能を AI Agent が直接呼び出せるスキルパッケージにカプセル化します。編集、変換、抽出、生成 — あなたの AI アシスタントが PDF を操作できるようになりました。Claude、GPT などの Agent が Skills を通じて関数呼び出しのように文書を処理します。</div>
+<ul class="product-features">
+<li><span class="icon">✏️</span><strong>編集系 Skills</strong>— テキスト編集、注释添加、合并分割、ページ管理</li>
+<li><span class="icon">🔄</span><strong>変換系 Skills</strong>— PDF ⇄ Word / Excel / PPT / HTML / 画像</li>
+<li><span class="icon">📤</span><strong>抽出系 Skills</strong>— テキスト抽出、テーブル認識、图片提取、KVP 字段提取</li>
+<li><span class="icon">📄</span><strong>生成系 Skills</strong> — 模板填充、报告生成、水印添加、批量输出</li>
+<li><span class="icon">🧩</span><strong>Agent Ready</strong>— Claude、GPT、OpenClaw などの主要 AI Agent に対応</li>
+</ul>
+</div>
+<div class="product-visual">
+<div class="big-icon">⚡</div>
+<h3 style="font-size:20px;margin-bottom:12px">30 以上のスキルを完全カバー</h3>
+<div class="capabilities">
+<span class="cap-tag">PDF 转 Word</span>
+<span class="cap-tag">PDF 转 Excel</span>
+<span class="cap-tag">テキスト抽出</span>
+<span class="cap-tag">テーブル認識</span>
+<span class="cap-tag">合并 PDF</span>
+<span class="cap-tag">分割 PDF</span>
+<span class="cap-tag blue">OCR 認識</span>
+<span class="cap-tag blue">添加水印</span>
+<span class="cap-tag blue">模板填充</span>
+<span class="cap-tag blue">ページ管理</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="product-section">
+<div class="container">
+<div class="product-layout" style="direction:rtl">
+<div class="product-info" style="direction:ltr">
+<div class="product-tag">产品 4</div>
+<h2>MCP Server<br/>AI が PDF 機能を直接呼び出し</h2>
+<div class="subtitle">MCP Server は Model Context Protocol 標準プロトコルに基づき、ComPDF のドキュメント処理機能を MCP 対応の AI アプリケーションに開放します。Claude Desktop、Cursor、Windsurf などのツールが MCP Server を設定するだけで、AI が直接 PDF の読み取り、編集、変換をコード統合なしで実行できます。</div>
+<ul class="product-features">
+<li><span class="icon">🔌</span><strong>標準プロトコル</strong> — 基于 MCP 标准，一次接入随处可用</li>
+<li><span class="icon">🤖</span><strong>AI ネイティブ</strong> — 让 Claude、GPT 等模型直接读写 PDF 文件</li>
+<li><span class="icon">🔗</span><strong>マルチツールサポート</strong>— Claude Desktop、Cursor、Windsurf などに対応</li>
+<li><span class="icon">⚙️</span><strong>インテリジェントルーティング</strong> — AI 根据任务自动选择合适的 PDF 处理方法</li>
+<li><span class="icon">🛡️</span><strong>セキュリティ管理可能</strong> — 支持认证鉴权、用量控制与数据隔离</li>
+</ul>
+</div>
+<div class="product-visual" style="direction:ltr">
+<div class="big-icon">🔌</div>
+<h3 style="font-size:20px;margin-bottom:12px">MCP プロトコル設定</h3>
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:left;width:100%;max-width:340px;font-family:monospace;font-size:12px;color:#94a3b8;line-height:1.8">
+        {<br/>
+          "mcpServers": {<br/>
+            "compdf": {<br/>
+              "url": "mcp.compdf.com",<br/>
+              "capabilities": [<br/>
+                "document_parse",<br/>
+                "document_extract",<br/>
+                "ocr"<br/>
+              ]<br/>
+            }<br/>
+          }<br/>
+        }
+      </div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+<h2>AI をあなたの文書処理エキスパートに</h2>
+<p>複雑な PDF を解析したい、対話形式で文書を操作したい、AI Agent にファイル処理を自動化させたい — ComPDF AI プロダクトマトリックスが対応するソリューションを提供します。無料トライアルで今すぐ体験ください。</p>
+<a class="btn btn-gold" href="#">無料トライアル</a>
+<a class="btn btn-outline" href="#">ソリューションチームに連絡 →</a>
+</div>
+</section>
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>
