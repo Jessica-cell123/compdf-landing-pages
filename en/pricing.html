@@ -122,8 +122,8 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </div></section>
 <section><div class="container">
 <div class="tab-bar">
-<button class="tab-btnactive"onclick="switchTab('sdk')">SDK</button>
-<button class="tab-btn"onclick="switchTab('api')">API Pricing</button>
+<button class="tab-btn active" onclick="switchTab('sdk')">SDK</button>
+<button class="tab-btn" onclick="switchTab('api')">API Pricing</button>
 </div>
 <!-- SDK Tab -->
 <div class="tab-panelactive"id="tab-sdk">
@@ -139,12 +139,12 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="sdk-form-wrap">
 <h3>Get SDK Quote</h3>
 <form class="sdk-form"onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓Submitted';this.querySelector('.fbtn').style.background='#10b981'">
-<input placeholder="FullName"type="text"/>
-<input placeholder="BusinessEmail"type="email"/>
+<input placeholder="FullName" type="text"/>
+<input placeholder="BusinessEmail" type="email"/>
 <input placeholder="Phone number(optional)"type="tel"/>
-<input placeholder="CompanyName"type="text"/>
-<textarea placeholder="Describe your project — features, platforms, andrequirements"style="padding:10px 14px;border:1px solidvar(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
-<button class="fbtn btnbtn-primary"style="width:100%;justify-content:center;font-size:15px;padding:12px"type="submit">Submit for Quote</button>
+<input placeholder="CompanyName" type="text"/>
+<textarea placeholder="Describe your project — features, platforms, and requirements" style="padding:10px 14px;border:1px solidvar(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
+<button class="fbtn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:12px" type="submit">Submit for Quote</button>
 <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">We'll respond within 1 business day</p>
 </form>
 </div>
@@ -164,7 +164,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <li>High Security</li>
 <li>24h Email Support</li>
 </ul>
-<a class="btnbtn-outline"href="https://api.compdf.com/signup"target="_blank">Free Registration</a>
+<a class="btn-outline" href="https://api.compdf.com/signup" target="_blank">Free Registration</a>
 </div>
 <div class="api-cardfeatured">
 <h3>Growth</h3>
@@ -178,7 +178,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <li>24h Email Support</li>
 <li>Unlimited parallel tasks</li>
 </ul>
-<a class="btnbtn-green"href="https://api.compdf.com/login"target="_blank">Buy Now</a>
+<a class="btn-green" href="https://api.compdf.com/login" target="_blank">Buy Now</a>
 </div>
 <div class="api-card">
 <h3>Pro</h3>
@@ -193,45 +193,45 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <li>Unlimited parallel tasks</li>
 <li>Unlimited file size</li>
 </ul>
-<a class="btnbtn-primary"href="https://api.compdf.com/login"target="_blank">Buy Now</a>
+<a class="btn-primary" href="https://api.compdf.com/login" target="_blank">Buy Now</a>
 </div>
 </div>
-<p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:20px">Volume exceeds 10,000 docs/?<a href="mailto:sales@compdf.com"style="color:var(--primary-light);font-weight:600">Contact Us for Custom Solutions →</a></p>
+<p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:20px">Volume exceeds 10,000 docs/month?<a href="mailto:sales@compdf.com" style="color:var(--primary-light);font-weight:600">Contact Us for Custom Solutions →</a></p>
 </div>
 </div></section>
 <section class="section-alt"><div class="container">
 <div class="section-title"><span class="tag">FAQ</span><h2>FAQ</h2></div>
 <div class="faq-list">
 <div class="faq-itemopen">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">ComPDF SDK How Pricing Works?<span class="arrow">▼</span></div>
-<div class="faq-a">SDK Annual License,Price based on selected platform(Web/ Mobile/ Desktop/ Server)and feature combination,mostlow $1,300/ Starting from.UnlimitedDocument Processing and UnlimitedUser.</div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ComPDF SDK How Pricing Works?<span class="arrow">▼</span></div>
+<div class="faq-a">SDK Annual License,Price based on selected platform(Web/ Mobile/ Desktop/ Server)and feature combination,as low as $1,300/year starting from.UnlimitedDocument Processing and UnlimitedUser.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">SDK Which Platforms Are Supported??<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK Which Platforms Are Supported?<span class="arrow">▼</span></div>
 <div class="faq-a">Supports Web(JavaScript), iOS, Android, Flutter, React Native, Windows, macOS, Java,.NET total 9 large Platform.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">How to Get Started SDK use?<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How to Get Started SDK use?<span class="arrow">▼</span></div>
 <div class="faq-a">Register ComPDF will can 30 daysFull-FeaturedFree Trial License,No credit card required. use between can AllFeature and Platform.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">Cloud API How is Document Volume Calculated??<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud API How is Document Volume Calculated?<span class="arrow">▼</span></div>
 <div class="faq-a">Per API Processing one page = one document.Free Tier: monthly 200 docs,Growth tier 5,000 docs,Pro tier 10,000 docs. over through partcan or upgradeSolution.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">API What Features Are Supported??<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">API What Features Are Supported?<span class="arrow">▼</span></div>
 <div class="faq-a">Supports PDF Conversion(Office/Image/HTML), PDF Edit(Merge/Split/ ), OCR Recognition, Watermark Addition, Compression, AI Document Parsing &amp; Extraction, etc..</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">Is Private Deployment Supported??<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is Private Deployment Supported?<span class="arrow">▼</span></div>
 <div class="faq-a">Supports.SDK Supports Private Deployment,API also Provides Self-hosted Solution.DataDeploy in has Service,not Enterprise within.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">Are Enterprise Discounts Available??<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are Enterprise Discounts Available?<span class="arrow">▼</span></div>
 <div class="faq-a">Provides.Volume discounts available for large annual purchases,Supports OEM Authorization. Contact SalesTeamGet Quote.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q"onclick="this.parentElement.classList.toggle('open')">SDK and API Can I Use Both??<span class="arrow">▼</span></div>
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK and API Can I Use Both?<span class="arrow">▼</span></div>
 <div class="faq-a">Can.Many customers usebothSDK(ForClientView/Edit) and API(ForServerBatch Processing),They complement each other.</div>
 </div>
 </div>
