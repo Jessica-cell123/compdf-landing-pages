@@ -52,9 +52,9 @@ section{padding:80px 0}
 .sdk-form-wrap{max-width:600px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px}
 .sdk-form-wrap h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center}
 .sdk-form{display:flex;flex-direction:column;gap:14px}
-.sdk-form input,.sdk-form select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%}
-.sdk-form input::placeholder{color:var(--text-muted)}
-.sdk-form input:focus,.sdk-form select:focus{border-color:var(--primary)}
+.sdk-form input,.sdk-form select,.sdk-form textarea{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%}
+.sdk-form input::placeholder,.sdk-form textarea::placeholder{color:var(--text-muted)}
+.sdk-form input:focus,.sdk-form select:focus,.sdk-form textarea:focus{border-color:var(--primary)}
 .sdk-form select{color:var(--text-muted)}
 
 /* API Grid */
@@ -141,11 +141,11 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <div class="sdk-form-wrap">
       <h3>获取 SDK 报价</h3>
       <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'">
-        <input type="text" placeholder="您的姓名">
-        <input type="email" placeholder="工作邮箱">
-        <input type="text" placeholder="公司名称">
-        <select><option value="">您需要的产品</option><option>SDK 授权</option><option>Cloud API</option><option>SDK + API</option><option>AI 产品</option></select>
-        <select><option value="">您使用的平台</option><option>Web</option><option>iOS / Android</option><option>Flutter / React Native</option><option>Windows / macOS</option><option>Java / .NET Server</option><option>多个平台</option></select>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Business Email">
+        <input type="tel" placeholder="Phone number (optional)">
+        <input type="text" placeholder="Company Name">
+        <textarea placeholder="Describe your project — features, platforms, and requirements" style="padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:#fff;font-size:14px;outline:none;width:100%;min-height:80px;resize:vertical;font-family:inherit"></textarea>
         <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:12px">提交获取报价</button>
         <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">提交后 1 个工作日内回复</p>
       </form>
