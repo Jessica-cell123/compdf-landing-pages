@@ -89,6 +89,13 @@ section{padding:80px 0}
 .api-card .api-feats li::before{content:'✓';color:var(--accent-green);font-weight:700}
 .api-card .btn{width:100%;justify-content:center}
 
+.pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px}
+.pf-cat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px}
+.pf-cat h4{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text-secondary)}
+.pf-items{display:flex;flex-wrap:wrap;gap:8px}
+.pf-items span{font-size:12px;padding:4px 12px;border-radius:6px;border:1px solid var(--border);color:var(--text-muted)}
+.feat-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:720px;margin:0 auto}
+.feat-tags span{font-size:13px;padding:8px 18px;border-radius:8px;border:1px solid var(--border);color:var(--text-secondary);background:var(--bg-card)}
 /* FAQ */
 .faq-list{max-width:720px;margin:0 auto}
 .faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
@@ -101,7 +108,7 @@ section{padding:80px 0}
 
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
 
-@media(max-width:900px){
+@media(max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr)}
   .api-grid{grid-template-columns:1fr}
   .hero h1{font-size:30px}
   nav ul{display:none}
@@ -179,32 +186,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
             <label class="sf-radio"><input type="radio" name="deploy"> <span>离线 SDK</span></label>
           </div>
         
-        <div class="sf-field"><label class="sf-label">平台</label>
-          <div class="sf-check-group">
-            <label class="sf-check"><input type="checkbox"> <span>Web</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Windows</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Android</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>iOS</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Flutter</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>React Native</span></label>
-          </div>
-        </div>
-        <div class="sf-field"><label class="sf-label">功能</label>
-          <div class="sf-check-group" style="display:flex;flex-wrap:wrap;gap:8px">
-            <label class="sf-check"><input type="checkbox"> <span>Viewer</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Annotations</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Document Editor</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Content Editor</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Signatures</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Forms</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Security</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Compare Documents</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Measurement</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Redaction</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Layers</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Color Separation</span></label>
-            <label class="sf-check"><input type="checkbox"> <span>Compress</span></label>
-          </div>
+
         </div></div>
         <div class="sf-field"><label class="sf-label">请描述您的项目</label>
           <textarea placeholder="详细的项目描述有助于我们理解您的需求，并提供合适的解决方案和精准报价。"></textarea>
@@ -270,6 +252,27 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
   </div>
 </div></section>
 
+<!-- Supported Platforms -->
+<section class="section-alt"><div class="container">
+  <div class="section-title"><span class="tag">Supported Platforms</span><h2>Find the Products You Need</h2></div>
+  <div class="pf-grid">
+    <div class="pf-cat"><h4>Desktop SDK</h4><div class="pf-items"><span>Windows</span><span>Mac</span><span>Electron</span><span>MAUI</span></div></div>
+    <div class="pf-cat"><h4>Web SDK</h4><div class="pf-items"><span>React</span><span>Next.js</span><span>Vue</span><span>Electron</span></div></div>
+    <div class="pf-cat"><h4>Mobile SDK</h4><div class="pf-items"><span>Android</span><span>iOS</span><span>React Native</span><span>Flutter</span></div></div>
+    <div class="pf-cat"><h4>Server SDK</h4><div class="pf-items"><span>Java</span><span>.Net</span></div></div>
+  </div>
+</div></section>
+
+<!-- Supported Features -->
+<section><div class="container">
+  <div class="section-title"><span class="tag">Supported Features</span><h2>Find the Features You Need</h2><p><a href="https://www.compdf.com/pdf-sdk/features-list" target="_blank" style="color:var(--primary-light);text-decoration:underline">Discover Full Features</a></p></div>
+  <div class="feat-tags">
+    <span>Viewer</span><span>Annotations</span><span>Signatures</span><span>Forms</span>
+    <span>Document Editor</span><span>Content Editor</span><span>Security</span><span>Compare Documents</span>
+    <span>Measurement</span><span>Redaction</span><span>Layers</span><span>Color Separation</span>
+    <span>Compress</span><span>Data Extraction</span><span>Convert from PDF</span><span>Convert to PDF</span>
+  </div>
+</div></section>
 <section class="section-alt"><div class="container">
   <div class="section-title"><span class="tag">FAQ</span><h2>常见问题</h2></div>
   <div class="faq-list">
