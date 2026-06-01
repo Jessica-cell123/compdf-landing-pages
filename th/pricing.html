@@ -154,11 +154,11 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="sdk-form-wrap">
             <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ ส่ง';this.querySelector('.fbtn').style.background='#10b981'">
         <div class="sf-row">
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> ชื่อ-นามสกุล</label><input type="text" placeholder="ชื่อ-นามสกุล"></div>
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> อีเมล</label><input type="email" placeholder="name@company.com"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> ชื่อ-นามสกุล</label><input type="text" placeholder="ชื่อ-นามสกุล" required></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> อีเมล</label><input type="email" placeholder="name@company.com" required></div>
         </div>
         <div class="sf-row">
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> เบอร์โทรศัพท์</label><input type="tel" placeholder="เบอร์โทรศัพท์"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> เบอร์โทรศัพท์</label><input type="tel" placeholder="เบอร์โทรศัพท์" required></div>
           <div class="sf-field"><label class="sf-label">ชื่อบริษัท</label><input type="text" placeholder="ชื่อบริษัท"></div>
         </div>
         <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> คุณกำลังสร้างผลิตภัณฑ์นี้เพื่อใคร?</label>
@@ -177,21 +177,19 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
             <label class="sf-check"><input type="checkbox"> <span>Conversion</span></label>
           </div>
         </div>
-        <div class="sf-field"><label class="sf-label">คุณต้องการรูปแบบการปรับใช้แบบใด?</label>
+        <div class="sf-field"><label class="sf-label">คุณต้องการรูปแบบการปรับใช้แบบไหน?</label>
           <div class="sf-radio-group">
             <label class="sf-radio"><input type="radio" name="deploy" checked> <span>โฮสต์เอง</span></label>
             <label class="sf-radio"><input type="radio" name="deploy"> <span>Cloud API</span></label>
             <label class="sf-radio"><input type="radio" name="deploy"> <span>Offline SDK</span></label>
           </div>
-        
-
-        </div></div>
+        </div>
         <div class="sf-field"><label class="sf-label">กรุณาอธิบายโปรเจกต์ของคุณ</label>
-          <textarea placeholder="คำอธิบายโปรเจกต์โดยละเอียดจะช่วยให้เราเข้าใจความต้องการของคุณและนำเสนอโซลูชันที่เหมาะสมพร้อมใบเสนอราคาที่แม่นยำ"></textarea>
+          <textarea placeholder="คำอธิบายโปรเจกต์โดยละเอียดจะช่วยให้เราเข้าใจความต้องการของคุณและนำเสนอโอลูชันที่เหมาะสมพร้อมใบเสนอราคาที่แม่นยำ"></textarea>
         </div>
         <div class="sf-terms">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" style="flex-shrink:0"><rect width="22" height="22" x="1" y="1" fill="var(--primary)" rx="4"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 9-6.667 6.667-4.243-4.243"/></svg>
-          <span>ฉันได้อ่านและยอมรับข้อกำหนดในการให้บริการและนโยบายความเป็นส่วนตัว (ข้อมูลที่คุณส่งจะถูกเก็บเป็นความลับและจะไม่ถูกเปิดเผยแก่บุคคลที่สาม)</span>
+          <span>ฉันได้อ่านและยอมรับ<a href="https://www.compdf.com/terms-of-service" target="_blank">ข้อกำหนดในการให้บริการ</a>และ<a href="https://www.compdf.com/privacy-policy" target="_blank">นโยบายความเป็นส่วนตัว</a> (ข้อมูลที่คุณส่งจะถูกเก็บเป็นความลับและจะไม่ถูกเปิดเผยแก่บุคคลที่สาม)</span>
         </div>
         <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;max-width:380px;margin:0 auto">ส่ง</button>
         <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:8px">เราจะติดต่อคุณภายใน 1 วันทำการ</p>

@@ -156,11 +156,11 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <div class="sdk-form-wrap">
                   <form class="sdk-form" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 提交';this.querySelector('.fbtn').style.background='#10b981'">
         <div class="sf-row">
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 您的姓名</label><input type="text" placeholder="您的姓名"></div>
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 工作邮箱</label><input type="email" placeholder="name@company.com"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 您的姓名</label><input type="text" placeholder="您的姓名" required></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 工作邮箱</label><input type="email" placeholder="name@company.com" required></div>
         </div>
         <div class="sf-row">
-          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 手机号码</label><input type="tel" placeholder="手机号码"></div>
+          <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 手机号码</label><input type="tel" placeholder="手机号码" required></div>
           <div class="sf-field"><label class="sf-label">公司名称</label><input type="text" placeholder="公司名称"></div>
         </div>
         <div class="sf-field"><label class="sf-label"><span class="sf-req">*</span> 您为谁构建此产品？</label>
@@ -185,15 +185,13 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
             <label class="sf-radio"><input type="radio" name="deploy"> <span>Cloud API</span></label>
             <label class="sf-radio"><input type="radio" name="deploy"> <span>离线 SDK</span></label>
           </div>
-        
-
-        </div></div>
+        </div>
         <div class="sf-field"><label class="sf-label">请描述您的项目</label>
           <textarea placeholder="详细的项目描述有助于我们理解您的需求，并提供合适的解决方案和精准报价。"></textarea>
         </div>
         <div class="sf-terms">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" style="flex-shrink:0"><rect width="22" height="22" x="1" y="1" fill="var(--primary)" rx="4"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 9-6.667 6.667-4.243-4.243"/></svg>
-          <span>我已阅读并同意服务条款和隐私政策。（您提交的数据将被保密处理，绝不会泄露给第三方。）</span>
+          <span>我已阅读并同意<a href="https://www.compdf.com/terms-of-service" target="_blank">服务条款</a>和<a href="https://www.compdf.com/privacy-policy" target="_blank">隐私政策</a>。（您提交的数据将被保密处理，绝不会泄露给第三方。）</span>
         </div>
         <button type="submit" class="fbtn btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;max-width:380px;margin:0 auto">提交</button>
         <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:8px">我们将在 1 个工作日内与您联系。</p>
