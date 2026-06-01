@@ -76,16 +76,19 @@ section{padding:80px 0}
 .api-card .btn{width:100%;justify-content:center}
 
 /* FAQ */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:960px;margin:0 auto}
-.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;transition:all .3s}
-.faq-item:hover{border-color:rgba(37,99,235,.3)}
-.faq-item h4{font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
-.faq-item p{font-size:13px;color:var(--text-secondary);line-height:1.7}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
+.faq-q{padding:18px 22px;font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+.faq-q:hover{background:rgba(37,99,235,.04)}
+.faq-q .arrow{transition:transform .3s;font-size:16px;color:var(--text-muted)}
+.faq-a{padding:0 22px 18px;color:var(--text-secondary);font-size:13px;line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .arrow{transform:rotate(180deg)}
 
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
 
 @media(max-width:900px){
-  .api-grid,.faq-grid{grid-template-columns:1fr}
+  .api-grid{grid-template-columns:1fr}
   .hero h1{font-size:30px}
   nav ul{display:none}
 }
@@ -202,15 +205,39 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 
 <section class="section-alt"><div class="container">
   <div class="section-title"><span class="tag">FAQ</span><h2>常见问题</h2></div>
-  <div class="faq-grid">
-    <div class="faq-item"><h4>ComPDF SDK 如何定价？</h4><p>SDK 按年授权，价格根据所选平台（Web / 移动端 / 桌面端 / 服务端）和功能组合确定，最低 $1,300/年起。不限文档处理量和不限用户数。</p></div>
-    <div class="faq-item"><h4>SDK 支持哪些平台？</h4><p>支持 Web（JavaScript）、iOS、Android、Flutter、React Native、Windows、macOS、Java、.NET 共 9 大平台。</p></div>
-    <div class="faq-item"><h4>如何获取 SDK 试用？</h4><p>注册 ComPDF 会员即可申请 30 天全功能免费试用 License，无需信用卡。试用期间可体验所有功能和平台。</p></div>
-    <div class="faq-item"><h4>Cloud API 的文档量如何计算？</h4><p>每次 API 调用处理一页文档计为一份。免费层每月 200 份，Growth 层 5,000 份，Pro 层 10,000 份。超过部分可购买附加包或升级方案。</p></div>
-    <div class="faq-item"><h4>API 支持哪些功能？</h4><p>支持 PDF 转换（Office/图片/HTML）、PDF 编辑（合并/拆分/旋转）、OCR 识别、水印添加、压缩、AI 文档解析与抽取等。</p></div>
-    <div class="faq-item"><h4>是否支持私有化部署？</h4><p>支持。SDK 支持私有化部署，API 也提供 Self-hosted 方案。数据部署在自有服务器，不出企业内网。</p></div>
-    <div class="faq-item"><h4>是否提供企业折扣？</h4><p>提供。年采购量大的客户可享受批量折扣，支持 OEM 授权模式。请联系销售团队获取定制报价。</p></div>
-    <div class="faq-item"><h4>SDK 和 API 可以同时使用吗？</h4><p>可以。许多客户同时使用 SDK（用于客户端查看/编辑）和 API（用于服务端批量处理），两者互补。</p></div>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ComPDF SDK 如何定价？<span class="arrow">▼</span></div>
+      <div class="faq-a">SDK 按年授权，价格根据所选平台（Web / 移动端 / 桌面端 / 服务端）和功能组合确定，最低 $1,300/年起。不限文档处理量和不限用户数。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK 支持哪些平台？<span class="arrow">▼</span></div>
+      <div class="faq-a">支持 Web（JavaScript）、iOS、Android、Flutter、React Native、Windows、macOS、Java、.NET 共 9 大平台。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">如何获取 SDK 试用？<span class="arrow">▼</span></div>
+      <div class="faq-a">注册 ComPDF 会员即可申请 30 天全功能免费试用 License，无需信用卡。试用期间可体验所有功能和平台。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud API 的文档量如何计算？<span class="arrow">▼</span></div>
+      <div class="faq-a">每次 API 调用处理一页文档计为一份。免费层每月 200 份，Growth 层 5,000 份，Pro 层 10,000 份。超过部分可购买附加包或升级方案。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">API 支持哪些功能？<span class="arrow">▼</span></div>
+      <div class="faq-a">支持 PDF 转换（Office/图片/HTML）、PDF 编辑（合并/拆分/旋转）、OCR 识别、水印添加、压缩、AI 文档解析与抽取等。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">是否支持私有化部署？<span class="arrow">▼</span></div>
+      <div class="faq-a">支持。SDK 支持私有化部署，API 也提供 Self-hosted 方案。数据部署在自有服务器，不出企业内网。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">是否提供企业折扣？<span class="arrow">▼</span></div>
+      <div class="faq-a">提供。年采购量大的客户可享受批量折扣，支持 OEM 授权模式。请联系销售团队获取定制报价。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">SDK 和 API 可以同时使用吗？<span class="arrow">▼</span></div>
+      <div class="faq-a">可以。许多客户同时使用 SDK（用于客户端查看/编辑）和 API（用于服务端批量处理），两者互补。</div>
+    </div>
   </div>
 </div></section>
 
