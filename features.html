@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>功能清单 | ComPDF SDK 全功能列表</title>
+<style>
+:root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Noto Sans SC',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--primary-light);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:rgba(15,23,42,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:#fff}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#F97316,#EF4444);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+nav ul{display:flex;gap:20px;list-style:none;font-size:13px;font-weight:500}
+nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.active{color:#fff}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);padding:80px 0 60px;position:relative;overflow:hidden;text-align:center}
+.hero h1{font-size:40px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(90deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:560px;margin:0 auto}
+section{padding:80px 0}
+.section-alt{background:var(--bg-elevated)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:30px;font-weight:700;margin-bottom:12px}
+.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.cat-title{font-size:14px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;padding-left:4px}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px}
+.feat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
+.feat-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px)}
+.feat-card .f-icon{font-size:28px;margin-bottom:10px}
+.feat-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.feat-card .f-desc{color:var(--text-secondary);font-size:12px;line-height:1.6}
+.feat-card .f-links{margin-top:10px}
+.feat-card .f-links a{font-size:11px;font-weight:600;color:var(--primary-light)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
+.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
+.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
+.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
+.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
+@media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}nav ul{display:none}}
+@media(max-width:500px){.feat-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+  <ul>
+    <li><a href="1-document-editing.html">文档编辑</a></li>
+    <li><a href="2-file-processing.html">文件处理</a></li>
+    <li><a href="3-document-automation.html">RAG知识库</a></li>
+    <li><a href="4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="5-ai-products.html">AI 产品</a></li>
+    <li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="8-third-party-platforms-v5.html">平台生态</a></li>
+    <li><a href="compdf-sdk.html">SDK</a></li>
+    <li><a href="industries.html">行业方案</a></li>
+    <li><a href="low-code.html">Low-Code</a></li>
+    <li><a href="aws-marketplace.html">AWS</a></li>
+    <li><a href="salesforce.html">Salesforce</a></li>
+    <li><a href="third-party-platforms.html">第三方平台</a></li>
+    <li><a href="workflow.html">Workflow</a></li>
+    <li><a href="pricing.html">定价</a></li>
+    <li><a href="features.html" class="active">功能清单</a></li>
+  </ul>
+</div></nav>
+
+<section class="hero"><div class="container">
+  <h1>ComPDF SDK <span class="gradient">功能清单</span></h1>
+  <p>60+ 功能覆盖 PDF 查看、编辑、转换、AI 处理全场景 — 每个功能都有对应的 Demo 和开发文档</p>
+</div></section>
+
+<section><div class="container">
+  <div class="cat-title">📖 基础功能 Essential Features</div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="f-icon">👁️</div><h3>PDF Viewer</h3><p class="f-desc">高性能 PDF 渲染引擎，支持多模式翻页、文本搜索、缩略图导航</p><div class="f-links"><a href="https://www.compdf.com/demo/webviewer" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">📝</div><h3>Annotations</h3><p class="f-desc">20+ 标注工具：高亮、下划线、形状、贴纸、便签等</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-annotation" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">✂️</div><h3>Document Editor</h3><p class="f-desc">页面管理：插入、删除、旋转、替换、拆分、合并 PDF 页面</p><div class="f-links"><a href="https://www.compdf.com/demo/organize-pdf" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">✏️</div><h3>Content Editor</h3><p class="f-desc">文本与图片内容编辑，保留原始排版，所见即所得</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-content-editor" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">✍️</div><h3>Signatures</h3><p class="f-desc">电子签名与数字签名，支持签名样式自定义和验证</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-signature" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">🔍</div><h3>Text Search</h3><p class="f-desc">全文文本搜索与高亮定位，支持正则表达式匹配</p></div>
+    <div class="feat-card"><div class="f-icon">🔖</div><h3>Bookmarks</h3><p class="f-desc">书签导航与大纲管理，支持创建、编辑和跳转</p></div>
+    <div class="feat-card"><div class="f-icon">🖨️</div><h3>Print</h3><p class="f-desc">高质量 PDF 打印输出，支持打印范围与份数设置</p></div>
+  </div>
+
+  <div class="cat-title">⚙️ 专业功能 Professional Features</div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="f-icon">📄</div><h3>PDF Generation</h3><p class="f-desc">从 HTML、模板、图片批量生成 PDF，支持模板填充</p></div>
+    <div class="feat-card"><div class="f-icon">📋</div><h3>Forms</h3><p class="f-desc">交互式表单创建与填写，自动识别表单字段，支持数据验证</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-form" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">🔒</div><h3>Security</h3><p class="f-desc">PDF 加密/解密、权限控制 — 设置文档访问密码与操作权限</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-security" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">🖌️</div><h3>Redaction</h3><p class="f-desc">敏感信息密文涂黑，永久移除机密内容，支持 AI 自动检测</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-redaction" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">🧩</div><h3>Layers</h3><p class="f-desc">PDF 图层管理 — 显示/隐藏、合并、导出指定图层内容</p></div>
+    <div class="feat-card"><div class="f-icon">📐</div><h3>PDF/A</h3><p class="f-desc">PDF/A、PDF/X、PDF/E、PDF/UA 标准格式转换与验证</p></div>
+    <div class="feat-card"><div class="f-icon">🔄</div><h3>Conversion</h3><p class="f-desc">30+ 格式双向转换 — PDF ⇄ Word/Excel/PPT/HTML/图片</p></div>
+    <div class="feat-card"><div class="f-icon">📏</div><h3>Measurement</h3><p class="f-desc">PDF 距离、周长、面积测量工具，支持比例尺校准</p></div>
+    <div class="feat-card"><div class="f-icon">📦</div><h3>Compress</h3><p class="f-desc">PDF 文件压缩，智能优化图片质量与文件大小平衡</p></div>
+    <div class="feat-card"><div class="f-icon">⚖️</div><h3>Compare</h3><p class="f-desc">文档对比 — 逐页差异高亮，支持内容对比与覆盖对比</p><div class="f-links"><a href="https://www.compdf.com/demo/pdf-compare" target="_blank">Demo →</a></div></div>
+    <div class="feat-card"><div class="f-icon">🎨</div><h3>Color Separation</h3><p class="f-desc">色彩分离 — 分离 CMYK 各通道，适合印刷预览与校对</p></div>
+    <div class="feat-card"><div class="f-icon">💧</div><h3>Watermark</h3><p class="f-desc">文本/图片水印添加，支持透明度、旋转、平铺等设置</p></div>
+  </div>
+
+  <div class="cat-title">🤖 AI 功能 AI Document Processing</div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="f-icon">🧠</div><h3>AI Document Parsing</h3><p class="f-desc">深度学习版面分析 — 识别标题、表格、图片等元素，输出 Markdown/JSON</p></div>
+    <div class="feat-card"><div class="f-icon">📤</div><h3>AI Document Extraction</h3><p class="f-desc">智能文档抽取 — 自动识别发票、合同中的金额、日期、供应商等关键字段</p></div>
+    <div class="feat-card"><div class="f-icon">🏢</div><h3>Enterprise KB</h3><p class="f-desc">企业知识库 — 将文档转化为可检索知识库，支持 RAG 集成</p></div>
+    <div class="feat-card"><div class="f-icon">🔍</div><h3>OCR Recognition</h3><p class="f-desc">AI OCR 识别 — 扫描件文字识别，支持 50+ 语种和手写体</p></div>
+  </div>
+</div></section>
+
+<section class="cta-section"><div class="container">
+  <h2>查看完整功能列表与 Demo</h2>
+  <p>每个功能都有在线 Demo 和详细开发文档，点击即可体验</p>
+  <div style="display:flex;gap:12px;justify-content:center;position:relative">
+    <a href="https://www.compdf.com/pdf-sdk/features-list" target="_blank" class="btn btn-primary" style="background:#fff;color:#1E3A8A">查看完整功能列表 →</a>
+    <a href="https://www.compdf.com/demo/webviewer" target="_blank" class="btn btn-outline">在线体验 Demo</a>
+  </div>
+</div></section>
+
+<footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+</body>
+</html>
