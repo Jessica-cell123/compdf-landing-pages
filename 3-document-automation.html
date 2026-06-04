@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ComPDF AI - RAG 知识库解决方案 | 智能文档解析驱动企业知识库构建</title>
 <style>
 :root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
@@ -96,125 +97,125 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <body>
 <nav><div class="container"><div class="logo"><div class="logo-icon">C</div> ComPDF</div>
 <ul>
-    <li><a href="1-document-editing.html">文档编辑</a></li>
-    <li><a href="2-file-processing.html">文件处理</a></li>
-    <li><a href="3-document-automation.html" class="active">RAG知识库</a></li>
-    <li><a href="4-hardware-integration.html">软硬件结合</a></li>
-    <li><a href="5-ai-products.html">AI 产品</a></li>
-    <li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
-    <li><a href="8-third-party-platforms-v5.html">平台生态</a></li>
-    <li><a href="compdf-sdk.html">SDK</a></li>
-    <li><a href="industries.html">行业方案</a></li>
-    <li><a href="low-code.html">Low-Code</a></li>
-    <li><a href="aws-marketplace.html">AWS</a></li>
-    <li><a href="salesforce.html">Salesforce</a></li>
-    <li><a href="third-party-platforms.html">第三方平台</a></li>
-    <li><a href="features.html">功能清单</a></li>
-    <li><a href="pricing.html">定价</a></li>
-    <li><a href="workflow.html">Workflow</a></li>
+<li><a href="1-document-editing.html">文档编辑</a></li>
+<li><a href="2-file-processing.html">文件处理</a></li>
+<li><a class="active" href="3-document-automation.html">RAG知识库</a></li>
+<li><a href="4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="5-ai-products.html">AI 产品</a></li>
+<li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="8-third-party-platforms-v5.html">平台生态</a></li>
+<li><a href="compdf-sdk.html">SDK</a></li>
+<li><a href="industries.html">行业方案</a></li>
+<li><a href="low-code.html">Low-Code</a></li>
+<li><a href="aws-marketplace.html">AWS</a></li>
+<li><a href="salesforce.html">Salesforce</a></li>
+<li><a href="third-party-platforms.html">第三方平台</a></li>
+<li><a href="features.html">功能清单</a></li>
+<li><a href="pricing.html">定价</a></li>
+<li><a href="workflow.html">Workflow</a></li>
 </ul>
 </div></nav>
 <section class="hero"><div class="container">
-  <div class="hero-badge">🧠 ComPDF AI 智能文档解析 × RAG</div>
-  <h1>用<span class="gradient">高精度文档解析</span><br>为 RAG 知识库注入可靠数据</h1>
-  <p>ComPDF AI 基于自研 PDF 原生解析引擎与深度学习模型，精准还原复杂文档的版面结构、表格与层级关系，输出 RAG 场景可直接使用的 Markdown / JSON 结构化数据。</p>
-  <div class="hero-tags">
-    <span class="hero-tag">PDF 原生解析</span>
-    <span class="hero-tag">AI 版面识别</span>
-    <span class="hero-tag">复杂表格提取</span>
-    <span class="hero-tag">Markdown / JSON 输出</span>
-    <span class="hero-tag">20+ 格式支持</span>
-  </div>
-  <div style="display:flex;gap:12px;justify-content:center"><a href="#" class="btn btn-primary">免费试用 API</a><a href="#" class="btn btn-outline">查看文档 →</a></div>
+<div class="hero-badge">🧠 智能文档解析·RAG</div>
+<h1>将<span class="gradient">高精度文档解析</span>能力<br/>转化为 RAG 知识库可信的数据底座</h1>
+<p>ComPDF AI 结合自研 PDF 解析引擎与 AI 模型能力，精准还原复杂文档结构，输出适用于 RAG 流程的 Markdown 与 JSON 数据。</p>
+<div class="hero-tags">
+<span class="hero-tag">AI 版面结构识别</span>
+<span class="hero-tag">复杂表格提取</span>
+<span class="hero-tag">Markdown / JSON 输出</span>
+<span class="hero-tag">支持 20+ 文件格式</span>
+<span class="hero-tag">20+ 格式支持</span>
+</div>
+<div style="display:flex;gap:12px;justify-content:center"><a class="btn btn-primary" href="#">获取定制方案</a><a class="btn btn-outline" href="#">查看文档 →</a></div>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">RAG 场景痛点</span><h2>知识库效果差？问题往往出在文档解析环节</h2><p>RAG 系统的回答质量，取决于底层文档解析的精度与结构保持能力</p></div>
-  <div class="pain-grid">
-    <div class="pain-card"><div class="emoji">📊</div><h4>表格信息丢失</h4><p>普通 OCR 无法保留复杂表格的行列关系，合并单元格和跨页表格几乎全部损坏</p></div>
-    <div class="pain-card"><div class="emoji">🧩</div><h4>版面结构混乱</h4><p>多栏、图文混排、侧边栏等复杂布局被错误拼接，破坏原始语义逻辑</p></div>
-    <div class="pain-card"><div class="emoji">✂️</div><h4>切分质量低下</h4><p>因缺少结构信息，Chunk 切分粒度不当，导致关键上下文被截断或冗余</p></div>
-    <div class="pain-card"><div class="emoji">❌</div><h4>RAG 答非所问</h4><p>底层解析质量不足，向量检索召回率低，LLM 基于错误上下文生成幻觉</p></div>
-  </div>
+<div class="section-title"><span class="tag">RAG 的核心问题</span><h2>为什么知识库项目总是“卡”在第一步？</h2><p>知识库质量的上限，取决于底层文档解析的精度与结构还原能力。</p></div>
+<div class="pain-grid">
+<div class="pain-card"><div class="emoji">📊</div><h4>RAG 的核心问题</h4><p>为什么知识库项目总是“卡”在第一步？</p></div>
+<div class="pain-card"><div class="emoji">🧩</div><h4>知识库质量的上限，取决于底层文档解析的精度与结构还原能力。</h4><p>表格数据丢失严重</p></div>
+<div class="pain-card"><div class="emoji">✂️</div><h4>传统 OCR 无法正确处理复杂表格结构。合并单元格、跨页表格等内容经常出现错乱、断裂甚至直接丢失。</h4><p>版面结构被破坏</p></div>
+<div class="pain-card"><div class="emoji">❌</div><h4>多栏排版、图文混排、侧边栏等复杂布局在解析过程中容易被拆散，导致原始阅读顺序丢失。</h4><p>Chunk 切分质量差</p></div>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">核心解析能力</span><h2>ComPDF AI 为 RAG 场景提供什么？</h2><p>基于自研 PDF 解析内核 + AI 深度学习模型，提供远超通用 OCR 的文档理解能力</p></div>
-  <div class="cap-grid">
-    <div class="cap-card"><div class="icon">📐</div><h3>PDF 原生解析引擎</h3><p>直接读取 PDF 底层文字流、字体信息与坐标位置，无需 OCR 即可精准还原数字 PDF 的文本与结构，保留原始排版的语义层级。</p><ul class="detail-list"><li>直接提取文字流，无 OCR 误差</li><li>保留字体、字号、颜色等格式信息</li><li>精准还原标题层级与段落关系</li><li>支持 PDF 内嵌书签与目录结构</li></ul></div>
-    <div class="cap-card"><div class="icon">🧠</div><h3>AI 驱动的版面分析</h3><p>基于深度学习的版面检测模型，可识别 10+ 种版面元素（标题、正文、表格、图片、页眉页脚、脚注等），正确划分文档的逻辑阅读顺序。</p><ul class="detail-list"><li>多栏、图文混排自动分区</li><li>标题与正文的层级自动关联</li><li>页眉页脚、水印自动过滤</li><li>跨页段落与表格自动拼接</li></ul></div>
-    <div class="cap-card"><div class="icon">📊</div><h3>复杂表格结构提取</h3><p>采用专项表格检测与单元格识别模型，准确还原合并单元格、嵌套表格、无线框表格的行列关系，输出结构化表格数据。</p><ul class="detail-list"><li>合并单元格精准还原行列映射</li><li>无线框/虚线框表格识别</li><li>跨页表格自动拼接与续表识别</li><li>表格数据输出为 HTML / Markdown / JSON</li></ul></div>
-    <div class="cap-card"><div class="icon">🔤</div><h3>扫描件 OCR + 版面还原</h3><p>对图片型 PDF 和扫描件，先进行高精度 OCR 文字识别，再通过版面分析还原文档结构，使其达到与数字 PDF 相同的解析质量。</p><ul class="detail-list"><li>支持 50+ 语种 OCR 识别</li><li>倾斜校正与图像增强预处理</li><li>OCR 结果自动套用版面结构</li><li>手写体与印刷体混合识别</li></ul></div>
-  </div>
+<div class="section-title"><span class="tag">核心解析能力</span><h2>ComPDF AI 为 RAG 场景提供什么？</h2><p>基于自研 PDF 解析内核 + AI 深度学习模型，提供远超通用 OCR 的文档理解能力</p></div>
+<div class="cap-grid">
+<div class="cap-card"><div class="icon">📐</div><h3>PDF 原生解析引擎</h3><p>直接读取 PDF 底层文字流、字体信息与坐标位置，无需 OCR 即可精准还原数字 PDF 的文本与结构，保留原始排版的语义层级。</p><ul class="detail-list"><li>直接提取文字流，无 OCR 误差</li><li>保留字体、字号、颜色等格式信息</li><li>精准还原标题层级与段落关系</li><li>支持 PDF 内嵌书签与目录结构</li></ul></div>
+<div class="cap-card"><div class="icon">🧠</div><h3>AI 驱动的版面分析</h3><p>基于深度学习的版面检测模型，可识别 10+ 种版面元素（标题、正文、表格、图片、页眉页脚、脚注等），正确划分文档的逻辑阅读顺序。</p><ul class="detail-list"><li>多栏、图文混排自动分区</li><li>标题与正文的层级自动关联</li><li>页眉页脚、水印自动过滤</li><li>跨页段落与表格自动拼接</li></ul></div>
+<div class="cap-card"><div class="icon">📊</div><h3>复杂表格结构提取</h3><p>采用专项表格检测与单元格识别模型，准确还原合并单元格、嵌套表格、无线框表格的行列关系，输出结构化表格数据。</p><ul class="detail-list"><li>合并单元格精准还原行列映射</li><li>无线框/虚线框表格识别</li><li>跨页表格自动拼接与续表识别</li><li>表格数据输出为 HTML / Markdown / JSON</li></ul></div>
+<div class="cap-card"><div class="icon">🔤</div><h3>扫描件 OCR + 版面还原</h3><p>对图片型 PDF 和扫描件，先进行高精度 OCR 文字识别，再通过版面分析还原文档结构，使其达到与数字 PDF 相同的解析质量。</p><ul class="detail-list"><li>支持 50+ 语种 OCR 识别</li><li>倾斜校正与图像增强预处理</li><li>OCR 结果自动套用版面结构</li><li>手写体与印刷体混合识别</li></ul></div>
+</div>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">完整流程</span><h2>知识库搭建全链路：从文档到智能问答</h2><p>ComPDF AI 覆盖文档解析与结构化处理环节，打通知识库构建的关键瓶颈</p></div>
-  <div class="flow-section">
-    <div class="flow-row">
-      <div class="flow-node"><div class="emoji">📁</div><div class="label">① 文档收集</div><div class="desc">PDF / 扫描件 / Word<br>PPT / Excel / 图片</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node highlight"><div class="emoji">🤖</div><div class="label">② 文档解析</div><div class="desc">ComPDF AI<br>版面分析 + 内容提取</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node highlight"><div class="emoji">✂️</div><div class="label">③ 智能切分</div><div class="desc">结构感知 Chunk<br>按语义边界分块</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><div class="emoji">🧮</div><div class="label">④ 向量化</div><div class="desc">Embedding 生成<br>向量数据库存储</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><div class="emoji">🔍</div><div class="label">⑤ 检索召回</div><div class="desc">语义匹配<br>相关片段检索</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><div class="emoji">💬</div><div class="label">⑥ LLM 生成</div><div class="desc">结合上下文<br>精准回答 + 溯源</div></div>
-    </div>
-  </div>
-  <div style="text-align:center;margin:32px 0 40px">
-    <div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
-      <span style="color:var(--primary-light);font-weight:700;font-size:13px">🟦 ComPDF AI 覆盖范围：步骤 ②③ — 文档解析 + 智能切分</span>
-      <span style="display:block;color:var(--text-muted);font-size:12px;margin-top:4px">输出 Markdown / JSON 结构化数据，可直接对接下游向量化与 RAG 框架</span>
-    </div>
-  </div>
-  <div style="margin-top:20px">
-    <h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px;color:var(--text-secondary)">ComPDF AI 在步骤 ②③ 中的具体处理</h3>
-    <div class="output-grid">
-      <div class="output-card"><div class="emoji">📐</div><h4>版面分析与元素检测</h4><p>识别标题、正文、表格、图片、页眉页脚等 10+ 种元素，确定正确阅读顺序</p><span class="format-tag">深度学习模型</span></div>
-      <div class="output-card"><div class="emoji">📊</div><h4>内容提取与结构重建</h4><p>文本精准提取、复杂表格行列还原、跨页段落拼接、标题层级关联</p><span class="format-tag">PDF 原生引擎</span></div>
-      <div class="output-card"><div class="emoji">✂️</div><h4>结构感知智能切分</h4><p>基于标题层级与段落边界切分 Chunk，保留表格完整性，避免语义截断</p><span class="format-tag">输出 Markdown / JSON</span></div>
-    </div>
-  </div>
+<div class="section-title"><span class="tag">完整工作流</span><h2>从文档到智能问答，一站式构建企业知识库</h2><p>ComPDF AI 覆盖文档解析与结构化处理环节，打通知识库构建的关键瓶颈</p></div>
+<div class="flow-section">
+<div class="flow-row">
+<div class="flow-node"><div class="emoji">📁</div><div class="label">① 文档收集</div><div class="desc">PDF / 扫描件 / Word<br/>PPT / Excel / 图片</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-node highlight"><div class="emoji">🤖</div><div class="label">② 文档解析</div><div class="desc">ComPDF AI<br/>版面分析 + 内容提取</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-node highlight"><div class="emoji">✂️</div><div class="label">③ 智能切分</div><div class="desc">结构感知 Chunk<br/>按语义边界分块</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-node"><div class="emoji">🧮</div><div class="label">④ 向量化</div><div class="desc">Embedding 生成<br/>向量数据库存储</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-node"><div class="emoji">🔍</div><div class="label">⑤ 检索召回</div><div class="desc">语义匹配<br/>相关片段检索</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-node"><div class="emoji">💬</div><div class="label">⑥ LLM 生成</div><div class="desc">结合上下文<br/>精准回答 + 溯源</div></div>
+</div>
+</div>
+<div style="text-align:center;margin:32px 0 40px">
+<div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
+<span style="color:var(--primary-light);font-weight:700;font-size:13px">🟦 ComPDF AI 覆盖范围：步骤 ②③ — 文档解析 + 智能切分</span>
+<span style="display:block;color:var(--text-muted);font-size:12px;margin-top:4px">输出 Markdown / JSON 结构化数据，可直接对接下游向量化与 RAG 框架</span>
+</div>
+</div>
+<div style="margin-top:20px">
+<h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px;color:var(--text-secondary)">ComPDF AI 在步骤 ②③ 中的具体处理</h3>
+<div class="output-grid">
+<div class="output-card"><div class="emoji">📐</div><h4>版面分析与元素检测</h4><p>识别标题、正文、表格、图片、页眉页脚等 10+ 种元素，确定正确阅读顺序</p><span class="format-tag">深度学习模型</span></div>
+<div class="output-card"><div class="emoji">📊</div><h4>内容提取与结构重建</h4><p>文本精准提取、复杂表格行列还原、跨页段落拼接、标题层级关联</p><span class="format-tag">PDF 原生引擎</span></div>
+<div class="output-card"><div class="emoji">✂️</div><h4>结构感知智能切分</h4><p>基于标题层级与段落边界切分 Chunk，保留表格完整性，避免语义截断</p><span class="format-tag">输出 Markdown / JSON</span></div>
+</div>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">解析效果 & 跑分</span><h2>为什么用 ComPDF AI 解析搭建您的知识库</h2><p>表格还原、版面分析、文本提取精度全面公开 — 每一项都有量化基准和真实数据支撑</p></div>
-  <table class="compare-table">
-    <thead><tr><th>能力维度</th><th class="highlight-col">ComPDF AI</th><th>通用 OCR 方案</th><th>开源解析工具</th></tr></thead>
-    <tbody>
-      <tr><td>数字 PDF 解析</td><td class="highlight-col">原生引擎直接提取，无损精度</td><td>依赖 OCR，存在识别误差</td><td>基础提取，丢失格式</td></tr>
-      <tr><td>复杂表格还原</td><td class="highlight-col">AI 模型识别行列关系与合并单元格</td><td>识别率有限，合并单元格易出错</td><td>仅支持简单表格</td></tr>
-      <tr><td>多栏版面处理</td><td class="highlight-col">深度学习版面分割，正确还原阅读顺序</td><td>按行读取，多栏内容错误拼接</td><td>需手动规则配置</td></tr>
-      <tr><td>跨页内容拼接</td><td class="highlight-col">自动识别续表与跨页段落</td><td>不支持</td><td>不支持</td></tr>
-      <tr><td>输出格式</td><td class="highlight-col">Markdown / JSON / HTML</td><td>纯文本为主</td><td>纯文本 / 简单 HTML</td></tr>
-      <tr><td>部署方式</td><td class="highlight-col">云端 API + 私有化部署</td><td>云端 API</td><td>本地部署，需自行维护</td></tr>
-    </tbody>
-  </table>
+<div class="section-title"><span class="tag">基准测试报告</span><h2>为高质量 RAG 而生的文档理解能力</h2><p>ComPDF AI 将原生 PDF 解析与深度学习能力结合，相比传统 OCR 方案，能够输出更完整、更结构化、更具上下文语义的信息，为现代 RAG 系统提供高质量数据输入。</p></div>
+<table class="compare-table">
+<thead><tr><th>能力维度</th><th class="highlight-col">ComPDF AI</th><th>通用 OCR 方案</th><th>开源解析工具</th></tr></thead>
+<tbody>
+<tr><td>数字 PDF 解析</td><td class="highlight-col">原生引擎直接提取，无损精度</td><td>依赖 OCR，存在识别误差</td><td>基础提取，丢失格式</td></tr>
+<tr><td>复杂表格还原</td><td class="highlight-col">AI 模型识别行列关系与合并单元格</td><td>识别率有限，合并单元格易出错</td><td>仅支持简单表格</td></tr>
+<tr><td>多栏版面处理</td><td class="highlight-col">深度学习版面分割，正确还原阅读顺序</td><td>按行读取，多栏内容错误拼接</td><td>需手动规则配置</td></tr>
+<tr><td>跨页内容拼接</td><td class="highlight-col">自动识别续表与跨页段落</td><td>不支持</td><td>不支持</td></tr>
+<tr><td>输出格式</td><td class="highlight-col">Markdown / JSON / HTML</td><td>纯文本为主</td><td>纯文本 / 简单 HTML</td></tr>
+<tr><td>部署方式</td><td class="highlight-col">云端 API + 私有化部署</td><td>云端 API</td><td>本地部署，需自行维护</td></tr>
+</tbody>
+</table>
 </div></section>
 <section class="section-alt"><div class="container">
-  <div class="section-title"><span class="tag">应用场景</span><h2>ComPDF AI 解析能力在 RAG 场景中的落地</h2></div>
-  <div class="scenario-grid">
-    <div class="scenario-card"><div class="icon">🏦</div><h3>金融研报 / 财报知识库</h3><p>财报中的复杂财务表格、多栏注释与跨页附注，通过 ComPDF AI 的表格提取与版面分析能力，输出结构化数据供投研问答系统使用。</p><div class="scenes"><span class="scene-tag">财务表格提取</span><span class="scene-tag">研报结构解析</span><span class="scene-tag">投研问答</span></div></div>
-    <div class="scenario-card"><div class="icon">⚖️</div><h3>合同 / 法律文书知识库</h3><p>利用 PDF 原生解析保留合同条款的精确层级关系，结合版面分析识别附件、签章区等特殊区域，构建可检索的法务知识体系。</p><div class="scenes"><span class="scene-tag">条款层级解析</span><span class="scene-tag">合同比对</span><span class="scene-tag">法务检索</span></div></div>
-    <div class="scenario-card"><div class="icon">📚</div><h3>教材 / 科研论文知识库</h3><p>教材中的公式、图表标注、参考文献索引等复杂元素，ComPDF AI 可分类识别并保留关联关系，支撑教学问答与学术检索。</p><div class="scenes"><span class="scene-tag">公式识别</span><span class="scene-tag">图表关联</span><span class="scene-tag">学术问答</span></div></div>
-    <div class="scenario-card"><div class="icon">🏥</div><h3>医学文献 / 临床指南知识库</h3><p>医学文献中的药物表格、诊疗流程图和多栏排版，通过精准解析确保临床知识的完整性与准确性，辅助医学知识问答。</p><div class="scenes"><span class="scene-tag">药物表格解析</span><span class="scene-tag">指南结构化</span><span class="scene-tag">临床辅助问答</span></div></div>
-  </div>
+<div class="section-title"><span class="tag">应用场景</span><h2>面向 RAG 的企业级文档解析能力</h2></div>
+<div class="scenario-grid">
+<div class="scenario-card"><div class="icon">🏦</div><h3>金融研究知识库</h3><p>复杂财务表格、多栏注释、跨页内容等结构均可精准提取与重建，帮助构建高准确率的金融问答知识库。</p><div class="scenes"><span class="scene-tag">财务表格提取</span><span class="scene-tag">研报结构解析</span><span class="scene-tag">投研问答</span></div></div>
+<div class="scenario-card"><div class="icon">⚖️</div><h3>合同与法务知识库</h3><p>重建合同层级结构，识别附件、印章与特殊区域，打造可检索、可追溯的法务知识体系。</p><div class="scenes"><span class="scene-tag">条款层级解析</span><span class="scene-tag">合同比对</span><span class="scene-tag">法务检索</span></div></div>
+<div class="scenario-card"><div class="icon">📚</div><h3>学术与科研知识库</h3><p>针对公式、图表标注、参考文献索引等复杂内容进行分类与关联，满足科研与学术场景下的智能问答需求。</p><div class="scenes"><span class="scene-tag">公式识别</span><span class="scene-tag">图表关联</span><span class="scene-tag">学术问答</span></div></div>
+<div class="scenario-card"><div class="icon">🏥</div><h3>医疗文献与临床指南知识库</h3><p>精准解析医学表格、临床流程图、多栏排版等复杂结构，提升医疗知识问答的完整性与可靠性。</p><div class="scenes"><span class="scene-tag">药物表格解析</span><span class="scene-tag">指南结构化</span><span class="scene-tag">临床辅助问答</span></div></div>
+</div>
 </div></section>
 <section><div class="container">
-  <div class="section-title"><span class="tag">技术优势</span><h2>为什么 ComPDF AI 更适合 RAG 前处理？</h2></div>
-  <div class="adv-grid">
-    <div class="adv-card"><div class="icon">⚡</div><h4>双引擎架构</h4><p>数字 PDF 用原生引擎直接提取，扫描件用 AI OCR + 版面分析，两种路径均输出高质量结构化数据</p></div>
-    <div class="adv-card"><div class="icon">🎯</div><h4>结构感知切分</h4><p>基于版面分析结果进行语义级 Chunk 切分，按标题层级、段落边界和表格范围自动划分，避免硬切截断</p></div>
-    <div class="adv-card"><div class="icon">📊</div><h4>表格专项优化</h4><p>专项训练的表格检测与单元格识别模型，对财报表格、多层表头等复杂场景针对性优化</p></div>
-    <div class="adv-card"><div class="icon">🔌</div><h4>框架即插即用</h4><p>输出的 Markdown 可直接被 LangChain、LlamaIndex、Dify、FastGPT 等主流框架消费，无需二次转换</p></div>
-    <div class="adv-card"><div class="icon">📄</div><h4>20+ 格式覆盖</h4><p>除 PDF 外，支持 Word、PPT、Excel、图片等 20+ 格式的统一解析，一个 API 处理全部文档类型</p></div>
-    <div class="adv-card"><div class="icon">🛡️</div><h4>灵活部署方式</h4><p>提供云端 API 与私有化部署选项，满足金融、政务、医疗等行业的数据合规与安全要求</p></div>
-  </div>
+<div class="section-title"><span class="tag">技术优势</span><h2>为什么 ComPDF AI 更适合 RAG 前处理？</h2></div>
+<div class="adv-grid">
+<div class="adv-card"><div class="icon">⚡</div><h4>双引擎架构</h4><p>数字 PDF 用原生引擎直接提取，扫描件用 AI OCR + 版面分析，两种路径均输出高质量结构化数据</p></div>
+<div class="adv-card"><div class="icon">🎯</div><h4>结构感知切分</h4><p>基于版面分析结果进行语义级 Chunk 切分，按标题层级、段落边界和表格范围自动划分，避免硬切截断</p></div>
+<div class="adv-card"><div class="icon">📊</div><h4>表格专项优化</h4><p>专项训练的表格检测与单元格识别模型，对财报表格、多层表头等复杂场景针对性优化</p></div>
+<div class="adv-card"><div class="icon">🔌</div><h4>框架即插即用</h4><p>输出的 Markdown 可直接被 LangChain、LlamaIndex、Dify、FastGPT 等主流框架消费，无需二次转换</p></div>
+<div class="adv-card"><div class="icon">📄</div><h4>20+ 格式覆盖</h4><p>除 PDF 外，支持 Word、PPT、Excel、图片等 20+ 格式的统一解析，一个 API 处理全部文档类型</p></div>
+<div class="adv-card"><div class="icon">🛡️</div><h4>灵活部署方式</h4><p>提供云端 API 与私有化部署选项，满足金融、政务、医疗等行业的数据合规与安全要求</p></div>
+</div>
 </div></section>
 <section class="cta-section"><div class="container">
-  <h2>让文档解析不再是 RAG 的瓶颈</h2>
-  <p>ComPDF AI 为您的知识库项目提供高精度的文档预处理能力<br>从复杂 PDF 到可用的结构化 Chunk，只需一次 API 调用</p>
-  <div style="display:flex;gap:12px;justify-content:center;position:relative"><a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A">免费试用 API →</a><a href="#" class="btn btn-outline">查看接入文档</a></div>
+<h2>立即构建您的 RAG 知识库</h2>
+<p>结合 ComPDF AI 与大模型能力，释放企业文档中的真正价值。<br/></p>
+<div style="display:flex;gap:12px;justify-content:center;position:relative"><a class="btn btn-primary" href="#" style="background:#fff;color:#1E3A8A">免费试用</a><a class="btn btn-outline" href="#">开发者文档</a></div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 </body>

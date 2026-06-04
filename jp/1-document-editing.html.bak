@@ -116,30 +116,30 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </nav>
 <section class="hero">
 <div class="container">
-<div class="hero-badge">🚀 PDF編集の課題に別れを告げましょう</div>
-<h1>PDF編集の敷居を低くする<br/><span class="gradient">Wordのように全ページを自由にコントロール</span></h1>
-<p>注釈レビューからリアルタイムコラボレーションまで、ComPDFはWeb、iOS、Android、Windows、Mac、サーバー向けに完全なPDF編集機能を提供します。これにより、チームは既存のビジネスプロセス内でドキュメントの編集、レビュー、承認をプラットフォームを切り替えることなく完結できます。</p>
+<div class="hero-badge">🚀 PDF 編集の悩みにさようなら</div>
+<h1>PDF 編集のハードルを下げる<br/><span class="gradient">Word のように自由にページを操作</span></h1>
+<p>注釈、コメント、リアルタイムコラボレーション — Web / iOS / Android / Windows / Mac / Server 全プラットフォーム対応<br/>チームのコラボレーション効率を倍増。文書レビューがボトルネックではなくなる</p>
 <div style="display:flex;gap:12px;justify-content:center">
 <a class="btn btn-primary" href="#">無料トライアル</a>
-<a class="btn btn-outline" href="#">オンラインで体験 →</a>
+<a class="btn btn-outline" href="#">デモを見る →</a>
 </div>
 </div>
 </section>
 <section>
 <div class="container">
 <div class="section-title">
-<span class="tag">ネイティブ埋め込みアーキテクチャ</span>
-<h2>プロフェッショナルなPDF編集機能をビジネスシステムにネイティブ統合</h2>
-<p>ComPDFは、PDF編集エンジンを搭載し、企業アプリケーションにシームレスに組み込むことができます。サードパーティツールに移動することなく、プラットフォーム内でPDFの表示、注釈付け、編集、署名が可能です。</p>
+<span class="tag">組み込み型アーキテクチャ</span>
+<h2>PDF 編集機能をシステムにシームレスに埋め込み</h2>
+<p>ComPDF は編集エンジン層としてエンタープライズアプリケーションに組み込まれ、ユーザーは外部ツールに遷移せずに文書操作が可能</p>
 </div>
 <div style="display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px">
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ユーザー操作</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">システム/アプリで文書を開く</div></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ユーザー操作</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">あなたの App / システム<br/>で文書を開く</div></div>
 <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-<div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ComPDF編集エンジン</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">編集 / 注釈 / 署名 / フォーム / 共同作業</div></div>
+<div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ComPDF 編集エンジン</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">編集 / 注釈 / 署名<br/>フォーム / コラボレーション</div></div>
 <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">自動保存と書き戻し</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">文書を修正後、業務システムに自動同期</div></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">自動保存と書き戻し</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">文書修正後<br/>自动同步回系统</div></div>
 <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">後続のビジネスプロセスをトリガー</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">承認 / アーカイブ / 通知などのプロセスが自動的に続行されます</div></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">下流フローをトリガー</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">承認 / アーカイブ / 通知<br/>業務フローを継続</div></div>
 </div>
 <div style="text-align:center;margin-bottom:40px">
 <div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
@@ -147,15 +147,15 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </div>
 </div>
 <div class="section-title" style="margin-top:20px">
-<h2>すぐに使えるエンタープライズ向けPDFエンジン</h2>
+<h2>すぐに使える PDF 全機能エンジン</h2>
 <p>編集、注釈、フォーム、比較 — 必要な文書機能がすべて揃っています</p>
 </div>
 <div class="features-grid">
-<div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>コンテンツ編集</h3><p>PDFのテキスト、画像、透かしを直接編集し、元のレイアウトを完全に保持します。</p></div>
-<div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>注釈</h3><p>20種類以上の注釈ツール（ハイライト、下線、図形描画、付箋など）を提供</p></div>
-<div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>フォーム入力</h3><p>インタラクティブフォーム、自動認識、データ検証をサポート</p></div>
-<div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>ページ管理</h3><p>ページの挿入、削除、回転、分割、結合に対応しています。</p></div>
-<div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>文書比較</h3><p>並列比較、相違点比較、オーバーレイ比較に対応し、変更内容を自動追跡します。</p></div>
+<div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>コンテンツ編集</h3><p>文本、图片、水印直接修改，保留原始排版</p></div>
+<div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>注釈</h3><p>高亮、下划线、形状、贴纸等 20+ 标注工具</p></div>
+<div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>フォーム入力</h3><p>交互式表单控件，支持自动识别与数据验证</p></div>
+<div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>ページ管理</h3><p>插入、删除、旋转、拆分、合并页面</p></div>
+<div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>文書比較</h3><p>逐页对比差异，自动标记变更内容</p></div>
 <a class="feature-card" href="https://www.compdf.com/pdf-sdk" style="text-decoration:none;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center" target="_blank">
 <div class="feature-icon" style="background:rgba(37,99,235,.08)">➕</div>
 <h3>その他の PDF 編集機能</h3>
@@ -167,25 +167,25 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <section class="section-alt">
 <div class="container">
 <div class="section-title">
-<span class="tag">統合シーン</span>
-<h2>PDF編集機能をビジネスシーンに組み込む</h2>
+<span class="tag">統合シナリオ</span>
+<h2>業務システムに埋め込み、文書編集をワークフローから切り離さない</h2>
 <p>ComPDF の編集機能は CRM、ERP、OA および各種業務システムに組み込み可能。文書操作がそのまま業務操作に</p>
 </div>
 <div class="scene-grid">
-<div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce</h4><p>営業担当者が CRM 内で直接見積書や契約書 PDF を編集。修正後は自動的に顧客レコードに関連付け。ダウンロード→編集→再アップロードの煩雑な操作は不要</p></div></div>
-<div class="scene-card"><div class="icon">📱</div><div><h4>モバイル App 組み込み編集</h4><p>iOS/AndroidアプリでネイティブレベルのPDF編集体験を提供。アプリを切り替えることなく、署名、注釈付け、フォーム入力、コンテンツ編集が可能です。</p></div></div>
-<div class="scene-card"><div class="icon">🔗</div><div><h4>OA / 承認ワークフロー</h4><p>承認者は承認ノードで直接ドキュメントを編集したり、注釈を追加したりできます。編集内容は自動的に保存され、次の承認ステップに進みます。</p></div></div>
-<div class="scene-card"><div class="icon">🏢</div><div><h4>ERP / 業務システムワークフロー</h4><p>システム内で発注書、品質検査報告書、物流書類を直接編集・署名し、入庫、支払い、アーカイブなどの後続プロセスを自動的にトリガーします。</p></div></div>
-<div class="scene-card"><div class="icon">📋</div><div><h4>契約管理プラットフォーム</h4><p>契約の全ライフサイクルをカバー：オンラインでの変更履歴レビュー、条項ごとの注釈、複数当事者による電子署名、完全なバージョン追跡により、監査とコンプライアンス要件に対応します。</p></div></div>
-<div class="scene-card"><div class="icon">🏗️</div><div><h4>現場作業 App</h4><p>現場チームはモバイルデバイスでPDF図面を閲覧し、欠陥や施工の進捗を直接マークアップし、署名確認を完了し、その情報をバックエンドシステムにリアルタイムで同期できます。</p></div></div>
+<div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce 統合</h4><p>営業担当者が CRM 内で直接見積書や契約書 PDF を編集。修正後は自動的に顧客レコードに関連付け。ダウンロード→編集→再アップロードの煩雑な操作は不要</p></div></div>
+<div class="scene-card"><div class="icon">📱</div><div><h4>モバイル App 組み込み編集</h4><p>iOS / Android App 内で完全な PDF 編集体験を提供 — ユーザーは App 内で直接署名、注釈、フォーム入力が可能。サードパーティアプリへの遷移は不要</p></div></div>
+<div class="scene-card"><div class="icon">🔗</div><div><h4>OA / 承認ワークフロー</h4><p>文書承認ノードに編集機能を埋め込み、承認者が直接文書内容を修正または注釈を追加。修正完了後、自動的に次の承認フローへ</p></div></div>
+<div class="scene-card"><div class="icon">🏢</div><div><h4>ERP / 業務システムワークフロー</h4><p>発注書、品質検査レポート、出荷伝票などの業務文書をシステム内で直接編集・署名。操作完了後、後続フロー（入庫、支払い、アーカイブ）を自動トリガー</p></div></div>
+<div class="scene-card"><div class="icon">📋</div><div><h4>契約管理プラットフォーム</h4><p>契約書テキストのオンライン修正、条項注釈、複数者での共同署名。すべてのバージョン変更を自動記録し、監査追跡とコンプライアンスアーカイブをサポート</p></div></div>
+<div class="scene-card"><div class="icon">🏗️</div><div><h4>現場作業 App</h4><p>エンジニアがモバイル端末で図面 PDF を閲覧し、問題点を直接注釈・署名確認。データはリアルタイムでバックエンド管理システムに同期</p></div></div>
 </div>
 </div>
 </section>
 <section>
 <div class="container">
-<div class="section-title"><span class="tag">技術的優位性</span><h2>企業チームがComPDFを選ぶ理由</h2></div>
+<div class="section-title"><span class="tag">技術ハイライト</span><h2>ComPDF を選ぶ 4 つの確固たる理由</h2></div>
 <div class="highlights">
-<div class="hl-item"><div class="num">5 min</div><div class="label">柔軟なデプロイ方法</div></div>
+<div class="hl-item"><div class="num">5 min</div><div class="label">迅速な統合</div></div>
 <div class="hl-item"><div class="num">6+</div><div class="label">対応プラットフォーム</div></div>
 <div class="hl-item"><div class="num">99.9%</div><div class="label">レンダリング精度</div></div>
 <div class="hl-item"><div class="num">&lt; 200ms</div><div class="label">平均応答時間</div></div>
@@ -202,11 +202,11 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </section>
 <section>
 <div class="container">
-<div class="section-title"><span class="tag">導入事例</span><h2>「お客様の声、確かな実績」</h2></div>
+<div class="section-title"><span class="tag">お客様の導入事例</span><h2>お客様の導入事例 — ComPDF が実際の問題をどう解決したかをご紹介</h2></div>
 <div class="case-grid">
-<div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>建築設計図面注釈ソリューション</h4><p>注釈とフォーム機能を建設現場アプリに統合。作業員が PDF 図面に直接、不具合、進捗の注釈と署名確認が可能</p><a class="btn btn-primary" href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" style="font-size:13px;padding:8px 18px" target="_blank">ソリューションを見る →</a></div></div>
-<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>フル機能 PDF エディター迅速構築ソリューション</h4><p>編集、注釈、フォーム機能を備えたプロフェッショナルなPDFエディターを迅速に構築し、開発期間を80%短縮します。</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px;padding:8px 18px" target="_blank">ソリューションを見る →</a></div></div>
-<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>デスクトップ PDF ツール迅速リリースソリューション</h4><p>ComPDF SDK を活用してデスクトップ PDF ツールを構築し、統合からリリースまでわずか 3 週間で完了しました。</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px;padding:8px 18px" target="_blank">ソリューションを見る →</a></div></div>
+<div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>建設現場 PDF 図面注釈ソリューション</h4><p>注釈とフォーム機能を建設現場アプリに統合。作業員が PDF 図面に直接、不具合、進捗の注釈と署名確認が可能</p><a class="btn btn-primary" href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" style="font-size:13px;padding:8px 18px" target="_blank">ソリューションを見る →</a></div></div>
+<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>フル機能 PDF エディター迅速構築ソリューション</h4><p>ゼロからプロフェッショナルな PDF エディターを構築。編集、注釈、フォームの全フローをカバーし、開発期間を 80% 短縮</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px;padding:8px 18px" target="_blank">ソリューションを見る →</a></div></div>
+<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>デスクトップ PDF ツール迅速リリースソリューション</h4><p>ComPDF SDK に基づきデスクトップ PDF ツールを構築。3 週間で統合からリリースまでの全フローを完了</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px;padding:8px 18px" target="_blank">ソリューションを見る →</a></div></div>
 </div>
 </div>
 </section>
@@ -214,18 +214,18 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="container">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
 <div>
-<span class="tag">無料デモを予約する</span>
+<span class="tag">無料体験</span>
 <h2 style="font-size:32px;font-weight:700;margin:12px 0 16px">1 対 1 の技術デモを予約<br/>ComPDF がお客様のシナリオをどう解決するかをご確認ください</h2>
 <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px">ソリューションエンジニアがお客様の具体的なご要望に応じて、統合ソリューションをライブデモでご紹介し、技術アドバイスを提供します — 完全無料、一切の条件はございません</p>
 <div style="display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">特定のビジネスシナリオに対応したカスタマイズデモンストレーション</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">30 分のカスタマイズデモ。お客様の業務シナリオに特化</span></div>
 <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">専用統合ソリューション + サンプルコードを入手</span></div>
 <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">技術選定、アーキテクチャ、コンプライアンスに関する質問にお答え</span></div>
 <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">デモ後すぐに無料トライアル + テクニカルサポートを開始</span></div>
 </div>
 </div>
 <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">🚀 無料デモを予約する</h3>
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">🚀 無料デモを予約</h3>
 <form onsubmit="event.preventDefault();this.querySelector('.form-btn').textContent='✓ 已提交';this.querySelector('.form-btn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
 <input placeholder="您的姓名" type="text"/>
 <input placeholder="工作邮箱" type="email"/>
@@ -243,7 +243,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <h2>5 分で統合、すぐにプロ級の PDF 編集機能を</h2>
 <p>ゼロコストでスタート · 無料トライアル · 今すぐアプリを生まれ変わらせる</p>
 <div style="display:flex;gap:12px;justify-content:center;position:relative">
-<a class="btn btn-primary" href="#" style="background:#fff;color:#1E3A8A">無料トライアル</a>
+<a class="btn btn-primary" href="#" style="background:#fff;color:#1E3A8A">無料トライアルを開始</a>
 <a class="btn btn-outline" href="#">完全なドキュメントを見る →</a>
 </div>
 </div>

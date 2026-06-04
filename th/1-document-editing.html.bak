@@ -117,30 +117,30 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </nav>
 <section class="hero">
 <div class="container">
-<div class="hero-badge">🚀 ปรับแต่ง PDF ในมิติใหม่</div>
-<h1>แก้ไข PDF ได้อย่างอิสระเหมือนโปรแกรม Word<br/><span class="gradient">ควบคุมได้เต็มที่ ไม่มีข้อจำกัด</span></h1>
-<p>ตั้งแต่คำอธิบายประกอบและความคิดเห็นไปจนถึงการทำงานร่วมกันแบบเรียลไทม์ - นำพลังเต็มรูปแบบของการแก้ไข PDF มาสู่ Web, iOS, Android, Windows, Mac และ Server เพิ่มศักยภาพให้ทีมของคุณแก้ไข ตรวจสอบ และอนุมัติเอกสารโดยไม่ต้องออกจากขั้นตอนการทำงานของคุณ</p>
+<div class="hero-badge">🚀 บอกลาปัญหาในการแก้ไข PDF</div>
+<h1>ลดเกณฑ์สำหรับการแก้ไข PDF<br/><span class="gradient">ควบคุมทุกหน้าด้วยอิสระเช่นเดียวกับ Word</span></h1>
+<p>ความคิดเห็น คำอธิบายประกอบ และการทำงานร่วมกันแบบเรียลไทม์ ครอบคลุมแพลตฟอร์มเว็บ/iOS/Android/Windows/Mac/เซิร์ฟเวอร์ทั้งหมด<br/>ประสิทธิภาพการทำงานร่วมกันเป็นทีมสองเท่าและการตรวจสอบเอกสารไม่ใช่ปัญหาคอขวดอีกต่อไป</p>
 <div style="display:flex;gap:12px;justify-content:center">
-<a class="btn btn-primary" href="#">เริ่มทดลองใช้ฟรี</a>
-<a class="btn btn-outline" href="#">เปิดตัวการสาธิต →</a>
+<a class="btn btn-primary" href="#">ทดลองใช้ฟรี</a>
+<a class="btn btn-outline" href="#">ดูการสาธิต →</a>
 </div>
 </div>
 </section>
 <section>
 <div class="container">
 <div class="section-title">
-<span class="tag">สถาปัตยกรรมแบบฝังตัว</span>
-<h2>การแก้ไข PDF ที่ฝังในแอปพลิเคชันของคุณโดยตรง</h2>
-<p>ComPDF ทำงานเป็นเลเยอร์การแก้ไขที่มีคุณสมบัติครบถ้วนภายในแอปพลิเคชันองค์กรของคุณ ดู ใส่คำอธิบายประกอบ แก้ไข และลงนามในเอกสาร PDF ได้โดยไม่ต้องออกจากแพลตฟอร์มของคุณ</p>
+<span class="tag">สถาปัตยกรรมฝังตัว</span>
+<h2>ความสามารถในการแก้ไข PDF ที่ฝังอยู่ในระบบของคุณได้อย่างราบรื่น</h2>
+<p>ComPDF ถูกฝังลงในแอปพลิเคชันระดับองค์กรเป็นเลเยอร์กลไกการแก้ไข ช่วยให้ผู้ใช้สามารถดำเนินการเอกสารให้เสร็จสิ้นได้โดยไม่ต้องข้ามไปยังเครื่องมือภายนอก</p>
 </div>
 <div style="display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px">
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">การดำเนินการของผู้ใช้</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">เปิดเอกสารในแอป/ระบบของคุณ</div></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">การกระทำของผู้ใช้</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">ในแอป/ระบบของคุณ<br/>เปิดเอกสารใน</div></div>
 <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-<div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">กลไกการแก้ไข ComPDF</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">แก้ไข/ ใส่คำอธิบายประกอบ/ เซ็นชื่อ/ ฟอร์ม/ การทำงานร่วมกัน</div></div>
+<div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">โปรแกรมแก้ไข ComPDF</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">แก้ไข/ใส่คำอธิบาย/ลงชื่อ<br/>แบบฟอร์ม/ความร่วมมือ</div></div>
 <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">บันทึกอัตโนมัติและเขียนกลับ</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">หลังจากแก้ไขเอกสาร ระบบจะซิงค์กลับโดยอัตโนมัติ</div></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">บันทึกและเขียนกลับโดยอัตโนมัติ</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">หลังจากแก้ไขเอกสารแล้ว<br/>ซิงค์กลับไปยังระบบโดยอัตโนมัติ</div></div>
 <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ทริกเกอร์โฟลว์ดาวน์สตรีม</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">การอนุมัติ/การเก็บถาวร/การแจ้งเตือน ดำเนินการตามขั้นตอนทางธุรกิจต่อไป</div></div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ทริกเกอร์กระบวนการดาวน์สตรีม</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">การอนุมัติ / การเก็บถาวร / การแจ้ง<br/>ดำเนินธุรกิจต่อไป</div></div>
 </div>
 <div style="text-align:center;margin-bottom:40px">
 <div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
@@ -148,15 +148,15 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </div>
 </div>
 <div class="section-title" style="margin-top:20px">
-<h2>โปรแกรมแก้ไข PDF ที่สมบูรณ์แบบ พร้อมใช้งานทันที</h2>
+<h2>เอ็นจิ้นความสามารถเต็มรูปแบบ PDF นอกกรอบ</h2>
 <p>การแก้ไข คำอธิบายประกอบ แบบฟอร์ม การเปรียบเทียบ ความสามารถด้านเอกสารทั้งหมดที่คุณต้องการพร้อมแล้ว</p>
 </div>
 <div class="features-grid">
-<div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>การแก้ไขเนื้อหา</h3><p>แก้ไขข้อความ รูปภาพ และลายน้ำได้โดยตรง พร้อมรักษาเค้าโครงเดิม</p></div>
-<div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>คำอธิบายประกอบ คำอธิบายประกอบ</h3><p>เครื่องมือคำอธิบายประกอบกว่า 20 รายการ เช่น ไฮไลต์, ขีดเส้นใต้, รูปร่าง และสติกเกอร์</p></div>
-<div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>การกรอกแบบฟอร์ม</h3><p>การควบคุมฟอร์มแบบโต้ตอบพร้อมการตรวจจับอัตโนมัติและการตรวจสอบข้อมูล</p></div>
-<div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>การจัดการเพจ</h3><p>แทรก ลบ หมุน แยก และรวมหน้า</p></div>
-<div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>การเปรียบเทียบเอกสาร</h3><p>การเปรียบเทียบเนื้อหาและการเปรียบเทียบแบบซ้อนทับพร้อมการติดตามการเปลี่ยนแปลงอัตโนมัติ</p></div>
+<div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>การแก้ไขเนื้อหา</h3><p>ข้อความ รูปภาพ และลายน้ำสามารถแก้ไขได้โดยตรงโดยยังคงรูปแบบเดิมไว้</p></div>
+<div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>คำอธิบายประกอบ คำอธิบายประกอบ</h3><p>ไฮไลต์ ขีดเส้นใต้ รูปร่าง สติ๊กเกอร์ และเครื่องมือคำอธิบายประกอบมากกว่า 20 รายการ</p></div>
+<div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>การกรอกแบบฟอร์ม</h3><p>การควบคุมแบบฟอร์มแบบโต้ตอบรองรับการระบุอัตโนมัติและการตรวจสอบข้อมูล</p></div>
+<div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>การจัดการเพจ</h3><p>แทรก ลบ หมุน แยก รวมหน้า</p></div>
+<div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>การเปรียบเทียบเอกสาร</h3><p>เปรียบเทียบความแตกต่างทีละหน้าและทำเครื่องหมายการเปลี่ยนแปลงโดยอัตโนมัติ</p></div>
 <a class="feature-card" href="https://www.compdf.com/pdf-sdk" style="text-decoration:none;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center" target="_blank">
 <div class="feature-icon" style="background:rgba(37,99,235,.08)">➕</div>
 <h3>คุณสมบัติการแก้ไข PDF เพิ่มเติม</h3>
@@ -168,25 +168,25 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <section class="section-alt">
 <div class="container">
 <div class="section-title">
-<span class="tag">สถานการณ์การผสานรวม</span>
-<h2>ผสานรวมการแก้ไข PDF เข้ากับการทำงานของธุรกิจคุณ</h2>
+<span class="tag">สถานการณ์บูรณาการ</span>
+<h2>ฝังลงในระบบธุรกิจเพื่อให้การแก้ไขเอกสารไม่แยกออกจากขั้นตอนการทำงานอีกต่อไป</h2>
 <p>ความสามารถในการแก้ไข ComPDF สามารถฝังอยู่ใน CRM, ERP, OA และระบบธุรกิจต่างๆ และการดำเนินการด้านเอกสารคือการดำเนินธุรกิจ</p>
 </div>
 <div class="scene-grid">
-<div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce</h4><p>พนักงานขายสามารถแก้ไขใบเสนอราคาและสัญญา PDF ใน CRM ได้โดยตรง และเชื่อมโยงบันทึกของลูกค้าโดยอัตโนมัติหลังการแก้ไข ขจัดความจำเป็นในการดำเนินการที่ยุ่งยากในการดาวน์โหลด แก้ไข และอัปโหลด</p></div></div>
-<div class="scene-card"><div class="icon">📱</div><div><h4>การแก้ไขแบบอินไลน์ของแอปบนอุปกรณ์เคลื่อนที่</h4><p>มอบประสบการณ์การแก้ไข PDF แบบเนทีฟภายในแอป iOS หรือ Android ของคุณ ผู้ใช้สามารถลงชื่อ, ใส่คำอธิบายประกอบ, กรอกแบบฟอร์ม และแก้ไขเนื้อหาได้โดยไม่ต้องสลับไปใช้แอปพลิเคชันอื่น</p></div></div>
-<div class="scene-card"><div class="icon">🔗</div><div><h4>OA / เวิร์กโฟลว์การอนุมัติ</h4><p>ผู้อนุมัติสามารถแก้ไขเนื้อหาเอกสารหรือเพิ่มคำอธิบายประกอบได้โดยตรงภายในโหนดการอนุมัติ การเปลี่ยนแปลงจะถูกบันทึกโดยอัตโนมัติและส่งต่อไปยังขั้นตอนถัดไปในเวิร์กโฟลว์</p></div></div>
-<div class="scene-card"><div class="icon">🏢</div><div><h4>ERP/ขั้นตอนการทำงานของระบบธุรกิจ</h4><p>แก้ไขและลงนามใน PO, รายงาน QC, เอกสารการจัดส่งภายในระบบของคุณ — ทริกเกอร์กระบวนการปลายน้ำโดยอัตโนมัติ (การรับ, การชำระเงิน, การเก็บถาวร)</p></div></div>
-<div class="scene-card"><div class="icon">📋</div><div><h4>แพลตฟอร์มการจัดการสัญญา</h4><p>การจัดการสัญญาตลอดวงจรชีวิต - การแก้ไขออนไลน์, คำอธิบายประกอบระดับข้อกำหนด, ลายเซ็นอิเล็กทรอนิกส์แบบหลายฝ่าย และประวัติเวอร์ชันที่สมบูรณ์สำหรับการตรวจสอบและปฏิบัติตามข้อกำหนด</p></div></div>
-<div class="scene-card"><div class="icon">🏗️</div><div><h4>แอปงานภาคสนาม</h4><p>ทีมงานภาคสนามสามารถดูพิมพ์เขียว PDF บนอุปกรณ์มือถือ ทำเครื่องหมายข้อบกพร่องและความคืบหน้าได้โดยตรงบนเอกสาร เก็บลายเซ็น และซิงค์ทุกอย่างกลับไปยังสำนักงานได้แบบเรียลไทม์</p></div></div>
+<div class="scene-card"><div class="icon">☁️</div><div><h4>การบูรณาการ CRM/Salesforce</h4><p>พนักงานขายสามารถแก้ไขใบเสนอราคาและสัญญา PDF ใน CRM ได้โดยตรง และเชื่อมโยงบันทึกของลูกค้าโดยอัตโนมัติหลังการแก้ไข ขจัดความจำเป็นในการดำเนินการที่ยุ่งยากในการดาวน์โหลด แก้ไข และอัปโหลด</p></div></div>
+<div class="scene-card"><div class="icon">📱</div><div><h4>การแก้ไขแบบอินไลน์ของแอปบนอุปกรณ์เคลื่อนที่</h4><p>มอบประสบการณ์การแก้ไข PDF ที่สมบูรณ์แบบในแอป iOS / Android ของคุณ - ผู้ใช้สามารถลงนาม ใส่คำอธิบายประกอบ และกรอกแบบฟอร์มได้โดยตรงในแอปโดยไม่ต้องข้ามไปยังแอปพลิเคชันบุคคลที่สาม</p></div></div>
+<div class="scene-card"><div class="icon">🔗</div><div><h4>OA / เวิร์กโฟลว์การอนุมัติ</h4><p>ความสามารถในการแก้ไขถูกฝังอยู่ในโหนดการอนุมัติเอกสาร ผู้อนุมัติสามารถแก้ไขเนื้อหาเอกสารหรือเพิ่มความคิดเห็นได้โดยตรง หลังจากการแก้ไขเสร็จสิ้น ระบบจะเข้าสู่ลิงก์การอนุมัติถัดไปโดยอัตโนมัติ</p></div></div>
+<div class="scene-card"><div class="icon">🏢</div><div><h4>ERP/ขั้นตอนการทำงานของระบบธุรกิจ</h4><p>เอกสารทางธุรกิจ เช่น ใบสั่งซื้อ รายงานการตรวจสอบคุณภาพ และใบแจ้งหนี้ สามารถแก้ไขและลงนามในระบบได้โดยตรง หลังจากการดำเนินการเสร็จสมบูรณ์ กระบวนการต่อมา (คลังสินค้า การชำระเงิน และการเก็บถาวร) จะถูกทริกเกอร์โดยอัตโนมัติ</p></div></div>
+<div class="scene-card"><div class="icon">📋</div><div><h4>แพลตฟอร์มการจัดการสัญญา</h4><p>การแก้ไขข้อความสัญญาแบบออนไลน์ คำอธิบายประกอบข้อ การลงนามหลายฝ่าย การบันทึกการเปลี่ยนแปลงเวอร์ชันทั้งหมดโดยอัตโนมัติ และการสนับสนุนสำหรับการตรวจสอบย้อนกลับและการเก็บถาวรการปฏิบัติตามข้อกำหนด</p></div></div>
+<div class="scene-card"><div class="icon">🏗️</div><div><h4>แอปงานภาคสนาม</h4><p>วิศวกรดูแบบ PDF บนเทอร์มินัลมือถือและทำเครื่องหมายจุดปัญหาโดยตรงและลงนามเพื่อยืนยัน จากนั้นข้อมูลจะซิงโครไนซ์กลับไปยังระบบการจัดการเบื้องหลังแบบเรียลไทม์</p></div></div>
 </div>
 </div>
 </section>
 <section>
 <div class="container">
-<div class="section-title"><span class="tag">ไฮไลต์เทคโนโลยี</span><h2>ทำไมทีมถึงเลือก ComPDF สำหรับการแก้ไข PDF</h2></div>
+<div class="section-title"><span class="tag">จุดเด่นทางเทคนิค</span><h2>4 เหตุผลหลักในการเลือก ComPDF</h2></div>
 <div class="highlights">
-<div class="hl-item"><div class="num">5 min</div><div class="label">วิธีการปรับใช้ที่ยืดหยุ่น</div></div>
+<div class="hl-item"><div class="num">5 min</div><div class="label">บูรณาการอย่างรวดเร็ว</div></div>
 <div class="hl-item"><div class="num">6+</div><div class="label">แพลตฟอร์มการสนับสนุน</div></div>
 <div class="hl-item"><div class="num">99.9%</div><div class="label">ความแม่นยำในการแสดงผล</div></div>
 <div class="hl-item"><div class="num">&lt; 200ms</div><div class="label">การตอบสนองโดยเฉลี่ย</div></div>
@@ -203,11 +203,11 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </section>
 <section>
 <div class="container">
-<div class="section-title"><span class="tag">เรื่องราวของลูกค้า</span><h2>ลูกค้าจริง ผลลัพธ์จริง</h2></div>
+<div class="section-title"><span class="tag">กรณีลูกค้า</span><h2>แนวทางปฏิบัติของลูกค้า - ดูว่าพวกเขาใช้ ComPDF เพื่อแก้ไขปัญหาจริงอย่างไร</h2></div>
 <div class="case-grid">
-<div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>คำอธิบายประกอบพิมพ์เขียวสำหรับงานก่อสร้าง</h4><p>ผสานรวมฟังก์ชันคำอธิบายประกอบและแบบฟอร์มเข้ากับแอปพลิเคชันไซต์ก่อสร้าง เพื่อให้ผู้ปฏิบัติงานสามารถทำเครื่องหมายข้อบกพร่อง ความคืบหน้า และลงนามในแบบร่าง PDF ได้โดยตรง</p><a class="btn btn-primary" href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" style="font-size:13px;padding:8px 18px" target="_blank">ดูแผน →</a></div></div>
-<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>โปรแกรมแก้ไข PDF ที่มีคุณสมบัติครบถ้วนเพื่อสร้างโซลูชันอย่างรวดเร็ว</h4><p>สร้างโปรแกรมแก้ไข PDF ระดับมืออาชีพตั้งแต่เริ่มต้น ครอบคลุมการแก้ไข, คำอธิบายประกอบ และแบบฟอร์ม - ลดวงจรการพัฒนาลง 80%</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px;padding:8px 18px" target="_blank">ดูแผน →</a></div></div>
-<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>แผนการเปิดตัวด่วนสำหรับเครื่องมือ PDF บนเดสก์ท็อป</h4><p>สร้างเครื่องมือ PDF สำหรับเดสก์ท็อปด้วย ComPDF SDK - ครบวงจรตั้งแต่การผสานรวมไปจนถึงการเปิดตัวผลิตภัณฑ์ใน 3 สัปดาห์</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px;padding:8px 18px" target="_blank">ดูแผน →</a></div></div>
+<div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>รูปแบบคำอธิบายประกอบการเขียนแบบ PDF ของสถานที่ก่อสร้าง</h4><p>ผสานรวมฟังก์ชันคำอธิบายประกอบและแบบฟอร์มเข้ากับแอปพลิเคชันไซต์ก่อสร้าง เพื่อให้ผู้ปฏิบัติงานสามารถทำเครื่องหมายข้อบกพร่อง ความคืบหน้า และลงนามในแบบร่าง PDF ได้โดยตรง</p><a class="btn btn-primary" href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" style="font-size:13px;padding:8px 18px" target="_blank">ดูแผน →</a></div></div>
+<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>โปรแกรมแก้ไข PDF ที่มีคุณสมบัติครบถ้วนเพื่อสร้างโซลูชันอย่างรวดเร็ว</h4><p>สร้างโปรแกรมแก้ไข PDF ระดับมืออาชีพตั้งแต่เริ่มต้น ครอบคลุมกระบวนการแก้ไข คำอธิบายประกอบ และแบบฟอร์มทั้งหมด และลดระยะเวลาการพัฒนาลง 80%</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px;padding:8px 18px" target="_blank">ดูแผน →</a></div></div>
+<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>แผนการเปิดตัวด่วนสำหรับเครื่องมือ PDF บนเดสก์ท็อป</h4><p>สร้างเครื่องมือ PDF บนเดสก์ท็อปโดยใช้ ComPDF SDK และดำเนินการกระบวนการทั้งหมดให้เสร็จสิ้นตั้งแต่การรวมระบบไปจนถึงการเปิดตัวภายใน 3 สัปดาห์</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px;padding:8px 18px" target="_blank">ดูแผน →</a></div></div>
 </div>
 </div>
 </section>
@@ -215,11 +215,11 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="container">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
 <div>
-<span class="tag">จองการสาธิตฟรี</span>
+<span class="tag">ทดลองใช้ฟรี</span>
 <h2 style="font-size:32px;font-weight:700;margin:12px 0 16px">จองการสาธิตทางเทคนิคแบบตัวต่อตัว<br/>ดูว่า ComPDF แก้ไขสถานการณ์ของคุณอย่างไร</h2>
 <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px">วิศวกรโซลูชันของเราจะสาธิตโซลูชันแบบผสานรวมและให้คำแนะนำด้านเทคนิคถึงสถานที่ทำงานตามความต้องการเฉพาะของคุณ โดยไม่มีค่าใช้จ่ายใด ๆ ทั้งสิ้น โดยไม่มีข้อผูกมัดใด ๆ</p>
 <div style="display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">การสาธิตแบบกำหนดเอง 30 นาทีสำหรับกรณีการใช้งานเฉพาะของคุณ</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">การนำเสนอแบบกำหนดเองความยาว 30 นาที ปรับให้เหมาะกับสถานการณ์ทางธุรกิจของคุณ</span></div>
 <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">รับโซลูชันการบูรณาการพิเศษ + โค้ดตัวอย่าง</span></div>
 <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">ตอบคำถามเกี่ยวกับการเลือกเทคโนโลยี สถาปัตยกรรม และการปฏิบัติตามข้อกำหนด</span></div>
 <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">เริ่มทดลองใช้ฟรี + การสนับสนุนทางเทคนิคทันทีหลังจากการสาธิต</span></div>

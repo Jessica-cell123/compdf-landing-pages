@@ -129,10 +129,10 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="container">
   <div class="hero-badge">🚀 PDF Editing, Reimagined</div>
   <h1>Edit PDFs with the Freedom of a Word Processor<br/><span class="gradient">Full Control, Zero Compromise</span></h1>
-  <p>From annotations and comments to real-time collaboration - bring the full power of PDF editing to Web, iOS, Android, Windows, Mac, and Server. Empower your team to edit, review, and approve documents without ever leaving your workflow.</p>
+  <p>From annotations and comments to real-time collaboration — bring the full power of PDF editing to Web, iOS, Android, Windows, Mac, and Server. Empower your team to edit, review, and approve documents without ever leaving your workflow.</p>
   <div style="display:flex; gap:12px; justify-content:center">
     <a href="#" class="btn btn-primary">Start Free Trial</a>
-    <a href="#" class="btn btn-outline">Launch Demo →</a>
+    <a href="#" class="btn btn-outline">View Demo →</a>
   </div>
 </div>
 </section>
@@ -141,16 +141,16 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="section-title">
 <span class="tag">Embedded Architecture</span>
   <h2>PDF Editing, Natively Embedded in Your Application</h2>
-  <p>ComPDF operates as a full-featured editing layer inside your enterprise app. View, annotate, edit, and sign PDF documents without leaving your platform.</p>
+  <p>ComPDF operates as a full-featured editing layer inside your enterprise app. Users view, annotate, edit, and sign PDF documents without ever navigating to an external tool — the entire experience stays within your platform.</p>
 </div>
 <div style="display:flex; align-items:stretch; justify-content:center; gap:0; flex-wrap:wrap; margin-bottom:40px">
-<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">User Action</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">Open a document in your app/system</div></div>
+<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">User Action</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">Open a document in your app/system<br/>open it inDocs</div></div>
 <div style="font-size:22px; color:var(--accent); margin:0 4px; display:flex; align-items:center">→</div>
-<div style="background:rgba(37,99,235,.06); border:1px solid var(--primary); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">ComPDF Editing Engine</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">Edit/ Annotate/ Sign/ Forms/ Collaboration</div></div>
+<div style="background:rgba(37,99,235,.06); border:1px solid var(--primary); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">ComPDF Editing Engine</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">Edit/ Annotate/ Sign<br/>Forms/ Collaboration</div></div>
 <div style="font-size:22px; color:var(--accent); margin:0 4px; display:flex; align-items:center">→</div>
-<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">Auto-Save & Write Back</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">After document changes, auto-synced back to the system</div></div>
+<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">Auto-Save &amp; Write Back</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">After document changes,<br/>auto-synced back to the system</div></div>
 <div style="font-size:22px; color:var(--accent); margin:0 4px; display:flex; align-items:center">→</div>
-<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">Trigger Downstream Flow</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">Approval/ Archiving/ Notification. Continue business flow</div></div>
+<div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 16px; text-align:center; min-width:130px; flex:1; max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px; font-weight:700; margin-top:6px">Trigger Downstream Flow</div><div style="font-size:11px; color:var(--text-muted); margin-top:2px">Approval/ Archiving/ Notification<br/>Continue business flow</div></div>
 </div>
 <div style="text-align:center; margin-bottom:40px">
 <div style="display:inline-block; background:rgba(37,99,235,.08); border:1px solid rgba(37,99,235,.25); border-radius:8px; padding:12px 24px">
@@ -166,7 +166,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="feature-card"><div class="feature-iconfi-purple">📝</div><h3>Annotations &amp; Comments</h3><p>20+ annotation tools including highlight, underline, shapes, and stickers</p></div>
 <div class="feature-card"><div class="feature-iconfi-orange">📋</div><h3>Form Filling</h3><p>Interactive form controls with auto-detection and data validation</p></div>
 <div class="feature-card"><div class="feature-iconfi-green">📄</div><h3>Page Management</h3><p>Insert, delete, rotate, split, and merge pages</p></div>
-<div class="feature-card"><div class="feature-iconfi-pink">🔍</div><h3>Document Comparison</h3><p>Content comparison and overlay comparison with auto-change tracking</p></div>
+<div class="feature-card"><div class="feature-iconfi-pink">🔍</div><h3>Document Comparison</h3><p>Page-by-page diff comparison with auto-change tracking</p></div>
 <a class="feature-card" href="https://www.compdf.com/pdf-sdk" style="text-decoration:none; border:1px dashedvar(--border); display:flex; flex-direction:column; align-items:center; justify-content:center" target="_blank">
 <div class="feature-icon" style="background:rgba(37,99,235,.08)">➕</div>
 <h3>More PDF Editing Features</h3>
@@ -178,28 +178,28 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <section class="section-alt">
 <div class="container">
 <div class="section-title">
-<span class="tag">Tech Highlights</span>
+<span class="tag">Integration Scenarios</span>
 <h2>Embed PDF Editing Where Your Business Happens</h2>
 <p>Whether it is CRM, ERP, OA, or a custom platform — ComPDF editing turns document actions into seamless business operations</p>
 </div>
 <div class="scene-grid">
-<div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce</h4><p>Sales teams edit quotes, proposals, and contracts directly inside Salesforce. Changes are automatically saved back to the opportunity record - no more download-edit-reupload.</p></div></div>
+<div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce</h4><p>Sales teams edit quotes, proposals, and contracts directly inside Salesforce. Changes are automatically saved back to the opportunity record — no more download-edit-reupload.</p></div></div>
 <div class="scene-card"><div class="icon">📱</div><div><h4>Mobile App Embedding</h4><p>Deliver a native PDF editing experience inside your iOS or Android app. Users can sign, annotate, fill forms, and edit content without ever switching to another application.</p></div></div>
 <div class="scene-card"><div class="icon">🔗</div><div><h4>OA / Approval Workflow</h4><p>Approvers can modify document content or add annotations directly within the approval node. Changes are automatically saved and routed to the next step in the workflow.</p></div></div>
 <div class="scene-card"><div class="icon">🏢</div><div><h4>ERP / Business Systems</h4><p>Edit and sign PO, QC reports, shipping docs inside your system — auto-trigger downstream processes (receiving, payment, archiving)</p></div></div>
-<div class="scene-card"><div class="icon">📋</div><div><h4>Contract Management</h4><p>Full lifecycle contract management - online redlining, clause-level annotations, multi-party e-signatures, and complete version history for audit trails and compliance.</p></div></div>
-<div class="scene-card"><div class="icon">🏗️</div><div><h4>Field Operations</h4><p>Field teams view PDF blueprints on mobile devices, mark defects and progress directly on the document, capture signatures, and sync everything back to the office in real tim</p></div></div>
+<div class="scene-card"><div class="icon">📋</div><div><h4>Contract Management</h4><p>Full lifecycle contract management — online redlining, clause-level annotations, multi-party e-signatures, and complete version history for audit trails and compliance.</p></div></div>
+<div class="scene-card"><div class="icon">🏗️</div><div><h4>Field Operations</h4><p>Field teams view PDF blueprints on mobile devices, mark defects and progress directly on the document, capture signatures, and sync everything back to the office in real time.</p></div></div>
 </div>
 </div>
 </section>
 <section>
 <div class="container">
-<div class="section-title"><span class="tag">Integration Scenarios</span><h2>Why Teams Choose ComPDF for PDF Editing</h2></div>
+<div class="section-title"><span class="tag">Supported Deployment Options</span><h2>Why Choose ComPDF for PDF Editing</h2></div>
 <div class="why-grid">
-  <div class="why-card"><div class="why-num">3</div><h3>Flexible Deployment Method</h3><p class="why-desc">Local SDK, self-hosted, or Cloud API - choose the deployment model that fits your needs.</p></div>
-  <div class="why-card"><div class="why-num">9+</div><h3>Frameworks</h3><p class="why-desc">9+ Frameworks Supports</p></div>
-  <div class="why-card"><div class="why-num">~2</div><h3>Weeks to Integrate</h3><p class="why-desc">JavaScript & TypeScript with React, Vue, Angular, Next.js, Svelte, and more.</p></div>
-  <div class="why-card"><div class="why-num">24/5</div><h3>Technical Support</h3><p class="why-desc">Weeks to Integrate</p></div>
+  <div class="why-card"><div class="why-num">3</div><h3>Flexible Deployment</h3><p class="why-desc">Local SDK, self-hosted, or Cloud API — choose the deployment model that fits your infrastructure and compliance needs.</p></div>
+  <div class="why-card"><div class="why-num">9+</div><h3>Frameworks</h3><p class="why-desc">JavaScript &amp; TypeScript with React, Vue, Angular, Next.js, Svelte, Electron and more.</p></div>
+  <div class="why-card"><div class="why-num">~2</div><h3>Weeks to Integrate</h3><p class="why-desc">From SDK download to production deployment. Comprehensive docs and sample code get you there fast.</p></div>
+  <div class="why-card"><div class="why-num">24/5</div><h3>Technical Support</h3><p class="why-desc">Professional R&amp;D team, full documentation, independent IP. Enterprise support when you need it.</p></div>
 </div>
 </div>
 </section>
@@ -208,8 +208,8 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="section-title"><span class="tag">Customer Stories</span><h2>Real Customers, Real Results</h2></div>
 <div class="case-grid">
  <div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>Blueprint Annotation for Construction</h4><p>Integrate annotation and forms into construction field apps — workers mark defects, progress, and sign off on blueprints on-site.</p><a class="btn-primary" href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" style="font-size:13px; padding:8px 18px" target="_blank">View Solution →</a></div></div>
-<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>Blueprint Annotation for Construction</h4><p>Build a professional PDF editor from scratch covering edit, annotation, and forms — achieving an 80% shorter dev cycle.</p><a class="btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px; padding:8px 18px" target="_blank">View Solution →</a></div></div>
-<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>Desktop PDF Tool for Developers</h4><p>Build a professional PDF editor from scratch covering edit, annotation, and forms - achieving an 80% shorter dev cycle.</p><a class="btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px; padding:8px 18px" target="_blank">View Solution →</a></div></div>
+<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>PDF Editor for Enterprise Teams</h4><p>Build a professional PDF editor from scratch covering edit, annotation, and forms — achieving an 80% shorter dev cycle.</p><a class="btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px; padding:8px 18px" target="_blank">View Solution →</a></div></div>
+<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>Desktop PDF Tool for Developers</h4><p>Build a desktop PDF tool with ComPDF SDK — complete cycle from integration to production launch in just 3 weeks.</p><a class="btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px; padding:8px 18px" target="_blank">View Solution →</a></div></div>
 </div>
 </div>
 </section>
@@ -217,7 +217,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <div class="container">
 <div style="display:grid; grid-template-columns:1fr1fr; gap:60px; align-items:center">
 <div>
-<span class="tag">Book a Free Demo</span>
+<span class="tag">Free Trial</span>
 <h2 style="font-size:32px; font-weight:700; margin:12px 016px">Talk to a Solutions Engineer<br/>See ComPDF in Action for Your Use Case</h2>
 <p style="color:var(--text-secondary); font-size:15px; margin-bottom:24px">Schedule a 30-minute session tailored to your specific workflow. Well walk you through the integration, answer technical questions, and help you evaluate fit.</p>
 <div style="display:flex; flex-direction:column; gap:12px">
