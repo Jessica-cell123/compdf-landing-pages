@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>功能清单 | ComPDF SDK 60+ 功能全覆盖</title>
+<title>功能清单 | ComPDF SDK 全部功能</title>
 <style>
 :root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -23,47 +23,17 @@ nav ul a{color:var(--text-secondary);white-space:nowrap}nav ul a:hover,nav ul a.
 .hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto}
 section{padding:80px 0}
 .section-alt{background:var(--bg-elevated)}
-.section-title{text-align:center;margin-bottom:48px}
-.section-title h2{font-size:30px;font-weight:700;margin-bottom:12px}
-.section-title p{color:var(--text-secondary);font-size:15px;max-width:620px;margin:0 auto}
-.tag{display:inline-flex;align-items:center;gap:4px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--primary-light);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:14px}
-
-/* Category header */
-.cat-header{display:flex;align-items:center;gap:12px;margin-bottom:24px;margin-top:48px}
-.cat-header:first-of-type{margin-top:0}
-.cat-header .cat-icon{font-size:28px}
-.cat-header h3{font-size:18px;font-weight:700;color:var(--text)}
-.cat-header .cat-count{font-size:12px;color:var(--text-muted);background:var(--bg-card);padding:2px 10px;border-radius:10px;border:1px solid var(--border)}
-.cat-header .cat-line{flex:1;height:1px;background:var(--gradient);opacity:.3}
-
-/* Feature Grid */
-.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px}
+.cat-title{font-size:14px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;padding-left:4px}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px}
 .feat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden}
 .feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:.6}
 .feat-card:hover{border-color:rgba(37,99,235,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.08)}
 .feat-card .f-icon{font-size:32px;margin-bottom:10px}
 .feat-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
 .feat-card .f-desc{color:var(--text-secondary);font-size:12px;line-height:1.6;flex:1}
-.feat-card .f-meta{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
-.feat-card .f-meta span{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);color:var(--text-muted)}
 .feat-card .f-links{margin-top:10px}
-.feat-card .f-links a{font-size:11px;font-weight:600;color:var(--primary-light);transition:all .2s}
-.feat-card .f-links a:hover{color:var(--accent)}
-
-/* Platform badges */
-.plat-section{text-align:center;padding:40px 0 0}
-.plat-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.plat-badge{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;color:var(--text-secondary);transition:all .2s}
-.plat-badge:hover{border-color:var(--primary);color:#fff}
-
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;transition:all .2s;border:none;cursor:pointer}
-.btn-primary{background:linear-gradient(135deg,#2563EB,#0EA5E9);color:#fff}
-.btn-outline{background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border-light)}
-.cta-section{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#0891B2 100%);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
-.cta-section h2{font-size:28px;font-weight:700;margin-bottom:12px;position:relative}
-.cta-section p{font-size:14px;opacity:.85;margin-bottom:28px;position:relative}
+.feat-card .f-links span{font-size:12px;font-weight:600;color:var(--primary-light)}
 footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-muted);text-align:center;padding:32px 0;font-size:13px}
-
 @media(max-width:1100px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){.feat-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}nav ul{display:none}}
 @media(max-width:450px){.feat-grid{grid-template-columns:1fr}}
@@ -93,127 +63,56 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </div></nav>
 
 <section class="hero"><div class="container">
-  <h1>ComPDF SDK <span class="gradient">60+ 功能全景</span></h1>
-  <p>从 PDF 查看、编辑、转换到 AI 智能解析 — 覆盖文档全生命周期的每一个环节。每个功能都配有在线 Demo 和开发文档。</p>
+  <h1>ComPDF SDK <span class="gradient">全部功能</span></h1>
+  <p>点击功能卡片查看详情页 — 每个功能都配有详细介绍、平台支持和集成指南</p>
 </div></section>
 
 <section><div class="container">
 
-  <!-- 👁️ 查看与导航 -->
-  <div class="cat-header"><span class="cat-icon">👁️</span><h3>查看与导航</h3><span class="cat-count">8 项</span><span class="cat-line"></span></div>
+  <div class="cat-title">📖 查看与标注</div>
   <div class="feat-grid">
-    <a href="features/viewer.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">👁️</div><h4>PDF Viewer</h4><p class="f-desc">高性能 PDF 渲染引擎，支持单页/连续/双页多模式翻页，大文件秒级打开</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span><span>Desktop</span></div><div class="f-links"><span style="font-size:11px;font-weight:600;color:var(--primary-light)">查看详情 →</span></div></div></a>
-    <div class="feat-card"><div class="f-icon">🔍</div><h4>Text Search</h4><p class="f-desc">全文文本搜索、实时高亮定位、逐项跳转，支持正则表达式匹配</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span></div></div>
-    <div class="feat-card"><div class="f-icon">🔖</div><h4>Bookmarks</h4><p class="f-desc">书签导航与大纲树管理，支持创建、编辑、删除和点击跳转</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span></div></div>
-    <div class="feat-card"><div class="f-icon">🖼️</div><h4>Thumbnails</h4><p class="f-desc">页面缩略图预览，支持拖拽排序、快速定位和批量操作</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span></div></div>
-    <div class="feat-card"><div class="f-icon">🔎</div><h4>Zoom & Pan</h4><p class="f-desc">平滑缩放（百分比/适应宽度/适应页面）、拖拽平移、手势支持</p></div>
-    <div class="feat-card"><div class="f-icon">🔄</div><h4>Display Modes</h4><p class="f-desc">单页、连续滚动、双页对开、封面独立等多种阅读模式切换</p></div>
-    <div class="feat-card"><div class="f-icon">📐</div><h4>Page Navigation</h4><p class="f-desc">页码跳转、前后翻页、历史记录回退，支持键盘快捷键</p></div>
-    <div class="feat-card"><div class="f-icon">🖨️</div><h4>Print</h4><p class="f-desc">高质量 PDF 打印输出，支持页面范围、份数、缩放等设置</p><div class="f-meta"><span>Web</span><span>Desktop</span></div></div>
+    <a href="features/viewer.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">👁️</div><h4>PDF Viewer</h4><p class="f-desc">高性能 PDF 渲染引擎，多模式翻页、文本搜索、缩略图导航</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/annotations.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📝</div><h4>Annotations</h4><p class="f-desc">20+ 标注工具：高亮、下划线、形状、贴纸、便签、图章等</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/forms.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📋</div><h4>Forms</h4><p class="f-desc">交互式表单创建与填写，自动检测字段，支持数据验证与自动填充</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/measurement.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📏</div><h4>Measurement</h4><p class="f-desc">距离、面积、周长测量工具，支持比例尺校准和单位切换</p><div class="f-links"><span>查看详情 →</span></div></div></a>
   </div>
 
-  <!-- ✏️ 编辑与批注 -->
-  <div class="cat-header"><span class="cat-icon">✏️</span><h3>编辑与批注</h3><span class="cat-count">7 项</span><span class="cat-line"></span></div>
+  <div class="cat-title">✏️ 编辑与处理</div>
   <div class="feat-grid">
-    <div class="feat-card"><div class="f-icon">✏️</div><h4>Content Editor</h4><p class="f-desc">文本与图片内容直接编辑，保留原始排版样式，所见即所得的编辑体验</p><div class="f-meta"><span>Web</span><span>Desktop</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-content-editor" target="_blank">在线体验 →</a></div></div>
-    <a href="features/annotations.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📝</div><h4>Annotations</h4><p class="f-desc">20+ 标注工具：高亮、下划线、删除线、波浪线、形状、贴纸、便签、图章等</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span><span>Desktop</span></div><div class="f-links"><span style="font-size:11px;font-weight:600;color:var(--primary-light)">查看详情 →</span></div></div></a>
-    <div class="feat-card"><div class="f-icon">✂️</div><h4>Document Editor</h4><p class="f-desc">页面管理：插入、删除、旋转、替换、提取、复制、拆分与合并 PDF</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span><span>Desktop</span></div><div class="f-links"><a href="https://www.compdf.com/demo/organize-pdf" target="_blank">在线体验 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">🖌️</div><h4>Redaction</h4><p class="f-desc">敏感信息密文涂黑，永久移除机密内容，支持 AI 自动检测敏感数据</p><div class="f-meta"><span>Web</span><span>Desktop</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-redaction" target="_blank">在线体验 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">💧</div><h4>Watermark</h4><p class="f-desc">文本/图片水印添加删除，支持透明度、旋转角度、平铺、页码范围设置</p><div class="f-meta"><span>Web</span><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">📋</div><h4>Forms</h4><p class="f-desc">交互式表单创建与填写，自动检测表单字段，支持数据验证与自动填充</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span><span>Desktop</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-form" target="_blank">在线体验 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">✍️</div><h4>Signatures</h4><p class="f-desc">电子签名与数字签名，支持绘制/图片/文字签名，数字签名创建与验证</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-signature" target="_blank">在线体验 →</a></div></div>
+    <a href="features/document-editor.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">✂️</div><h4>Document Editor</h4><p class="f-desc">页面管理：插入、删除、旋转、替换、拆分、合并 PDF 页面</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/content-editor.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">✏️</div><h4>Content Editor</h4><p class="f-desc">文本与图片内容直接编辑，保留原始排版，所见即所得</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/redaction.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🖌️</div><h4>Redaction</h4><p class="f-desc">敏感信息密文涂黑，永久移除机密内容，支持 AI 自动检测</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/compress.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📦</div><h4>Compress</h4><p class="f-desc">PDF 文件压缩优化，智能平衡图片质量与文件大小</p><div class="f-links"><span>查看详情 →</span></div></div></a>
   </div>
 
-  <!-- 🔄 格式转换 -->
-  <div class="cat-header"><span class="cat-icon">🔄</span><h3>格式转换</h3><span class="cat-count">10 项</span><span class="cat-line"></span></div>
+  <div class="cat-title">🔒 安全与签名</div>
   <div class="feat-grid">
-    <div class="feat-card"><div class="f-icon">📄</div><h4>PDF ⇄ Word</h4><p class="f-desc">PDF 与 Word 双向转换，保留段落层级、字体、页码和目录结构</p><div class="f-meta"><span>Server</span><span>Web</span></div></div>
-    <div class="feat-card"><div class="f-icon">📊</div><h4>PDF ⇄ Excel</h4><p class="f-desc">PDF 表格精准转换为 Excel，保留行列结构、合并单元格与数值精度</p><div class="f-meta"><span>Server</span><span>Web</span></div></div>
-    <div class="feat-card"><div class="f-icon">📑</div><h4>PDF ⇄ PPT</h4><p class="f-desc">PDF 与 PowerPoint 双向转换，保留幻灯片布局、图表和动画占位</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">🌐</div><h4>PDF ⇄ HTML</h4><p class="f-desc">PDF 转 HTML 网页，保留文本、图片和超链接，适合在线发布</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">🖼️</div><h4>PDF ⇄ Image</h4><p class="f-desc">PDF 转 JPG/PNG/ TIFF/BMP，支持页面范围、DPI、色彩模式设置</p><div class="f-meta"><span>Server</span><span>Web</span></div></div>
-    <div class="feat-card"><div class="f-icon">📝</div><h4>PDF ⇄ TXT</h4><p class="f-desc">PDF 文本提取为纯文本文件，支持编码选择和段落分隔符设置</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">📋</div><h4>PDF ⇄ CSV</h4><p class="f-desc">PDF 表格数据提取为 CSV 格式，保留行列分隔，适合数据分析导入</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">📓</div><h4>PDF ⇄ Markdown</h4><p class="f-desc">PDF 转 Markdown 格式，保留标题层级、列表和代码块，适合 RAG 场景</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">🏢</div><h4>Office → PDF</h4><p class="f-desc">Word/Excel/PPT 批量转换为 PDF 统一格式，适合归档与分发</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">📐</div><h4>PDF/A Standards</h4><p class="f-desc">PDF/A、PDF/X、PDF/E、PDF/UA 标准转换与合规验证</p><div class="f-meta"><span>Server</span></div></div>
+    <a href="features/security.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🔒</div><h4>Security</h4><p class="f-desc">PDF 加密/解密、权限控制、数字证书管理与验证</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/electronic-signatures.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">✍️</div><h4>Electronic Signatures</h4><p class="f-desc">电子签名创建，支持绘制/图片/文字签名样式，合规签署</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/digital-signatures.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🔑</div><h4>Digital Signatures</h4><p class="f-desc">数字签名创建与验证，签名验证与撤销检测</p><div class="f-links"><span>查看详情 →</span></div></div></a>
   </div>
 
-  <!-- 🔒 安全与签名 -->
-  <div class="cat-header"><span class="cat-icon">🔒</span><h3>安全与合规</h3><span class="cat-count">6 项</span><span class="cat-line"></span></div>
+  <div class="cat-title">🔄 格式转换与生成</div>
   <div class="feat-grid">
-    <div class="feat-card"><div class="f-icon">🔒</div><h4>Encryption</h4><p class="f-desc">PDF 密码加密与解密，支持 128/256 位 AES 加密算法</p><div class="f-meta"><span>Web</span><span>Server</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-security" target="_blank">在线体验 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">🔑</div><h4>Permissions</h4><p class="f-desc">细粒度权限控制：禁止打印、禁止复制、禁止编辑等</p><div class="f-meta"><span>Web</span><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">📜</div><h4>Digital Signatures</h4><p class="f-desc">数字签名创建、验证与撤销检测，符合 PDF 签名标准规范</p><div class="f-meta"><span>Web</span><span>Desktop</span></div></div>
-    <div class="feat-card"><div class="f-icon">🖌️</div><h4>Redaction</h4><p class="f-desc">敏感信息永久涂黑移除，支持文本/图片区域遮盖，不可逆操作</p><div class="f-meta"><span>Web</span><span>Desktop</span></div></div>
-    <div class="feat-card"><div class="f-icon">🔐</div><h4>Certificates</h4><p class="f-desc">数字证书管理与验证，支持自签名和 CA 签发证书</p></div>
-    <div class="feat-card"><div class="f-icon">🛡️</div><h4>Document Audit</h4><p class="f-desc">文档操作审计追踪，记录所有编辑、签名和修改历史</p></div>
+    <a href="features/conversion.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🔄</div><h4>Conversion</h4><p class="f-desc">30+ 格式双向转换 — PDF ⇄ Word/Excel/PPT/HTML/图片等</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/pdf-generation.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📄</div><h4>PDF Generation</h4><p class="f-desc">从 HTML、模板、图片批量生成 PDF，支持动态模板填充</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/compare-document.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">⚖️</div><h4>Compare</h4><p class="f-desc">文档对比：内容差异高亮与覆盖对比可视化</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/ocr.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🔍</div><h4>OCR</h4><p class="f-desc">AI OCR 文字识别，支持 50+ 语种，印刷体与手写体混合识别</p><div class="f-links"><span>查看详情 →</span></div></div></a>
   </div>
 
-  <!-- 🧩 高级功能 -->
-  <div class="cat-header"><span class="cat-icon">🧩</span><h3>高级功能</h3><span class="cat-count">8 项</span><span class="cat-line"></span></div>
+  <div class="cat-title">🎨 高级与印刷</div>
   <div class="feat-grid">
-    <div class="feat-card"><div class="f-icon">📄</div><h4>PDF Generation</h4><p class="f-desc">从 HTML、模板、JSON 或图片批量生成 PDF，支持动态模板填充</p><div class="f-meta"><span>Server</span><span>Web</span></div></div>
-    <div class="feat-card"><div class="f-icon">⚖️</div><h4>Compare Documents</h4><p class="f-desc">文档对比：内容对比（逐文本差异高亮）与覆盖对比（可视化叠加重叠）</p><div class="f-meta"><span>Web</span><span>Desktop</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-compare" target="_blank">在线体验 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">📏</div><h4>Measurement</h4><p class="f-desc">距离、面积、周长测量工具，支持比例尺校准和单位切换</p><div class="f-meta"><span>Web</span><span>Desktop</span></div><div class="f-links"><a href="https://www.compdf.com/demo/pdf-measuring-tools" target="_blank">在线体验 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">📦</div><h4>Compress</h4><p class="f-desc">PDF 文件压缩优化，智能平衡图片质量与文件大小</p><div class="f-meta"><span>Server</span><span>Web</span></div></div>
-    <div class="feat-card"><div class="f-icon">🧩</div><h4>Layers</h4><p class="f-desc">PDF 图层（OCG）管理：显示/隐藏、合并、导出指定图层</p></div>
-    <div class="feat-card"><div class="f-icon">🎨</div><h4>Color Separation</h4><p class="f-desc">CMYK 色彩分离预览，适合印刷出版前的色彩校对</p></div>
-    <div class="feat-card"><div class="f-icon">🔗</div><h4>Links & Actions</h4><p class="f-desc">超链接、书签跳转、页面动作的创建、编辑与删除</p></div>
-    <div class="feat-card"><div class="f-icon">📎</div><h4>Attachments</h4><p class="f-desc">PDF 附件（嵌入式文件）的添加、提取与删除操作</p></div>
+    <a href="features/layers.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🧩</div><h4>Layers</h4><p class="f-desc">PDF 图层管理：显示/隐藏、合并、导出指定图层内容</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/color-separation.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🎨</div><h4>Color Separation</h4><p class="f-desc">CMYK 色彩分离预览，适合印刷出版前的色彩校对</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/pdf-standards.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📐</div><h4>PDF Standards</h4><p class="f-desc">PDF/A、PDF/X、PDF/E、PDF/UA 标准转换与合规验证</p><div class="f-links"><span>查看详情 →</span></div></div></a>
   </div>
 
-  <!-- 🤖 AI 智能处理 -->
-  <div class="cat-header"><span class="cat-icon">🤖</span><h3>AI 智能处理</h3><span class="cat-count">7 项</span><span class="cat-line"></span></div>
+  <div class="cat-title">🤖 AI 智能处理</div>
   <div class="feat-grid">
-    <div class="feat-card"><div class="f-icon">🧠</div><h4>AI Document Parsing</h4><p class="f-desc">深度学习版面分析：识别标题/正文/表格/图片等 10+ 元素，输出 Markdown/JSON</p><div class="f-meta"><span>Server</span><span>Cloud API</span></div></div>
-    <div class="feat-card"><div class="f-icon">📤</div><h4>AI Extraction</h4><p class="f-desc">智能文档抽取：自动识别发票、合同中的金额/日期/供应商等 KVP 字段</p><div class="f-meta"><span>Server</span><span>Cloud API</span></div></div>
-    <div class="feat-card"><div class="f-icon">🏢</div><h4>Enterprise KB</h4><p class="f-desc">企业知识库构建：文档向量化入库，支持 RAG 问答与智能检索</p><div class="f-meta"><span>Server</span><span>Cloud API</span></div></div>
-    <div class="feat-card"><div class="f-icon">🔍</div><h4>OCR Recognition</h4><p class="f-desc">AI OCR 文字识别：支持 50+ 语种，印刷体与手写体混合识别</p><div class="f-meta"><span>Server</span><span>Cloud API</span></div></div>
-    <div class="feat-card"><div class="f-icon">🤖</div><h4>AI Skills</h4><p class="f-desc">30+ PDF 处理技能封装，AI Agent 可直接调用编辑/转换/提取能力</p><div class="f-meta"><span>Cloud API</span></div></div>
-    <div class="feat-card"><div class="f-icon">🔌</div><h4>MCP Server</h4><p class="f-desc">基于 MCP 协议接入，Claude/GPT 等 AI 模型直接调用 PDF 能力</p><div class="f-meta"><span>Cloud API</span></div></div>
-    <div class="feat-card"><div class="f-icon">📋</div><h4>Smart Chunking</h4><p class="f-desc">结构感知智能切分：按标题层级和段落边界分块，保留表格完整性</p><div class="f-meta"><span>Server</span></div></div>
+    <a href="features/ai-parsing.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">🧠</div><h4>AI Document Parsing</h4><p class="f-desc">深度学习版面分析，识别标题/表格/图片等元素，输出 Markdown/JSON</p><div class="f-links"><span>查看详情 →</span></div></div></a>
+    <a href="features/ai-extraction.html" style="text-decoration:none;color:inherit"><div class="feat-card"><div class="f-icon">📤</div><h4>AI Document Extraction</h4><p class="f-desc">智能文档抽取，自动识别发票/合同中的金额、日期、供应商等 KVP 字段</p><div class="f-links"><span>查看详情 →</span></div></div></a>
   </div>
 
-  <!-- 🛠️ 开发与集成 -->
-  <div class="cat-header"><span class="cat-icon">🛠️</span><h3>开发与集成</h3><span class="cat-count">6 项</span><span class="cat-line"></span></div>
-  <div class="feat-grid">
-    <div class="feat-card"><div class="f-icon">🎨</div><h4>UI Customization</h4><p class="f-desc">工具栏、菜单栏、右键菜单、面板完全自定义，匹配品牌风格</p><div class="f-meta"><span>Web</span></div></div>
-    <div class="feat-card"><div class="f-icon">🌍</div><h4>Localization</h4><p class="f-desc">多语言国际化支持，可自定义 UI 语言和文本翻译</p><div class="f-meta"><span>Web</span><span>iOS</span><span>Android</span></div></div>
-    <div class="feat-card"><div class="f-icon">🔌</div><h4>Plugins</h4><p class="f-desc">插件扩展架构，可自定义功能和事件钩子</p></div>
-    <div class="feat-card"><div class="f-icon">📡</div><h4>Webhook</h4><p class="f-desc">异步任务完成回调通知，支持自定义事件和重试策略</p><div class="f-meta"><span>Server</span></div></div>
-    <div class="feat-card"><div class="f-icon">📖</div><h4>Full Documentation</h4><p class="f-desc">详细开发文档、API 参考、示例代码、视频教程全覆盖</p><div class="f-links"><a href="https://www.compdf.com/documentation" target="_blank">查看文档 →</a></div></div>
-    <div class="feat-card"><div class="f-icon">💬</div><h4>Technical Support</h4><p class="f-desc">24/5 专业技术支持，1 对 1 工程师对接，工作日当天响应</p></div>
-  </div>
-
-</div></section>
-
-<section class="plat-section"><div class="container">
-  <div class="section-title">
-    <span class="tag">全平台覆盖</span>
-    <h2>支持所有主流平台</h2>
-    <p>一套 SDK，覆盖 Web、移动端、桌面端和服务端</p>
-  </div>
-  <div class="plat-row">
-    <span class="plat-badge">🌐 Web / JavaScript</span>
-    <span class="plat-badge">🍎 iOS / Swift</span>
-    <span class="plat-badge">🤖 Android / Kotlin</span>
-    <span class="plat-badge">⚡ Flutter</span>
-    <span class="plat-badge">⚛️ React Native</span>
-    <span class="plat-badge">🪟 Windows / C#</span>
-    <span class="plat-badge">🖥️ macOS / Obj-C</span>
-    <span class="plat-badge">☕ Java</span>
-    <span class="plat-badge">🔷 .NET</span>
-  </div>
-</div></section>
-
-<section class="cta-section"><div class="container">
-  <h2>开始体验 ComPDF SDK 全功能</h2>
-  <p>30 天免费试用 · 无需信用卡 · 专业技术团队全程支持</p>
-  <div style="display:flex;gap:12px;justify-content:center;position:relative">
-    <a href="https://www.compdf.com/pricing" target="_blank" class="btn btn-primary" style="background:#fff;color:#1E3A8A">开始免费试用</a>
-    <a href="https://www.compdf.com/pdf-sdk/features-list" target="_blank" class="btn btn-outline">查看完整功能列表 →</a>
-  </div>
 </div></section>
 
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
