@@ -129,11 +129,29 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
   .hero h1{font-size:30px}
   nav ul{display:none}
 }
+
+.lang-switch{position:relative;display:inline-block;margin-left:12px}
+.lang-btn{background:rgba(255,255,255,.08);border:1px solid var(--border);border-radius:6px;color:#fff;padding:4px 10px;cursor:pointer;font-size:16px;line-height:1;transition:all .2s}
+.lang-btn:hover{background:rgba(255,255,255,.15)}
+.lang-menu{display:none;position:absolute;top:100%;right:0;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:4px;z-index:200;min-width:120px;margin-top:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.lang-menu a{display:block;padding:8px 14px;color:var(--text-secondary);font-size:13px;border-radius:4px;text-decoration:none;white-space:nowrap}
+.lang-menu a:hover{background:rgba(37,99,235,.1);color:#fff}
 </style>
 </head>
 <body>
 <nav><div class="container">
-<div class="logo"><div class="logo-icon">C</div> ComPDF</div>
+<div class="logo">
+<div class="lang-switch">
+  <button class="lang-btn" onclick="toggleLangMenu()">🌐</button>
+  <div class="lang-menu" id="langMenu">
+    <a href="#" data-lang="">中文</a>
+    <a href="#" data-lang="en">English</a>
+    <a href="#" data-lang="tw">繁體中文</a>
+    <a href="#" data-lang="jp">日本語</a>
+    <a href="#" data-lang="ko">한국어</a>
+    <a href="#" data-lang="th">ไทย</a>
+  </div>
+</div><div class="logo-icon">C</div> ComPDF</div>
 <ul>
 <li><a href="/compdf-landing-pages/jp/1-document-editing.html">文档编辑</a></li>
 <li><a href="/compdf-landing-pages/jp/2-file-processing.html">文件处理</a></li>
@@ -362,5 +380,9 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
+<script>
+function toggleLangMenu(){var m=document.getElementById('langMenu');m.style.display=m.style.display==='block'?'none':'block'}
+document.addEventListener('click',function(e){if(!e.target.closest('.lang-switch')){var m=document.getElementById('langMenu');if(m)m.style.display='none'}});
+(function(){var p=location.pathname;var m=document.getElementById('langMenu');if(!m)return;var langs=['','en/','tw/','jp/','ko/','th/'];var page=p.split('/').pop();m.querySelectorAll('a').forEach(function(a){var l=a.getAttribute('data-lang');var prefix=l?l+'/':'';a.href='/compdf-landing-pages/'+prefix+page;});})();</script>
 </body>
 </html>
