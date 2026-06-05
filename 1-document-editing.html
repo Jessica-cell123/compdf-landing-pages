@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ComPDF - 重新定义 PDF 编辑体验 | 像 Word 一样自由编辑</title>
 <style>
 :root{--primary:#2563EB;--primary-light:#3B82F6;--accent:#06B6D4;--accent-green:#10B981;--gradient:linear-gradient(135deg,#2563EB,#06B6D4);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
@@ -101,169 +102,169 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 <body>
 <nav>
 <div class="container">
-  <div class="logo">
+<div class="logo">
 <div class="lang-switch">
-  <button class="lang-btn" onclick="toggleLangMenu()">🌐</button>
-  <div class="lang-menu" id="langMenu">
-    <a href="#" data-lang="">中文</a>
-    <a href="#" data-lang="en">English</a>
-    <a href="#" data-lang="tw">繁體中文</a>
-    <a href="#" data-lang="jp">日本語</a>
-    <a href="#" data-lang="ko">한국어</a>
-    <a href="#" data-lang="th">ไทย</a>
-  </div>
+<button class="lang-btn" onclick="toggleLangMenu()">🌐</button>
+<div class="lang-menu" id="langMenu">
+<a data-lang="" href="#">中文</a>
+<a data-lang="en" href="#">English</a>
+<a data-lang="tw" href="#">繁體中文</a>
+<a data-lang="jp" href="#">日本語</a>
+<a data-lang="ko" href="#">한국어</a>
+<a data-lang="th" href="#">ไทย</a>
+</div>
 </div><div class="logo-icon">C</div> ComPDF</div>
-  <ul>
-    <li><a href="1-document-editing.html" class="active">文档编辑</a></li>
-    <li><a href="2-file-processing.html">文件处理</a></li>
-    <li><a href="3-document-automation.html">RAG知识库</a></li>
-    <li><a href="4-hardware-integration.html">软硬件结合</a></li>
-    <li><a href="5-ai-products.html">AI 产品</a></li>
-    <li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
-    <li><a href="compdf-sdk.html">SDK</a></li>
-    <li><a href="industries.html">行业方案</a></li>
-    <li><a href="low-code.html">Low-Code</a></li>
-    <li><a href="aws-marketplace.html">AWS</a></li>
-    <li><a href="salesforce.html">Salesforce</a></li>
-    <li><a href="third-party-platforms.html">第三方平台</a></li>
-    <li><a href="features.html">功能清单</a></li>
-    <li><a href="pricing.html">定价</a></li>
-    <li><a href="workflow.html">Workflow</a></li>
+<ul>
+<li><a class="active" href="1-document-editing.html">文档编辑</a></li>
+<li><a href="2-file-processing.html">文件处理</a></li>
+<li><a href="3-document-automation.html">RAG知识库</a></li>
+<li><a href="4-hardware-integration.html">软硬件结合</a></li>
+<li><a href="5-ai-products.html">AI 产品</a></li>
+<li><a href="7-sdk-buyers-guide.html">选型指南</a></li>
+<li><a href="compdf-sdk.html">SDK</a></li>
+<li><a href="industries.html">行业方案</a></li>
+<li><a href="low-code.html">Low-Code</a></li>
+<li><a href="aws-marketplace.html">AWS</a></li>
+<li><a href="salesforce.html">Salesforce</a></li>
+<li><a href="third-party-platforms.html">第三方平台</a></li>
+<li><a href="features.html">功能清单</a></li>
+<li><a href="pricing.html">定价</a></li>
+<li><a href="workflow.html">Workflow</a></li>
 </ul>
 </div>
 </nav>
 <section class="hero">
 <div class="container">
-  <div class="hero-badge">🚀 告别PDF编辑难题</div>
-  <h1>降低 PDF 编辑的门槛<br/><span class="gradient">像 Word 一样自由掌控每一页</span></h1>
-  <p>从批注审阅到实时协作，ComPDF 为 Web、iOS、Android、Windows、Mac 与 Server 提供完整 PDF 编辑能力。让团队在现有业务流程中即可完成文档编辑、审阅与审批，无需切换平台。</p>
-  <div style="display:flex;gap:12px;justify-content:center">
-    <a href="#" class="btn btn-primary">免费试用</a>
-    <a href="#" class="btn btn-outline">在线体验 →</a>
-  </div>
+<div class="hero-badge">🚀告别PDF编辑难题</div>
+<h1>降低 PDF 编辑的门槛<br/><span class="gradient">像 Word 一样自由掌控每一页</span></h1>
+<p>从批注审阅到实时协作，ComPDF 为 Web、iOS、Android、Windows、Mac 与 Server 提供完整 PDF 编辑能力。让团队在现有业务流程中即可完成文档编辑、审阅与审批，无需切换平台。</p>
+<div style="display:flex;gap:12px;justify-content:center">
+<a class="btn btn-primary" href="#">免费试用</a>
+<a class="btn btn-outline" href="#">在线体验</a>
+</div>
 </div>
 </section>
 <section>
 <div class="container">
-  <div class="section-title">
-    <span class="tag">原生嵌入式架构</span>
-    <h2>将专业 PDF 编辑能力原生集成到您的业务系统中</h2>
-    <p>ComPDF提供完整 PDF 编辑引擎，无缝嵌入企业应用。无需跳转第三方工具，即可在您的平台内完成 PDF 查看、批注、编辑与签署。</p>
-  </div>
-  <div style="display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px">
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">用户操作</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">在您的系统/应用中打开文档</div></div>
-    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-    <div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ComPDF 编辑引擎</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">编辑 / 批注 / 签名 / 表单 / 协作</div></div>
-    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">自动保存与回写</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">文档修改后自动同步回业务系统</div></div>
-    <div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">触发后续业务流程</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">审批 / 归档 / 通知等流程自动继续执行</div></div>
-  </div>
-  <div style="text-align:center;margin-bottom:40px">
-    <div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
-      <span style="color:var(--primary-light);font-weight:700;font-size:13px">💡 用户全程在你的系统内操作，无需跳转第三方工具，体验无缝、数据不出站</span>
-    </div>
-  </div>
-  <div class="section-title" style="margin-top:20px">
-    <h2>开箱即用的企业级 PDF 引擎</h2>
-    <p>编辑、批注、表单、比较 — 你需要的文档能力，全部就绪</p>
-  </div>
-  <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>内容编辑</h3><p>直接修改 PDF 文本、图片、水印，完整保留原始排版布局</p></div>
-    <div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>注释批注</h3><p>提供 20+ 注释工具，包括高亮、下划线、图形标记、便签等</p></div>
-    <div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>表单填写</h3><p>支持交互式表单、自动识别与数据校验</p></div>
-    <div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>页面管理</h3><p>支持页面插入、删除、旋转、拆分与合并</p></div>
-    <div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>文档比较</h3><p>支持并排对比异比对与叠加对比，自动追踪修改内容</p></div>
-    <a href="https://www.compdf.com/pdf-sdk" target="_blank" class="feature-card" style="text-decoration:none;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <div class="feature-icon" style="background:rgba(37,99,235,.08)">➕</div>
-      <h3>更多 PDF 编辑功能</h3>
-      <p>查看完整功能列表 →</p>
-    </a>
-  </div>
+<div class="section-title">
+<span class="tag">原生嵌入式架构</span>
+<h2>将专业 PDF 编辑能力原生集成到您的业务系统中</h2>
+<p>ComPDF提供完整 PDF 编辑引擎，无缝嵌入企业应用。无需跳转第三方工具，即可在您的平台内完成 PDF 查看、批注、编辑与签署。</p>
+</div>
+<div style="display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px">
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">👤</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">用户操作</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">在您的系统/应用中打开文档</div></div>
+<div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+<div style="background:rgba(37,99,235,.06);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">✏️</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">ComPDF 编辑引擎</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">编辑 / 批注 / 签名 / 表单 / 协作</div></div>
+<div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">💾</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">自动保存与回写</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">文档修改后自动同步回业务系统</div></div>
+<div style="font-size:22px;color:var(--accent);margin:0 4px;display:flex;align-items:center">→</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 16px;text-align:center;min-width:130px;flex:1;max-width:170px"><div style="font-size:28px">🔄</div><div style="font-size:12.5px;font-weight:700;margin-top:6px">触发后续业务流程</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">审批 / 归档 / 通知等流程自动继续执行</div></div>
+</div>
+<div style="text-align:center;margin-bottom:40px">
+<div style="display:inline-block;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:8px;padding:12px 24px">
+<span style="color:var(--primary-light);font-weight:700;font-size:13px">💡用户全程停留在您的平台内操作。无需切换系统，避免数据外流风险。</span>
+</div>
+</div>
+<div class="section-title" style="margin-top:20px">
+<h2>开箱即用的企业级 PDF 引擎</h2>
+<p>内容编辑、批注审阅、表单填写、页面管理、文档比对……覆盖企业所需的完整 PDF 能力，快速部署即可使用。</p>
+</div>
+<div class="features-grid">
+<div class="feature-card"><div class="feature-icon fi-blue">✏️</div><h3>内容编辑</h3><p>直接修改 PDF 文本、图片、水印，完整保留原始排版布局</p></div>
+<div class="feature-card"><div class="feature-icon fi-purple">📝</div><h3>注释</h3><p>提供 20+ 注释工具，包括高亮、下划线、图形标记、便签等</p></div>
+<div class="feature-card"><div class="feature-icon fi-orange">📋</div><h3>表单填写</h3><p>支持交互式表单、自动识别与数据校验</p></div>
+<div class="feature-card"><div class="feature-icon fi-green">📄</div><h3>页面管理</h3><p>支持页面插入、删除、旋转、拆分与合并</p></div>
+<div class="feature-card"><div class="feature-icon fi-pink">🔍</div><h3>文档对比</h3><p>支持并排对比异比对与叠加对比，自动追踪修改内容</p></div>
+<a class="feature-card" href="https://www.compdf.com/pdf-sdk" style="text-decoration:none;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center" target="_blank">
+<div class="feature-icon" style="background:rgba(37,99,235,.08)">➕</div>
+<h3>更多 PDF 编辑能力</h3>
+<p>查看完整功能列表</p>
+</a>
+</div>
 </div>
 </section>
 <section class="section-alt">
 <div class="container">
-  <div class="section-title">
-    <span class="tag">集成场景</span>
-    <h2>将 PDF 编辑嵌入您的业务场景</h2>
-    <p>ComPDF 编辑能力可嵌入 CRM、ERP、OA 及各类业务系统，文档操作即业务操作</p>
-  </div>
-  <div class="scene-grid">
-    <div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce</h4><p>销售人员在 CRM 中直接编辑报价单、合同 PDF，修改后自动关联客户记录，无需下载-编辑-再上传的繁琐操作</p></div></div>
-    <div class="scene-card"><div class="icon">📱</div><div><h4>移动 App 内嵌编辑</h4><p>在 iOS 与 Android App 中提供原生级 PDF 编辑体验。用户无需切换应用，即可完成签名、批注、表单填写与内容编辑。</p></div></div>
-    <div class="scene-card"><div class="icon">🔗</div><div><h4>OA / 审批工作流</h4><p>审批人员可直接在审批节点修改文档或添加批注，修改内容自动保存并流转至下一审批环节。</p></div></div>
-    <div class="scene-card"><div class="icon">🏢</div><div><h4>ERP / 业务系统工作流</h4><p>在系统内直接编辑与签署采购单、质检报告、物流文件，并自动触发收货、付款、归档等后续流程。</p></div></div>
-    <div class="scene-card"><div class="icon">📋</div><div><h4>合同管理平台</h4><p>覆盖合同全生命周期：在线红线审阅、条款级批注、多方电子签署、完整版本追踪，满足审计与合规要求。</p></div></div>
-    <div class="scene-card"><div class="icon">🏗️</div><div><h4>现场作业 App</h4><p>现场团队可在移动设备上查看 PDF 图纸，直接标记缺陷与施工进度，完成签字确认，并实时同步回后台系统。</p></div></div>
-  </div>
+<div class="section-title">
+<span class="tag">集成场景</span>
+<h2>将 PDF 编辑嵌入您的业务场景</h2>
+<p>无论是 CRM、ERP、OA，还是企业业务系统，ComPDF 都能让文档处理融入业务流程，实现真正的一体化协作。</p>
+</div>
+<div class="scene-grid">
+<div class="scene-card"><div class="icon">☁️</div><div><h4>CRM / Salesforce</h4><p>销售团队可直接在 Salesforce 内编辑报价单、方案与合同，修改内容自动同步至客户线索记录，无需下载、编辑、再上传。</p></div></div>
+<div class="scene-card"><div class="icon">📱</div><div><h4>移动应用集成</h4><p>在 iOS 与 Android App 中提供原生级 PDF 编辑体验。用户无需切换应用，即可完成签名、批注、表单填写与内容编辑。</p></div></div>
+<div class="scene-card"><div class="icon">🔗</div><div><h4>OA / 审批流程</h4><p>审批人员可直接在审批节点修改文档或添加批注，修改内容自动保存并流转至下一审批环节。</p></div></div>
+<div class="scene-card"><div class="icon">🏢</div><div><h4>ERP / 企业业务系统</h4><p>在系统内直接编辑与签署采购单、质检报告、物流文件，并自动触发收货、付款、归档等后续流程。</p></div></div>
+<div class="scene-card"><div class="icon">📋</div><div><h4>合同管理</h4><p>覆盖合同全生命周期：在线红线审阅、条款级批注、多方电子签署、完整版本追踪，满足审计与合规要求。</p></div></div>
+<div class="scene-card"><div class="icon">🏗️</div><div><h4>外勤与现场作业</h4><p>现场团队可在移动设备上查看 PDF 图纸，直接标记缺陷与施工进度，完成签字确认，并实时同步回后台系统。</p></div></div>
+</div>
 </div>
 </section>
 <section>
 <div class="container">
-  <div class="section-title"><span class="tag">技术优势</span><h2>为什么企业团队选择 ComPDF</h2></div>
-  <div class="highlights">
-    <div class="hl-item"><div class="num">5 min</div><div class="label">灵活部署方式</div></div>
-    <div class="hl-item"><div class="num">6+</div><div class="label">支持平台</div></div>
-    <div class="hl-item"><div class="num">99.9%</div><div class="label">渲染精度</div></div>
-    <div class="hl-item"><div class="num">< 200ms</div><div class="label">平均响应</div></div>
-  </div>
-  <div class="platform-row">
-    <div class="platform-badge"><div class="emoji">🌐</div><div class="name">Web / JavaScript</div></div>
-    <div class="platform-badge"><div class="emoji">🍎</div><div class="name">iOS / Swift</div></div>
-    <div class="platform-badge"><div class="emoji">🤖</div><div class="name">Android / Kotlin</div></div>
-    <div class="platform-badge"><div class="emoji">🪟</div><div class="name">Windows / C#</div></div>
-    <div class="platform-badge"><div class="emoji">🖥️</div><div class="name">macOS / Obj-C</div></div>
-    <div class="platform-badge"><div class="emoji">⚛️</div><div class="name">React Native</div></div>
-  </div>
+<div class="section-title"><span class="tag">技术优势</span><h2>为什么企业团队选择 ComPDF</h2></div>
+<div class="highlights">
+<div class="hl-item"><div class="num">5 min</div><div class="label">灵活部署方式</div></div>
+<div class="hl-item"><div class="num">6+</div><div class="label">支持 9+ 主流框架</div></div>
+<div class="hl-item"><div class="num">99.9%</div><div class="label">快速集成上线</div></div>
+<div class="hl-item"><div class="num">&lt; 200ms</div><div class="label">24/5 专业技术支持</div></div>
+</div>
+<div class="platform-row">
+<div class="platform-badge"><div class="emoji">🌐</div><div class="name">Web / JavaScript</div></div>
+<div class="platform-badge"><div class="emoji">🍎</div><div class="name">iOS / Swift</div></div>
+<div class="platform-badge"><div class="emoji">🤖</div><div class="name">Android / Kotlin</div></div>
+<div class="platform-badge"><div class="emoji">🪟</div><div class="name">Windows / C#</div></div>
+<div class="platform-badge"><div class="emoji">🖥️</div><div class="name">macOS / Obj-C</div></div>
+<div class="platform-badge"><div class="emoji">⚛️</div><div class="name">React Native</div></div>
+</div>
 </div>
 </section>
 <section>
 <div class="container">
-  <div class="section-title"><span class="tag">客户案例</span><h2>真实客户，真实成果</h2></div>
-  <div class="case-grid">
-    <div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>建筑蓝图批注解决方案</h4><p>将注释和表单功能集成到建筑现场应用，工人可直接在 PDF 图纸上标注缺陷、进度和签字确认</p><a href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 18px">查看方案 →</a></div></div>
-    <div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>全功能 PDF 编辑器快速构建方案</h4><p>快速构建包含编辑、批注与表单功能的专业 PDF 编辑器，研发周期缩短 80%。</p><a href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 18px">查看方案 →</a></div></div>
-    <div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>桌面端 PDF 工具快速上线方案</h4><p>基于 ComPDF SDK 构建桌面 PDF 工具，从集成到正式上线仅用 3 周。</p><a href="https://www.compdf.com/blog/case-study-tweaking-technologies" target="_blank" class="btn btn-primary" style="font-size:13px;padding:8px 18px">查看方案 →</a></div></div>
-  </div>
+<div class="section-title"><span class="tag">客户案例</span><h2>真实客户，真实成果</h2></div>
+<div class="case-grid">
+<div class="case-card"><div class="case-thumb">🏗️</div><div class="case-body"><h4>建筑蓝图批注解决方案</h4><p>将批注与表单能力集成至建筑现场应用，施工人员可直接在 PDF 蓝图上标记缺陷、记录进度并现场签字。</p><a class="btn btn-primary" href="https://www.compdf.com/blog/enhance-magicplan-app-by-pdf-sdk" style="font-size:13px;padding:8px 18px" target="_blank">查看案例</a></div></div>
+<div class="case-card"><div class="case-thumb">🏢</div><div class="case-body"><h4>企业级 PDF 编辑器</h4><p>快速构建包含编辑、批注与表单功能的专业 PDF 编辑器，研发周期缩短 80%。</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-haidongxinxi-uses-compdfkit-build-pdf-editor" style="font-size:13px;padding:8px 18px" target="_blank">查看案例</a></div></div>
+<div class="case-card"><div class="case-thumb">🛠️</div><div class="case-body"><h4>开发者桌面 PDF 工具</h4><p>基于 ComPDF SDK 构建桌面 PDF 工具，从集成到正式上线仅用 3 周。</p><a class="btn btn-primary" href="https://www.compdf.com/blog/case-study-tweaking-technologies" style="font-size:13px;padding:8px 18px" target="_blank">查看案例</a></div></div>
+</div>
 </div>
 </section>
 <section class="form-section" id="contact">
 <div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div>
-      <span class="tag">预约免费演示</span>
-      <h2 style="font-size:32px;font-weight:700;margin:12px 0 16px">预约 1 对 1 技术演示<br>看 ComPDF 如何解决你的场景</h2>
-      <p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px">我们的解决方案工程师将根据你的具体需求，现场演示集成方案并提供技术建议 — 完全免费，无任何附加条件</p>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">针对具体业务场景的定制化演示</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">获取专属集成方案 + 示例代码</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">解答技术选型、架构和合规问题</span></div>
-        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">演示后立即开通免费试用 + 技术支持</span></div>
-      </div>
-    </div>
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">🚀 预约免费演示</h3>
-      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.form-btn').textContent='✓ 已提交';this.querySelector('.form-btn').style.background='#10b981'">
-        <input type="text" placeholder="您的姓名">
-        <input type="email" placeholder="工作邮箱">
-        <input type="text" placeholder="公司名称">
-        <select><option value="">您感兴趣的场景</option><option>PDF 编辑器集成</option><option>文档注释与协作</option><option>表单填写与签名</option><option>文档自动化工作流</option><option>AI 文档处理</option><option>其他</option></select>
-        <button type="submit" class="form-btn" style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">立即预约演示 →</button>
-        <p style="font-size:12px;color:var(--text-muted);text-align:center">提交后我们将在 1 个工作日内与您确认时间</p>
-      </form>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div>
+<span class="tag">预约免费演示</span>
+<h2 style="font-size:32px;font-weight:700;margin:12px 0 16px">联系解决方案工程师<br/>针对您的业务场景，体验 ComPDF 实际效果</h2>
+<p style="color:var(--text-secondary);font-size:15px;margin-bottom:24px">预约 30 分钟专属演示，我们将结合您的业务流程，讲解集成方案、解答技术问题，并帮助您评估最佳接入方式。</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">针对具体业务场景的定制化演示</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">获取专属集成方案与示例代码</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">解答技术选型、系统架构与合规问题</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:14px">演示后即可获得免费试用与技术支持</span></div>
+</div>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">🚀 预约免费演示</h3>
+<form onsubmit="event.preventDefault();this.querySelector('.form-btn').textContent='✓ 已提交';this.querySelector('.form-btn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
+<input placeholder="姓名" type="text"/>
+<input placeholder="企业邮箱" type="email"/>
+<input placeholder="公司名称" type="text"/>
+<select><option value="">您的使用场景</option><option>PDF 文档编辑与批注</option><option>文件格式转换与 OCR</option><option>RAG 知识库与文档解析</option><option>硬件与扫描仪集成</option><option>AI 文档处理</option><option>其他 / 暂不确定</option></select>
+<button class="form-btn" style="padding:12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">提交</button>
+<p style="font-size:12px;color:var(--text-muted);text-align:center">我们将在 1 个工作日内与您确认预约信息</p>
+</form>
+</div>
+</div>
 </div>
 </section>
 <section class="cta-section">
 <div class="container">
-  <h2>5 分钟集成，立刻拥有专业级 PDF 编辑能力</h2>
-  <p>零成本启动 · 免费试用 · 即刻让你的应用脱胎换骨</p>
-  <div style="display:flex;gap:12px;justify-content:center;position:relative">
-    <a href="#" class="btn btn-primary" style="background:#fff;color:#1E3A8A">免费试用</a>
-    <a href="#" class="btn btn-outline">查看完整文档 →</a>
-  </div>
+<h2>5 分钟集成，立刻拥有专业级 PDF 编辑能力</h2>
+<p>零成本启动 · 免费试用 · 即刻让你的应用脱胎换骨</p>
+<div style="display:flex;gap:12px;justify-content:center;position:relative">
+<a class="btn btn-primary" href="#" style="background:#fff;color:#1E3A8A">免费试用</a>
+<a class="btn btn-outline" href="#">查看完整文档 →</a>
+</div>
 </div>
 </section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>

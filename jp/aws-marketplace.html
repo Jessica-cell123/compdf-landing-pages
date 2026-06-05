@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ComPDF AWS Marketplace | AWS で ComPDF をワンクリックデプロイ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF AWS Marketplace | AWSでComPDFをワンクリックデプロイ</title>
 <style>
 :root{--primary:#FF9900;--primary-dark:#E88B00;--accent:#2563EB;--accent-green:#10B981;--gradient:linear-gradient(135deg,#FF9900,#2563EB);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -84,7 +84,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </head>
 <body>
 <nav><div class="container">
-<div class="logo">
+  <div class="logo">
 <div class="lang-switch">
   <button class="lang-btn" onclick="toggleLangMenu()">🌐</button>
   <div class="lang-menu" id="langMenu">
@@ -96,111 +96,112 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <a href="#" data-lang="th">ไทย</a>
   </div>
 </div><div class="logo-icon">C</div> ComPDF</div>
-<ul>
-<li><a href="/compdf-landing-pages/jp/1-document-editing.html">文档编辑</a></li>
-<li><a href="/compdf-landing-pages/jp/2-file-processing.html">文件处理</a></li>
-<li><a href="/compdf-landing-pages/jp/3-document-automation.html">RAG知识库</a></li>
-<li><a href="/compdf-landing-pages/jp/4-hardware-integration.html">软硬件结合</a></li>
-<li><a href="/compdf-landing-pages/jp/5-ai-products.html">AI 产品</a></li>
-<li><a href="/compdf-landing-pages/jp/7-sdk-buyers-guide.html">选型指南</a></li>
-<li><a href="/compdf-landing-pages/jp/compdf-sdk.html">SDK</a></li>
-<li><a href="/compdf-landing-pages/jp/industries.html">行业方案</a></li>
-<li><a href="/compdf-landing-pages/jp/low-code.html">Low-Code</a></li>
-<li><a class="active" href="/compdf-landing-pages/jp/aws-marketplace.html">AWS</a></li>
-<li><a href="/compdf-landing-pages/jp/salesforce.html">Salesforce</a></li>
-<li><a href="/compdf-landing-pages/jp/third-party-platforms.html">第三方平台</a></li>
-<li><a href="/compdf-landing-pages/jp/pricing.html">定价</a></li>
-<li><a href="/compdf-landing-pages/jp/workflow.html">Workflow</a></li>
+  <ul>
+    <li><a href="/compdf-landing-pages/jp/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/jp/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/jp/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/jp/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/jp/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/jp/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/jp/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/jp/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/jp/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/jp/aws-marketplace.html" class="active">AWS</a></li>
+    <li><a href="/compdf-landing-pages/jp/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/jp/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/jp/features.html">功能清单</a></li>
+    <li><a href="/compdf-landing-pages/jp/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/jp/workflow.html">Workflow</a></li>
 </ul>
 </div></nav>
 <section class="hero"><div class="container">
-<div class="hero-text">
-<div class="tag">ComPDF × AWS Marketplace</div>
-<h1>在 AWS 上<span class="gradient">一键部署 ComPDF</span></h1>
-<p>ComPDF は AWS Marketplace に出品され、AMI イメージとして提供されています。EC2 でインスタンスを起動するだけで完全な PDF 変換機能を取得。統一 AWS 課金、プライベートネットワークデプロイ、VPC 内データ処理により、エンタープライズ級の文書処理インフラが数分で準備できます。</p>
-<div class="hero-btns">
-<a class="btn btn-aws" href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview" target="_blank">デプロイガイドを見る</a>
-<a class="btn btn-outline" href="#form">获取 License →</a>
-</div>
-</div>
-<div class="hero-visual">
-<div class="big-icon">🟠</div>
-<div class="aws-arch">
-<div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
-<div class="aws-arrow">→</div>
-<div class="aws-node" style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 实例</div></div>
-<div class="aws-arrow">→</div>
-<div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
-<div class="aws-arrow">→</div>
-<div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
-</div>
-<p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI イメージ · すぐに使える · プライベートデプロイ · VPC 内データ処理</p>
-</div>
+  <div class="hero-text">
+    <div class="tag">ComPDF × AWS Marketplace</div>
+    <h1>AWSで<span class="gradient">ComPDFをワンクリックデプロイ</span></h1>
+    <p>ComPDF 已上架 AWS Marketplace，以 AMI 镜像形式提供。在 EC2 上启动实例即可获得完整的 PDF 转换能力 —— 統一AWS課金、私有网络部署、VPC外へのデータ送信なし，企业级文档处理基础设施分钟级就绪。</p>
+    <div class="hero-btns">
+      <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview" target="_blank" class="btn btn-aws">デプロイガイドを見る</a>
+      <a href="#form" class="btn btn-outline">ライセンスを入手 →</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="big-icon">🟠</div>
+    <div class="aws-arch">
+      <div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
+      <div class="aws-arrow">→</div>
+      <div class="aws-node" style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 实例</div></div>
+      <div class="aws-arrow">→</div>
+      <div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
+      <div class="aws-arrow">→</div>
+      <div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
+    </div>
+    <p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI 镜像 · 即开即用 · 私有化部署 · VPC外へのデータ送信なし</p>
+  </div>
 </div></section>
 <section><div class="container">
-<div class="section-title"><span class="tag">コアアドバンテージ</span><h2>AWS Marketplace での ComPDF デプロイを選ぶ理由</h2></div>
-<div class="benefits-grid">
-<div class="benefit-card"><div class="icon">🚀</div><div><h4>ワンクリックデプロイ、数分で本番稼働</h4><p>AWS Marketplace で AMI イメージをサブスクライブ後、EC2 インスタンスを起動するだけで完全な ComPDF 文書処理サービスを取得。手動での環境構築は不要。</p></div></div>
-<div class="benefit-card"><div class="icon">💰</div><div><h4>統一 AWS 課金</h4><p>サブスクリプション費用は AWS 月額請求書に統合。Enterprise Discount Program による充当に対応し、企業の調達と財務照合フローを簡素化。</p></div></div>
-<div class="benefit-card"><div class="icon">🔒</div><div><h4>VPC 内データ処理</h4><p>自社 VPC プライベートネットワーク内にデプロイ。文書処理リクエストは内部ネットワーク経由で転送され、データは公網を通過しません。金融、医療などの業界コンプライアンス要件を満たします。</p></div></div>
-<div class="benefit-card"><div class="icon">📈</div><div><h4>弾力的なスケーリング</h4><p>EC2 の弾力的な能力に基づき、文書処理量に応じてインスタンス仕様を随時調整。高負荷時は自動拡張、アイドル時はコスト削減。</p></div></div>
-</div>
+  <div class="section-title"><span class="tag">コアアドバンテージ</span><h2>AWS MarketplaceでのComPDF導入を選ぶ理由</h2></div>
+  <div class="benefits-grid">
+    <div class="benefit-card"><div class="icon">🚀</div><div><h4>ワンクリック導入、数分で本番稼働</h4><p>从 AWS Marketplace AMIをサブスクライブ 镜像后，EC2 インスタンスを起動即可获得完整的 ComPDF 文档处理服务，无需手动搭建环境。</p></div></div>
+    <div class="benefit-card"><div class="icon">💰</div><div><h4>統一AWS課金</h4><p>サブスクリプション費用はAWS月次請求書に統合され、Enterprise Discount Programによる充当に対応。企業の調達と財務照合プロセスを簡素化します。</p></div></div>
+    <div class="benefit-card"><div class="icon">🔒</div><div><h4>VPC外へのデータ送信なし</h4><p>自社VPCプライベートネットワーク内に導入。文書処理リクエストは内部ネットワーク経由で転送され、データは公網を通過しません。金融、医療などの業界コンプライアンス要件を満たします。</p></div></div>
+    <div class="benefit-card"><div class="icon">📈</div><div><h4>弾力的なスケーリング</h4><p>EC2の弾力的な能力に基づき、文書処理量に応じてインスタンス仕様を随時調整。高負荷時は自動拡張、アイドル時はコスト削減。</p></div></div>
+  </div>
 </div></section>
 <section class="section-alt"><div class="container">
-<div class="section-title"><span class="tag">技術アーキテクチャ</span><h2>AMI デプロイアーキテクチャ</h2><p>ComPDF AWS AMI は Docker Compose で管理され、すぐに使用可能</p></div>
-<div class="arch-grid">
-<div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF 変換 HTTP API サービス、ポート 7000</p></div>
-<div class="arch-card"><div class="emoji">🗄️</div><h4>MySQL データベース</h4><p>服务数据库，与 processor 自动启动</p></div>
-<div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>容器编排，文件路径 /var/www/compdf/</p></div>
-<div class="arch-card"><div class="emoji">🔑</div><h4>ライセンス認証</h4><p>ライセンスを購入・設定後、すぐにサービスをアクティベート</p></div>
-</div>
-<h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px">サブスクリプションから本番稼働までの全フロー</h3>
-<div class="arch-flow">
-<div class="af-node highlight"><div class="af-icon">🛒</div><div class="af-label">AMI をサブスクライブ</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">🚀</div><div class="af-label">EC2 を起動</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">🔑</div><div class="af-label">ライセンス設定</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">▶️</div><div class="af-label">サービス起動</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API 调用</div></div>
-</div>
+  <div class="section-title"><span class="tag">技術アーキテクチャ</span><h2>AMI導入アーキテクチャ</h2><p>ComPDF AWS AMIはDocker Composeベースで管理、すぐに使用可能</p></div>
+  <div class="arch-grid">
+    <div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF変換HTTP APIサービス、ポート7000</p></div>
+    <div class="arch-card"><div class="emoji">🗄️</div><h4>MySQLデータベース</h4><p>サービスデータベース、processorと自動起動</p></div>
+    <div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>コンテナオーケストレーション、ファイルパス /var/www/compdf/</p></div>
+    <div class="arch-card"><div class="emoji">🔑</div><h4>ライセンス認証</h4><p>ライセンス購入・設定後、すぐにサービスをアクティベート</p></div>
+  </div>
+  <h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px">サブスクリプションから本番稼働までの全フロー</h3>
+  <div class="arch-flow">
+    <div class="af-node highlight"><div class="af-icon">🛒</div><div class="af-label">AMIをサブスクライブ</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">🚀</div><div class="af-label">EC2を起動</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">🔑</div><div class="af-label">ライセンス設定</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">▶️</div><div class="af-label">サービスを開始</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API呼び出し</div></div>
+  </div>
 </div></section>
 <section><div class="container">
-<div class="section-title"><span class="tag">コア機能</span><h2>AMI 提供的文档处理能力</h2><p>覆盖 PDF 转换全场景，通过 HTTP API 簡単接続</p></div>
-<div class="features-grid">
-<div class="feature-card"><div class="emoji">🔄</div><h4>PDF フォーマット変換</h4><p>PDF ↔ Word / Excel / PPT / HTML / 画像、双方向変換、元のレイアウトを保持</p></div>
-<div class="feature-card"><div class="emoji">📄</div><h4>Office 转 PDF</h4><p>Word、Excel、PPT 文書を一括で PDF に変換。一元的なアーカイブと配布に最適</p></div>
-<div class="feature-card"><div class="emoji">🖼️</div><h4>图片转换</h4><p>JPG、PNG、TIFF、BMP などの一般的な画像形式と PDF の相互変換をサポート</p></div>
-<div class="feature-card"><div class="emoji">📐</div><h4>PDF 仕様変換</h4><p>PDF/A、PDF/X、PDF/E などの標準フォーマット変換に対応。アーカイブと印刷要件を満たす</p></div>
-<div class="feature-card"><div class="emoji">⚡</div><h4>バッチ処理</h4><p>高並行バッチ文書処理をサポート。自動ロードバランシングにより大規模本番環境に最適</p></div>
-<div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>標準 HTTP API インターフェース。任意の言語から呼び出し可能で、既存システムに簡単に統合</p></div>
-</div>
+  <div class="section-title"><span class="tag">コア機能</span><h2>AMIが提供する文書処理機能</h2><p>PDF変換の全シナリオをカバー、HTTP APIで簡単接続</p></div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="emoji">🔄</div><h4>PDF形式変換</h4><p>PDF ↔ Word / Excel / PPT / HTML / 画像、双方向変換、元のレイアウトを保持</p></div>
+    <div class="feature-card"><div class="emoji">📄</div><h4>Office から PDF へ</h4><p>Word、Excel、PPT文書を一括でPDFに変換。一元管理と配布に最適</p></div>
+    <div class="feature-card"><div class="emoji">🖼️</div><h4>画像変換</h4><p>JPG、PNG、TIFF、BMPなどの一般的な画像形式とPDFの相互変換をサポート</p></div>
+    <div class="feature-card"><div class="emoji">📐</div><h4>PDF仕様変換</h4><p>PDF/A、PDF/X、PDF/Eなどの標準フォーマット変換に対応、アーカイブと印刷要件を満たす</p></div>
+    <div class="feature-card"><div class="emoji">⚡</div><h4>バッチ処理</h4><p>高並行バッチ文書処理をサポート、自動ロードバランシングにより大規模本番環境に最適</p></div>
+    <div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>標準HTTP APIインターフェース。任意の言語から呼び出し可能で、既存システムに簡単に統合</p></div>
+  </div>
 </div></section>
 <section class="form-section" id="form"><div class="container">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-<div>
-<span class="tag">获取 License</span>
-<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">使い始める ComPDF on AWS</h2>
-<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">情報を送信してライセンスとデプロイソリューションを取得。技術チームが AWS 上のデプロイ設定を支援</p>
-<div style="display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">专属 License 与部署方案</span></div>
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWS 架构配置建议与最佳实践</span></div>
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">技术团队全程支持，30 天無料トライアル</span></div>
-</div>
-</div>
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">AWS デプロイソリューションを入手</h3>
-<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
-<input placeholder="您的姓名" type="text"/>
-<input placeholder="工作邮箱" type="email"/>
-<input placeholder="公司名称" type="text"/>
-<select><option value="">想定月間文書処理量</option><option>&lt; 10,000 份</option><option>10,000 - 100,000 份</option><option>100,000 - 1,000,000 份</option><option>&gt; 1,000,000 份</option></select>
-<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">ソリューションを入手 →</button>
-</form>
-</div>
-</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <span class="tag">ライセンスを入手</span>
+      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">AWS で ComPDF を使い始める</h2>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">提出信息ライセンスを入手 和部署方案，我们的技术团队将协助你完成 AWS 上的部署配置</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">専用ライセンスと導入プラン</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWSアーキテクチャ設定の推奨事項とベストプラクティス</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">技術チームが完全サポート、30日間無料トライアル</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">AWS導入プランを入手</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提出';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的氏名">
+        <input type="email" placeholder="仕事用メール">
+        <input type="text" placeholder="会社名">
+        <select><option value="">想定月間文書処理量</option><option>< 10,000件</option><option>10,000～100,000件</option><option>100,000～1,000,000件</option><option>> 1,000,000件</option></select>
+        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">プランを入手 →</button>
+      </form>
+    </div>
+  </div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 <script>

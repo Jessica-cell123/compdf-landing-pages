@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
-<html lang="zh-CN">
+<html lang="ko">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>월별 예상 문서 처리량</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComPDF AWS Marketplace | AWS에서ComPDF 원클릭 배포</title>
 <style>
 :root{--primary:#FF9900;--primary-dark:#E88B00;--accent:#2563EB;--accent-green:#10B981;--gradient:linear-gradient(135deg,#FF9900,#2563EB);--bg:#0F172A;--bg-card:#1E293B;--bg-elevated:#162032;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#64748B;--border:#334155;--border-light:#3B4C66;--radius:16px;--radius-sm:12px}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -85,7 +84,7 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
 </head>
 <body>
 <nav><div class="container">
-<div class="logo">
+  <div class="logo">
 <div class="lang-switch">
   <button class="lang-btn" onclick="toggleLangMenu()">🌐</button>
   <div class="lang-menu" id="langMenu">
@@ -97,111 +96,112 @@ footer{background:#0B1120;border-top:1px solid var(--border);color:var(--text-mu
     <a href="#" data-lang="th">ไทย</a>
   </div>
 </div><div class="logo-icon">C</div> ComPDF</div>
-<ul>
-<li><a href="/compdf-landing-pages/ko/1-document-editing.html">文档编辑</a></li>
-<li><a href="/compdf-landing-pages/ko/2-file-processing.html">文件处理</a></li>
-<li><a href="/compdf-landing-pages/ko/3-document-automation.html">RAG知识库</a></li>
-<li><a href="/compdf-landing-pages/ko/4-hardware-integration.html">软硬件结合</a></li>
-<li><a href="/compdf-landing-pages/ko/5-ai-products.html">AI 产品</a></li>
-<li><a href="/compdf-landing-pages/ko/7-sdk-buyers-guide.html">选型指南</a></li>
-<li><a href="/compdf-landing-pages/ko/compdf-sdk.html">SDK</a></li>
-<li><a href="/compdf-landing-pages/ko/industries.html">行业方案</a></li>
-<li><a href="/compdf-landing-pages/ko/low-code.html">Low-Code</a></li>
-<li><a class="active" href="/compdf-landing-pages/ko/aws-marketplace.html">AWS</a></li>
-<li><a href="/compdf-landing-pages/ko/salesforce.html">Salesforce</a></li>
-<li><a href="/compdf-landing-pages/ko/third-party-platforms.html">第三方平台</a></li>
-<li><a href="/compdf-landing-pages/ko/pricing.html">定价</a></li>
-<li><a href="/compdf-landing-pages/ko/workflow.html">Workflow</a></li>
+  <ul>
+    <li><a href="/compdf-landing-pages/ko/1-document-editing.html">文档编辑</a></li>
+    <li><a href="/compdf-landing-pages/ko/2-file-processing.html">文件处理</a></li>
+    <li><a href="/compdf-landing-pages/ko/3-document-automation.html">RAG知识库</a></li>
+    <li><a href="/compdf-landing-pages/ko/4-hardware-integration.html">软硬件结合</a></li>
+    <li><a href="/compdf-landing-pages/ko/5-ai-products.html">AI 产品</a></li>
+    <li><a href="/compdf-landing-pages/ko/7-sdk-buyers-guide.html">选型指南</a></li>
+    <li><a href="/compdf-landing-pages/ko/compdf-sdk.html">SDK</a></li>
+    <li><a href="/compdf-landing-pages/ko/industries.html">行业方案</a></li>
+    <li><a href="/compdf-landing-pages/ko/low-code.html">Low-Code</a></li>
+    <li><a href="/compdf-landing-pages/ko/aws-marketplace.html" class="active">AWS</a></li>
+    <li><a href="/compdf-landing-pages/ko/salesforce.html">Salesforce</a></li>
+    <li><a href="/compdf-landing-pages/ko/third-party-platforms.html">第三方平台</a></li>
+    <li><a href="/compdf-landing-pages/ko/features.html">功能清单</a></li>
+    <li><a href="/compdf-landing-pages/ko/pricing.html">定价</a></li>
+    <li><a href="/compdf-landing-pages/ko/workflow.html">Workflow</a></li>
 </ul>
 </div></nav>
 <section class="hero"><div class="container">
-<div class="hero-text">
-<div class="tag">ComPDF × AWS Marketplace</div>
-<h1>AWS에서<span class="gradient">ComPDF 원클릭 배포</span></h1>
-<p>ComPDF는 AWS Marketplace에서 제공되며 AMI 이미지로 제공됩니다. EC2에서 인스턴스를 시작하면 완전한 PDF 변환 기능을 얻을 수 있습니다. 통합 AWS 청구, 프라이빗 네트워크 배포, 데이터가 VPC 외부로 나가지 않으며 엔터프라이즈 수준 문서 처리 인프라가 몇 분 안에 준비됩니다.</p>
-<div class="hero-btns">
-<a class="btn btn-aws" href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview" target="_blank">배포 가이드 보기</a>
-<a class="btn btn-outline" href="#form">라이센스 취득 →</a>
-</div>
-</div>
-<div class="hero-visual">
-<div class="big-icon">🟠</div>
-<div class="aws-arch">
-<div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
-<div class="aws-arrow">→</div>
-<div class="aws-node" style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 인스턴스</div></div>
-<div class="aws-arrow">→</div>
-<div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
-<div class="aws-arrow">→</div>
-<div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
-</div>
-<p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI 이미지 · 즉시 사용 가능 · 프라이빗 배포 · 데이터가 VPC를 떠나지 않음</p>
-</div>
+  <div class="hero-text">
+    <div class="tag">ComPDF × AWS Marketplace</div>
+    <h1>AWS에서<span class="gradient">ComPDF 원클릭 배포</span></h1>
+    <p>ComPDF 已上架 AWS Marketplace，以 AMI 镜像形式提供。在 EC2 上启动实例即可获得完整的 PDF 转换能力 —— 통합 AWS 결제、私有网络部署、데이터는 VPC를 벗어나지 않습니다，企业级文档处理基础设施分钟级就绪。</p>
+    <div class="hero-btns">
+      <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-deployment/aws-marketplace-overview" target="_blank" class="btn btn-aws">배포 가이드 보기</a>
+      <a href="#form" class="btn btn-outline">라이선스 받기 →</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="big-icon">🟠</div>
+    <div class="aws-arch">
+      <div class="aws-node"><div class="emoji">☁️</div><div class="label">AWS Marketplace</div></div>
+      <div class="aws-arrow">→</div>
+      <div class="aws-node" style="border-color:var(--primary);background:rgba(255,153,0,.06)"><div class="emoji">🖥️</div><div class="label">EC2 实例</div></div>
+      <div class="aws-arrow">→</div>
+      <div class="aws-node"><div class="emoji">🐳</div><div class="label">Docker Compose</div></div>
+      <div class="aws-arrow">→</div>
+      <div class="aws-node"><div class="emoji">🔌</div><div class="label">HTTP API</div></div>
+    </div>
+    <p style="color:var(--text-muted);font-size:12px;margin-top:20px">AMI 镜像 · 即开即用 · 私有化部署 · 데이터는 VPC를 벗어나지 않습니다</p>
+  </div>
 </div></section>
 <section><div class="container">
-<div class="section-title"><span class="tag">핵심 장점</span><h2>ComPDF 배포를 위해 AWS Marketplace를 선택하는 이유</h2></div>
-<div class="benefits-grid">
-<div class="benefit-card"><div class="icon">🚀</div><div><h4>원클릭 배포, 몇 분 만에 온라인 연결</h4><p>AWS Marketplace에서 AMI 이미지를 구독한 후 EC2 인스턴스를 시작하면 환경을 수동으로 구축할 필요 없이 완전한 ComPDF 문서 처리 서비스를 얻을 수 있습니다.</p></div></div>
-<div class="benefit-card"><div class="icon">💰</div><div><h4>통합 AWS 결제</h4><p>구독료는 AWS 월별 청구서에 통합되어 기업 할인 프로그램 공제를 지원하고 기업 조달 및 재무 조정 프로세스를 단순화합니다.</p></div></div>
-<div class="benefit-card"><div class="icon">🔒</div><div><h4>데이터가 VPC를 종료하지 않습니다</h4><p>자체 VPC 프라이빗 네트워크에 배포되어 문서 처리 요청은 인트라넷을 통해 전송되고 데이터는 공용 네트워크를 통과하지 않으므로 금융, 의료 및 기타 산업의 규정 준수 요구 사항을 충족합니다.</p></div></div>
-<div class="benefit-card"><div class="icon">📈</div><div><h4>탄성팽창과 수축</h4><p>EC2의 탄력적인 기능을 기반으로 문서 처리량에 따라 인스턴스 사양을 언제든지 조정할 수 있으며, 부하가 높을 때 자동으로 확장되고, 유휴 상태에서는 비용이 절감됩니다.</p></div></div>
-</div>
+  <div class="section-title"><span class="tag">핵심 장점</span><h2>AWS Marketplace에서 ComPDF를 배포해야 하는 이유</h2></div>
+  <div class="benefits-grid">
+    <div class="benefit-card"><div class="icon">🚀</div><div><h4>원클릭 배포, 몇 분 안에 온라인</h4><p>从 AWS Marketplace AMI 구독 镜像后，EC2 시작即可获得完整的 ComPDF 文档处理服务，无需手动搭建环境。</p></div></div>
+    <div class="benefit-card"><div class="icon">💰</div><div><h4>통합 AWS 결제</h4><p>구독료가 AWS 월간 청구서에 통합되며 기업 할인 프로그램 공제를 지원하여 기업 조달 및 재무 조정 프로세스를 간소화합니다.</p></div></div>
+    <div class="benefit-card"><div class="icon">🔒</div><div><h4>데이터는 VPC를 벗어나지 않습니다</h4><p>자체 VPC 프라이빗 네트워크 내에 배포되어 문서 처리 요청이 내부 네트워크를 통해 전송되며 데이터가 공용 네트워크를 통과하지 않아 금융, 의료 등 산업의 규정 준수 요구 사항을 충족합니다.</p></div></div>
+    <div class="benefit-card"><div class="icon">📈</div><div><h4>탄력적 확장 및 축소</h4><p>EC2의 탄력적 기능을 기반으로 문서 처리량에 따라 인스턴스 사양을 조정하며, 부하가 높을 때 자동 확장되고 유휴 상태에서는 비용이 절감됩니다.</p></div></div>
+  </div>
 </div></section>
 <section class="section-alt"><div class="container">
-<div class="section-title"><span class="tag">기술 아키텍처</span><h2>AMI 배포 아키텍처</h2><p>ComPDF AWS AMI는 Docker Compose를 기반으로 관리되며 즉시 사용할 수 있습니다</p></div>
-<div class="arch-grid">
-<div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF 변환 HTTP API 서비스, 포트 7000</p></div>
-<div class="arch-card"><div class="emoji">🗄️</div><h4>MySQL 데이터베이스</h4><p>서비스 데이터베이스, 프로세서로 자동 시작됨</p></div>
-<div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>컨테이너 오케스트레이션, 파일 경로 /var/www/compdf/</p></div>
-<div class="arch-card"><div class="emoji">🔑</div><h4>라이선스 활성화</h4><p>라이센스를 구입하고 서비스를 활성화하도록 서비스를 구성하십시오</p></div>
-</div>
-<h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px">구독부터 온라인까지의 전체 과정</h3>
-<div class="arch-flow">
-<div class="af-node highlight"><div class="af-icon">🛒</div><div class="af-label">AMI 구독</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">🚀</div><div class="af-label">EC2 시작</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">🔑</div><div class="af-label">라이센스 구성</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">▶️</div><div class="af-label">서비스 시작</div></div>
-<div class="af-arrow">→</div>
-<div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API 호출</div></div>
-</div>
+  <div class="section-title"><span class="tag">기술 아키텍처</span><h2>AMI 배포 아키텍처</h2><p>ComPDF AWS AMI는 Docker Compose 기반으로 관리되며 즉시 사용 가능</p></div>
+  <div class="arch-grid">
+    <div class="arch-card"><div class="emoji">📦</div><h4>compdfkit_processor</h4><p>PDF 변환 HTTP API 서비스, 포트 7000</p></div>
+    <div class="arch-card"><div class="emoji">🗄️</div><h4>MySQL 데이터베이스</h4><p>서비스 데이터베이스, processor와 함께 자동 시작</p></div>
+    <div class="arch-card"><div class="emoji">🔧</div><h4>Docker Compose</h4><p>컨테이너 오케스트레이션, 파일 경로 /var/www/compdf/</p></div>
+    <div class="arch-card"><div class="emoji">🔑</div><h4>라이선스 활성화</h4><p>라이선스 구매 및 구성 후 서비스 활성화</p></div>
+  </div>
+  <h3 style="text-align:center;font-size:18px;font-weight:700;margin-bottom:24px">구독부터 실행까지 전체 프로세스</h3>
+  <div class="arch-flow">
+    <div class="af-node highlight"><div class="af-icon">🛒</div><div class="af-label">AMI 구독</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">🚀</div><div class="af-label">EC2 시작</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">🔑</div><div class="af-label">라이선스 구성</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">▶️</div><div class="af-label">서비스 시작</div></div>
+    <div class="af-arrow">→</div>
+    <div class="af-node"><div class="af-icon">🔌</div><div class="af-label">API 호출</div></div>
+  </div>
 </div></section>
 <section><div class="container">
-<div class="section-title"><span class="tag">핵심 역량</span><h2>AMI가 제공하는 문서 처리 기능</h2><p>모든 PDF 변환 시나리오를 다루며, HTTP API를 통해 쉽게 액세스할 수 있습니다</p></div>
-<div class="features-grid">
-<div class="feature-card"><div class="emoji">🔄</div><h4>PDF 형식 변환</h4><p>PDF ← Word / Excel / PPT / HTML / 그림, 양방향 변환, 원본 레이아웃 유지</p></div>
-<div class="feature-card"><div class="emoji">📄</div><h4>오피스를 PDF로</h4><p>Word, Excel, PPT 문서를 일괄적으로 PDF로 변환하여 통합 보관 및 배포에 적합</p></div>
-<div class="feature-card"><div class="emoji">🖼️</div><h4>이미지 변환</h4><p>JPG, PNG, TIFF, BMP 및 PDF와 같은 일반적인 이미지 형식 간 변환 지원</p></div>
-<div class="feature-card"><div class="emoji">📐</div><h4>PDF 사양 변환</h4><p>보관 및 인쇄 요구 사항을 충족하기 위한 PDF/A, PDF/X, PDF/E 및 기타 표준 형식 변환</p></div>
-<div class="feature-card"><div class="emoji">⚡</div><h4>일괄 처리</h4><p>대규모 생산 환경에 적합한 동시성 높은 일괄 문서 처리, 자동 로드 밸런싱 지원</p></div>
-<div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>표준 HTTP API 인터페이스는 어떤 언어로든 호출할 수 있으며 기존 시스템에 쉽게 통합될 수 있습니다.</p></div>
-</div>
+  <div class="section-title"><span class="tag">핵심 역량</span><h2>AMI가 제공하는 문서 처리 기능</h2><p>PDF 변환의 모든 시나리오를 포괄하며 HTTP API로 쉽게 연결</p></div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="emoji">🔄</div><h4>PDF 형식 변환</h4><p>PDF ↔ Word / Excel / PPT / HTML / 이미지, 양방향 변환, 원본 레이아웃 유지</p></div>
+    <div class="feature-card"><div class="emoji">📄</div><h4>Office-to-PDF 변환</h4><p>Word, Excel, PPT 문서를 일괄 PDF로 변환, 통합 보관 및 배포에 적합</p></div>
+    <div class="feature-card"><div class="emoji">🖼️</div><h4>이미지 변환</h4><p>JPG, PNG, TIFF, BMP 등 일반적인 이미지 형식과 PDF 간 상호 변환 지원</p></div>
+    <div class="feature-card"><div class="emoji">📐</div><h4>PDF 사양 변환</h4><p>PDF/A, PDF/X, PDF/E 등 표준 형식 변환으로 보관 및 인쇄 요구 사항 충족</p></div>
+    <div class="feature-card"><div class="emoji">⚡</div><h4>일괄 처리</h4><p>고동시성 일괄 문서 처리 지원, 자동 로드 밸런싱으로 대규모 프로덕션 환경에 적합</p></div>
+    <div class="feature-card"><div class="emoji">🔗</div><h4>RESTful API</h4><p>표준 HTTP API 인터페이스, 모든 언어에서 호출 가능, 기존 시스템에 쉽게 통합</p></div>
+  </div>
 </div></section>
 <section class="form-section" id="form"><div class="container">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-<div>
-<span class="tag">라이센스 취득</span>
-<h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">AWS에서 ComPDF 사용 시작</h2>
-<p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">라이선스 및 배포 계획을 얻기 위해 정보를 제출하면 당사 기술 팀이 AWS에서 배포 구성을 완료하는 데 도움을 드릴 것입니다</p>
-<div style="display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">독점 라이센스 및 배포 계획</span></div>
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWS 아키텍처 구성 권장 사항 및 모범 사례</span></div>
-<div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">기술팀의 전적인 지원, 30일 무료 평가판</span></div>
-</div>
-</div>
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
-<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">AWS 배포 계획 얻기</h3>
-<form onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已提交';this.querySelector('.fbtn').style.background='#10b981'" style="display:flex;flex-direction:column;gap:14px">
-<input placeholder="1,000,000부" type="text"/>
-<input placeholder="工作邮箱" type="email"/>
-<input placeholder="公司名称" type="text"/>
-<select><option value="">월별 예상 문서 처리량</option><option>||| 계획을 세우세요 →</option><option>ComPDF AWS 마켓플레이스 | 한 번의 클릭으로 AWS에 ComPDF 배포</option><option>당신의 이름</option><option>직장 이메일</option></select>
-<button class="fbtn" style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer" type="submit">회사명</button>
-</form>
-</div>
-</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <span class="tag">라이선스 받기</span>
+      <h2 style="font-size:30px;font-weight:700;margin:12px 0 16px">AWS에서 ComPDF 시작하기</h2>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:24px">제출信息라이선스 받기 和部署方案，我们的技术团队将协助你完成 AWS 上的部署配置</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">전용 라이선스 및 배포 계획</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">AWS 아키텍처 구성 권장사항 및 모범 사례</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="check">✓</span><span style="font-size:13px">기술팀 전폭 지원, 30일 무료 평가판</span></div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center">AWS 배포 계획</h3>
+      <form style="display:flex;flex-direction:column;gap:14px" onsubmit="event.preventDefault();this.querySelector('.fbtn').textContent='✓ 已제출';this.querySelector('.fbtn').style.background='#10b981'">
+        <input type="text" placeholder="您的이름">
+        <input type="email" placeholder="업무용 이메일">
+        <input type="text" placeholder="회사 이름">
+        <select><option value="">월간 예상 문서 처리량</option><option>< 10,000건</option><option>10,000 - 100,000건</option><option>100,000 - 1,000,000건</option><option>> 1,000,000건</option></select>
+        <button type="submit" class="fbtn" style="padding:12px;background:linear-gradient(135deg,#FF9900,#E88B00);color:#0F172A;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer">플랜 받기 →</button>
+      </form>
+    </div>
+  </div>
 </div></section>
 <footer><div class="container"><p>© 2026 ComPDF. All Rights Reserved.</p></div></footer>
 <script>
